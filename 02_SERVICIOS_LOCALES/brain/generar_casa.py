@@ -1,0 +1,166 @@
+import json
+import os
+
+# Definimos la estructura completa de la casa de 4 dormitorios, 2 plantas, baños y escalera
+casa_data = {
+  "ProjectName": "Casa 4 Dormitorios 2 Plantas",
+  "Buildings": [
+    {
+      "Id": "BLD-01",
+      "Name": "Casa Principal",
+      "Origin": [0, 0],
+      "Levels": [
+        {
+          "Id": "LVL-01",
+          "Name": "Planta Baja",
+          "Elevation": 0,
+          "F2f": 2800,
+          "Use": "Zona Dia y Visitas",
+          "Zones": [
+            {
+              "Id": "ZONE-PB-01",
+              "Name": "Zona Social",
+              "Spaces": [
+                {
+                  "Id": "SPC-LIVING",
+                  "Name": "Living-Comedor",
+                  "Type": "Living",
+                  "Origin": [0, 0],
+                  "Dimensions": [6000, 5000],
+                  "Boundary": "Exterior",
+                  "Openings": [
+                    {"Id": "OP-01", "Type": "Window", "Width": 2000, "Height": 1500, "SillHeight": 900, "Origin": [3000, 0], "Rotation": 0},
+                    {"Id": "OP-02", "Type": "Door", "Width": 900, "Height": 2100, "SillHeight": 0, "Origin": [5500, 2500], "Rotation": 90}
+                  ]
+                },
+                {
+                  "Id": "SPC-COCINA",
+                  "Name": "Cocina",
+                  "Type": "Kitchen",
+                  "Origin": [6000, 0],
+                  "Dimensions": [4000, 5000],
+                  "Boundary": "Exterior",
+                  "Furniture": [
+                    {"Id": "FURN-01", "SubType": "BaseCabinet", "Origin": [6000, 4500], "Dimensions": [4000, 600], "Rotation": 0},
+                    {"Id": "FURN-02", "SubType": "Refrigerator", "Origin": [9400, 500], "Dimensions": [600, 600], "Rotation": 0}
+                  ],
+                  "Fixtures": [
+                    {"Id": "FIX-01", "SubType": "Sink", "Origin": [7500, 4700], "Rotation": 0}
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "ZONE-PB-02",
+              "Name": "Zona Noche PB",
+              "Spaces": [
+                {
+                  "Id": "SPC-BANO-VISITAS",
+                  "Name": "Baño Visitas",
+                  "Type": "Bathroom",
+                  "Origin": [0, 5000],
+                  "Dimensions": [2000, 2500],
+                  "Boundary": "Interior",
+                  "Fixtures": [
+                    {"Id": "FIX-02", "SubType": "Toilet", "Origin": [200, 5200], "Rotation": 90},
+                    {"Id": "FIX-03", "SubType": "Sink", "Origin": [1500, 6800], "Rotation": 0}
+                  ]
+                },
+                {
+                  "Id": "SPC-DORM-VISITAS",
+                  "Name": "Dormitorio Visitas",
+                  "Type": "Bedroom",
+                  "Origin": [2000, 5000],
+                  "Dimensions": [3500, 4000],
+                  "Boundary": "Exterior",
+                  "Furniture": [
+                    {"Id": "FURN-03", "SubType": "Bed", "Origin": [2200, 7500], "Dimensions": [1600, 2000], "Rotation": 0}
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "LVL-02",
+          "Name": "Planta Alta",
+          "Elevation": 2800,
+          "F2f": 2800,
+          "Use": "Zona Noche Principal",
+          "Zones": [
+            {
+              "Id": "ZONE-PA-01",
+              "Name": "Zona Privada",
+              "Spaces": [
+                {
+                  "Id": "SPC-DORM-PRINCIPAL",
+                  "Name": "Dormitorio Principal",
+                  "Type": "Bedroom",
+                  "Origin": [0, 0],
+                  "Dimensions": [4500, 5000],
+                  "Boundary": "Exterior",
+                  "Furniture": [
+                    {"Id": "FURN-04", "SubType": "Bed", "Origin": [1450, 3000], "Dimensions": [1800, 2000], "Rotation": 0}
+                  ]
+                },
+                {
+                  "Id": "SPC-BANO-SUITE",
+                  "Name": "Baño en Suite",
+                  "Type": "Bathroom",
+                  "Origin": [0, 5000],
+                  "Dimensions": [2500, 3000],
+                  "Boundary": "Interior",
+                  "Fixtures": [
+                    {"Id": "FIX-04", "SubType": "Toilet", "Origin": [200, 5200], "Rotation": 90},
+                    {"Id": "FIX-05", "SubType": "Sink", "Origin": [1800, 5200], "Rotation": 0},
+                    {"Id": "FIX-06", "SubType": "Shower", "Origin": [200, 7200], "Rotation": 0}
+                  ]
+                },
+                {
+                  "Id": "SPC-DORM-2",
+                  "Name": "Dormitorio 2",
+                  "Type": "Bedroom",
+                  "Origin": [4500, 0],
+                  "Dimensions": [3500, 4000],
+                  "Boundary": "Exterior",
+                  "Furniture": [
+                    {"Id": "FURN-05", "SubType": "Bed", "Origin": [4700, 2000], "Dimensions": [1600, 2000], "Rotation": 0}
+                  ]
+                },
+                {
+                  "Id": "SPC-DORM-3",
+                  "Name": "Dormitorio 3",
+                  "Type": "Bedroom",
+                  "Origin": [8000, 0],
+                  "Dimensions": [3500, 4000],
+                  "Boundary": "Exterior",
+                  "Furniture": [
+                    {"Id": "FURN-06", "SubType": "Bed", "Origin": [8200, 2000], "Dimensions": [1600, 2000], "Rotation": 0}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "Stairs": [
+        {
+          "Id": "STAIR-01",
+          "Type": "Straight",
+          "BaseLevelId": "LVL-01",
+          "TopLevelId": "LVL-02",
+          "Width": 1000,
+          "Origin": [5000, 2000],
+          "Rotation": 0
+        }
+      ]
+    }
+  ]
+}
+
+# Guardar el archivo en la misma carpeta
+output_file = "casa_completa.json"
+with open(output_file, 'w', encoding='utf-8') as f:
+    json.dump(casa_data, f, indent=2, ensure_ascii=False)
+
+print(f"✅ Archivo '{output_file}' generado exitosamente en: {os.path.abspath(output_file)}")

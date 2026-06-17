@@ -1,0 +1,590 @@
+## MUROS: REBAJES Y ROZAS [Página 89]
+
+### Tabla 4: Rozas y rebajes admisibles en muros de carga (DIN 1053)
+| Grosor de pared (cm) | Rozas horizontales Profundidad (mm) | Rozas verticales Profundidad (mm) | Grosor de muro restante (mm) |
+| :--- | :--- | :--- | :--- |
+| $\ge 115$ | - | $\le 30$ | $\ge 115$ |
+| $\ge 175$ | $\le 30$ | $\le 30$ | $\ge 115$ |
+| $\ge 240$ | $\le 30$ | $\le 30$ | $\ge 175$ |
+| $\ge 365$ | $\le 30$ | $\le 30$ | $\ge 24$ |
+
+Esta es una transcripción técnica íntegra y exhaustiva de los fragmentos proporcionados del manual **"Neufert - Arte de Proyectar en Arquitectura"**. Se han respetado todos los valores numéricos, tablas, cotas de diagramas y terminología normativa.
+
+***
+
+# ELEMENTOS CONSTRUCTIVOS: VENTANAS
+## TIPOS DE ABERTURA Y VENTANAS [Página 110]
+
+### Tipos de abertura
+1.  **Hojas hacia dentro o hacia fuera**:
+    *   Hoja abatible de eje horizontal, practicable hacia fuera.
+    *   Hoja abatible de eje vertical.
+    *   Hoja abatible de eje horizontal, practicable hacia dentro.
+2.  **Hojas basculantes y pivotantes**:
+    *   Hoja basculante.
+    *   Hoja pivotante (el eje de giro también puede ser excéntrico).
+3.  **Ventana de guillotina**.
+4.  **Ventana corredera**.
+
+### Formas de mocheta
+*   **5**: Mocheta en el interior, marco anclado por dos caras.
+*   **6**: Mocheta en el exterior, marco anclado por dos caras.
+*   **7**: Sin mocheta, marco anclado solo por una cara.
+*   **8**: Ventana con jardinera incorporada.
+*   **10-12**: Detalles de mocheta (exterior, interior, PIR).
+
+### Tabla 9: Medidas de los huecos de obra (PIR) para ventanas DIN 18050
+**Nota técnica:** Los números enteros indicados encima de los recuadros son múltiplos de 125 mm. Ejemplo: una ventana 9 x 11 tiene dimensiones reales de $(9 \times 125) \times (11 \times 125) = 1.125 \times 1.375 \text{ mm}$.
+
+| Ventana de | 1 hoja | 2 hojas | 3 hojas | 4 hojas |
+| :--- | :--- | :--- | :--- | :--- |
+| **Anchura (mm)** | 375, 500, 625, 750, 875 | 1.000, 1.125, 1.250, 1.375 | 1.500, 1.625, 1.750, 1.875 | 2.000, 2.125, 2.250 |
+| **Altura (mm)** | 375, 500, 625, 750, 875, 1.000, 1.125, 1.250, 1.375, 1.500, 1.625, 1.875, 2.000, 2.125, 2.250 | - | - | - |
+
+***
+
+# VIDRIO: VIDRIO AISLANTE [Página 117]
+
+### Tabla 3-4: Valores energéticos y lumínicos (Vidrio THERMOPLUS® S3)
+| Clase de vidrio | Grosor ext. (mm) | Transmisión lum. $\tau_L$ (%) | Reflexión luz $\rho_{L,a}$ (%) | Transmisión energ. $g$ (%) |
+| :--- | :---: | :---: | :---: | :---: |
+| **Posición 3** | 4, 6, 8, 10 | 80, 79, 78, 77 | 13, 13, 12, 12 | 61, 59, 57, 56 |
+| **Posición 2** | 4, 6, 8, 10 | 80, 79, 78, 78 | 14, 14, 14, 14 | 59, 57, 56, 55 |
+
+### Tabla 5: Vidrio aislante con protección solar (Relleno Argón Infrastop)
+| Tipo de vidrio | $\tau_L$ (%) | $g$ (%) | $U_g$ (16mm) | $\rho_{L,a}$ (%) | $RA$ |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Azul 50/27** | 50 | 28 | 1,1 | 19 | 95 |
+| **Brillante 50/25** | 50 | 27 | 1,1 | 20 | 92 |
+| **Plata 50/30** | 50 | 32 | 1,1 | 33 | 94 |
+
+***
+
+# PUERTAS: DISPOSICIÓN Y MEDIDAS [Página 125-126]
+
+### Dimensiones de paso libre (Edificios de viviendas)
+*   **Habitaciones (1 hoja)**: aprox. 80 cm.
+*   **Aseos**: aprox. 70 cm.
+*   **Acceso a la vivienda**: aprox. 90 cm.
+*   **Acceso a edificios**: hasta 115 cm.
+*   **Paso libre mínimo absoluto**: 55 cm.
+*   **Altura de paso libre**: normal 195-200 cm (mínimo 185 cm).
+
+### Tabla 2: Medidas normalizadas DIN 18101 (mm)
+| N.º | Hueco de obra | Hoja (exterior) | Marco (anchura) |
+| :--- | :---: | :---: | :---: |
+| 1 | $875 \times 1.875$ | $860 \times 1.860$ | 841 |
+| 3 | $750 \times 2.000$ | $735 \times 1.985$ | 716 |
+| 5 | $1.000 \times 2.000$ | $985 \times 1.985$ | 966 |
+
+### Diagramas de cotas (Página 125):
+*   **6 Puertas de vidrio (discapacitados)**: Altura total 2,1 m. Marcajes a 0,3 m, 0,85 m, 1,05 m y 1,4 m. Espacio de maniobra $1,5 \times 1,5 \text{ m}$.
+
+***
+
+# ESCALERAS: CONCEPTOS Y REGLAS [Página 132-133]
+
+### Reglas de dimensionado
+*   **Fórmula de la zancada**: $2 \text{ Contrahuellas (C)} + 1 \text{ Huella (H)} = 59 \text{ a } 65 \text{ cm}$ (óptimo 62,5 cm).
+*   **Escalera normal**: Relación 17/29.
+*   **Pendientes**: Rampas (1:6), Escaleras cómodas (20°-23°), Escaleras empinadas (45°).
+*   **Peldaños**: Máximo 18 peldaños por rellano.
+
+### Tabla 3: Medidas en edificios (DIN 18065)
+| Tipo de edificio | Ancho útil (cm) | Contrahuella (cm) | Huella (cm) |
+| :--- | :---: | :---: | :---: |
+| **Vivienda (max 2 aptos)** | 80 | 20 | 23 |
+| **Sótano / Desván** | 80 | 21 | 21 |
+| **Otros edificios** | 100 | 19 | 26 |
+
+### Distancias máximas a caja de escalera
+*   Edificios en altura: 25 m.
+*   Locales comerciales / Garajes subterráneos: 30 m.
+*   Hospitales: 35 m.
+
+***
+
+# TRANSPORTE MECÁNICO [Página 138-140]
+
+### Escaleras mecánicas
+*   **Ángulo**: 30° a 35°.
+*   **Capacidad ($C$)**: $3.600 \times \frac{N \times v}{t} \times f$ [pers/h].
+*   **Anchos de peldaño**: 600, 800, 1.000 mm.
+*   **Rendimiento**: 4.000 a 10.000 personas/hora transportadas.
+
+### Rampas mecánicas (Pasillos móviles)
+*   **Pendiente máxima**: 12°.
+*   **Fórmula**: $Q = \frac{K \times B \times V \times 3600}{0,25}$ [pers/h].
+*   **Cota de profundidad**: Espesor del mecanismo aprox. 180 mm.
+
+### Ascensores
+*   **Cabina 8 pers. (830 kg)**: $1,10 \text{ m} \times 1,40 \text{ m}$ (interior). Hueco $1,60 \text{ m} \times 1,80 \text{ m}$.
+*   **Sillas de ruedas**: Cabina mín. $1,10 \times 1,40 \text{ m}$. Puerta mín. 0,90 m.
+*   **Elementos de control**: Altura de 85 a 100 cm sobre el suelo.
+
+Esta es una transcripción técnica exhaustiva de los fragmentos proporcionados de la **Parte 7** del manual **"Neufert - Arte de Proyectar en Arquitectura"**. Se han respetado estrictamente todos los valores numéricos, tablas, cotas de diagramas y terminología técnica presentes en las imágenes a.
+
+***
+
+# ASCENSORES: PERSONAS EN EDIFICIOS PÚBLICOS [Página 142]
+
+La circulación vertical en los edificios de varias plantas de nueva construcción se realiza fundamentalmente con ascensores. En grandes edificios es conveniente agruparlos en torno a un nudo de circulación. Los montacargas han de separarse visualmente de los ascensores para personas.
+
+### Capacidades de carga en edificios de viviendas:
+*   **400 kg (ascensor pequeño):** para personas, con paquetes.
+*   **630 kg (ascensor medio):** permiten el acceso a cochecitos de niños y sillas de ruedas.
+*   **1.000 kg (ascensor grande):** permiten el traslado de enfermos, ataúdes, muebles y sillas de ruedas de personas con discapacidad $\rightarrow$ **8**.
+
+### Tabla 8: Dimensiones características de los ascensores
+| Capacidad de carga | kg | 400 | 630 | ♿ | 1.000 | ♿ |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Velocidad transporte | m/s | 0,63 - 1 | 1,0 | 0,63 | 1,0 | 1,6 | 2,5 | 0,63 | 1,0 | 1,6 | 2,5 |
+| **Caja ascensor** | | | | | | |
+| Anch. min. de la caja $c$ | mm | $1.600$ | $1.900 \rightarrow$ | $1.900$ |
+| Prof. min. de la caja $d$ | mm | $1.600$ | $2.100$ | $2.600$ |
+| Prof. min. del foso $p$ | mm | $1.400$ | $1.500$ | $1.700$ | $1.700$ | $2.800$ | $1.400$ | $1.500$ | $1.700$ | $2.800$ |
+| Altura min. cabeza caja $n$ | mm | $3.700$ | $3.800$ | $4.000$ | $3.700$ | $3.800$ | $4.000$ | $5.000$ | $3.700$ | $3.800$ | $4.000$ | $5.000$ |
+| **Puerta** | | | | | | |
+| Anch. libre paso caja $c_t$ | mm | $800$ | mín. $900$ | $900$ |
+| Alt. libre paso en caja $s_t$ | mm | $2.000$ | $2.000$ | $2.000$ |
+| **Cuarto máquinas** | | | | | | |
+| Superficie mínima $m^2$ | $m^2$ | $8$ | $10$ | $10$ | $12$ | $14$ | $12$ | $14$ | $15$ |
+| Anchura mínima $r$ | mm | $2.400$ | $2.400$ | $2.700$ | $2.700$ | $3.000$ | $2.700$ | $2.700$ | $3.000$ |
+| Prof. mínima $s$ | mm | $3.200$ | $3.200$ | $3.700$ | $3.700$ | $4.200$ | $4.200$ | $4.200$ | $4.200$ |
+| Altura mínima $h$ | mm | $2.000$ | $2.200$ | $2.200$ | $2.200$ | $2.600$ | $2.000$ | $2.200$ | $2.800$ |
+| **Cabina** | | | | | | |
+| Anch. libre de cabina $s$ | mm | $1.100$ | $1.100$ | $1.100$ |
+| Prof. libre de cabina $b$ | mm | $950$ | $1.400$ | $2.100$ |
+| Altura libre de cabina $k$ | mm | $2.200$ | $2.200$ | $2.200$ |
+| Anch. libre acceso $c_t$ | mm | $800$ | mín. $900$ | $900$ |
+| Número máximo personas | | $5$ | $8$ | $13$ |
+
+### Diagramas y cotas (Página 142):
+*   **1 Planta de la caja**: Dimensiones $c$ (ancho), $d$ (fondo), $c_1$ (paso puerta), $b$ (cabina).
+*   **3 Cuarto de máquinas**: Altura libre $h \ge 2,15$ m (en acceso); altura en zona de máquinas $s$; ancho $r$.
+*   **5 Sección de caja**: Altura cabeza caja $n$; profundidad foso $p$; altura libre de puerta $s_t$.
+*   **7 Capacidad de transporte**: Gráfica con curvas para cargas de $1 \times 400$ kg hasta $3 \times 1.000$ kg y velocidades de $1$ m/s a $2,5$ m/s. Eje X (plantas), Eje Y (capacidad).
+
+---
+
+# ASCENSORES: OFICINAS, BANCOS, HOTELES Y MONTACAMAS [Página 143]
+
+### Fórmulas de cálculo de tráfico:
+*   **Tiempo medio de espera ($s$):** $\frac{\text{tiempo del recorrido }(s)}{\text{nº de ascensores/grupo}}$.
+*   **Capacidad de transp. %:** $\frac{100 \times \text{capacidad transp. (pers.)}}{\text{ocupación del edificio (pers.)}}$.
+
+### Tabla 8: Dimensiones para otros usos (Oficinas, bancos, hoteles)
+| Capacidad de carga | kg | 630 | 1.000 (1.250) | 1.600 |
+| :--- | :---: | :---: | :---: | :---: |
+| Velocidad nominal | m/s | $0,63 \dots 1,6$ | $0,63 \dots 2,5$ | $1,6 \dots 2,5$ |
+| Anchura mín. carga | $c$ | $1.900$ | $2.400$ | $2.600$ |
+| Profundidad mín. carga | $d$ | $2.100$ | $2.100 \dots 2.400$ | $2.600$ |
+| Altura mín. cabeza caja | $q$ | $3.800 \dots 5.000$ | $4.200 \dots 5.200$ | $4.400 \dots 5.400$ |
+| Altura libre paso caja | $f_1$ | $2.000 \dots 2.100$ | $2.100$ | $2.100$ |
+| Superficie mín. cuarto máq. | $m^2$ | $15 \dots 18$ | $20$ | $25$ |
+| Número máx. personas | | $8$ | $13 \dots (16)$ | $21$ |
+
+### Tabla 9: Dimensiones para montacamas y grandes cargas
+| Capacidad de carga | kg | 1.600 | 2.000 | 2.500 |
+| :--- | :---: | :---: | :---: | :---: |
+| Velocidad nominal | m/s | $0,63 \dots 1,6$ | $1 \dots 1,6$ | $1 \dots 2,5$ |
+| Anchura mín. carga | $c$ | $2.400$ | $2.400$ | $2.700$ |
+| Profundidad mín. carga | $d$ | $3.000$ | $3.300$ | $3.300$ |
+| Altura mín. cabeza caja | $q$ | $4.400 \dots 5.400$ | $4.400 \dots 5.400$ | $4.800 \dots 5.600$ |
+| Número máx. personas | | $21$ | $26$ | $33$ |
+
+### Diagramas (Página 143):
+*   **2 Ascensor para camillas**: Dimensiones de cabina $1,40 \times 2,40$ m. Puerta de $1,30$ m desplazada. Hueco de $2,40 \times 3,00$ m.
+*   **6 Tabla de ascensores más usuales**: Muestra configuraciones para $630$ kg, $1.000$ kg y $1.250$ kg con sus anchos de hueco ($1.900$ a $2.600$ mm).
+
+---
+
+# ASCENSORES HIDRÁULICOS Y MONTACARGAS [Página 144]
+
+### Montacargas pequeños:
+Capacidad de carga $\le 300$ kg, superficie de cabina $\le 1$ m², altura de cabina $\le 1,2$ m.
+**Fórmula de tiempo de recorrido ($Z$):** $Z = 2\frac{h}{v} + B_z + t_1 (t_1 + t_2) = \dots s$.
+
+### Tabla 7: Dimensiones de montacargas pequeños
+| Características | Un acceso y doble enfrentado | Doble acceso esquina |
+| :--- | :---: | :---: |
+| Capacidad de carga | $100 \dots 300$ kg | $100 \dots 300$ kg |
+| Anchura de la cabina | $400 \dots 1.000$ mm | $500 \dots 1.000$ mm |
+| Profundidad de la cabina | $600 \dots 1.000$ mm | $500 \dots 1.000$ mm |
+| Altura libre del antepecho | $600 \dots 800$ mm | $600 \dots 800$ mm |
+
+### Tabla 10: Dimensiones de montacargas (Grandes)
+| Capacidad de carga | kg | 630 | 1.000 | 1.600 | 2.000 | 2.500 | 3.200 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Anchura cabina $AC$ | mm | $1.100$ | $1.300$ | $1.500$ | $1.500$ | $1.800$ | $2.000$ |
+| Profundidad cabina $PC$ | mm | $1.570$ | $1.870$ | $2.470$ | $2.870$ | $2.870$ | $3.070$ |
+| Anchura puerta $AP$ | mm | $1.100$ | $1.300$ | $1.500$ | $1.500$ | $1.800$ | $2.000$ |
+| Anchura de la caja $AJ$ | mm | $1.800$ | $2.000$ | $2.200$ | $2.300$ | $2.600$ | $2.900$ |
+| Profundidad de la caja $PJ$ | mm | $1.700$ | $2.000$ | $2.600$ | $3.000$ | $3.000$ | $3.200$ |
+
+---
+
+# ASCENSORES HIDRÁULICOS (DETALLES TÉCNICOS) [Página 145]
+
+### Tabla 5: Datos técnicos
+| Tipo | Capacidad (kg) | Velocidad (m/s) | Altura máx. elev. (m) |
+| :--- | :---: | :---: | :---: |
+| **Mochila 1:1** | $630 \dots 1.600$ | $0,23 \dots 0,47$ | $6 \dots 7$ |
+| **Mochila 2:1** | $630 \dots 1.600$ | $0,46 \dots 0,82$ | $13 \dots 18$ |
+| **Tándem 1:1** | $1.600 \dots 3.200$ | $0,15 \dots 0,3$ | $6 \dots 7$ |
+| **Tándem 2:1** | $1.600 \dots 3.000$ | $0,23 \dots 0,61$ | $13 \dots 18$ |
+
+### Diagramas (Página 145):
+*   **4 Diagrama de cálculo de cabeza de caja ($CCJ$)**: Relaciona la carga útil ($kg$) con el diámetro del émbolo ($D = 600 \dots 700$ mm) y la altura de elevación ($H = 2 \dots 18$ m).
+*   **6 Mochila 1:1**: Muestra el pistón lateral. Hueco $A \times B$. Dimensiones cabina $AC \times PC$.
+
+---
+
+# CONSTRUCCIONES ESPECIALES [Página 146]
+
+*   **Ascensores de vidrio**: Requieren evaluación especial. Las protecciones deben tener mín. $3,5$ m de altura en puertas y $2,5$ m en el resto. Distancia entre elementos móviles $\ge 0,5$ m.
+*   **Ascensores en cajas reducidas**: Sobrerecorridos inferiores/superiores reducidos (aprox. $80$ mm y $250$ mm).
+
+### Diagramas (Página 146):
+*   **3 Propulsado por cables**: Con sala de máquinas y sobrerecorrido inferior $\ge 2 + 2,2$ m. Altura transporte $\le 0,4 \dots 0,6$ m.
+*   **6 Ascensor para discapacitados**: Espacio de acceso $\ge 0,8$ m.
+
+---
+
+# GENERALIDADES: BASES DEL PROYECTO [Página 147]
+
+### Diagrama 1: Funcional a lo largo del día
+Muestra ciclos de actividad:
+*   00:00 - 06:00: Dormir.
+*   06:00 - 12:00: Trabajar 01 / Vivir 02.
+*   12:00 - 18:00: Vivir 02 / Trabajar 01 / Dormir / Trabajar 02.
+
+### Diagrama 3: Orientación de las habitaciones
+*   **Sala de estar**: Mediodía a la noche. Asoleo deseable.
+*   **Cocina/comedor**: Mañana a la noche.
+*   **Habitación juegos niños**: Mediodía a la noche.
+*   **Dormitorios**: Por la noche. Asoleo deseable por la mañana.
+
+---
+
+# POLÍTICA ALEMANA DE VIVIENDA [Página 148]
+
+### Tabla 1: Superficies de viviendas protegidas
+| Número miembros familia | Superficie máxima ($m^2$) |
+| :--- | :---: |
+| 1 persona | $50$ |
+| 2 personas | $60$ |
+| 3 personas | $75$ |
+| 4 personas | $85$ |
+| *Cada miembro adicional* | $+ 10$ |
+
+### Cómputo de superficie útil (WoFlV):
+*   **100%**: Espacios con altura libre $\ge 2$ m.
+*   **50%**: Espacios con altura libre entre $1$ y $2$ m; espacios sin calefacción (invernaderos, piscinas).
+*   **25% (máx 50%)**: Balcones, galerías, terrazas.
+
+---
+
+# DENSIDAD HABITACIONAL: PARÁMETROS [Página 149]
+
+### Tabla 1: Tipologías de viviendas
+| Tipo | Sup. parcela ($m^2$) | Plantas | Edificabilidad | Hab/ha |
+| :--- | :---: | :---: | :---: | :---: |
+| **Unifamiliares** | $350 \dots 450$ | $1 \dots 2$ | $0,3 \dots 0,5$ | $70 \dots 90$ |
+| **Casas pareadas** | $250 \dots 300$ | $1 \dots 2$ | $0,5 \dots 0,6$ | $115 \dots 135$ |
+| **Hilera con patio** | $200 \dots 250$ | $1 \dots 2$ | $0,6 \dots 0,8$ | $150 \dots 180$ |
+| **Bloque en altura** | $\ge 5.000$ | $10$ | $1,2$ | aprox. $450$ |
+| **Viviendas en torre** | $\ge 1.875$ | $10$ | $1,2$ | aprox. $450$ |
+
+---
+
+# ACCESOS: INDIVIDUAL Y EN LÍNEA [Página 151]
+
+### Diagrama 6: Tipos de acceso
+*   **Casa aislada**: Acceso representativo desde la calle.
+*   **Casa en hilera**: Salida directa al exterior (patio o calle).
+*   **Viviendas urbanas**: Portal propio y escalera. Forma más económica.
+
+---
+
+# ACCESOS: POR CORREDOR [Página 152]
+
+*   **Corredor central**: Viviendas a un solo lado. Necesita dúplex para ventilación cruzada.
+*   **Corredor exterior**: Acceso horizontal en fachada. Problemas climáticos (frío/viento).
+*   **Cotas diagramas**: Anchos de corredor aprox. $1,20 \dots 1,50$ m. Distancia entre bloques aprox. $8 \dots 10$ m.
+
+---
+
+# ACCESOS: EDIFICIOS ATERRAZADOS [Página 153]
+
+*   **Pendiente media**: $8 \dots 40^\circ$.
+*   **Fondo jardineras ($x$):** $\frac{(ha - ht) \times hc}{ha}$.
+    *   $ha$: Altura del ojo.
+    *   $hc$: Altura de piso.
+    *   $ht$: Altura jardinera.
+*   **Cotas diagrama 4**: Salón ($1$), Comedor ($2$), Cocina ($3$), Dormitorios ($4, 5$). Terraza ($7$).
+
+---
+
+# ACCESOS: DESDE EL RELLANO [Página 154]
+
+*   **Una vivienda por rellano**: No económica por gran proporción de superficie de escalera.
+*   **Dos a cuatro viviendas**: Lo más frecuente.
+*   **Cotas diagrama 4**: Bloque con 4 viviendas. Ancho núcleo aprox. $12 \dots 15$ m. Fondo total aprox. $25 \dots 35$ m.
+
+---
+
+# PLANTAS: CASAS [Página 155]
+
+*   **Casa del siglo XVIII**: Corredor axial, fachada representativa.
+*   **Casa patio**: Estancias alrededor de espacio exterior privado.
+*   **La planta libre**: Estructura de soportes, paredes ligeras.
+*   **Cotas diagrama 2**: Casa patio de $20 \times 11$ m.
+
+---
+
+# PIEZAS DE LA VIVIENDA: ACCESOS (ENTRADA) [Página 158]
+
+*   **Paso libre mínimo puerta**: $90$ cm.
+*   **Altura de puerta**: mín. $2,1$ m.
+*   **Zonas de acceso**: ancho mín. $1,25$ m ($1,5$ m preferible).
+*   **Cotas diagrama 1**: Altura interruptores/buzón $\ge 2,1$ m (alero). Felpudo integrado.
+
+---
+
+# VESTÍBULO Y PASILLOS [Página 159-160]
+
+*   **Vestíbulo**: Espacio de recepción y cortavientos.
+*   **Medidas de ropa (cm)**: Abrigo ($65 \times 135$), Zapatos ($18 \times 30$), Maleta ($45 \times 35 \dots 50$), Paraguas ($86$).
+*   **Anchuras de pasillo (Tabla 2, p.160)**:
+    *   Poco tránsito (huecos un lado): $0,9$ m.
+    *   Mucho tránsito (huecos un lado): $1,3$ m.
+    *   Huecos ambos lados (en paralelo): $2,4 \dots 2,6$ m.
+
+---
+
+# COCINAS: DISTRIBUCIÓN Y DIN EN 1116 [Página 161]
+
+### Tabla 3: Dimensiones de muebles de cocina (cm)
+| Equipos | Anchura (cm) | Fondo (cm) |
+| :--- | :---: | :---: |
+| **Armarios** | | |
+| 1 Armario bajo | $30 \dots 150$ | $60$ |
+| 2 Columna | $60$ | $60$ |
+| 3 Armario alto | $30 \dots 150$ | $\le 40$ |
+| **Frigoríficos** | | |
+| 4 Frigorífico | $60$ | $60$ |
+| 5 Congelador vertical | $60$ | $60$ |
+| 6 Congelador horizontal | $\ge 90$ | Producto |
+| **Superficies trabajo** | | |
+| 7 Pequeña (cocina/fregadero) | $\ge 60$ | $60$ |
+| 8 Gran superficie | $\ge 120$ | $60$ |
+| **Cocción** | | |
+| 12 Cocina con horno | $60$ | $60$ |
+| 13 Placa con armario | $60 \dots 90$ | $60$ |
+| **Fregaderos** | | |
+| 16 Un seno con escurridor | $\ge 90$ | $60$ |
+| 17 Dos senos con escurridor | $\ge 120$ | $60$ |
+
+### Cotas de diseño (Página 161):
+*   **Altura de trabajo**: $85 \dots 95$ cm.
+*   **Espacio entre frentes**: mín. $1,2$ m ($1,5$ m preferible).
+*   **Hueco de luz**: mín. $1/8$ de la superficie útil.
+
+---
+
+# TIPOLOGÍAS DE COCINA [Página 162]
+
+*   **Mini cocinas**: Para apartamentos de estudiantes.
+*   **Cocina-comedor**: Planificable a partir de $12 \text{ m}^2$.
+*   **Cocina office**: Conexión visual con salón.
+*   **Cotas diagramas**:
+    *   Forma de U: Ancho total $240 \dots 270$ cm.
+    *   Forma de L: Brazo largo $365$ cm; zona comedor $\ge 4 \text{ m}^2$.
+
+---
+
+# MUEBLES Y EQUIPO DE COCINA [Página 163]
+
+### Tabla 16: Frigoríficos (Dimensiones)
+| Vol. (l) | a (cm) | f (cm) | h (cm) |
+| :--- | :---: | :---: | :---: |
+| $50$ | $55$ | $55 \dots 60$ | $80 \dots 85$ |
+| $100$ | $55 \dots 60$ | $60 \dots 65$ | $85$ |
+| $150$ | $55 \dots 60$ | $65 \dots 70$ | $90 \dots 100$ |
+| $250$ | $70 \dots 80$ | $70 \dots 75$ | $140 \dots 150$ |
+
+### Diagramas de muebles:
+*   **1 Armario un módulo**: $85 \times 20 \dots 60 \times 60$ cm.
+*   **5 Horno empotrado**: Ancho $60$ cm, altura $88$ cm.
+*   **14 Isla de cocina**: Largo $170 \dots 220$ cm, ancho $85$ cm.
+
+---
+
+# UTENSILIOS Y VAJILLA [Página 164]
+
+*   **Copas para licores**: Alturas desde $11$ cm (Aguardiente) hasta $28,6$ cm (Flauta).
+*   **Vajilla**: Taza de café (diam. $9 \dots 10$ cm), Platos (diam. $18, 24 \text{ e } 31$ cm).
+*   **Cuchillería**: Cuchillo pan ($20$ cm), Cuchillo cocinero ($20$ cm), Hachuela.
+
+---
+
+# PROCESOS DE TRABAJO EN COCINA [Página 165]
+
+*   **Diagrama 1**: Dos puestos de trabajo. Anchos $45 + 40 + 80 / 1,1 + 60$ cm.
+*   **Diagrama 8**: Altura habitual encimeras $85$ cm.
+*   **Diagrama 14**: Zócalo para limpiar con comodidad $\ge 8$ cm.
+*   **Diagrama 16**: Barra para comer, altura $110 \dots 115$ cm; fondo $40 \dots 60$ cm.
+
+---
+
+# COMEDORES [Página 166]
+
+### Exigencias mínimas:
+Espacio para cuatro personas. Superficie de mesa por persona aprox. $60 \times 40$ cm.
+
+### Tabla 12: Medidas de mesas y sillas
+| Número de personas | Ancho ($a1$) cm | Largo ($l1$) cm | Sup. útil ($m^2$) |
+| :--- | :---: | :---: | :---: |
+| 4 personas | $130$ | $180$ | $2,34$ |
+| 6 personas | $195$ | $180$ | $3,51$ |
+| 8 personas | $260$ | $180$ | $4,68$ |
+
+### Cotas de movimiento:
+*   **Mesa a la pared**: $55 \dots 75 \dots 90$ cm (según paso o servicio).
+*   **Mesa redonda (4-6 pers.)**: Diámetro $90$ cm (mín) a $110 \dots 125$ cm.
+*   **Mesa redonda (8 pers.)**: Diámetro $\approx 180$ cm ($t1$), exterior $\approx 200$ cm ($t2$).
+*   **Mesa extraíble**: Altura $70 \dots 75$ cm.
+
+
+# PIEZAS DE LA VIVIENDA
+## ESTANCIAS DE LA VIVIENDA
+
+### Espacios exteriores [Página 167]
+Puede lograrse un aumento considerable del valor de la habitabilidad de una vivienda con espacios exteriores (balcones, galerías y terrazas) comunicados con la vivienda, una ampliación deseable de la zona de estar en la época calurosa del año (para descanso, para tumbarse, dormir, leer o comer), además de un lugar de trabajo adicional, una zona de juego al aire libre para los niños fácil de supervisar. Los balcones, las galerías y las terrazas forman parte de la superficie habitable y se computan con el 25-50 % de su superficie en el cálculo → pág. 148.
+Por lo general están situados en relación con zonas de estar, de trabajo y el comedor (en caso de ubicar más espacios exteriores, también con dormitorios, cocinas, etc.).
+
+Una buena orientación (respecto a los puntos cardinales y las vistas), un espacio suficiente y una protección contra vistas ajenas, ruido e intemperie (viento, lluvia, fuerte irradiación solar) son decisivos para la calidad de los espacios exteriores.
+A la profundidad necesaria por razones funcionales debe sumarse el espacio requerido para el murete (y su ajardinamiento).
+Los balcones en esquina → **3** ofrecen protección contra vistas ajenas y viento y, al contrario que los balcones volado → **4**, son más acogedores. Por ello, los balcones volados deben estar protegidos por sus lados expuestos a los vientos. Los balcones retranqueados (galerías) → **5** aumentan la superficie del cerramiento exterior de las piezas adyacentes (con su consecuente pérdida térmica), pero son los que más otorgan un carácter de "estancia al aire libre". Los balcones desplazados en planta ofrecen una magnífica protección contra la intromisión y el viento → **6** - **7**.
+
+#### Diagramas y cotas (Página 167):
+*   **1 Tumbona**: 200 cm de largo x 70 cm de ancho.
+*   **2 Mesa de jardín**: 190 cm x 100 cm.
+*   **3 Balcón en esquina**: Ancho $\ge 2,8$ m; fondo $\ge 1,8$ m.
+*   **4 Balcón en voladizo**: Ancho $\ge 1,8$ m; fondo $\ge 1,2$ m.
+*   **5 Grupo de balcones retranqueados (galerías)**: Fondo $\ge 2,1$ m; ancho por módulo $\ge 3,5$ m.
+*   **8 Barandilla**: Alturas de 90 / 110 cm. Distancia entre barras $\le 12$ cm. Saliente del forjado $\le 4$ cm.
+*   **9 Balcón con trastero**: Fondo 3,5 m; ancho de trastero 1,5 m. Altura de barandilla 1,25 m; altura de antepecho 1,75 m.
+*   **10 Posibilidades de ejecución**: Muestra galería acristalada, hormigón armado con rotura de puente térmico y balcón de acero con pavimento de madera.
+*   **11 Posibles relaciones espaciales**: Zonas de estar -> Espacio exterior -> Masa de comer / Zona de trabajo / Dormitorio / Balcón.
+*   **12 Cochecitos y tumbonas**: Espacio de 1,1 m x 0,7 m para cochecito; 2,1 m x 0,7 m para tumbona.
+*   **13 Mesas y sillas**: Mesa circular diámetro 1,8 m; mesa rectangular 1,9 m x 1,0 m. Alturas de mesa 0,75 $\pm 0,5$ m.
+*   **14**:
+    *   A = 7 m² de balcón para 3-4 personas (4,2 m x 1,8 m).
+    *   B = 9 m² para 5-6 personas (4,2 m x 2,1 m).
+*   **15**:
+    *   A = 6 m² de balcón para 1-2 personas (4,2 m x 1,5 m).
+    *   B = 10 m² para 3-4 personas (4,8 m x 2,1 m).
+
+---
+
+### Invernaderos [Página 168]
+Los invernaderos son anexos con grandes superficies acristaladas. Antiguamente se caldeaban gracias al asoleo, disponían de ventilación natural → **11** - **12** y servían de amortiguador climático y superficie para la colocación de plantas en las estaciones frías del año.
+Hoy día, los invernaderos se utilizan, por lo general, como una ampliación de las estancias habitables, sobre todo en entretiempo. En caso de disponer de calefacción adicional y ventilación automática, pueden acondicionarse con plantas subtropicales.
+En muchos casos forman parte del volumen calefactado, con exigencias correspondientes a su envolvente.
+
+#### Diagramas y cotas (Página 168):
+*   **1 Edificio urbano solar**: Sección muestra ángulos de sol: Verano 65°, 39,5°; Invierno 19°. Dimensiones: trasteros 5,52 m; zonas de estar/dormitorios 2,45 m de fondo.
+*   **13 Planta baja**: Incluye (1) Pasillo, (2) Cortavientos, (3) Vestíbulo, (4) Sala de estar, (5) Comedor, (6) Garaje de dos plazas, (7) Cocina, (8) Lavadero, (9) Dormitorio niños, (10) Invernadero, (11) Superficie de almacenamiento de calor.
+*   **14 Planta superior**: (12) Dormitorio, (13) Balcón.
+*   **9 Planta (Heim + Müller)**: (1) Invernadero, (2) Galería, (3) Piscina, (4) Terraza, (5) Cocina, (6) Comedor, (7) Sala de estar.
+
+---
+
+### Estancias de la vivienda: Dormitorios [Página 169]
+Las estancias habitables pueden ser estancias para la convivencia y **estancias individuales (para el retiro)** para una o dos personas. El uso de dormitorios sirve también como **cuarto de trabajo, de juego y para estar**. Puede ser razonable equipar una estancia individual como un **pequeño apartamento**.
+
+#### Datos de superficies y dimensiones (Página 169):
+*   **1 Espacio individual multiuso**: $\ge 3,6$ m de ancho; fondo $\ge 3,5$ m. Superficie de maniobra silla de ruedas $1,5 \times 1,5$ m. Superficie aprox. **13 m²**.
+*   **2 Dormitorio (de los padres) con vestidor**: Ancho $\ge 3,6$ m (zona cama) + 1,6 m (vestidor); fondo $\ge 3,5$ m.
+*   **3 Dormitorios pequeños**:
+    *   Individual: $\ge 2,6$ m x $\ge 3,1$ m (aprox. **8 m²**).
+    *   Doble (padres): $\ge 3,5$ m x $\ge 3,1$ m (aprox. **13 m²**).
+*   **4 Dormitorio de dos camas (divisible)**: Ancho $\ge 5$ m; fondo $\ge 3,1$ m.
+*   **5 Pequeño espacio privado**: Con aseo y vestidor. Ancho total $\ge 5,5$ m (2 m aseo + 3,3 m habitación). Fondo 2,18 m - 1,65 m.
+*   **6 Espacio multiuso**: Con ropero, cocina, comedor y sala de estar. Ancho 6 m.
+*   **7 Salón clásico con comedor**: Ancho 8 m; fondo 4,5 m.
+
+---
+
+### Camas y Mobiliario [Página 170]
+#### Dimensiones detalladas:
+1.  **Futón**: 90-200 x 200 cm.
+2.  **Cama de campaña**: 190 x 70 cm; altura 35 cm; plegada 90 x 55 cm.
+3.  **Cama de tubo de acero**: 200 x 90 cm; altura cabecero 90 cm.
+4.  **Cama antigua de madera**: 200 x 90 cm; altura cabecero 120 cm.
+5.  **Sofá-cama**: 200 x 80 cm.
+9.  **Cama elevada sobre armario**: 200 x 90 cm; altura 110 cm.
+10. **Armario-cama**: 200 x 80 cm; altura armario 150 cm; profundidad armario 20 cm.
+11. **Litera triple**: Alturas de niveles 35, 75, 75 cm; altura total 185 cm. Necesita 0,338 m² por cama.
+12. **Cama pullman**: Altura 185 cm; profundidad 82 cm; altura asiento 57 cm.
+13. **Sillón-cama**: 200 x 70 cm.
+18. **Armario empotrado para camas plegables**: Hueco de 150 cm de ancho; profundidad 93 cm; espacio libre delante 140 cm.
+
+---
+
+### Armarios Roperos [Página 171]
+**Equipamiento ejemplo:**
+*   **Para hombre**: 2 trajes verano, 2 invierno, 1 chándal, 2 abrigos verano, 1 gabardina, 2 abrigos invierno, 1 traje negro, 1 esmoquin, 1 frac, 6 pijamas, 12 camisas, 6 camisetas, 12 camisetas caladas, 12 calzoncillos, 3 camisas de vestir, 8 pañuelos, 24 pares de calcetines, 2 sombreros verano/invierno, 1 paja, 1 rígido, 1 copa, 5 pares de zapatos.
+*   **Para mujer**: 1 abrigo invierno, 2 pieles, 2 abr. verano/gabar., 4 trajes, 5 vestidos lana/entretiempo, 5 blusas, 4 trajes noche, 4 vestidos verano, 18 bragas, 6 camisas, 5 combinaciones, 6 pijamas y camisones, 15 pares medias, 8 pares guantes, 8 pares zapatos, 4 sombreros.
+*   **Ropa de cama**: 6 sábanas bajeras, 6 fundas nórdicas, 12 fundas almohada, 6 toallas baño, 24 toallas lavabo, 6 toallas mano.
+
+#### Cotas de armarios:
+*   **1 Ropero exento**: Ancho 60 cm; fondo 60 cm; altura 180 cm (barra a 155 cm).
+*   **3 Armario empotrado doble**: Ancho 100 cm; fondo 65 cm; altura 250 cm.
+*   **4 Vestidor entre habitaciones**: Ancho 150 cm; pasillo central 55 cm; armarios fondo 65 cm y 30 cm.
+*   **8 Altura adecuada**: Estante superior a 200 cm; barra a 150 cm.
+
+---
+
+### Baños [Página 172-173]
+#### Tabla 1: Caudal y temperatura 
+| Aparato | Caudal agua caliente (l) | Temp. necesaria (°C) | Tiempo utilización (min) |
+| :--- | :--- | :--- | :--- |
+| Baño | 140-160 | 40 | 15 |
+| Baño sentado | 40 | 40 | 5 |
+| Baño de pies | 25 | 40 | 5 |
+| Ducha | 40-75 | 40 | 6 |
+
+#### Tabla 2: Espacio necesario para aparatos (Anchura x Altura cm) 
+*   **Lavamanos individual**: $>60 \times >55$
+*   **Lavamanos doble**: $>120 \times >55$
+*   **Bañera**: $>170 \times >75$
+*   **Ducha**: $>80 \times >80$ (en polibanes con a=90, altura 75 cm)
+*   **Inodoro con tanque bajo**: $40 \times 75$
+*   **Aparatos de lavado**: $60 \times 85$
+
+#### Cotas de movimiento y diseño :
+*   **Inodoro**: Espacio libre delante $\ge 60$ cm; ancho total zona inodoro $\ge 80$ cm.
+*   **Espacio entre bañera y pared**: $\ge 55$ cm.
+*   **Baño sin barreras (DIN 18025)**: Espacio de maniobra $150 \times 150$ cm.
+*   **10 Baño completo con lavadora**: $315 \times 190$ cm.
+*   **11 Baño con plato de ducha (sin barreras)**: $315 \times \ge 245$ cm.
+
+---
+
+### Espacios Auxiliares: Trasteros y Despensas [Página 174]
+*   **Trasteros**: Se debe prever un **2 % de la superficie habitable** para trasteros; mínimo $\ge 1$ m² con anchura libre de 75 cm.
+*   **Despensas**: Estantes hasta el techo. Formas: un solo lado (fondo 50-75 cm), ambos lados (125-175 cm), en forma de U (175 cm), en forma de L (125-175 cm).
+
+### Cuartos de servicio [Página 175]
+*   **Planchado**: Altura mesa para planchar sentado 70 cm; de pie 85-95 cm.
+*   **Máquina de coser**: Mesa 87 x 42 cm; altura 78 cm.
+*   **Iluminación**: Media de unos **350 lux**.
+*   **Tabla de dimensiones equipo doméstico**:
+    *   Lavadora/secadora: 60 x 60 cm.
+    *   Planchadora: 100/120 x 60 cm.
+    *   Total en línea: aprox. 380-460 cm.
+
+---

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OGYSjeuPxUw=",
+  "success": true,
+  "projectFilePath": "D:\\1WORK\\00 HPI\\00 COPILOT\\kwen-bimcopilot\\01_ADDIN_REVIT\\src\\ZBIMCopilotAddin.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pi\\.nuget\\packages\\microsoft.web.webview2\\1.0.2792.45\\microsoft.web.webview2.1.0.2792.45.nupkg.sha512"
+  ],
+  "logs": []
+}

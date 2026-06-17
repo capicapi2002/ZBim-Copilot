@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ZBIM-Copilot Solver</title>
+    <style>
+        body {
+            font-family: 'Consolas', monospace;
+            background-color: #1e1e1e;
+            color: #00ff00;
+            margin: 0;
+            padding: 15px;
+            overflow-y: auto;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        #log {
+            white-space: pre-wrap;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .error { color: #ff5555; }
+        .success { color: #50fa7b; }
+        .warning { color: #f1fa8c; }
+    </style>
+</head>
+<body>
+    <div id="log">⏳ Inicializando Motor ZBIM-Copilot...</div>
+
+    <script>
+        const logDiv = document.getElementById('log');
+
+        // Escuchar mensajes desde C# (Revit Backend)
+        window.chrome.webview.addEventListener('message', event => {
+            const message = event.data;
+            
+            let cssClass = '';
+            if (message.includes('❌')) cssClass = 'error';
+            else if (message.includes('✅')) cssClass = 'success';
+            else if (message.includes('⚠️')) cssClass = 'warning';
+
+            const span = document.createElement('span');
+            span.className = cssClass;
+            span.textContent = '\n' + message;
+            
+            logDiv.appendChild(span);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        });
+    </script>
+</body>
+</html>

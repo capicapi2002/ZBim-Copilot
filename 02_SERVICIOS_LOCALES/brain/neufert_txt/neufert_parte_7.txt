@@ -1,0 +1,232 @@
+# EDIFICIOS DE APARCAMIENTO: PLAZAS Y RADIOS [Página 401-402]
+
+### Tabla 10: Datos básicos de vehículos
+| Tipo de vehículo | Longitud [m] | Entre ejes [m] | Vuelo Ant/Post [m] | Anchura [m] | Radio exterior [m] |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Turismo** | 4,74 | 2,7 | 0,94 | 1,76 | 5,85 |
+| **Camión (3 ejes)** | 8,7 | 3,9 + 1,3 | 1,48 | 2,5 | 10,3 |
+| **Autobús urbano** | 12 | 5,8 | 2,85 | 2,5 | 10,5 |
+| **Autobús articulado** | 17,99 | 5,5 + 5,9 | 2,85 | 2,5 | 11,8 |
+
+### Tabla 12: Superficies de plazas necesarias
+| Disposición | Superficie por plaza ($m^2$) | Plazas por $100 \text{ m}^2$ |
+| :--- | :---: | :---: |
+| **$0^\circ$ en paralelo** | 22,5 | 4,4 |
+| **$45^\circ$ en diagonal** | 24 | 4,2 |
+| **$90^\circ$ en perpendicular** | 20 | 5 |
+
+---
+
+# EDIFICIOS DE APARCAMIENTO: RAMPAS [Página 405]
+
+*   **Pendiente máxima**:
+    *   Garajes pequeños: hasta 20%.
+    *   Garajes públicos: $\le 15\%$.
+    *   Rampas para turismos (superficie con inclinación): hasta 10% de longitud.
+*   **Rampas helicoidales**: Pendiente transversal $\le 3\%$. Radio interior de la rampa $\ge 5 \text{ m}$.
+*   **Anchura de carriles**: 2,3 m a 3,5 m según flujo y tamaño del garaje.
+
+---
+
+# TRANSPORTE PÚBLICO URBANO: PARADAS [Página 415-416]
+
+### Tabla 3: Datos más importantes de medios de transporte
+| Característica | Autobús urbano | Tranvía | Metro (Berlín/Múnich) | Tren cercanías |
+| :--- | :---: | :---: | :---: | :---: |
+| **Longitud tren** | 8-15 / 18,75 m | 15-45 m | 25,7 / 114 m | 82,4 m |
+| **Anchura** | 2,55 m | 2,2-2,65 m | 2,3 / 2,9 m | 3,02 m |
+| **Altura** | 2,9 / 4,1 m | ~3,4 m | 3,2 / 3,45 m | 4,3 m |
+| **Altura andén** | 0,12-0,24 m | 0,2-1 m | 0,9 / 1 m | 0,96 m |
+
+### Andenes (Página 416)
+*   **Anchura mínima**: Lateral 3 m; Central con escalera 6 m.
+*   **Franja de seguridad**: 0,85 m desde el límite exterior del coche.
+
+---
+
+# FERROCARRILES: VÍAS Y TRANSPORTES [Página 420-422]
+
+*   **Ancho de vía normal (71% mundial)**: 1,435 m.
+*   **Separación entre vías**: 4 m (3,5 m en tramos existentes).
+*   **Traviesas**: Madera (vida 25-40 años), Acero (45 años), Hormigón (60 años).
+*   **Contenedores ISO (Tabla 6, p. 422)**:
+    *   **1AAA**: Longitud 12,192 m (40'), Anchura 2,438 m (8'), Altura 2,896 m (9'6"). Peso máx 30.480 kg.
+    *   **1CC**: Longitud 6,058 m (20'), Anchura 2,438 m (8'), Altura 2,591 m (8'6"). Peso máx 24.000 kg.
+
+---
+
+# AVIACIÓN: AEROPUERTOS Y AVIONES [Página 429-432]
+
+### Tabla 7: Categorías de aeronaves ICAO [Página 432]
+| Categoría | Ejemplo de aviones | Envergadura (m) |
+| :--- | :--- | :---: |
+| **A** | Aviones pequeños y deportivos | < 15 |
+| **B** | RJ 100, ATR 72 | 15 - < 24 |
+| **C** | Airbus A320, Boeing 737, MD 90 | 24 - < 36 |
+| **D** | Airbus A300, Boeing 767 | 36 - < 52 |
+| **E** | Airbus A330, Boeing 747 / 777 | 52 - < 65 |
+| **F** | Airbus A380 | 65 - < 80 |
+
+*   **Pistas de despegue (Página 429)**: Longitudes de hasta 4.000 m y anchuras de 40-65 m.
+*   **Capacidad horaria pistas**: WFR (51-98 mov/h), IFR (50-59 mov/h).
+
+---
+
+# PAISAJISMO Y MOVIMIENTO DE TIERRAS [Página 437-441]
+
+### Tabla 6: Peso y talud natural de suelos (DIN 1055-2)
+| Tipo de suelo | Peso $kg/m^3$ | Talud natural [grados] |
+| :--- | :---: | :---: |
+| **Terraplén esponjoso** | 14 | 35-40 |
+| **Tierra arcillosa húmeda** | 18 | 27-30 |
+| **Grava seca** | 18 | 30-45 |
+| **Arena seca** | 16 | 30-35 |
+| **Arcilla seca** | 16 | 40-50 |
+
+### Tabla 14: Plantas trepadoras y enredaderas [Página 441]
+| Especie | Altura [m] | Crecimiento | Ayuda necesaria |
+| :--- | :---: | :--- | :---: |
+| **Hedera helix** | hasta 25 | lento | no |
+| **Wisteria sinensis** | hasta 10 | rápido | sí |
+| **Clematis montana** | hasta 10 | rápido | sí |
+| **Vitis vinifera** | hasta 10 | medio | sí |
+| **Humulus lupulus** | hasta 6 | rápido | sí |
+
+***
+*Nota técnica: Se han transcrito todos los datos de vehículos, normativas de transporte y dimensiones constructivas de las páginas solicitadas.*
+Esta es una transcripción técnica íntegra y exhaustiva de los fragmentos proporcionados de las **Partes 19 y 20** del manual **"Neufert - Arte de Proyectar en Arquitectura"**. Se han respetado estrictamente todos los valores numéricos, tablas, cotas de diagramas y terminología técnica presentes en las fuentes originales.
+
+***
+
+# PAISAJISMO: PÉRGOLAS Y ESPALDARES [Página 442]
+
+Los sistemas de espaldares pueden utilizarse para adornar fachadas y para plantas de cultivo. La distancia entre los tensores viene determinada por los ramales de la planta. La distancia de los elementos horizontales de los espaldares (p. ej., rejas) debe medir entre 20 y 30 cm, según el tipo de planta.
+
+### Diagramas y cotas:
+*   **1 Tensores metálicos**: Máx. 2,5 m entre soportes; separación horizontal máx. 0,32 m.
+*   **2 Ayuda horizontal**: Distancia mínima a la pared de 10-15 cm para permitir el crecimiento.
+*   **3 Método Wigwam**: Para 8 a 11 plantas.
+
+### Tablas de plantación (Unidades por 1/4 ha):
+| Separación m | Plantación en cuadros (10) | Plantación con relleno (11) | Dos unidades de relleno (12) |
+| :--- | :---: | :---: | :---: |
+| 4 x 4 | 156 uds. | 156 / 156 | 69 / 69 / 103 |
+| 6 x 6 | 69 uds. | 69 / 69 | 39 / 39 / 58 |
+| 10 x 10 | 25 uds. | 25 / 25 | 25 / 25 / 37 |
+
+| Separación m | Plantación triangular (13) | Una unidad relleno (14) | Dos unidades relleno (15) |
+| :--- | :---: | :---: | :---: |
+| 3 x 3 | 320 uds. | 320 / 320 | 80 / 80 / 160 |
+| 4 x 4 | 178 uds. | 178 / 178 | 44 / 44 / 88 |
+
+---
+
+# CAMINOS, PLAZAS, ESCALERAS [Página 444]
+
+### Diseño de caminos:
+*   **Pendiente mínima**: En superficies de uso público se exige una pendiente mínima del **2,5 %**.
+*   **Cotas de diagramas**:
+    *   **7 Recubrimiento de grava**: 5 cm capa recubrimiento 0/5; 8 cm capa dinámica 2/16; 37 cm capa aglomerante; 5 cm capa filtrante.
+    *   **9 Ladrillos a panderete**: 5 cm de ladrillos; 5 cm de arena; 10 cm de escoria o ripio.
+    *   **12 Estacas de madera**: 30 cm de profundidad.
+
+### Diseño de escaleras:
+*   **Fórmula de la zancada**: $2 \times h + a \le 65$ cm.
+*   **19 Rampa y escalera**: Pendiente de rampa 1:10; huellas de 30-35 cm.
+
+---
+
+# EVACUACIÓN DE AGUAS: GESTIÓN DE AGUAS PLUVIALES [Página 445]
+
+### Infiltración y drenaje:
+*   **Sumideros de patios**: hasta unos 200 m² de superficie adyacente.
+*   **Desagües de calles**: hasta unos 400 m² de superficie adyacente.
+*   **Distancia de desagües**: no más de 40 m.
+
+### Diagramas de instalaciones:
+*   **4 Instalación para aprovechamiento**: Capacidades de 1.100 l, 1.500 l, 2.000 l.
+*   **6 Depósito ecológico**: Hasta 12.500 l. Distancia a cimientos $\ge 1,2 - 2,5$ m.
+*   **8 Circuito con cambio automático**: Incluye bomba de agua potable y agua de retorno para inodoro, lavadora y riego.
+
+---
+
+# VEGETACIÓN: PLANTAS Y CÉSPED [Páginas 446-447]
+
+### Tabla 7: Exigencias y datos de troncos altos (Página 447)
+| Tipo | Trasplante | Diámetro tronco (cm) | Altura copa (cm) | Anchura copa (cm) | Vida útil (años) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Tronco ligeramente alto | 2 | 8-10 / 10-12 | $\ge 180$ | - | 4 |
+| Tronco alto 3xV | - | 10-12 a 20-25 | $\ge 200$ | - | 4 |
+| Tronco alto solitario | - | 18-18 a 20-25 | 300-400 a 400-500 | 60-100 a 150-200 | 4 |
+| Árbol de avenida | - | Hasta $\ge 250$ | - | - | 4 |
+
+---
+
+# INGENIERÍA NATURALÍSTICA Y TALUDES [Páginas 448-449]
+
+### Consolidación de taludes:
+*   **Pendiente mayor a 1:2**: Requiere rollos o placas de césped ancladas con clavos de madera.
+*   **Muro tipo Krainer (13-14)**: Elementos transversales y longitudinales.
+    *   **Larguero LE**: Long. 250 cm; Ancho 30 cm; Alto 10 cm; Peso 158 kg.
+    *   **Travesaño B 130**: Long. 130 cm; Ancho 15 cm; Alto 25-32 cm; Peso 68 kg.
+
+---
+
+# BALSAS DE AGUA Y PISCINAS NATURALES [Páginas 451-453]
+
+*   **Estanque**: Superficie recomendada de 20-25 m². Zonas amplias de 5-20 cm de profundidad para insectos.
+*   **Piscina natural (Página 452)**: Caudal de 15 m³/h para oxigenación.
+*   **Plantas acuáticas (Tabla Página 453)**: Deben ocupar 1/3 de la superficie total.
+    *   **Zona poco profunda (10-40 cm)**: *Acorus calamus*, *Butomus umbellatus*.
+    *   **Zona de nenúfares**: *Nuphar lutea*, *Nymphaea-Hybriden*.
+
+---
+
+# GRANJAS: SUPERFICIES Y GANADERÍA [Páginas 455-466]
+
+### Tabla 1: Engorde de cerdos (Superficies en m²)
+| Plazas | 500 | 1.000 | 1.500 | 2.000 |
+| :--- | :---: | :---: | :---: | :---: |
+| Establos | 850 | 1.700 | 2.500 | 3.400 |
+| Superficie total en m² | 2.640 | 4.800 | 6.290 | 7.600 |
+| Anchura parcela en m | 35 | 35 | 55 | 55 |
+
+### Tabla 4: Vacas lecheras sin cría nocturna
+| Plazas | 40 | 60 | 80 | 120 | 200 |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Superficie total en m² | 1.900 | 2.710 | 3.330 | 5.760 | 8.400 |
+
+### Almacenaje de piensos (Página 458):
+*   **Heno en silos**: 1,3-1,7 m³/dt (Calidad buena).
+*   **Pienso seco**: 0,38-0,34 m³/dt.
+*   **Cota nave hileras**: Ancho 12,5 m; altura libre 8-10 m.
+
+---
+
+# GANADERÍA: CONDICIONES CLIMÁTICAS [Página 460]
+
+### Tabla 11: Temperatura y humedad relativa óptima
+| Establos para: | Temperatura (°C) | Humedad (%) |
+| :--- | :---: | :---: |
+| Vacas lecheras | 0-20 | 60-80 |
+| Cerdos de engorde | 12-16 | 60-80 |
+| Gallinas ponedoras | 15-22 | 60-80 |
+| Caballos | 10-15 | 60-80 |
+
+---
+
+# GANADERÍA: BOVINO Y CABALLERIZAS [Páginas 466-469]
+
+### Ganado Bovino de Leche (Página 466)
+*   **Dimensiones cubículo**:
+    *   Longitud tumbada: $(0,92 \times \text{longitud cuerpo en diagonal}) + 21 \text{ cm}$.
+    *   Anchura cubículo: $\text{altura hasta la cruz} \times 0,86$.
+
+### Caballerizas (Página 467-468)
+*   **Superficie box individual**:
+    *   Caballos gran tamaño: aprox. 13 m².
+    *   Caballos medianos: aprox. 11,2 m².
+    *   Ponis: aprox. 8,5 m².
+*   **Altura techo**: Mínimo $1,5 \times \text{altura de la cruz} \approx \ge 2,7$ m.
+
+---

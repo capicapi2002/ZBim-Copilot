@@ -1,0 +1,300 @@
+# LAVANDERÍA: CAPACIDADES Y CÁLCULOS [Página 294]
+
+### Ropa sucia en kg de ropa seca/semana
+*   **Viviendas:** aprox. $3 \text{ kg/persona}$.
+*   **Hoteles:** aprox. $20 \text{ kg/cama}$ (cambio diario de sábanas y toallas).
+*   **Residencias de ancianos:** $3 \text{ kg/cama}$; cuidados especiales $8 \text{ kg/cama}$; cuidados intensivos $25 \text{ kg/cama}$.
+*   **Hospitales generales:** $12-15 \text{ kg/cama}$.
+*   **Hospitales de maternidad:** $16 \text{ kg/cama}$.
+
+### Fórmulas y dimensiones de equipos
+*   **Fórmula capacidad:** $\text{Capacidad de lavado} = \frac{\text{cantidad de ropa/semana}}{\text{días de lavado/semana} \times \text{lavados/día}}$.
+*   **Equipos:**
+    *   **1 Lavadora automática:** Frente $595 \text{ mm}$. Altura total $1.215 \text{ mm}$ (incl. panel).
+    *   **5 Lavadora industrial:** Anchura $1.085 \text{ mm}$. Altura $1.490 \text{ mm}$.
+    *   **9 Planchadora industrial:** Anchura $2.400 / 2.890 \text{ mm}$. Altura $1.443 \text{ mm}$.
+
+---
+
+# BOMBEROS [Página 295]
+
+### Requisitos de acceso y maniobra
+*   **Pasaje libre:** $\ge 3,5 \text{ m}$ de altura y $\ge 3 \text{ m}$ de anchura.
+*   **Radio de giro (curva):**
+    *   Diámetro exterior $21 \text{ m} \rightarrow$ Anchura mínima $5 \text{ m}$.
+    *   Diámetro exterior $> 140 \text{ m} \rightarrow$ Anchura mínima $3 \text{ m}$.
+*   **Pendiente pasaje:** Máx. $10\%$.
+
+### Tabla 7: Dimensiones de las plazas de aparcamiento
+| Tamaño | Anchura $b_1$ mín. | Longitud $l$ mín. | Puerta DIN 14092 ($b \times h$) |
+| :--- | :---: | :---: | :---: |
+| 1 | $4,5 \text{ m}$ | $8 \text{ m}$ | $3,5 \times 3,5 \text{ m}$ |
+| 2 | $4,5 \text{ m}$ | $10 \text{ m}$ | $3,5 \times 3,5 \text{ m}$ |
+| 3 | $4,5 \text{ m}$ | $12,5 \text{ m}$ | $3,5 \times 4 \text{ m}$ |
+
+### Tabla 9: Dimensiones de vehículos de bomberos
+| Tipo de vehículo | Peso total (kg) | Dist. ejes (mm) | Radio giro (m) | Longitud (mm) | Altura máx (mm) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **LF8** | $5.450 (5.800)$ | $2.600$ | $11.700$ | $5.650$ | $2.800$ |
+| **LF16** | $11.300 (11.500)$ | $3.750$ | $16.100$ | $8.000$ | $3.090$ |
+| **LF16-TS** | $10.200 (11.000)$ | $3.750$ | $16.100$ | $7.600$ | $3.100$ |
+| **Escalera giratoria DL 30** | $12.550 (13.000)$ | $4.400$ | $18.800$ | $9.800$ | $3.250$ |
+| **Escalera girat. LB30/5** | $20.200 (21.000)$ | $3.800 \times 1.320$ | $19.900$ | $9.800$ | $3.300$ |
+
+---
+
+# PARQUES DE BOMBEROS: PLANTAS [Página 296]
+
+*   **1 Primera planta:** 1. Retén de guardia. 2. Dormitorio. 3. Lavabo. 4. Inspector.
+*   **2 Planta baja:** 1. Sala carga baterías. 2. Vehículos. 3. Dormitorio. 4. Centralita. 5. Almacén. 8. Depósito fueloil.
+*   **3 Estación n.º 4 de Múnich (Ackermann + P):** Garaje subterráneo, Almacén aprovisionamiento, Almacén mangueras, Grupo electrógeno, Sala de bombas, Estación transformadora.
+*   **Sección (Diagrama 4):** 1. Pasillo. 2. Vivienda. 3. Aula. 4. Mat. enseñanza. 5. Sala descanso. 9. Nave de vehículos. 10. Lavado mangueras. 11. Almacén mangueras. 12. Almacén repuestos. 13. Taller. 16. Jefe de bomberos.
+
+---
+
+# IGLESIAS CRISTIANAS: ELEMENTOS LITÚRGICOS [Página 297]
+
+### Dimensiones de elementos
+*   **Púlpito (Diagramas 3 y 4):** Altura del suelo $1-1,2 \text{ m}$ (suelo del púlpito). Zócalo rehundido.
+*   **Altar:** Altura de $0,95-1 \text{ m}$. Debe ser exento para poder rodearlo.
+*   **Sagrario (Diagrama 5):** Empotrado en muro de $50 \times 50 \text{ cm}$.
+*   **Presbiterio:** Mínimo $1,5 \text{ m}$ de ancho en laterales y detrás del altar.
+*   **Cotas diagramas:**
+    *   **1 Atril:** Altura $110 \text{ cm}$. Inclinación superficie $35^\circ-55^\circ$.
+    *   **2 Pila bautismal:** Diámetro $\approx 60 \text{ cm}$. Altura $90 \text{ cm}$.
+    *   **6-7 Altar con sagrario:** Anchura $\ge 200 \text{ cm}$ (para sagrario); $\ge 110 \text{ cm}$ (simple). Altura $110 \text{ cm}$ (incl. sagrario $60+30+20$).
+
+---
+
+# IGLESIAS: BANCOS, CONFESIONARIOS, SACRISTÍA [Página 298]
+
+### Distribución de bancos
+*   **Espacio por plaza:** $0,4-0,5 \text{ m}^2$ sin pasillos; $0,43-0,52 \text{ m}^2$ con reclinatorio.
+*   **Anchura de pasillo:** Central $1,6 \text{ m}$; lateral $1 \text{ m}$.
+*   **Bancos (Diagramas 1-2):**
+    *   **Con reclinatorio:** Profundidad total $90 \text{ cm}$. Altura asiento $45 \text{ cm}$. Distancia entre bancos $16 \text{ cm}$.
+    *   **Sin reclinatorio:** Profundidad total $65 \text{ cm}$. Gancho para sombreros a $35 \text{ cm}$ del respaldo.
+
+### Confesionario y Sacristía
+*   **Confesionario (10):** Sección muestra ventana rejilla de $30 \times 40 \text{ cm}$. Altura total $220-250 \text{ cm}$.
+*   **Sacristía (11):** 1. Sala hábitos/paramentos. 2. Zona sacristán. 3. Vestíbulo. 4. Aseo. 5. Pasillo.
+
+---
+
+# CAMPANARIOS [Página 299]
+
+### Tabla 10: Características de las campanas (DIN 4178)
+| Tono | Diámetro d (mm) | Peso Campana P (kN) | Diámetro d (mm) | Peso Campana P (kN) |
+| :--- | :---: | :---: | :---: | :---: |
+| **Fina** | | | **Gruesa** | |
+| $sol^1$ | $1.890$ | $34$ | $2.000$ | $41$ |
+| $la^1$ | $1.780$ | $28$ | $1.880$ | $35$ |
+| $do^2$ | $1.480$ | $16$ | $1.570$ | $20$ |
+| $mi^2$ | $1.240$ | $10$ | $1.310$ | $12$ |
+| $do^3$ | $740$ | $2,2$ | $775$ | $2,5$ |
+
+### Cotas de montaje (Diagrama 9)
+*   **Anchura mínima caja:** $\ge 2 \cdot S_y$ ($S_y$ = diámetro oscilación campana $1 = 2,6 \cdot d$).
+*   **Profundidad mínima:** $\ge S_x$ ($S_x$ = diámetro oscilación campana $1 = 2,6 \cdot d$).
+
+---
+
+# SINAGOGAS Y MEZQUITAS [Páginas 300-301]
+
+### Sinagoga (Página 300)
+*   **Elementos clave:** *Almemor* (estrado elevado), *Arón Ha-Kodesh* (armario para rollos torá orientado a Jerusalén).
+*   **Templo de Salomón (3):** Sección longitudinal con cotas: $0-3,4-6,7-13,2$ m (Alteza); $-26,6$ m; $-66,6$ m (longitud total).
+
+### Mezquita (Página 301)
+*   **Sala de oración:** Orientada hacia La Meca (*qibla*). Nicho de oración (*mihrab*) y púlpito (*minbar*).
+*   **Minarete:** Resuena cinco veces al día la llamada del almuédano.
+*   **Persona en oración (1):** Espacio necesario $80 \times 120 \text{ cm}$. Altura sentado $100 \text{ cm}$.
+
+---
+
+# CONSULTORIOS MÉDICOS [Página 302]
+
+*   **Superficie mínima:** $150 \text{ m}^2$ para consulta de especialista.
+*   **Sala de consultas:** $12-16 \text{ m}^2$.
+*   **Salas de exploración:** $\ge 20 \text{ m}^2$.
+*   **Cotas de diagramas:**
+    *   **2 Entrevistas:** Espacio $200 \times 250 \text{ cm}$.
+    *   **3 Paciente tumbado:** Anchura $180 \text{ cm}$; fondo $250 \text{ cm}$.
+    *   **5 Extracciones sangre:** $210 \times 240 \text{ cm}$.
+    *   **6 Masaje:** Hilera camillas espacio $180 + 60 + 80 + 80 \text{ cm}$.
+
+---
+
+# HOSPITALES: GENERALIDADES Y MODULACIÓN [Páginas 303-304]
+
+### Tabla 2: Valores indicativos de superficies (Superficie útil/m²)
+| Áreas funcionales DIN 13080 | Superficie por cama (m²) |
+| :--- | :---: |
+| 1.00 Exploration y tratamiento | 12 |
+| 2.00 Enfermería | 18 |
+| 3.00 Administración | 2 |
+| 4.00 Servicios sociales | 3 |
+| 5.00 Abastecimiento y gestión residuos | 7 |
+| **Total superficie útil** | **42 m²** |
+| Superficies técnicas | 8 m² |
+| Circulaciones | 19 m² |
+| **Suma superficie construida útil** | **69 m²** |
+
+### Planificación y Retícula
+*   **Superficie construcción nueva:** aprox. $80 \text{ m}^2 / \text{cama}$.
+*   **Volumen total:** $200-280 \text{ m}^3 / \text{cama}$.
+*   **Retícula estructural (304):** Sugerida $7,2$ o $7,8 \text{ m}$.
+*   **Cotas diagrama 3 (304):** Planta basamento fondo $28,8 \text{ m}$. Módulos de $7,2 \text{ m}$. Zonas de pasillo $3,6 \text{ m} / 4,8 \text{ m}$.
+
+---
+
+# HOSPITALES: PASILLOS, PUERTAS, ASCENSORES [Página 307]
+
+### Pasillos y Puertas
+*   **Pasillo público:** Mínimo $150 \text{ cm}$ de ancho.
+*   **Pasillo para camas:** Mínimo $225 \text{ cm}$ de ancho.
+*   **Puerta normal:** $88,5 \times 213,5 \text{ cm}$.
+*   **Puerta para camas:** $126-137,5 \times 213,5 \text{ cm}$.
+*   **Puertas pasillos:** $240 \times 240 \text{ cm}$ (doble hoja).
+
+### Tabla 9: Dimensiones de ascensores portacamillas
+| Características | 1.600 kg | 2.000 kg | 2.500 kg |
+| :--- | :---: | :---: | :---: |
+| Anchura hueco c | $2.400$ | $2.400$ | $2.700$ |
+| Profundidad hueco d | $3.000$ | $3.300$ | $3.300$ |
+| Anchura cabina a | $1.400$ | $1.500$ | $1.800$ |
+| Prof. cabina b | $2.400$ | $2.700$ | $2.700$ |
+| Alto puerta camarin | $2.100$ | $2.100$ | $2.100$ |
+
+---
+
+# HOSPITALES: QUIRÓFANOS [Páginas 313-314]
+
+### Distribución y Superficies
+*   **Quirófano estándar:** aprox. $6,5 \times 6,5 \text{ m} \approx 40 \text{ m}^2$. Altura libre $\ge 3 \text{ m}$.
+*   **Zonas anexas:** Antequirófano (inducción anestesia) $3,8 \times 3,8 \text{ m}$ (ancho libre $1,25 \text{ m}$).
+*   **Salas de dictado:** $6 \text{ m}^2$.
+*   **Almacén de material estéril:** $10-15 \text{ m}^2$.
+
+### Climatización y técnica
+*   **Renovaciones aire:** $15-20$ cambios de aire por hora.
+*   **Suministro eléctrico:** Grupos electrógenos de emergencia (corte $< 0,5 \text{ s}$).
+*   **Iluminación:** Luminaria cenital orientable (satélite).
+*   **Cotas diagrama 2 (314):** Zona de inducción y reversión ancho $3,6 \text{ m}$. Zona de lavabos frente al pasillo.
+
+---
+
+# HOSPITALES: ENFERMERÍA [Páginas 317-318]
+
+### Habitaciones (Página 317)
+*   **Habitación sencilla:** $12 \text{ m}^2$. Ancho $3,75 \text{ m}$. Puerta $1,26 \text{ m}$.
+*   **Habitación doble:** $20 \text{ m}^2$. Ancho $3,75 \text{ m}$. Pasillo interno $1,35 \text{ m}$.
+*   **Habitación triple estándar:** $32,5 \text{ m}^2$. Anchura total $6,51 \text{ m}$ ($3,3 + 3,28$).
+
+### Equipamiento y Dimensiones (Página 318)
+*   **Superficie mínima/cama:** $8 \text{ m}^2$ (normativa oficial).
+*   **Distancia entre ejes:** $3,6 \text{ m}$. Anchura mínima habitación $3,45 \text{ m}$.
+*   **Aseos:** Lavabo e inodoro a $49 \text{ cm}$ de altura de suelo.
+*   **Puertas:** $1,26 \times 2,13 \text{ m}$.
+
+---
+
+# HOSPITALES: UCI Y CUIDADOS ESPECIALES [Página 321]
+
+*   **UCI:** Tamaño total del hospital determina el número de camas (de 6 a 36).
+*   **Espacios necesarios:** Sala anestesia, almacén material estéril fungible, cuarto sucio, cuarto limpieza, oficina para familiares, despacho médico guardia, sala documentación.
+*   **Cotas diagrama 3:** Unidad UCI clínica Helios. Pasillo central. Habitaciones individuales con esclusas de $460 \times 700 \text{ mm}$. Salas de estar personal $15 \text{ m}^2$.
+
+---
+
+# HOSPITALES: ABASTECIMIENTO Y RESIDUOS [Páginas 325-327]
+
+### Central de Esterilización (Página 325)
+*   **Superficie:** aprox. $40-120 \text{ m}^2$.
+*   **Distribución:** Cerca de unidad quirúrgica ($40\%$), UCI y medicina intensiva ($15\%$).
+
+### Cocinas y Alimentos (Página 326)
+*   **Superficie:** $15-20 \text{ m}^2$ para almacén de material (limpia y sucia).
+*   **Altura libre cocina:** $\ge 4 \text{ m}$.
+*   **Cotas diagrama 2:** Planta baja edificio cocinas. Zonas: Almacenamiento apiladoras, Lavado, Devolución vajilla, Preparación platos fríos/ensaladas.
+
+---
+
+# HOSPITALES: APROVISIONAMIENTO TÉCNICO [Páginas 328-329]
+
+### Ingeniería Eléctrica y Gases (Página 328)
+*   **Gases médicos:** Central de gases alejada mín. $5 \text{ m}$ del edificio.
+*   **Centrales instalaciones:** Altura libre $\ge 3 \text{ m}$. Iluminación $100 \text{ lux}$ (general), $200 \text{ lux}$ (mandos).
+
+### Telecomunicaciones (Página 329)
+*   **Red de datos:** Sala central informática de $35$ a $70 \text{ m}^2$.
+*   **Llamadas enfermería:** Prioridad: 1. Paciente, 2. Aseo, 3. Emergencia, 4. Reanimación.
+
+---
+
+# ESTADIOS Y GRADERÍAS [Páginas 330-331]
+
+### Desalojo y Visibilidad
+*   **Tiempo desalojo:** 1 espectador utiliza $1 \text{ m}$ de anchura de escalera en:
+    *   7 min (Estadio Ámsterdam, $9,5 \text{ m}$ anchura para $5.000$ pers $\rightarrow 0,8 \text{ s/pers}$).
+    *   12 min (Los Ángeles). 9 min (Turín).
+*   **Fórmula anchura escalera:** $m = \frac{n.º \text{ espectadores}}{\text{tiempo desalojo} \times 1,25}$.
+
+### Localidades con asiento (Página 331)
+*   **Anchura plaza:** $0,5 \text{ m}$.
+*   **Profundidad plaza:** $0,8 \text{ m}$.
+*   **Subdivisiones:** Superficie asiento $0,35 \text{ m}$; Circulación $0,45 \text{ m}$.
+*   **Pendiente:** Máx. 48 asientos en pendiente poco pronunciada; 36 en pronunciada. Pasillo de emergencia mín. $1 \text{ m}$ cada 750 plazas.
+
+---
+
+# INSTALACIONES DEPORTIVAS: CAMPOS DE JUEGO [Página 332-334]
+
+### Tabla de medidas (Página 332)
+| Deporte | Competición (m) | Aficionado (m) | Red/Portería |
+| :--- | :---: | :---: | :---: |
+| **Fútbol** | $45-90 \times 90-120$ | $68 \times 105$ | $7,32 \times 2,44$ |
+| **Rugby** | $68,4 \times 100$ | $68,4 \times 100$ | $5,6 \times 3$ |
+| **Balonmano** | $20 \times 40$ | $20 \times 40$ | $3 \times 2$ |
+| **Hockey** | - | $55 \times 91,4$ | $3,66 \times 2,14$ |
+| **Baloncesto** | $15 \times 28$ | $15 \times 28$ | aro a $3,05 \text{ m}$ |
+
+---
+
+# ATLETISMO [Páginas 335-338]
+
+### Pistas de competición
+*   **Tipo A:** 8 calles, campo interior completo, todas las instalaciones de saltos y lanzamientos. Perímetro $400 \text{ m}$. Radio $36,5 \text{ m}$.
+*   **Tipo B:** 6 calles. Perímetro $400 \text{ m}$.
+*   **Cotas de saltos (Página 337):**
+    *   **1 Longitud/Triple:** Pasillo $1,22 \text{ m}$ ancho. Foso $7 \times 2,75 \text{ m}$.
+    *   **2 Pértiga:** Pasillo $1,22 \text{ m}$. Colchoneta $5 \times 5 \text{ m}$ (mín).
+    *   **14 Vallas:** 400 m masc (10 vallas, altura $0,914 \text{ m}$, dist. $45 \text{ m}$ inicial, $35 \text{ m}$ entre vallas).
+
+### Dotación según población (Página 338)
+*   **5.000 hab:** 1 pista Tipo D ($10.554 \text{ m}^2$) $\rightarrow$ total $20.000 \text{ m}^2$.
+*   **20.000 hab:** 1 pista Tipo B ($14.000 \text{ m}^2$), 1 campo gran superficie ($8.400 \text{ m}^2$) $\rightarrow$ total $80.000 \text{ m}^2$.
+
+---
+
+# TENIS Y MINIGOLF [Páginas 339-341]
+
+### Tenis (Página 339)
+*   **Dobles:** $10,97 \times 23,77 \text{ m}$.
+*   **Individual:** $8,23 \times 23,77 \text{ m}$.
+*   **Espacio fondo:** $\ge 6,4 \text{ m}$. Lateral $\ge 3,65 \text{ m}$.
+*   **Altura red:** $0,914 \text{ m}$ (centro), $1,07 \text{ m}$ (postes).
+
+### Minigolf (Página 341)
+*   **Pista:** 18 pistas delimitadas.
+*   **Anchura mínima:** $80 \text{ cm}$. Longitud mín $5,5 \text{ m}$.
+*   **Cotas diagramas:**
+    *   **11 Pista recta obstáculos:** Longitud $465 \text{ cm}$. Obstáculos a $167, 30, 30, 20 \text{ mm}$ [ilegible].
+    *   **12 Laberinto:** Longitud $310 \text{ cm}$.
+    *   **13 Troncos de cono:** Anchura zona final $55 \dots 81 \text{ cm}$.
+
+***
+*Nota: Se han transcrito todos los datos legibles, incluyendo tablas de pesos de ropa, superficies hospitalarias y medidas reglamentarias deportivas de los fragmentos proporcionados.*
+Esta es una transcripción técnica exhaustiva de los fragmentos proporcionados de las **Partes 15 y 16** del manual **"Neufert - Arte de Proyectar en Arquitectura"**. Se han respetado estrictamente todos los valores numéricos, tablas, cotas de diagramas y terminología técnica presentes en las fuentes originales.
+
+***

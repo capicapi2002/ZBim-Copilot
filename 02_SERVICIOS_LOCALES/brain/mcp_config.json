@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ZBIM-Copilot-Revit": {
+      "command": "python",
+      "args": ["D:\\1WORK\\00 HPI\\00 COPILOT\\ZBim-Copilot\\02_SERVICIOS_LOCALES\\brain\\mcp_server.py"]
+    }
+  }
+}

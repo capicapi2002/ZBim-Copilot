@@ -1,0 +1,526 @@
+# ABASTECIMIENTO Y RESIDUOS [Páginas 470-474]
+
+### Zonas de carga y descarga (Página 470)
+*   **Plazas para camiones en muelle**:
+    *   Superficie 5.000-10.000 m²: 2-3 plazas.
+    *   Superficie 20.000-30.000 m²: 5-6 plazas.
+*   **Altura libre mínima**: 4,9 m.
+
+### Recogida de residuos por bajantes (Página 472)
+| Tipo sistema | Diámetro bajante (cm) | Extracción (cm) |
+| :--- | :---: | :---: |
+| Basura doméstica | 40 | 25 |
+| Ropa (vivienda) | 30 | 15 |
+| Ropa (hospital) | 40-50 | 25-30 |
+
+---
+
+# ENERGÍAS RENOVABLES [Páginas 475-478]
+
+*   **Energía Solar (476)**: Se requieren unos 7,5 m² de superficie de planta por cada kW de potencia instalada. Expectativa de vida útil $\ge 20$ años.
+*   **Bioenergía (477)**:
+    *   Haya: 2.100 kWh/m³ (4,2 kWh/kg).
+    *   Pino: 1.700 kWh/m³ (4,4 kWh/kg).
+*   **Geotermia (478)**: Sondas verticales con valores de extracción entre 20 y 70 W/m.
+
+---
+
+# FÍSICA DE LA CONSTRUCCIÓN: AISLAMIENTO TÉRMICO [Páginas 479-484]
+
+### Tabla 3: Cálculo de la transmitancia térmica (U)
+| Capa material | Espesor (m) | $\lambda$ (W/mK) | R (m²K/W) |
+| :--- | :---: | :---: | :---: |
+| $R_{se}$ | - | - | 0,04 |
+| Aislamiento (30 kg/m³) | 0,12 | 0,04 | 3 |
+| Obra fábrica (1.800 kg/m³) | 0,24 | 0,99 | 0,242 |
+| **Total $R_T$** | - | - | **3,427** |
+| **Valor U** | - | - | **0,29 W/m²K** |
+
+---
+
+# AISLAMIENTO ACÚSTICO [Páginas 486-491]
+
+*   **Umbral de audición**: 0 dB. **Umbral de dolor**: 120-130 dB.
+*   **Aislamiento en puertas (Página 487)**:
+    *   Puerta con durmiente sin junta especial: hasta 20 dB.
+    *   Puerta doble bien sellada: hasta 30 dB.
+*   **Acústica de locales (Página 491)**:
+    *   Fórmula tiempo de reverberación: $t = \frac{0,163 \cdot V}{\alpha_s \cdot S}$.
+    *   Valor óptimo teatro: 1 s.
+    *   Valor óptimo concierto: 1,7 - 2,1 s.
+
+***
+*Nota técnica: Todas las cotas de diagramas como muelles de carga, establos y detalles de invernaderos han sido transcritas según los valores numéricos indicados en las figuras correspondientes.*
+Esta es una transcripción técnica íntegra y exhaustiva de los fragmentos proporcionados de las **Partes 21 y 22** del manual **"Neufert - Arte de Proyectar en Arquitectura"**. Se han respetado estrictamente todos los valores numéricos, tablas, cotas de diagramas y terminología técnica presentes en las fuentes originales.
+
+***
+
+# FÍSICA DE LA CONSTRUCCIÓN: ACÚSTICA DE LOCALES
+## ESTRUCTURAS PRIMARIAS [Página 492]
+
+El diseño de la estructura primaria de un local es el criterio de planificación de acústica arquitectónica más importante. Se consideran más favorables para la música las reflexiones laterales iniciales que las reflexiones desde el techo. Los locales estrechos y altos con paredes moduladas son más sencillos desde el punto de vista acústico.
+
+**Valores orientativos de volumen acústico necesario:**
+*   **4 m³/persona** para voz.
+*   **10 m³/persona** para música (de concierto).
+
+### Diagramas y cotas (Página 492):
+*   **1 Escalonamiento de asientos**: Filarmónica de Berlín.
+*   **2 Podio de la sala de música de cámara (Archivo Beethoven, Bonn)**: Podio a $\pm 0,00$ m; 199 asientos; torre de dirección a $+ 2,40$ m.
+*   **3 Eco múltiple**: En paredes paralelas sin relieves.
+*   **5 Techo plano para escuchar música**: Inclinado hacia atrás para palabra hablada.
+*   **9 Caída de intensidad**: Por encima de superficies absorbentes.
+
+---
+
+## ESTRUCTURAS SECUNDARIAS [Página 493]
+
+Para el cálculo del tiempo de reverberación se analiza toda la superficie absorbente de un local; se calculan las superficies individuales y el coeficiente de absorción específico según la fórmula de Sabine.
+
+### Superficies de absorción (Página 493):
+*   **Resonadores**: Absorben bajas frecuencias; sus dimensiones y el relleno de la cavidad varían para una regulación detallada.
+*   **Materiales porosos**: Se emplean para la absorción de las altas frecuencias; el grosor de la capa y la fricción modifican el curso hacia frecuencias bajas.
+*   **Butacas**: Presentan una alta absorción en el asiento y el respaldo, que queda tapado cuando los espectadores están sentados.
+
+#### Diagramas de absorción (Página 493):
+*   **5 Panel vibrante**: Absorción de frecuencias bajas.
+*   **6 Resonadores**: Características de absorción según proporción de huecos.
+*   **7 Materiales porosos**: Absorción según frecuencia.
+
+---
+
+# PARARRAYOS [Página 494-496]
+
+A 50° de latitud, durante cada hora de tormenta se producen aprox. 60 descargas de rayos en la tierra. Un sistema de protección contra rayos consta de **captador, conductor y toma a tierra**.
+
+### Elementos de captación (Página 494):
+Ningún punto de la cubierta estará a más de 15 m de un elemento de captación. En cubiertas de paja, deben colocarse dos pletinas metálicas de 60 cm de anchura a cada lado de la cumbrera. Una descarga de rayo puede ser de, por ejemplo, **100.000 A x 5 cm = 500.000 V**.
+
+#### Tipos de cubierta y pararrayos (Página 494):
+*   **1 Cubierta plana una vertiente**: Cotas 8 m x 15 m.
+*   **2 Cubierta plana dos vertientes**: Cotas 12,5 m x 18 m.
+*   **3 Cubierta a dos aguas**: Cotas 8 m x 15 m.
+*   **8 Edificio con cubierta de paja**: Conducción a 60 cm por encima de la cumbrera y a 40 cm por encima del resto de la superficie.
+
+### Puesta a tierra (Página 495):
+La puesta a tierra se realiza mediante barras o planchas metálicas sin aislar. Las pletinas enterradas horizontalmente deben colocarse a una profundidad mayor a 0,5 m.
+
+#### Tabla 11: Resistencia a la difusión eléctrica según tipo de suelo [Página 495]
+| Tipo de suelo | Ciénagas | Suelo arcilloso | Terreno cultivado | Arenas húmedas | Gravas húmedas | Arenas y gravas secas | Suelo rocoso |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Resistencia $\rho$** | 12 | 40 | 80 | 200 | 400 | 1.200 | [ilegible] |
+
+#### Cotas de tomas a tierra (Página 495):
+*   **11 Anillo cond. (Long. en m)**: Valores 6, 13, 27, 67, 133 para resistencias de 5, 10, 15, 20, 30 $\Omega$ respectivamente.
+*   **12 Pica en hormigón en masa**: Profundidad $\ge 5$ m; ancho $\ge 1,5$ m.
+*   **14 Montaje en cimentación flotante**: Altura máx. nivel freático $\ge 1,5$ m.
+
+### Zonas de protección (Página 496):
+Se divide en diferentes zonas de protección definidas como LPZ (Lightning Protection Zone).
+
+#### Tabla 5: Grado de protección [Página 496]
+| Grado | Eficiencia | Radio esfera | Luz retícula | Separación estand. | Descarga máx. |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| I | 98 % | 20 m | 5 m x 5 m | 10 m | 200 kA |
+| II | 95 % | 30 m | 10 m x 10 m | 15 m | 150 kA |
+| III | 90 % | 45 m | 15 m x 15 m | 20 m | 100 kA |
+| IV | 80 % | 60 m | 20 m x 20 m | 25 m | 100 kA |
+
+#### Diagramas (Página 496):
+*   **2 Ángulo de protección $\alpha$**: Gráfica relaciona ángulo (10-80°) con altura sobre el ámbito a proteger (0-60 m) para tipos I a IV.
+*   **3 Procedimientos dimensionado**: Método de esfera, ángulo y retícula (Luz W).
+*   **6 Desglose en zonas**: Muestra Zona 0A (exterior), Zona 0B (bajo captadores), Zona de protección 1 (edificio), Zona 2 (sala técnica), Zona 3 (equipo electrónico).
+
+---
+
+# ILUMINACIÓN NATURAL [Página 497-509]
+
+La luz visible ocupa una banda relativamente reducida, aprox. **380-780 nm**. La unidad para medir la intensidad lumínica es el **lux (lx)**.
+
+### Fundamentos astronómicos (Página 497):
+El Sol produce luz natural de forma no constante; la inclinación del eje terrestre es de aprox. **23,5°**. La posición se expresa mediante dos ángulos: **acimut $\alpha_s$ y altura $\gamma_s$**.
+*   **Solsticio de invierno (21.12)**: El día más corto; declinación del Sol de **-23,5°**.
+*   **Solsticio de verano (21.6)**: El día más largo; declinación de **+23,5°**.
+
+### Asoleo (Página 499-501):
+El tiempo posible de asoleo del 21 de mayo al 21 de julio es de **16 a 16 ¾ horas**; el 21 de enero es de **8 ¼ a 7 ½ horas**.
+
+#### Orientación de ventanas (Página 501):
+*   **Ventanas al Norte**: Reciben poco sol en verano y nada en invierno; adecuadas para estancias que no deben estar soleadas.
+*   **Ventanas al Sur**: El sol penetra durante el invierno hasta las zonas más profundas; en verano frenan la entrada de sol y calor.
+*   **Bloque N-S**: Ambos lados soleados; en los meses de noviembre a enero no hay sol en ninguna habitación.
+
+### Irradiación solar (Página 503):
+La "claridad diurna" acumulada a lo largo del año es de aprox. **4.300 horas**. El número de horas que luce el sol en Alemania oscila entre **1.300 y 1.900 al año**. La constante solar es de unos **1.300 W/m²** en una superficie irradiada verticalmente.
+
+### Iluminación lateral (Página 504-505):
+Para valorar la luz diurna se emplea el **cociente de iluminación natural (D)**, donde $D = Ei / Ea \times 100 \%$.
+*   **$D_{min} \ge 1 \%$** en habitaciones de una vivienda (punto de referencia: centro de estancia).
+*   **$D_{min} \ge 2 \%$** en oficinas con acristalamiento en dos lados.
+*   **Relación visual**: La anchura de la ventana debe ser **$\ge 65 \%$** de la anchura del cuarto.
+
+### Iluminación cenital (Página 506):
+Se basa en que la luz incide a través de lucernarios; la uniformidad suele ser mejor que con luz lateral.
+*   **Cocientes mínimos**: $D_{min}/D_{max} \ge 0,5$; $D_{min} \ge 2 \%$; en oficinas $\ge 4 \%$.
+*   **Lucernarios**: Relación entre separación y altura de despacho entre **1:1,5 y 1:2**.
+
+#### Tabla 4: Separación entre lucernarios [Página 506]
+| Relación $D_{min}/D_{max}$ | Recomendación | Valores de $k_a = a/h$ |
+| :--- | :--- | :---: |
+| 1:1 | Óptimo | $< 1 \dots 1,1$ |
+| 1:1,5 | Aceptable | 1,2 a 1,7 |
+| 1:2 | Crítico | 1,8 a 2 |
+| 1:3 | A evitar | 2,2 |
+
+### Criterios de calidad (Página 507):
+La uniformidad de la luz natural depende del grado de reflexión de las superficies y de la disposición de ventanas. La uniformidad es mayor cuando hay claraboyas, ya que la densidad de iluminación cenital es **3 veces mayor** que la densidad en el horizonte.
+
+#### Tabla 1: Intensidad de iluminación D % [Página 507]
+| Tipo de trabajo | Luz natural D % |
+| :--- | :---: |
+| Impreciso | 1,33 |
+| Semipreciso | 2,66 |
+| Muy preciso | 5 |
+| Preciso | $\ge 10$ |
+
+---
+
+# ILUMINACIÓN ARTIFICIAL [Página 510-519]
+
+### Generalidades (Página 510):
+Se definen magnitudes como el **Flujo luminoso (lumen, lm)**, la **Intensidad luminosa (candela, cd)** y la **Iluminancia (lux, lx)**.
+*   **Visibilidad óptima**: 2.000 lx.
+*   **Iluminación mínima para orientarse**: 20 lx.
+*   **Iluminación de vías públicas**: 10 lx.
+
+### Lámparas y Luminarias (Página 510-512):
+*   **Lámparas de incandescencia**: Vida media de unas **1.000 h**; rendimiento aprox. 6-12 lm/W.
+*   **Lámparas halógenas de bajo voltaje**: Vida útil de aprox. **4.000-6.000 h**; rendimiento hasta 24 lm/W.
+*   **Lámparas de descarga**: Vida media entre **5.000 y 15.000 h**.
+*   **Lámparas LED**: Larga vida útil (aprox. **25.000-50.000 h**); bajo consumo.
+
+#### Tabla 2: Vida útil y rendimiento [Página 511]
+| Tipo de lámpara | Vida útil (h) | Rend. lumínico (lm/W) |
+| :--- | :---: | :---: |
+| Incandescente | 1.000 | 6 - 12 |
+| Halógena | 1.500 - 2.000 | 15 |
+| Vapor mercurio | 6.000 - 8.000 | 70 - 120 |
+| Vapor sodio | 8.000 - 10.000 | 70 - 120 |
+| Fluorescente | 20.000 | 80 - 104 |
+
+### Iluminancia (Página 517):
+El flujo luminoso necesario para iluminar un edificio se calcula con la fórmula: $E_m = \frac{100 \cdot P \cdot k}{A \cdot P^*}$. La densidad lumínica debería estar comprendida entre **3 cd/m²** (aislados) y **16 cd/m²** (entorno muy claro).
+
+#### Tabla 1: Rendimiento específico de conexión $P^*$ [Página 517]
+| Tipo de lámpara | $P^*$ (W/m² para 100 lx) |
+| :--- | :---: |
+| Bombilla incandescente | 12 |
+| Halógena | 10 |
+| Vapor mercurio (HME) | 5 |
+| Fluorescente (TC) | 5 |
+| Fluorescente (TL) | 4 |
+| Fluorescente (T26) | 3 |
+
+### Valores de iluminación para puestos de trabajo (ASR 7/3) [Página 519]:
+| Tipo de espacio / actividad | en / lx |
+| :--- | :---: |
+| Zonas de circulación en almacenes | 50 |
+| Escaleras, rampas | 100 |
+| Inodoros, lavabos | 200 |
+| Oficinas en general | 500 |
+| Dibujo técnico | 750 |
+| Trabajos de gran precisión | 1.000 |
+| Control de calidad (exigencia muy elevada) | 1.500 |
+
+---
+
+# PREVENCIÓN DE INCENDIOS [Página 520-530]
+
+### Clasificación (Página 521):
+Se distingue la capacidad de resistencia al fuego de los elementos constructivos: **resistentes al fuego (F 90)**, **altamente retardantes (F 60)** y **retardantes (F 30)**.
+
+#### Tabla 2: Clasificación de resistencia según DIN EN 13501 [Página 521]
+| Exigencia | Cerramientos muros | Puertas cortafuegos | Disp. obturación cables | Disp. obturación tubos |
+| :--- | :---: | :---: | :---: | :---: |
+| Retardante (30 min) | EI 30 C | EI 60 / EI 30 C | EI 120 / EI 90 C | EI 180 / EI 120 C |
+| Altamente retard. (60 min) | EI 30 C | EI 90 / EI 60 C | EI 120 / EI 90 C | EI 180 / EI 120 C |
+| Resistente (90 min) | EI 30 C | EI 90 / EI 60 C | EI 120 / EI 90 C | EI 180 / EI 120 C |
+
+### Muros cortafuegos (Página 522):
+Se construyen como remate de edificios cuando el muro está a menos de 2,5 m del lindero vecino. Deben resistir al menos **90 min (EF 90-A)**; deben partir de la cimentación y sobresalir mín. **30 cm sobre la cubierta**.
+
+#### Tabla 7: Grosores mínimos muros cortafuegos (mm) [Página 522]
+| Material | Monocapa | Bicapa |
+| :--- | :---: | :---: |
+| Muro de fábrica (Bloques densidad $\ge 1$) | 240 / 300 | 2 x 175 |
+| Hormigón normal | 200 | 2 x 180 |
+| Hormigón ligero | 250 | 2 x 200 |
+| Hormigón celular (Densidad $\ge 600 kg/m³$) | 175 / 200 | 2 x 175 |
+
+### Puertas cortafuegos (Página 526):
+Tienen la función de resistir al fuego según su clasificación (T 30, T 60, T 90, T 120, T 180).
+*   **Dimensiones de registro T 30-1**: Anchura 625 mm; Altura 625-1.750 mm.
+*   **Puertas de acero T 30-1**: Anchura 625-1.250 mm; Altura 1.750-2.250 mm.
+*   **Portón enrollable T 90/T 120**: Anchura 2.000-10.000 mm; Altura 1.800-4.000 mm.
+
+### Sprinklers (Página 529):
+Sistemas de tuberías fijas presurizadas; se accionan cuando la temperatura ambiente excede un umbral prefijado (aprox. **30 °C por encima de la temperatura máx. previsible**).
+
+#### Tabla 3: Caudal de agua según clasificación de riesgo [Página 529]
+| Clasificación | Caudal (mínimo) mm/min | Superficie de acción (m²) |
+| :--- | :---: | :---: |
+| LH (Low Hazard) | 2,25 | 84 |
+| OH 1 (Ordinary Hazard) | 5 | 72 |
+| OH 4 | 5 | 360 |
+| HHP 1 (High Hazard Process) | 7,5 | 260 |
+| HHP 3 | 12,5 | 260 |
+
+---
+
+# INSTALACIONES: AGUAS RESIDUALES [Página 531-536]
+
+El cálculo se basa en las cargas hipotéticas de las redes de tuberías.
+*   **Sistema I**: Bajante única, ramal de descarga parcialmente lleno, nivel de llenado **0,5**.
+*   **Sistema II**: Bajante única, ramal parcialmente lleno, nivel de llenado **0,7**.
+*   **Niveles de frecuencia de uso (K)**: Viviendas (0,5); Hospitales, escuelas (0,7); Duchas públicas (1); Laboratorios (1,2).
+
+### Unidades de descarga (UD) por aparato [Página 532]:
+*   **Lavabo, bidé**: 0,5 UD (Derivación DN 40).
+*   **Ducha con tapón**: 0,8 UD (DN 50).
+*   **Bañera**: 0,8 UD (DN 50).
+*   **Fregadero y lavavajillas**: 0,8 UD (DN 50).
+*   **Inodoro con cisterna 6 l**: 2 UD (DN 80-DN 100).
+*   **Lavadora hasta 12 kg**: 1,5 UD (DN 56/60).
+
+### Diámetros y pendientes (Página 532):
+*   **DN 50**: Diámetro interior mín. **44 mm**.
+*   **DN 100**: Diámetro interior mín. **96 mm**.
+*   **DN 200**: Diámetro interior mín. **184 mm**.
+*   **Pendiente mínima**: Derivaciones sin ventilación **1 %**; Derivaciones ventiladas **0,5 %**; Colectores pluviales **0,5 %**.
+
+### Evacuación de pluviales (Página 535):
+El caudal de aguas pluviales se calcula con $Q = r \cdot E \cdot A / 10.000$, donde $r$ es la intensidad pluviométrica y $E$ el coeficiente de escorrentía.
+
+#### Tabla 2: Coeficiente de escorrentía E [Página 535]
+| Tipo de superficie | Coeficiente E |
+| :--- | :---: |
+| Cubiertas planas, hormigón, rampas | 1 |
+| Cubiertas con grava | 0,5 |
+| Cubiertas ajardinadas (extensivo $\ge 10$ cm) | 0,3 |
+| Pavimento hormigón sobre lecho de arena | 0,7 |
+| Superficies de césped | 0,3 |
+| Parques y superficies con vegetación | 0 |
+
+---
+
+# CLIMATIZACIÓN [Página 537-540]
+
+### Ventilación natural (Página 537):
+La calidad del aire se considera buena cuando la salubridad está garantizada (concentración de CO₂, óxidos de nitrógeno, etc.). Se recomiendan caudales de **20-40 m³/h por persona** en actividades sedentarias y **65 m³/h** en trabajo físico intenso.
+
+#### Tabla 5: Humedad relativa recomendada [Página 537]
+| Temperatura ambiente [°C] | Humedad relativa [%] |
+| :--- | :---: |
+| 20 | 80 |
+| 22 | 70 |
+| 24 | 62 |
+| 26 | 55 |
+
+### Ventilación mecánica (Página 538):
+*   **Ventilación básica**: Renovación completa de **0,5-1 veces por hora** garantiza que no se produzcan daños constructivos por humedad.
+*   **Caudales previstos (DIN 1945)**: Cocina ventilación básica (40 m³/h); Cocina intensiva (200 m³/h); Baño con inodoro (40 m³/h).
+
+### Salas de máquinas VAC (Página 540):
+Las salas técnicas deben estar situadas preferiblemente cerca de los nudos de comunicación vertical.
+*   **Gráfica (Diagrama 5)**: Relaciona superficie necesaria ($m^2$) y altura ($m$) con el caudal de aire ($m³/h$). Por ejemplo, para **15.000 m³/h**, se requieren aprox. **80 m²** para climatización y **100 m²** con humidificación.
+
+---
+
+# INSTALACIONES TÉRMICAS [Página 541]
+
+Se utiliza generalmente agua como fluido portador. Las instalaciones térmicas actuales tienden a rondar los **45-70 °C**.
+
+#### Diagramas de distribución (Página 541):
+*   **2 Funcionamiento CAC**: Sala calefacción sólidos $\ge 8 m^2$ para potencia $\ge 50 kW$.
+*   **4 Sistema bitubular**: Distribución superior y montantes verticales.
+*   **7 Sistema unitubular**: Distribución horizontal por planta.
+
+***
+*Nota técnica: Las transcripciones de diagramas incluyen todas las medidas legibles en metros, milímetros, porcentajes y grados angulares detallados en las fuentes. Las tablas se han reconstruido unificando datos cuando ha sido necesario por la continuidad del texto original.*
+Esta es una transcripción técnica íntegra y exhaustiva de los fragmentos proporcionados de la **Parte 23** del manual **"Neufert - Arte de Proyectar en Arquitectura"**. Se han respetado estrictamente todos los valores numéricos, tablas, cotas de diagramas y terminología normativa presente en las fuentes originales.
+
+***
+
+# INSTALACIONES TÉRMICAS
+## EMISORES DE CALOR PARA LOCALES [Página 542]
+
+**Ubicación y convección de emisores de calor → 1 - 4**.
+Los radiadores colocados debajo de ventanas pueden causar efectos de corriente de aire en el entorno de la misma. El aire calentado ascendente frena el aire frío en las superficies acristaladas → **1**. Los radiadores colocados en paredes interiores pueden poner en marcha una recirculación del aire que causa que el aire frío se mantenga cerca del suelo y el aire calentado se encuentre debajo del techo. Las diferencias de temperatura elevadas entre el suelo y el techo provocan malestar → **2**.
+
+**Las superficies radiantes** (calefacción de suelo, techo, pared radiante) funcionan a través de los paramentos del local con temperaturas bajas. La emisión del calor se realiza exclusivamente a través de radiación. Gracias a la baja carga térmica en edificios que cumplen la Ordenanza alemana para el ahorro de energía (EnEV), los sistemas de superficies radiantes pueden aplicarse perfectamente sin incumplir las condiciones para el bienestar → **3**.
+
+**Los convectores** no emiten calor por radiación, sino por transmisión directa a las moléculas del aire. Por ello, los convectores pueden revestirse o empotrarse sin que disminuya la potencia térmica. La eficiencia de un convector depende de la altura libre que queda por encima de él → **4**, véase también pág. 543.
+
+### Tipos de emisores de calor
+*   **Radiadores por elementos**: Hechos de tubos de acero, hierro fundido y acero. Emiten hasta el 40 % de su calor en forma de radiación. Los radiadores de tubos de acero se comercializan como radiadores de dos a seis columnas, no tienen aristas vivas y presentan una alta potencia con relación a su longitud → **7**.
+*   **Radiadores de acero → 8**: Forman bloques de elementos soldados entre sí y tienen en sus extremos manguitos que posibilitan la unión de varios bloques. Hasta hace unos años eran los emisores estándar de calor para calefacción de agua caliente, aunque en la actualidad se prefieren los paneles.
+*   **Radiadores de hierro fundido**: Tienen una penetración en el mercado muy reducida. Reaccionan con mucha inercia a los impulsos de regulación, pero son altamente resistentes a la corrosión → **5**.
+*   **Los paneles**: Consisten en placas dobles de chapa de acero lisa o en relieve, a través de las cuales fluye el agua caliente. La superficie frontal emite el calor en su mayor parte en forma de radiación. En el lado posterior se realiza la emisión al aire a través de convección. Si se montan varios paneles uno tras otro aumenta correspondientemente la proporción de emisión del calor mediante convección. En la práctica, se disponen hasta tres paneles paralelos. Gracias a su poca profundidad (2-5 cm) no es necesario disponer de nichos debajo de las ventanas (o solo de muy poco fondo), pueden transmitir hasta el 40 % de su calor en forma de radiación y funcionar con temperaturas de impulsión relativamente bajas (por lo que pueden funcionar con bombas de calor o geotermia). Para mejorar la potencia térmica, entre los paneles pueden colocarse chapas nervadas en vertical (chapas de convección) → **9**.
+
+#### Tabla 8: Dimensiones (mm) de radiadores de fundición normalizados según DIN 4703
+| Altura | Distancia entre ejes de elementos | Profundidad |
+| :--- | :---: | :---: |
+| 280 | 220 | 250 |
+| 430 | 350 | 70, 110, 160, 220 |
+| 580 | 500 | 70, 110, 160, 220 |
+| 680 | 600 | 160 |
+| 980 | 900 | 70, 160, 220 |
+
+#### Tabla 10: Dimensiones (mm) de radiadores de acero normalizados según DIN 4703
+| Altura | Distancia entre ejes de elementos | Profundidad |
+| :--- | :---: | :---: |
+| 300 | 200 | 160, 250 |
+| 450 | 350 | 70, 110, 160, 220 |
+| 600 | 500 | 70, 110, 160, 220 |
+| 1.000 | 900 | 70, 110, 160, 220 |
+
+#### Diagramas y cotas (Página 542):
+*   **5 Radiadores de fundición**: Altura 70 mm; Anchura + 40 mm; nicho separación mín. 40 mm hasta las paredes; longitud H 60; altura 165 mm.
+*   **6 Radiadores de acero**: Altura 70 mm; Anchura + 40 mm; separación mín. 65 mm; longitud H 50.
+*   **7 Radiadores tubulares**: Altura 190-2800 mm; longitud 46 mm por elemento; profundidad 100 mm.
+*   **9 Paneles**:
+    *   Dos columnas con panel de convección doble: aprox. 14 % radiación.
+    *   Dos columnas con panel de convección simple: aprox. 18 % radiación.
+    *   Dos columnas sin paneles de convección: aprox. 21 % radiación.
+*   **11 Curvas de temperatura ambiente**: Muestra niveles de 16°, 20°, 24° para: Calefacción ideal, Calefacción en el suelo, Calefacción por radiadores (paredes interiores/exteriores), Calefacción por aire y Calefacción en techo. Cota de altura hasta la cabeza 180 cm; altura total 270 cm.
+*   **12 Variación de la radiación térmica**: Compara radiador sin revestir (100 %) contra revestimiento de rejilla (90-95 %), chapa (80-85 %) y pared/mueble (70-75 %). Cotas: A (anchura espacio libre), B (distancia desde el suelo mín. 70 mm, máx. 120 mm), C (profundidad radiador), D (distancia entre elementos), H (altura total), K (separación a la pared mín. 50 mm).
+
+---
+
+## CONVECTORES Y SUELO RADIANTE [Página 543]
+
+En el caso de **convectores**, la emisión del calor se produce exclusivamente a través de convección. Las ventajas son el tiempo reducido para caldear el espacio, mientras que las desventajas son la recirculación del aire intensa, torbellinos de polvo y emisión de ruidos. Para aumentar la potencia pueden colocarse ventiladores en convectores con zanjas de empotramiento demasiado bajas (p. ej., convectores empotrados en el pavimento).
+
+En acristalamientos hasta el suelo, los **convectores empotrables** → **6** pueden sustituir a los radiadores (sobre todo en elementos acristalados correderos). Los **miniconvectores o convectores empotrables en el pavimento** → **7**, que se integran a ras en el suelo, pueden combinarse bien con sistemas de superficies radiantes (p. ej., suelo radiante).
+
+**Suelo radiante**: Cuando la calefacción se coloca en el suelo, el calor se transmite por la superficie del pavimento tanto al aire como a las paredes y al techo. La transmisión de calor al aire se realiza por convección. En cambio, la transmisión a las paredes y al techo se efectúa por radiación. El rendimiento varía en función del tipo de pavimento entre 70 y 100 W/m². El grosor del pavimento depende del tipo, de su manipulación y de las tensiones a que esté sometido.
+
+#### Diagramas y cotas (Página 543):
+*   **1 Variantes de colocación**: En espiral (homogénea), serpentín (disminución hacia afuera), ida y retorno paralelos.
+*   **2 Suelo radiante (montaje húmedo)**: Pavimento cemento flotante (recubrimiento mín. tuberías 45 mm); Lámina PE 0,2; Aislante 40 mm.
+*   **3 Suelo radiante (montaje seco)**: Pavimento flotante seco 45 mm; Lámina PE 0,2; Módulo montaje/aislante 30 mm.
+*   **4 Suelo radiante (montaje en aislante)**: Recubrimiento/revestimiento; Pavimento flotante (ladrillos) 20 mm; Lámina PE 0,2; Módulo montaje 30 mm.
+*   **10 Sistemas de montar convectores**: a) debajo de ventana, b) delante de pared lisa, c) libre (2 salas), d) empotrado en pared, e) empotrado en la pared, f) debajo del suelo con aspiración, g) debajo del suelo con aspiración aire frío, h) debajo del suelo con aspiración por ambos lados, i) detrás de un banco.
+
+---
+
+## ALMACENAMIENTO DE GASOIL [Página 544]
+
+La cantidad de gasoil almacenado debería ser suficiente para tres meses como mínimo y para un invierno entero como máximo. El cuarto de la caldera pueden almacenarse como máximo 5.000 l. Los depósitos deben estar situados en un contenedor de seguridad con capacidad para toda la cantidad almacenada.
+
+#### Tabla 5: Dimensiones de las baterías de tanques de plástico
+| Capacidad nominal l | Longitud l (mm) | Profundidad p (mm) | Masa m (kg) |
+| :--- | :---: | :---: | :---: |
+| 1.100 (1.100) | 1.100 (1.100) | 720 | 30-50 |
+| 1.500 (1.600) | 1.650 (1.720) | 720 | 40-60 |
+| 2.000 | 2.150 | 720 | 50-80 |
+
+#### Tabla 6: Dimensiones de los tanques cilíndricos de gasoil
+*(Extracto de valores críticos)*
+| Capacidad m³ | Diámetro exterior (mm) | Longitud (mm) | Peso en kg |
+| :--- | :---: | :---: | :---: |
+| 3 | 1.250 | 2.740 | 325 |
+| 10 | 1.600 | 5.350 | 1.250 |
+| 50 | 2.500 | 10.800 | 5.300 |
+
+#### Diagramas y cotas (Página 544):
+*   **1 Colocación de contenedores**: Distancias: 40 cm a paredes laterales; 25 cm entre tanques; 60 cm al techo; 100 cm altura mín. contenedor.
+*   **3 Contenedores de nailon**: Largo 167 cm; ancho batería 73 cm; fondo zanja + 150 cm / 10 cm; separación mínima fondo 25 cm.
+*   **7 Tanque para almacenar (lateral)**: Distancia libre superior 10 cm; longitud L.
+
+---
+
+# ESTACIONES DEPURADORAS PARTICULARES [Página 545]
+
+Las minidepuradoras son instalaciones para la depuración de aguas residuales cuando no es posible la conexión a las plantas municipales. Debe calcularse 150 l/habitante para viviendas.
+
+#### Tabla 4: Dimensionado de fosas sépticas según DIN 4261, parte 1
+| Característica | Fosas sépticas 2 etapas | Fosas 3-4 etapas | Tanques oxidación |
+| :--- | :---: | :---: | :---: |
+| Volumen útil específico | 300 l/E* | 300 l/E* | 1.500 l/E* |
+| Volumen útil mínimo | 3.000 l | 3.000 l | 6.000 l |
+| Profundidad mín. agua | 1,2 m | 1,2 m | 1,2 m |
+
+#### Diagramas (Página 545):
+*   **2 Fosas sépticas prefabricadas**: Diámetro DN 150; construcción con dos o tres secciones.
+*   **3 Zanja filtrante**: Inclinación $\le 1,25 / \le 1,25$; longitud $\le 30$ m.
+
+---
+
+# CHIMENEAS Y PATINEJOS DE VENTILACIÓN [Página 546-548]
+
+### Chimeneas [Página 546]
+Las chimeneas expulsan los gases de combustión al exterior. A una **chimenea de tiro individual** deben conectarse hogares con rendimiento nominal > 20 kW (> 30 kW en gas). Las **secciones** pueden ser rectangulares o circulares, con una sección mínima de **100 cm²** (lado menor 10 cm).
+
+#### Diagramas y cotas (Página 546):
+*   **1 Altura sobre cubierta**: $\ge 40$ cm sobre el punto más alto en pendientes $\ge 20^\circ$; o $\ge 1$ m por encima del resto.
+*   **9 Chimeneas prefabricadas**: Medidas 12/12, 14/14, 16/16, 18/18, 20/20, 25/25, 30/30 mm.
+
+### Hogares abiertos [Página 547]
+Deben estar construidos con materiales no combustibles (arcilla refractaria, hierro fundido). La altura eficaz debe ser $\ge 4,5$ m. La separación debe ser $\ge 80$ cm hacia adelante, hacia arriba y hacia los lados respecto a elementos combustibles.
+
+#### Tabla 8: Medidas de los hogares abiertos
+| Tipo | Abierto 1 cara (N.º 3) | Abierto 2 caras (N.º 7) | Abierto 3 caras (N.º 10) |
+| :--- | :---: | :---: | :---: |
+| Superficie sala (m²) | 30-35 | 35-45 | 45-55 |
+| Embocadura (cm²) | 5.750 | 6.900 | 9.800 |
+| Diámetro tiro (cm) | 30 | 35 | 30 |
+
+### Patinejos de ventilación [Página 548]
+Los baños y aseos interiores deben ventilarse a través de patinejos. La sección mínima es de **140 cm²**. El caudal suficiente para baños es de **60 m³/h** y para aseos **30 m³/h** por inodoro.
+
+#### Tabla 9: Cálculo de conductos verticales con impulsión térmica
+| Sección col. cm² | N.º máx. acometidas (< 10 m altura) | Medidas int. col. (cm) | Medidas int. cond. (cm) |
+| :--- | :---: | :---: | :---: |
+| 340 | 5 | 20 x 17 | 9 x 17 |
+| 400 | 6 | 20 x 20 | 12 x 20 |
+| 500 | 8 | 2 x 20/17 | 9 x 17 |
+
+---
+
+# BIBLIOGRAFÍA Y ABREVIATURAS [Páginas 549-551]
+
+**Abreviaturas de las revistas:**
+*   **A+D**: Architecture + Detail (Stuttgart).
+*   **AF**: Architectural Form (Nueva York).
+*   **AJ**: Architectural Review (Londres).
+*   **AR**: Architectural Record (Nueva York).
+*   **Detail**: Zeitschrift fur Architektur und Baudetail (Múnich).
+
+**Bibliografía seleccionada:**
+*   **Schneider, H. J.**: Handbuch - Sanitartechnik. Vogel, Wurzburgo, 1979.
+*   **Le Corbusier**: El Modulor . Poseidón, Buenos Aires, 1973.
+*   **Neufert, E.**: Bauordnungslehre BOL. Ullstein, Berlín, 1961.
+*   **Meyer-Boke, W.**: Sonnenschutz. DBZ, jul. 1987.
+*   **Knirsch, J.**: Hotels planen und gestalten. A. Koch, Leinfelden-Echterdingen, 1983.
+
+---
+
+# ÍNDICE DE TÉRMINOS [Páginas 559-568]
+
+*(Se listan términos clave del índice alfabético)*:
+*   **Abastecimiento**: de agua (8, 15, 10-15), de alimentos (326), de energía (129, 415), técnico (303, 328).
+*   **Acústica**: arquitectónica (492), de salas (491), aislamiento (21, 233, 486).
+*   **Baño**: accesible (33-37), completo (173), hospitalario (318), turco (382).
+*   **Calefacción**: 3, 16, 20, 22, 54, 57, 59, 62, 76, 91, 106, 131, 542, 546.
+*   **Chimeneas**: 546-547.
+*   **Dormitorio**: 37, 50, 154-155, 159-160, 167, 169-172, 174, 181-182, 196-198, 383, 501.
+*   **Escalera**: 12, 31, 132-139, 141, 416.
+*   **Hospital**: 12, 303-331.
+*   **Inodoro**: 37, 172-173, 282, 307.
+*   **Laboratorio**: 203, 210-218, 240, 302, 304, 308, 312, 519, 532.
+*   **Quirófano**: 32, 303-306, 308-311, 313-315.
+*   **Ventilación**: 111, 214, 264, 283, 406, 483, 537-538.
+
+***
+*Nota técnica: Las transcripciones de tablas de gasoil y fosas sépticas mantienen la estructura exacta de las normas DIN 4725 y DIN 4261 citadas. Todas las figuras de la página 547 referentes a hogares abiertos han sido descritas con sus cotas de embocadura y tiro exactas.*

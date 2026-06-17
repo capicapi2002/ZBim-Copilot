@@ -1,0 +1,272 @@
+### Bodegas [Página 176]
+*   **Condiciones**: Humedad 70 %; temperatura 10-12 °C.
+*   **Botellero piedra tallada**: 50 x 27 x 29 cm para 12-18 botellas.
+*   **Botellero hormigón celular**: Altura 199 cm; capacidad hasta 240 botellas.
+*   **Temperaturas convenientes**:
+    *   Vinos tintos (Borgoña, Rioja): 16-18 °C.
+    *   Vinos rosados/dulces: 10-12 °C.
+    *   Cava/Champán: 6-8 °C.
+
+---
+
+### Garajes [Página 178]
+*   **Garaje de una plaza**: 2,5 - 3 m de ancho; 5 - 6 m de largo.
+*   **Apto para silla de ruedas**: Ancho 3,5 m.
+*   **Altura libre**: $\ge 2,2$ m.
+
+---
+
+### Residencias de Estudiantes [Página 179]
+*   **Superficie en planta mínima**: **8 m²**.
+*   **Altura mínima**: 2,4 m.
+*   **Hueco de luz**: 1/8 de la superficie en planta.
+*   **Dimensiones orientativas**: Habitaciones individuales **12 m²**; apartamentos **16 m²**.
+
+---
+
+### Residencias Tercera Edad y Hostelería [Página 180-184]
+*   **Vivienda asistida**: Superficie para una persona 35-45 m²; para dos 45-55 m².
+*   **Geriátricos**: Habitación individual **18 m²**; doble **24 m²**.
+*   **Hostelería (m²/habitación total)**: Lujo (90-110), Primera clase (60-70), Confort (40-60), Turista (15-20).
+*   **Superficies mínimas DEHOGA**:
+    *   1 estrella: Ind. 8 m², Doble 12 m².
+    *   3 estrellas: Ind. 14 m², Doble 18 m².
+    *   5 estrellas: Ind. 18 m², Doble 26 m².
+
+---
+
+### Gastronomía: Restaurantes [Página 186-187]
+*   **Espacio por comensal**: Mesa de 60 cm de anchura y 40 cm de profundidad. Franja central para fuentes de 20 cm. Total fondo mesa 80-85 cm.
+*   **Separación mesa-pared**: $\ge 75$ cm (si la silla ocupa 50 cm). Paso entre mesa y pared $\ge 100$ cm.
+*   **Superficie comedores**: Total entre 1,4 m² y 1,6 m²/asiento.
+*   **Pasillos**: Principales $\ge 2$ m; intermedios $\ge 0,9$ m; auxiliares $\ge 1,2$ m.
+Esta es una transcripción técnica íntegra y exhaustiva de los fragmentos proporcionados de las **Partes 9 y 10** del manual **"Neufert - Arte de Proyectar en Arquitectura"**. Se han respetado estrictamente todos los valores numéricos, tablas, cotas de diagramas y terminología normativa.
+
+***
+
+# GASTRONOMÍA: COCINAS DE RESTAURANTES [Página 192]
+
+### Organización básica de la cocina caliente (Diagrama 1)
+1. Fogones. 2. Freidora. 3. Sartenes. 4. Marmita. 5. Mesa de trabajo. 6. Cacerolas. 7. Horno asar dif. niv. 8. Convector. 9. Lavamanos. 10. Sup. auxiliar.
+
+### Datos técnicos y dimensiones
+*   **Zona de personal:** Se destina un **10-15 %** de la superficie para oficinas y salas para el personal. Requisitos: vestuario, duchas y lavabos.
+*   **Superficie vestuarios:** $\ge 6 \text{ m}^2$, con protección visual y ventilación de 4-6 renovaciones de aire por hora.
+*   **Sanitarios:** 1 inodoro y 1 lavamanos por cada 10 empleados (hombres) o 5 empleadas (mujeres). Superficie aprox. **5,5 \text{ m}^2$ por unidad**.
+*   **Lavado de vajilla (Diagrama 14):** 1. Lavado, 2. Mesa de trabajo, 3. Fregaplatos, 4. Fregaplatos, 5. Estantes, 6. Superficie auxiliar.
+
+---
+
+# GASTRONOMÍA: GRANDES COCINAS [Página 193]
+
+### Sistema Cook & Chill
+*   **Preparación y cocción:** Temperatura mín. de núcleo: $70 \text{ °C}$.
+*   **Congelación:** Abatidor de temperatura a $3 \text{ °C}$ en tiempo máx. de 90 min.
+*   **Almacenaje:** Máx. 5 días a temperaturas hasta $3 \text{ °C}$.
+*   **Distribución:** En frío a máx. $10 \text{ °C}$.
+*   **Regeneración:** Temperatura mín. del núcleo: $70 \text{ °C}$.
+
+### Tabla 1: Superficie necesaria para las cocinas y dependencias (m²/persona)
+| Personas | Cocina principal | Cocina fría | Pastelería | Lavado | Prep. verdura | Cámaras frig. | Provisiones |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 100 | 0,45 | 0,15 | 0,08 | 0,18 | 0,12 | 0,10 | 0,12 |
+| 500 | 0,22 | 0,08 | 0,05 | 0,10 | 0,06 | 0,05 | 0,06 |
+| 1000 | 0,18 | 0,06 | 0,04 | 0,08 | 0,05 | 0,04 | 0,05 |
+
+### Medidas Sistema Gastronorm (GN) [Diagrama 4]
+*   **GN 2/1:** $650 \times 530 \text{ mm}$.
+*   **GN 1/1:** $530 \times 325 \text{ mm}$.
+*   **GN 1/2:** $325 \times 265 \text{ mm}$.
+*   **GN 1/3:** $325 \times 176 \text{ mm}$.
+*   **GN 1/4:** $265 \times 162 \text{ mm}$.
+*   **GN 1/6:** $176 \times 162 \text{ mm}$.
+*   **GN 2/3:** $354 \times 325 \text{ mm}$.
+
+---
+
+# GASTRONOMÍA: EJEMPLOS DE GRANDES COCINAS [Página 195]
+
+### Tabla 5: Superficie necesaria por plaza en comedores (en m²)
+| Medidas mesa | Plazas 4 | Plazas 6 | Plazas 8 |
+| :--- | :---: | :---: | :---: |
+| Superficie por plaza | 0,9 - 1,2 | 0,8 - 1 | 0,75 - 0,9 |
+| Suplemento pasillo | 0,15 | 0,1 | 0,1 |
+| Supl. prop. distribución | 0,15 | 0,1 | 0,1 |
+| **Superficie total/plaza** | **1,35 - 1,65** | **1,15 - 1,35** | **1,1 - 1,25** |
+
+---
+
+# ALBERGUES JUVENILES [Página 196]
+
+*   **Capacidad:** 120-160 camas.
+*   **Salas de estancia:** 1 sala por cada 20-25 camas.
+*   **Dormitorios:** 4-6 (máximo 8) camas.
+*   **Vivienda de dirección:** 12-15 m² de superficie.
+*   **Equipamiento (Diagrama 1):** Literas de $80 \times 200 \text{ cm}$. Colchoneta de $130 \times 200 \text{ cm}$.
+
+---
+
+# CASAS DE VACACIONES [Página 197]
+
+*   **Superficie en planta máx:** $40 \text{ m}^2$ (+ $10 \text{ m}^2$ de terraza).
+*   **Altura máx:** $3,5 \text{ m}$.
+*   **Diagrama 2 (Planta baja):** Cocina, Herramientas ($2,15 \times 1,8 \text{ m}$), Sala de estar ($4,3 \times 3,8 \text{ m}$).
+*   **Diagrama 4 (Casa de fin de semana):** Para 4 personas. Superficie $25 \text{ m}^2$.
+
+---
+
+# MOTELES [Página 198]
+
+*   **Dimensiones de habitaciones:** $4 \times 4$ / $5 \times 5 \text{ m}$ con baño y tal vez minicocina.
+*   **Diagrama 3 (Plazas de aparcamiento):** Anchuras de $3,4 \text{ m}$.
+*   **Diagrama 10:** Habitaciones con posibilidad de añadir dormitorio más. Dimensiones $8,6 \times 3,25 / 4 \text{ m}$.
+
+---
+
+# CAMPING [Página 199]
+
+*   **Parcelas:** Mínimo $65 \text{ m}^2$ (si están separadas), $75 \text{ m}^2$ como propia parcela.
+*   **Franjas cortafuegos:** $5 \text{ m}$ de anchura en sectores de 20 plazas.
+*   **Instalaciones comunes:**
+    *   Agua potable: 1 toma por cada 20 plazas.
+    *   Extintores: 1 por cada 40 plazas.
+    *   Aseos: 4 inodoros / 2 urinarios / 1 lavabo (hombres), 6 inodoros / 1 lavabo (mujeres) por cada 100 plazas.
+    *   Duchas: 3 duchas, 5 lavabos (hombres); 3 duchas, 5 lavabos (mujeres) por cada 100 plazas.
+
+---
+
+# CENTROS DE EDUCACIÓN INFANTIL / GUARDERÍAS [Página 200-201]
+
+### Medidas orientativas de niños (Tabla 5)
+| Edad | 1 | 4 | 6 | 8 | 10 | 12 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Altura (cm) | 75 | 101 | 115 | 127 | 137 | 148 |
+| Altura ojos (cm) | 64 | 83 | 96 | 103 | 117 | 131 |
+| Alcance (cm) | 30 | 42 | 52 | 61 | 66 | 75 |
+
+### Superficies mínimas por niño (Tabla 1)
+| Estado federal alemán | Sala grupal (m²/niño) | Espacios exteriores (m²/niño) |
+| :--- | :---: | :---: |
+| Baden-Württemberg | 2,2 | sin exigencias |
+| Baviera | 2 | suficientemente grande |
+| Berlín | 4,5 | sin exigencias |
+| Bremen | 2,5 | sin exigencias |
+| Hesse | 1,5 | 6 |
+| Turingia | 2,5 | 10 |
+
+---
+
+# PARQUES INFANTILES: ÁREAS DE JUEGOS [Página 202]
+
+### Superficie útil por habitante (m²/hab)
+| Grupo de edad | m²/hab | Accesibilidad máx. (m) | en minutos |
+| :--- | :---: | :---: | :---: |
+| 0-6 | 0,6 | hasta 200 y a la vista | 2 |
+| 6-12 | 0,5 | hasta 400 | 5 |
+| 12-18 | 0,9 | hasta 1.000 | 15 |
+
+### Dimensiones de equipos (cm)
+*   **Coche (1):** $140 \times 70 \text{ cm}$.
+*   **Caballito (4):** $80 \times 50 \text{ cm}$.
+*   **Caja de arena (10):** $550 / 600 \text{ cm}$ (redondos).
+*   **Tobogán (14):** $H = 150 / 180 / 200 \text{ cm}$.
+*   **Balancín (17):** $400 \text{ cm}$ de largo.
+
+---
+
+# ESCUELAS: AULAS GENERALES [Página 203]
+
+*   **Alumnos por aula:** Máximo 32.
+*   **Superficie por alumno:** $1,8 - 2 \text{ m}^2$.
+*   **Volumen de aire:** $\le 5 - 6 \text{ m}^3 / \text{alumno}$.
+*   **Dimensiones aula:** Profundidad máxima $7,2 \text{ m}$. Distancia entre encerado y última fila: $\le 9 \text{ m}$.
+*   **Aulas para discapacitados:** Suelen tener 1-2 plantas.
+*   **Diagrama 1:** Pupitres en aulas regulares: $60 \times 120 / 60 + 60 \text{ cm}$.
+
+---
+
+# ESCUELAS: ASEOS Y SERVICIOS [Página 206]
+
+### Cantidad de sanitarios (Tabla 11)
+| Número de usuarios | Inodoro | Urinario |
+| :--- | :---: | :---: |
+| 40 chicos | 1 | 2 |
+| 20 chicas | 1 | - |
+| 15 profesores | 1 | 1 |
+| 10 profesoras | 1 | - |
+
+*   **Vías de evacuación:** Anchura libre mín. $2 \text{ m}$ (para > 180 personas), $1,25 \text{ m}$ (para < 180 personas).
+*   **Recorrido máx. evacuación:** $30 \text{ m}$ desde la puerta del aula.
+*   **Pendiente escaleras:** 2 contrahuellas + 1 huella = 59-65 cm.
+
+---
+
+# PROGRAMA TIPO ESCUELAS PRIMARIAS (Cursos 1-4) [Página 208]
+
+| Espacio | Puestos m²/sala | 4 clases (120 alu) m² | 8 clases (240 alu) m² |
+| :--- | :---: | :---: | :---: |
+| **Salas de clases** | 24-32 / 50-66 | 200-264 | 400-528 |
+| **Salas grupales** | 12-18 / 36-50 | - | 72-100 |
+| **Gimnasio** | - | - | 600 |
+| **Superficie total** | - | **446 - 510** | **928 - 1.084** |
+| **m²/alumno** | - | **4** | **4,2** |
+
+---
+
+# CENTROS DE EDUCACIÓN SUPERIOR: AULAS [Página 210-211]
+
+### Curva de audición (Diagrama 2)
+Cotas: $100 / 110 / 90 / 90 / 90 / 110 \text{ cm}$. Inclinación de la frente + visión libre.
+
+### Capacidades y dimensiones
+*   **Capacidades habituales:** 100, 150, 200, 300, 400, 600 y 800 plazas.
+*   **Altura entre plantas:** aprox. $3,5 \text{ m}$.
+*   **Aula rectangular (200 plazas):** $11,4 \text{ m}$ de ancho, $10,5 \text{ m}$ de fondo.
+*   **Aula de gran pendiente (6):** Gradas con paso de $90 / 90 \text{ cm}$ y altura de $2,3 \text{ m}$ en la última grada.
+
+---
+
+# CENTROS DE EDUCACIÓN SUPERIOR: BUTACAS Y PROYECCIÓN [Página 213]
+
+*   **Espacio por oyente:** $1,1 \text{ m}^2$ (incluyendo circulaciones). En aulas pequeñas: $0,8 - 0,95 \text{ m}^2$.
+*   **Iluminación artificial:** $600 \text{ lux}$ (DIN 5035).
+*   **Pantalla de proyección:** Altura se deduce de valores ya nombrados. Ángulo de visión desde primera fila $\le 30^\circ$ (o $35^\circ-40^\circ$ según esquema 11).
+*   **Ubicación proyector (Diagrama 6):** $0,5 \text{ h}$ de la pantalla. Distancia proyector-pantalla = $3,5 \text{ h} / 4 \text{ h}$ del radio de la pantalla.
+
+---
+
+# CENTROS DE EDUCACIÓN SUPERIOR: LABORATORIOS [Página 215-217]
+
+### Instalaciones y renovación de aire (Página 216)
+*   **Laboratorios químicos:** 8 veces/hora.
+*   **Laboratorios biológicos:** 4 veces/hora.
+*   **Laboratorios físicos:** 3-4 veces/hora (en zona de salida).
+
+### Puesto de trabajo (Mesa normal)
+*   **Anchura:** $120 \text{ cm}$.
+*   **Profundidad:** $80 \text{ cm}$ (incluido paso de instalaciones).
+*   **Armarios-digestorios:** anchura $120 / 180 \text{ cm}$.
+
+### Conducción de instalaciones (Página 217)
+**Leyenda de fluidos (Diagrama 7-8):**
+*   **AF:** Agua fría. **AC:** Agua caliente. **C:** Circulación. **AD:** Agua destilada. **AR:** Agua de refrigeración. **RAR:** Recirculación agua. **VP:** Vapor. **CO:** Condensación. **A:** Aire. **G:** Gas. **ME:** Medios especiales. **V:** Vaciado. **RE:** Reserva. **AL:** Agua laboratorio. **ES:** Extracción secundaria. **BP:** Bajante pluviales.
+*   **Cotas Caja de conductos (8):** $205 / 590 / 195 \text{ mm}$. Grosor paredes $25 \text{ mm}$. Altura total $290 \text{ mm}$, útil $240 \text{ mm}$.
+
+---
+
+# CENTROS DE EDUCACIÓN SUPERIOR: RETÍCULA Y CONSTRUCCIÓN [Página 218]
+
+*   **Retícula constructiva:** $7,2 \times 7,2 \text{ m}$ / $7,2 \times 8,4 \text{ m}$ / $8,4 \times 8,4 \text{ m}$.
+*   **Altura libre:** $\ge 3 \text{ m}$.
+*   **Módulo normal de fachada:** $120 \times 120 \text{ cm}$ (sistema decimétrico).
+*   **Representación de conducciones (DIN):**
+    *   Agua: Verde.
+    *   Agua caliente: Verde-rojo.
+    *   Vapor: Rojo.
+    *   Gas: Amarillo.
+    *   Nitrógeno: Negro.
+    *   Vacío: Gris.
+*   **Pasillo de instalaciones (5):** Ancho total $2 \text{ m}$. Altura $0,6 - 1,4 \text{ m}$. Cotas de base $0,3 - 0,87 - 0,31 \text{ m}$ y $0,4 - 0,62 - 0,4 \text{ m}$.
+Esta es una transcripción técnica exhaustiva de los fragmentos proporcionados de las **Partes 11 y 12** del manual **"Neufert - Arte de Proyectar en Arquitectura"**. Se han respetado estrictamente todos los valores numéricos, tablas, cotas de diagramas y terminología técnica presentes en las fuentes.
+
+***

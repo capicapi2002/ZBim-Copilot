@@ -1,0 +1,290 @@
+***
+
+# NEUFERT - ARTE DE PROYECTAR EN ARQUITECTURA
+**16ª edición totalmente renovada y actualizada**
+
+---
+
+## PRÓLOGOS Y ASESORES [Página V]
+**Johannes Kister**, Dessau, marzo de 2009.
+**Neufert-Stiftung**, marzo de 2009.
+
+### Asesores externos:
+*   **Dirk Bohne**: Instalaciones
+*   **Karl-Heinz Breuer**: Generalidades
+*   **Paul Corall**: Protección contra incendios
+*   **Thomas Ehrenberg**: Gasolineras y estaciones de servicio
+*   **Olaf Gersmeier**: Planificación y dirección de obra facultativa
+*   **Lydia Haack, John Höpfner**: Gasolineras y lavaderos de coches
+*   **Karl-Josef Heinrichs**: Física de la construcción
+*   **Alfred Jacoby**: Sinagogas
+*   **Stefan Jäckel, Tobias Micke y Andreas Kotlan**: Espacios exteriores
+*   **Jörg Junhold**: Parques zoológicos
+*   **Lür Meyer-Bassin**: Teatros
+*   **Hans-Peter Mühlethaler**: Gastronomía
+*   **Gunther Nogge**: Parques zoológicos
+*   **Marcellus Puhlemann**: Planificación y dirección de obra facultativa
+*   **Hermann Schnell**: Facility management
+*   **Finn Stoll**: Administración
+*   **Wolfgang Thiede**: Sanidad
+*   **Carsten Thiemann**: Ferrocarriles
+*   **Heiko Uelze**: Gastronomía
+*   **Susanne Weber**: Iluminación
+*   **Carola Wunderlich**: Aviación
+
+---
+
+## DIBUJOS: FORMATOS NORMALIZADOS [Página 6]
+**Información: DIN Instituto Alemán de Normalización, Berlín.**
+Formatos basados en una superficie de $1\text{ m}^2$ con proporciones $x:y = \sqrt{2} \rightarrow 1$.
+
+### Tabla: Formatos normalizados DIN 476, 4999 (Dimensiones en mm)
+| Formato Clase | Serie A | Serie B | Serie C |
+| :--- | :--- | :--- | :--- |
+| 0 | $841 \times 1.189$ | $1000 \times 1.414$ | $917 \times 1.297$ |
+| 1 | $594 \times 841$ | $707 \times 1.000$ | $648 \times 917$ |
+| 2 | $420 \times 594$ | $500 \times 707$ | $458 \times 648$ |
+| 3 | $297 \times 420$ | $353 \times 500$ | $324 \times 458$ |
+| 4 | $210 \times 297$ | $250 \times 353$ | $229 \times 324$ |
+| 5 | $148 \times 210$ | $176 \times 250$ | $162 \times 229$ |
+| 6 | $105 \times 148$ | $125 \times 176$ | $114 \times 162$ |
+| 7 | $74 \times 105$ | $88 \times 125$ | $81 \times 114$ |
+| 8 | $52 \times 74$ | $62 \times 88$ | $57 \times 81$ |
+| 12 | $13 \times 18$ | $15 \times 22$ | - |
+
+---
+
+## CRITERIOS DE DOTACIÓN ELÉCTRICA EN VIVIENDAS [Página 18]
+**Según DIN 18015/48820**
+
+### Tabla: Número de instalaciones (mínimos)
+| Aparato / Espacio | Vivienda < 50 m² | 50 - 75 m² | 75 - 100 m² | > 100 m² |
+| :--- | :---: | :---: | :---: | :---: |
+| **Enchufes / Iluminación** | | | | |
+| Sala de estar / Dormitorio | 3 / 1 | 4 / 1 | 5 / 1 | 6 / 1 |
+| Cocina | 3 / 1 | 4 / 1 | 5 / 1 | 6 / 1 |
+| Baño | 2 / 1 | 2 / 1 | 2 / 1 | 2 / 1 |
+| **Circuitos independientes** | | | | |
+| Lavadora | 1 | 1 | 1 | 1 |
+| Lavavajillas | 1 | 1 | 1 | 1 |
+| Cocina eléctrica | 1 | 1 | 1 | 1 |
+
+---
+
+## MEDIDAS Y PESOS: EQUIVALENCIA SISTEMA INTERNACIONAL Y ANGLOSAJÓN [Página 23]
+### Medidas de longitud
+*   $1\text{ mm} = 0,0394\text{ pulgadas}$
+*   $1\text{ m} = 3,2808\text{ pies}$
+*   $1\text{ km} = 0,6214\text{ millas}$
+
+### Pesos
+*   $1\text{ g} = 15,432\text{ grains}$
+*   $1\text{ kg} = 2,2046\text{ libras}$
+*   $1\text{ t} = 1.000\text{ kg} = 1,102\text{ short tons}$
+
+---
+
+## ARQUITECTURA ACCESIBLE: EDIFICIOS PÚBLICOS DIN 18024 [Página 34]
+
+### Espacios de maniobra:
+*   **General**: Mínimo $1,5\text{ m}$ de ancho por $1,5\text{ m}$ de largo.
+*   **Pasillos**: Ancho mínimo $1,5\text{ m}$.
+*   **Puertas**: Anchura libre de paso $\ge 0,9\text{ m}$.
+*   **Rampas**: Pendiente máxima del $6\%$. Longitud máxima por tramo $6\text{ m}$ sin rellano. Anchura libre $\ge 1,2\text{ m}$.
+
+### Diagramas de cotas (Página 34):
+*   **1 Delante de puertas basculantes**: Espacio libre $\ge 150\text{ cm}$ de profundidad y $\ge 50\text{ cm}$ lateral al picaporte.
+*   **4 Rampa, sección transversal**: Ancho $120\text{ cm}$, bordillos de protección de $10\text{ cm}$ de altura, pasamanos a $85\text{ cm}$ de altura.
+*   **6 Cabina de ascensor**: Medidas libres interiores $1,1\text{ m} \times 1,4\text{ m}$. Espacio frente a la puerta $1,5\text{ m} \times 1,5\text{ m}$.
+
+---
+
+## VIVIENDAS SIN BARRERAS (MBO) [Página 37]
+### Tabla: Superficies orientativas (m²)
+| Estancia | 1 Persona | 2 Personas | 3 Personas |
+| :--- | :---: | :---: | :---: |
+| Sala de estar | 20 | 20 | 22 |
+| Dormitorio | 16 | 24 | 16 |
+| Cocina | 8 | 9 | 9 |
+| Baño | 6 | 7 | 7 |
+| **Superficie Total** | **69** | **80** | **98,5** |
+
+---
+
+## DIMENSIONES DEL CUERPO Y ESPACIO NECESARIO [Página 40]
+### Cotas de diagramas de posturas humanas:
+*   **1 A gatas**: Longitud $1.375\text{ mm}$, altura $625\text{ mm}$ (dorso) a $750\text{ mm}$ (cabeza).
+*   **12 Sentado en silla de trabajo**: Altura de mesa $750$-$800\text{ mm}$, altura de asiento $450$-$480\text{ mm}$.
+*   **15 Sentado en un sofá**: Altura de mesa baja $625\text{ mm}$, profundidad total $1.250\text{ mm}$.
+*   **23 Tumbado**: Longitud de la cama $2.000\text{ mm}$, altura de ocupación $300\text{ mm}$.
+
+---
+
+## CARGAS PERMANENTES: DIN 1055 [Página 35]
+### Tabla: Materiales de almacenaje (Peso en $kN/m^3$)
+| Elemento | Valor de cálculo | Ángulo rozamiento |
+| :--- | :---: | :---: |
+| **Lignito seco** | 8 | 35° |
+| **Hulla en bruto** | 10 | 35° |
+| **Trigo, centeno, cebada** | 8 | 30° |
+| **Patatas** | 7,5 | 30° |
+| **Cerveza en barriles** | 5,5 | - |
+| **Hormigón armado** | 25 | - |
+| **Acero** | 78,5 | - |
+
+***
+*Nota técnica: Se han transcrito los datos de las imágenes,,,,,,,,,,,,,, y correspondientes a las secciones de dibujo técnico, instalaciones, medidas, cargas y accesibilidad.*
+
+# DIMENSIONES BÁSICAS Y PROPORCIONES
+## PROPORCIONES GEOMÉTRICAS [Página 42]
+
+Ya desde la antigüedad, las construcciones presentan claras relaciones métricas. Los datos concretos más antiguos que se conocen son de Pitágoras, que partía de la hipótesis de que las relaciones numéricas de la acústica también debían ser armónicas ópticamente. A partir de ahí se desarrolló el **rectángulo pitagórico** $\rightarrow$ **1**, que contiene todos los intervalos proporcionales armónicos y excluye los dos intervalos disonantes: la segunda y la séptima.
+
+### Tabla 3: Relaciones métricas obtenidas a partir de las ecuaciones pitagóricas
+| $\alpha$ | a | b | c | $\beta$ | m | x | y |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 36°87' | 3 | 4 | 5 | 53°13' | 1 | 1 | 2 |
+| 22°62' | 5 | 12 | 13 | 67°38' | 1 | 2 | 3 |
+| 16°26' | 7 | 24 | 25 | 73°74' | 1 | 3 | 4 |
+| 28°07' | 8 | 15 | 17 | 61°93' | 0,5 | 3 | 5 |
+| 12°68' | 9 | 40 | 41 | 77°32' | 1 | 4 | 5 |
+| 18°92' | 12 | 35 | 37 | 71°08' | 0,5 | 5 | 7 |
+| 43°60' | 20 | 21 | 29 | 46°40' | 0,5 | 3 | 7 |
+| 31°89' | 28 | 45 | 53 | 58°11' | 0,5 | 5 | 9 |
+
+
+### Fórmulas para el trazado de polígonos:
+*   $a^2 + b^2 = c^2$
+*   $a = m(y^2 - x^2)$
+*   $b = m \cdot 2 \cdot x \cdot y$
+*   $c = m(y^2 + x^2)$
+*   $h = r \cdot \cos \beta$
+*   $\sigma = \frac{r \cdot \text{sen } \beta}{2}$
+*   $S = 2 \cdot r \cdot \text{sen } \beta$
+*   $h = \frac{S}{2} \cdot \text{ctg } \beta$
+
+
+### Diagramas de polígonos (Página 42):
+*   **5 Triángulo equilátero, hexágono**: Lado = r.
+*   **7 Pentágono**: División del radio por la mitad $\Delta$ B, arco con centro en B y radio AB $\Delta$ C, A-C $\Delta$ lado del pentágono.
+*   **8 Polígono de 15 lados**: $AC = \frac{a}{6} - \frac{a}{10} = \frac{a}{15}$.
+*   **9 Heptágono aproximado**: La línea BC divide AM por la mitad en el punto D, BD es aprox. $1/7$ de la longitud del círculo.
+*   **10 Eneágono aproximado**: Arco con centro en A y radio AB que corta AC en el punto D = $c_1$. Arco con centro en C y radio CM que corta el arco BD en el punto E = a. La distancia DE corresponde aprox. a $1/9$ de la longitud del círculo $\Delta$ d.
+
+
+---
+
+## PROPORCIONES GEOMÉTRICAS [Página 44]
+
+### Sección sacra y construcciones en Ostia Antica:
+| y | x | y/x |
+| :--- | :--- | :--- |
+| 1 | 1 | 1 |
+| 3 | 2 | 1,5 |
+| 7 | 5 | 1,4 |
+| 17 | 12 | 1,4166... |
+| 41 | 29 | 1,4137... |
+
+
+### Diagramas y obras de referencia (Página 44):
+*   **1 Teatro romano según Vitruvio**: Trazado basado en un cuadrado girado tres veces.
+*   **4 Teatro de Epidauro**: (1) Cavea nueva, (2) Cavea vieja, (3) Orquesta, (4) Escenario, (5) Entrada lateral, (6) Muro de contención.
+*   **10 Palladio, villa Pisani en Bagnolo**: Medidas de estancias: 16, 18, 24, 32.
+*   **11 Casa del Tesoro, Japón**: Cota de base 2,13 m; ancho total 2,11 m; altura H.
+*   **13 Planta de la sede central de BMW, Múnich**: Formada por cuatro cilindros adyacentes.
+
+
+---
+
+## MODULACIÓN EN LA EDIFICACIÓN [Página 46]
+
+### Conceptos según DIN 4172:
+*   **Medida directriz (ancho de ladrillo + junta)**: $250 \times 125 \times 62,5$ mm.
+*   **Medida nominal (ladrillo solo)**: $240 \times 115 \times 52$ mm.
+*   **Medida de obra en bruto (MB)** y **Medida nominal (MN)**: MN = MB - 1 cm (en juntas de 1 cm).
+
+### Tabla 3: Cuadro de valores preferentes para la construcción según DIN 4172 (mm)
+*(Selección de valores críticos)*
+| Medidas de obra (a, b, c, d) | Medidas aisladas (e) | Medidas de acabado (f, g, h, i) |
+| :--- | :--- | :--- |
+| 25 | 2,5 | $2 \times 5$ |
+| 50 | 5 | 10 |
+| 125 | 12,5 | 15 |
+| 250 | 25 | 25 |
+| 500 | 50 | 50 |
+| 1000 | 100 | 100 |
+
+
+---
+
+## BIOCONSTRUCCIÓN: CAMPOS ELECTROMAGNÉTICOS [Página 50]
+
+### Tabla 3: Valores de inducciones magnéticas de electrodomésticos (en microteslas, $\mu$T)
+| Aparato | 3 cm | 30 cm | 100 cm |
+| :--- | :--- | :--- | :--- |
+| Secador | 6-2.000 | 0,01-7 | 0,01-3 |
+| Afeitadora | 15-1.500 | 0,08-9 | 0,01-3 |
+| Lámpara fluorescente | 40-400 | 0,5-2 | 0,02-0,25 |
+| Microondas | 73-200 | 4-8 | 0,25-0,6 |
+| Televisor | 2,5-50 | 0,04-2 | 0,01-0,04 |
+| Ordenador | 0,5-30 | < 0,01 | - |
+| Frigorífico | 0,5-1,7 | 0,01-0,25 | < 0,01 |
+
+
+---
+
+## PROYECTO Y DIRECCIÓN FACULTATIVA: PROYECTO DE EJECUCIÓN [Página 72]
+
+### Tabla 3: Libros de obra (ejemplo abreviado)
+| Sala N.º | Usuario | Superficie ($m^2$) | Altura (m) | Volumen ($m^3$) | LW (FCH) | LUX |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 104 (Vestíbulo) | (ABT) | 6,92 | 2,47 | 14,87 | 20 | 1 |
+| 204 (Baño/WC) | - | 3,47 | 2,475 | 8,588 | 24 | 7 |
+| 304 (Cocina) | - | 6,09 | 2,47 | 15,04 | 20 | 4 |
+
+
+---
+
+## CIMENTACIÓN: IMPERMEABILIZACIÓN [Página 83]
+
+### Tabla 4: Clasificación de acción de agua según DIN 18195-1:2000-08
+*   **DIN 18195-4**: Humedad del suelo y agua de infiltración sin presión hidrostática (suelo altamente permeable k > $10^{-4}$ m/s).
+*   **DIN 18195-6**: Agua de infiltración acumulada con presión hidrostática (suelo poco permeable).
+*   **DIN 18195-5**: Agua sin presión hidrostática en superficies horizontales (cubiertas transitables, balcones).
+
+
+---
+
+## MUROS: OBRA DE FÁBRICA DE PIEDRA NATURAL [Página 86]
+
+### Tabla 11: Resistencia mínima a compresión de las piedras de cantería ($N/mm^2$)
+| Tipo de piedra | Resistencia ($N/mm^2$) |
+| :--- | :--- |
+| Piedras calizas, travertino, toba volcánica | 20 |
+| Piedras areniscas blandas | 30 |
+| Piedras calizas duras (incluido el mármol) | 50 |
+| Piedras areniscas con cuarzo | 80 |
+| Granito, sienita, diorita, diabasa, pórfido | 120 |
+
+
+### Tabla 12: Valor básico de la compresión admisible ($MN/m^2$)
+| Grado de calidad | Resistencia de la piedra | Grupo de mortero I | Grupo II | Grupo IIa | Grupo III |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| N1 | $\ge 20$ | 0,2 | 0,5 | 0,8 | 1,2 |
+| N4 | $\ge 100$ | 3 | 4,5 | 5,5 | 7 |
+
+
+---
+
+## MUROS: OBRA DE FÁBRICA DE PIEDRA ARTIFICIAL [Página 87]
+
+### Tabla 12: Formato de los ladrillos según DIN 105
+| Denominación | Sigla | Soga en cm | Tizón en cm | Grosor en cm |
+| :--- | :--- | :--- | :--- | :--- |
+| Formato pequeño | DF | 24 | 11,5 | 5,2 |
+| **Formato normal** | **NF** | **24** | **11,5** | **7,1** |
+| 1 1/2 formato normal | 2 DF | 24 | 11,5 | 11,3 |
+| 2 1/2 formato normal | 3 DF | 24 | 17,5 | 11,3 |
+
+
+---

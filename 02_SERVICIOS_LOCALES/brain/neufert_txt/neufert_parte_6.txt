@@ -1,0 +1,307 @@
+# INSTALACIONES DEPORTIVAS: MINIGOLF [Página 342]
+
+Los obstáculos de las diferentes pistas de una misma instalación deben ser distintos. La línea límite marca el final de los primeros obstáculos. Las pistas practicables solo desde el golpe de salida no disponen de línea límite.
+
+### Datos técnicos y dimensiones
+*   **Hoyo:** Diámetro estándar de **120 mm**. Para sistemas Minigolf, Cobigolf y Sterngolf, el límite es **100 mm**.
+*   **Palo y pelota:** Superficie del pelo para golpear $\le 40 \text{ cm}^2$. Diámetro de la pelota $\ge 37 \text{ mm}$ y $\le 43 \text{ mm}$.
+*   **Pista normalizada:** Longitud **6,25 m**; anchura **0,9 m**; diámetro del círculo de meta **1,4 m**.
+
+### Tipos de sistemas:
+1.  **Minigolf:** 17 pistas de hormigón (12 m de longitud) y una pista de golpe largo (aprox. 25 m).
+2.  **Cobigolf:** 18 pistas. Tamaños: grande (12 a 14 m) y pequeño (6 a 7 m).
+3.  **Sterngolf:** 18 pistas de hormigón. Pistas de 8 m de longitud, ancho 1 m. Diámetro del círculo de meta 2 m. Marca de salida: círculo de 30 cm de diámetro.
+
+#### Diagramas y cotas (Página 342):
+*   **16 Círculo central:** Sin línea límite. Diámetro 140 cm.
+*   **17 Volcán:** Sin línea límite. Longitud total 525 cm. Ancho pista 140 cm.
+*   **18 Rampa y obstáculo en V:** Sin línea límite. Distancia obstáculo a meta 75 cm. Altura obstáculo 30-35 cm.
+*   **19 Ángulo recto:** Ancho 140 cm. Longitud brazo interior 20 m [posible error de cota, parece indicar 2,0 m].
+*   **24 Cuña de subida:** Ventanilla central de $5,5 \times 10 \text{ cm}$.
+
+---
+
+# INSTALACIONES DEPORTIVAS: CAMPOS DE GOLF [Página 343-344]
+
+### Tabla 8: Longitud de los hoyos (m)
+| Par | Para hombres | Para mujeres |
+| :--- | :---: | :---: |
+| 3 | hasta 228 | hasta 201 |
+| 4 | 229 - 434 | 202 - 382 |
+| 5 | desde 435 | desde 383 |
+
+*   **Longitud normalizada (18 hoyos):** **6.492 m**.
+*   **Green:** Superficie mínima **400 m²** (habitualmente 500-600 m²).
+*   **Calles:** Anchura de **30-50 m**.
+
+### Sistemas constructivos (Diagrama 3, p. 343):
+*   **Capa vegetal:** 30 cm.
+*   **Arena:** 15-20 cm.
+*   **Capa de drenaje:** 35/45 cm.
+
+### Programa funcional Casa Club (Página 344):
+*   **Zonas:** Administración, Tienda, Vestíbulo, Salas de estar, Terraza, Economía/Cocina, Aseos, Vestuarios, Salas de lavado y duchas.
+*   **Mantenimiento:** Taller con plataforma elevadora, Almacén de materiales, Gasolinera, Lavado con separador de aceite, Almacén de abono y semillas.
+
+---
+
+# DEPORTES ACUÁTICOS: EMBARCACIONES [Página 345]
+
+### Tabla 8: Tipos de veleros (extracto)
+| Clase | Tripulación | Eslora/Manga (m) | Calado (m) | Vela mayor ($\text{m}^2$) |
+| :--- | :---: | :---: | :---: | :---: |
+| **Finn** | 1 | $4,5 / 1,51$ | 0,85 | 10 |
+| **Flying Dutchman** | 2 | $6,05 / 1,8$ | 1,1 | 15 |
+| **Star** | 2 | $6,9 / 1,7$ | 1 | 28 |
+| **Dragon** | 3 | $8,9 / 1,9$ | 1,2 | 22 |
+| **Soling** | 3 | $8,15 / 1,9$ | 1,3 | 24,3 |
+| **Tornado** | 2 | $6,25 / 3,05$ | 0,8 | 22,5 |
+
+### Profundidades exigidas en puertos:
+*   Veleros y barcos con orza levadiza: **1.250 mm**.
+*   Barcos con quilla: **4.000 a 5.000 mm**.
+
+---
+
+# PUERTOS DEPORTIVOS Y MARINAS [Página 346-350]
+
+*   **Diques de abrigo:** Pendiente 1:2 (mar abierto) y 1:1,5 (puerto). Anchura superior (S) según altura (H): H=1 $\rightarrow$ B=4; H=3 $\rightarrow$ B=11; H=6 $\rightarrow$ B=21,5.
+*   **Postes de amarre:** Vida útil madera ~15 años; acero ~35 años.
+*   **Radio de giro (remolques):** Mínimo **18 m** (6 t carga axial).
+
+### Organización de zonas (Página 348):
+*   **Agua:** 60% de la superficie total.
+*   **Tierra:** 40% (Parking 20%, Servicios/Gastronomía 10%, Técnica/Mantenimiento 10%).
+
+### Tabla 10: Dimensiones en tierra para veleros (m) [Página 347]
+| Clase | Longitud | Anchura (B) | Dist. Seg. (S) | Ancho nec. |
+| :--- | :---: | :---: | :---: | :---: |
+| **Finn-Dinghy** | 4,5 | 3 | 3 | 5 |
+| **Star** | 7 | 3,5 | 1,5 | 7,5 |
+| **Soling** | 8,5 | 4 | 2 | 9,5 |
+| **Tornado** | 6,5 | 6 | 2 | 7 |
+
+---
+
+# REMO Y PIRAGÜISMO [Página 351-352]
+
+*   **Embarcaciones de regata:** 1 remero (850 cm); 8 remeros (1.950 cm).
+*   **Canal de regatas (Múnich):** Longitud **2.000 m**; Ancho **91 m**.
+*   **Dimensiones de calles:** 6 calles de **13,5 m** de anchura cada una.
+*   **Piscina de entrenamiento doble (17):** $10,96 \times 7,1 \text{ m}$. Altura de niveles 0,9 / 0,6 / 2,65 m.
+
+---
+
+# HÍPICA [Página 353-354]
+
+*   **Pendiente terreno:** $\le 10\%$.
+*   **Cuarto de monturas:** Ancho de **4-4,5 m**.
+*   **Dimensiones de pistas:**
+    *   Doma (pequeña): $20 \times 40 \text{ m}$.
+    *   Doma (internacional): $20 \times 60 \text{ m}$.
+    *   Saltos: $50 \times 100 \text{ m}$ hasta $150 \times 300 \text{ m}$.
+*   **Espacio para almacenaje (por ración diaria):**
+    *   Avena: 0,22 $m^3$ para 5 kg.
+    *   Heno (prensado): 1,1 - 3,3 $m^3$ para 12 kg.
+
+---
+
+# SALTOS DE ESQUÍ [Página 355]
+
+*   **Fórmula crítica:** $K = L1/7 + 4 \text{ m}$.
+*   **Trampolines grandes (Ejemplo):** $\alpha = 35^\circ$; $L = 80 \text{ m}$; $Vo = 21 \text{ m/s}$.
+*   **Gradas:** Se sitúan en diente de sierra a lo largo de la línea del trampolín.
+
+---
+
+# PISTAS DE HIELO Y PATINAGE [Página 356-357]
+
+*   **Pista estándar:** $30 \times 60 \text{ m}$.
+*   **Velocidad (Página 356):** Longitud **400 m**. Radio curva interior $\ge 25 \text{ m}$.
+*   **Hockey sobre hielo (Página 357):** Portería $1,83 \text{ m}$ ancho x $1,22 \text{ m}$ alto.
+*   **Curling:** Longitud 42 m; círculo de meta (tee) $\emptyset$ 3,65 m.
+
+---
+
+# PABELLONES POLIDEPORTIVOS [Página 362-363]
+
+### Tabla 1: Dimensiones de los pabellones (m)
+| Tipo | Dimensiones (m) | Sup. (m²) | Deporte principal |
+| :--- | :--- | :---: | :--- |
+| Individual | $15 \times 27 \times 5,5$ | 405 | Badminton, Baloncesto |
+| Doble | $22 \times 44 \times 7$ | 968 | Balonmano, Hockey |
+| Triple | $27 \times 45 \times 7$ | 1.215 | Voleibol, Fútbol sala |
+| Cuádruple | $44 \times 88 \times 9$ | 3.872 | Competiciones nacionales |
+
+### Tabla 1: Dimensiones campos de deporte (m) [Página 363]
+| Deporte | Longitud | Anchura | Altura libre |
+| :--- | :---: | :---: | :---: |
+| **Baloncesto** | 28 | 15 | 7 |
+| **Badminton** | 13,4 | 6,1 | 9 |
+| **Tenis** | 23,77 | 10,97 | 7 |
+| **Voleibol** | 18 | 9 | 12,5 |
+
+---
+
+# PABELLONES: JUDO, BOXEO, PING-PONG Y BILLAR [Página 368-369]
+
+*   **Judo:** Superficie de lucha $6 \times 6 \text{ m}$ hasta $10 \times 10 \text{ m}$.
+*   **Boxeo:** Ring de $4,9 \times 4,9 \text{ m}$ a $6,1 \times 6,1 \text{ m}$. Plataforma total entre $7,5 \times 7,5$ y $8 \times 8 \text{ m}$.
+*   **Ping-Pong:** Mesa $152,5 \times 274 \text{ cm}$. Altura 76 cm. Área de juego competición $7 \times 14 \text{ m}$.
+*   **Billar (Tabla 8):**
+    *   Tamaño VI: $190 \times 95 \text{ cm}$ (interior). Peso 350 kg.
+    *   Tamaño I: $285 \times 142,5 \text{ cm}$ (interior). Peso 800 kg.
+
+---
+
+# GIMNASIOS DE MANTENIMIENTO [Página 370-371]
+
+*   **Superficie mínima:** $40 \text{ m}^2$ para 12 usuarios.
+*   **Sala de 200 m²:** Recomendada para 40-45 personas.
+*   **Espacios por aparato:**
+    *   Bicicleta estática: $40 / 90$ [ilegible, parece 1,2 m²].
+    *   Prensa de piernas: $140 / 130$.
+    *   Banco de entrenamiento: $145 / 80$.
+
+---
+
+# PARQUES ACUÁTICOS: PISCINAS CUBIERTAS [Página 374-383]
+
+*   **Superficie solar:** 6-8 $m^2$ por cada $m^2$ de lámina de agua.
+*   **Vestuarios:** Cabina individual $1 \times 1,25 \text{ m}$. Cabina minusválidos $2,45 \times 1,5 \text{ m}$.
+*   **Duchas:** Mínimo 0,8 m ancho; 0,8 m prof.
+*   **Vaso de natación:** 25 m de largo; profundidad mín. 1,80 m.
+*   **Saltos (Página 377):** Plataformas a 1, 3, 5 y 10 m. Profundidad agua para 10 m: **5 m**.
+
+---
+
+# SAUNAS Y CENTROS DE SALUD [Página 384-386]
+
+*   **Clasificación (Aforo):** I (2-4 pers.); II (4-5); III (6-10); IV (11-15).
+*   **Superficie útil cabina:** I (1,7-2,2 m²); II (2,4-4 m²); III (5-10 m²); IV (8-13 m²).
+*   **Temperaturas:**
+    *   Vestuario: $20-22 \text{ °C}$.
+    *   Sauna: $80-100 \text{ °C}$ (aire); $3-10\%$ humedad.
+    *   Ducha: $24-26 \text{ °C}$.
+
+---
+
+# VIALES Y ESPACIOS DE CIRCULACIÓN [Página 388-391]
+
+*   **Autopistas (Página 389-390):** Secciones RQ 35,5; RQ 29,5; RQ 33; RQ 26. Panel-puente altura libre **4,75 m**.
+*   **Espacio necesario (50 km/h) [Página 391]:**
+    *   **Camión / Camión:** 6,25 m de ancho total.
+    *   **Camión / Turismo:** 5,5 m.
+    *   **Camión / Bicicleta:** 4,25 m.
+    *   **Turismo / Turismo:** 4,75 m.
+*   **Pasos peatonales:** 1,5 - 2 m espacio necesario para grupos; 0,7 - 1 m para una persona.
+Esta es una transcripción técnica íntegra y exhaustiva de los fragmentos proporcionados de las **Partes 17 y 18** del manual **"Neufert - Arte de Proyectar en Arquitectura"**. Se han respetado estrictamente todos los valores numéricos, tablas, cotas de diagramas y terminología técnica presentes en las fuentes originales.
+
+***
+
+# VIALES: CARRETERAS [Página 392]
+
+### Secciones tipo del firme (Sin edificación colindante) [Diagrama 1]
+*   **RQ 20**: Anchura total 20 m. Calzada 7,5 m + 7,5 m. Separación central 2 m. Arcenes externos 1,5 m.
+*   **RQ 15,5**: Anchura total 15,5 m. Calzada 11,5 m (2 x 3,75 m + 2 x 3,25 m [ilegible/deducido]). Arcenes 2,5 m.
+*   **RQ 10,5**: Anchura total 10,5 m. Calzada 7,5 m. Arcenes 1,5 m.
+*   **RQ 9,5**: Anchura total 9,5 m. Calzada 6,5 m. Arcenes 1,5 m.
+*   **RQ 7,5**: Anchura total 7,5 m. Calzada 5,5 m. Arcenes 1 m.
+
+### Perfiles con edificación y transporte [Diagramas 2-7]
+*   **2 Acera y carril bici**: Dimensiones laterales: p (2,25 m), bic (1,3 m), f (2 m), veh (2 m). Tranvía sobre vía férrea propia: 6,6 m.
+*   **3 Calle colectora (Camiones)**: Calzada 5,5 m. Arcenes transitables 1,5 m.
+*   **4 Carril bus central**: Carriles bus 3,5 m. Carriles veh 4,75 m. Carril bici 2 m. Acera (p) 2,25 m.
+*   **5 Calle colectora doble sentido**: Calzada 6,5 m. Arcenes 2,25 m.
+*   **6 Calzada anchura extra (4 carriles)**: Calzada total 11 m (5,5 m + 5,5 m). Aceras y bicis laterales 2,5 m.
+*   **7 Calle acceso local**: Calzada 4,75 m. Estacionamiento paralelo 2 m y perpendicular 4,3 m.
+
+---
+
+# VIALES: NUDOS VIARIOS [Página 393]
+
+### Clasificación y dimensiones
+*   **Rotondas pequeñas**: Diámetro $d = 25 - 40 \text{ m}$.
+*   **Rotondas grandes**: Diámetro $d > 40 \text{ m}$.
+*   **Límite de edificación**: Carreteras nacionales alemanas a 20 m del borde lateral. Restricciones hasta 40 m desde el borde de calzada.
+*   **Diagramas de giros (1-8)**: Bifurcaciones al mismo nivel, calles residenciales, estrechamientos para giro a la izquierda.
+*   **Diagramas de enlaces (9-12)**: Enlaces a distinto nivel (hoja de trébol, enlaces en anillo).
+
+---
+
+# VIALES: ACERAS Y CARRILES PARA BICICLETAS [Página 394]
+
+### Tabla: Valores de los elementos a proyectar
+| Elemento | R1 mín [m] | S max [%] | $H_a / H_w$ mín [m] | altura libre mín [m] |
+| :--- | :---: | :---: | :---: | :---: |
+| **Camino peatonal junto a calle** | 6 (12) | - | - | 2,5 |
+| **Carril bici junto a calle** | 10 (2) | según tipo de calle | 30 / 10 | 2,5 |
+| **Camino peatones y bicis** | 10 (2) / 8 | 3 (4 < 250 m) | 30 / 10 | 2,5 |
+| **Vía para bicicletas** | 10 (2) / 8 | 3 (4 < 250 m) | 30 / 10 | 2,5 |
+| **Camino peatonal de trazado indep.** | 6 (12) | - | - | 2,5 |
+| **Camino bicis de trazado indep.** | 10 (2) / 8 | 3 (4 < 250 m) | 30 / 10 | 2,5 / (3,5) |
+
+### Cotas de diseño (Diagramas 1-14)
+*   **1 Peatonal**: Ancho $\ge 2,25 \text{ m}$.
+*   **2 Carril bici**: Ancho 1,6 m (un sentido), 2,5 m (dos sentidos).
+*   **8 Conducciones (Sección)**: Profundidades: E/G/W/FH (0,7 m), P/T (0,7 m), KM/KS/KR (1,2 m).
+*   **10-14 Diseño con árboles**: Arboles de copa pequeña (ancho 6-8 m), copa grande (10-11 m).
+
+---
+
+# VIALES: CICLISMO URBANO [Página 395]
+
+### Medidas básicas bicicleta [Diagramas 1-2]
+*   **Longitud**: 1,7 - 1,9 m. **Altura**: 1 - 1,25 m. **Anchura**: 0,6 m.
+*   **Silla de niños/cesta**: Sobresale 0,45 m detrás; altura total 1,25 m.
+
+### Tabla: Valores orientativos para número de aparcamientos
+| Tipo de edificio | Unidades necesarias |
+| :--- | :--- |
+| **Edificios residenciales** | 1 por cada $30 \text{ m}^2$ superficie útil |
+| **Residencias estudiantes** | 1 por cada cama |
+| **Escuelas formación general** | 0,7 por cada plaza |
+| **Oficinas** | 0,3 por cada puesto de trabajo |
+| **Tiendas consumo cotidiano** | 1 por cada $25 \text{ m}^2$ superficie venta |
+| **Cines, teatros** | 1 por cada 7 plazas |
+
+---
+
+# VIALES: ESTACIONAMIENTO DE BICICLETAS [Página 396]
+
+*   **Soportes (1-2)**: En paralelo (60 cm entre ejes); Entrelazadas (35 cm entre ejes). Altura total con bici 220 cm.
+*   **Dimensiones garajes (14)**:
+    *   Capacidad 15 bicis: Profundidad ~3 m.
+    *   Capacidad 29 bicis: Sistema de dos niveles.
+    *   Capacidad 42 bicis: Tres niveles.
+*   **Cubiertas (6-9)**: Altura libre 2,2 m a 2,25 m.
+
+---
+
+# VIALES: PROTECCIÓN ACÚSTICA [Página 398]
+
+### Tabla 11: Estimación del nivel de ruido de una calle
+| Intensidad tráfico (veh/h) | Disposición de la calle | Separación desde centro (m) | Nivel acústico |
+| :--- | :--- | :---: | :---: |
+| **10-50** | Residencial de 2º orden | > 35 | 0 (I) |
+| **> 50-200** | Residencial de 1º orden | > 100 | I |
+| **> 200-1.000** | Calle en el interior de pueblo | 101-300 | II |
+| **> 3.000-5.000** | Carreteras principales/Autopistas | 101-300 | IV (V) |
+
+### Cotas de muros acústicos (4-7)
+*   **Muro de piezas prefabricadas**: Altura $H \le 1,19 \text{ m}$. Anchura de base 140-901 mm.
+*   **Pirámide de protección**: Base 125 cm + 150 cm + 125 cm. Altura por niveles (38 cm cada uno).
+
+---
+
+# EDIFICIOS DE APARCAMIENTO: VEHÍCULOS [Páginas 399-400]
+
+### Cotas de modelos seleccionados (Longitud x Anchura x Altura / Radio giro)
+*   **VW Golf**: 4,15 x 1,73 x 1,44 m / Radio 5,45 m. Peso 1,8 t.
+*   **VW Passat**: 4,67 x 1,74 x 1,46 m / Radio 5,7 m. Peso 1,25 t.
+*   **Audi A4**: 4,48 x 1,73 x 1,41 m / Radio 5,58 m. Peso 1,2 t.
+*   **Mercedes E 430**: 4,79 x 1,8 x 1,42 m / Radio 5,67 m. Peso 1,68 t.
+*   **Porsche 911**: 4,25 x 1,65 x 1,3 m / Radio 5,87 m.
+*   **Ambulancia/Rescate**: 5,55 x 1,92 x 2,8 m / Radio 6,4 m. Peso 4,6 t.
+
+---

@@ -1,0 +1,247 @@
+# ZOOS: RECINTOS [Página 242]
+
+### Aspectos de diseño
+*   **Cercanía con la naturaleza:** Los recintos deben satisfacer las expectativas del público y las necesidades de los animales.
+*   **Cercanía física:** A mayor cercanía, mayor interés y tiempo de permanencia.
+*   **Visibilidad:** Evitar vistas molestas y masas de gente cerca del recinto.
+*   **Posibilidad de recogimiento:** Espacios donde el animal pueda esconderse.
+
+### Separaciones
+*   **Fosos:** Generalmente con agua. Permiten una imagen natural. En invierno, el nivel del agua debe bajarse si se hiela.
+*   **Vidrio:** Se utiliza en la mayoría de los casos como separación, evita el contagio de enfermedades.
+*   **Rejas:** En zoos modernos se deben evitar las clásicas jaulas.
+
+#### Diagramas y cotas (Página 242):
+*   **2 Jaula interior:** Corredor acristalado. Cota de altura del recinto: $2 \text{ m}$. Cota de ancho de corredor: $3 \text{ m}$.
+*   **3 Foso exterior:** Ancho de separación: $2 \text{ m}$.
+*   **4 Foso con vidrio:** Altura del muro del foso: $3 \text{ m}$. Ancho del foso: $3 \text{ m}$.
+*   **6 Terrario:** Altura de visión: $0,9 - 1,1 \text{ m}$. Pasillo para cuidadores detrás.
+*   **7 Foso para grandes animales:** Ancho del foso: $3 \text{ m}$. Altura de la barrera: $1,0 \text{ m}$.
+
+---
+
+# EDIFICIOS DE OFICINAS: ORGANIZACIÓN [Página 243]
+
+### Tabla 1: Relación entre tareas y tipo de espacio
+| Tarea | Tipo de trabajo | Lugar de trabajo |
+| :--- | :--- | :--- |
+| Tareas rutinarias | Trabajo individual | Despacho individual |
+| Desarrollo de proyectos | Trabajo en equipo | Oficina de trabajo en grupo |
+| Reuniones / Negociaciones | Intercambio | Sala de reuniones |
+
+### Estructura de superficies (GIF) [Diagrama 2-3]:
+*   **Superficie útil (SU):** Espacio de oficinas + Superficies anexas (sanitarios, guardarropa, cocinas, archivos, limpieza).
+*   **Circulaciones:** Pasillos, vestíbulos de ascensores, áreas de recepción.
+*   **Superficie útil adicional:** Servicios de guardería, salas de descanso, rampas, superficies de espera.
+
+---
+
+# EDIFICIOS DE OFICINAS: TENDENCIAS Y CRITERIOS [Página 244]
+
+### Diagramas de utilización (Página 244):
+*   **2 Utilización diaria:** Zona espacial aprox. $5 \text{ m}^2$. Puesto de trabajo (65%). Archivo (8%). Reuniones (8%). Cantina (10%).
+*   **4 Distribución por grupos:**
+    *   Director, Jefe de departamento: $16 \text{x}$.
+    *   Secretariado: $12 \text{x}$.
+    *   Director de grupo / Especialista: $7 \text{x} - 5 \text{x}$.
+    *   Grupos de trabajo: $4 \text{x}$.
+*   **Reparto de superficies (Gráfico C):** Dirección (5%), Entrevistas (5%), Secretaría (5%), Salas de grupo 5-16 personas (70%), Parte reversible 15-25% (10%).
+
+---
+
+# EDIFICIOS DE OFICINAS: SUPERFICIES NECESARIAS [Página 247]
+
+### Dimensiones del puesto de trabajo:
+*   **1 Despacho individual:** Ancho mín. $3,4 \text{ m}$, profundidad mín. $2,9 \text{ m}$.
+*   **2 Superficie mínima:** $160 \times 80 \text{ cm}$ (escritorio). Superficie de movimiento mín. $1,5 \text{ m}^2$.
+*   **4 Zona de reuniones:** Diámetro círculo de movimiento $\ge 2,2 \text{ m}$.
+*   **7 Puesto individual con superficie adicional:** Ancho total $3,6 \text{ m}$. Profundidad $1,8 \text{ m}$.
+
+---
+
+# EDIFICIOS DE OFICINAS: ARCHIVOS [Página 249]
+
+### Tabla 14: Comparación de sistemas de archivo
+| Sistema | Archivo corrido horizontal (carpetas) | Archivo bibliotecario (carpetas) | Archivo combinado (estantes) |
+| :--- | :---: | :---: | :---: |
+| Para 10.000 documentos | $7,25 \text{ m}$ | $11 \text{ m}$ | $2,4 \text{ m}$ |
+| Superficie necesaria ($m^2$) | $5,92$ | $8,25$ | $3,6$ |
+
+#### Cotas de archivadores:
+*   **12 Archivador Velox:** Largo $1,30 \text{ m}$. Fondo $0,33 - 1,98 \text{ m}$.
+*   **15 Superficie de pared:** Para un volumen de documentos en archivadores convencionales $= 1,3 \text{ m}^2$.
+*   **18 Archivo móvil:** Comparación con archivo normal: ahorro de espacio del $100 - 120 \%$. Altura $2,08 / 1,50 / 2,06 \text{ m}$.
+
+---
+
+# EDIFICIOS DE OFICINAS: SUPERFICIES AUXILIARES [Página 250]
+
+### Tabla 3: Superficies medias brutas por puesto de trabajo ($m^2$)
+| Espacio | Bajo | Media | Alto |
+| :--- | :---: | :---: | :---: |
+| **Puesto de trabajo** | | | |
+| Puesto angosto | $11 - 15$ | $13$ | $15,5$ |
+| Adicional para consultas | $1,5 - 4,2$ | $2,5$ | |
+| **Superficies anexas** | | | |
+| Aseos | $0,3 - 0,8$ | $0,7$ | |
+| Conferencias / Cursos | $0,3 - 1$ | $0,6$ | |
+| Archivo | $0,4 - 1$ | $0,6$ | $9$ |
+| Almacén | $0,4 - 1,5$ | $0,6$ | |
+| Cafetería / Cocina | $0,8 - 1,8$ | $1,1$ | |
+| Garaje | $0 - 13$ | $2,6$ | |
+| **Edificio** | | | |
+| Superficie construida | $1,9 - 3,8$ | $3$ | $10,5$ |
+| Instalaciones | $2,4 - 4,6$ | $3$ | |
+| Circulaciones | $2,2 - 6$ | $4,5$ | |
+
+---
+
+# EDIFICIOS DE OFICINAS: INSTALACIONES [Página 254]
+
+*   **Costes:** $2/5$ de los gastos operativos son consumo de energía.
+*   **Temperaturas:** Verano $26 \text{ °C}$ máx., Invierno $19 \text{ °C}$ mín.
+*   **Caudal ventilación (Tabla 4):**
+    *   No fumador (Oficina): $20 - 30 \text{ m}^3/h$ por persona.
+    *   Fumador (Oficina): $30 - 40 \text{ m}^3/h$ por persona.
+    *   Fumador (Salas reuniones): $51 - 68 \text{ m}^3/h$ por persona.
+
+---
+
+# TORRES Y RASCACIELOS: EXIGENCIAS [Página 258]
+
+### Tabla 1: Categorías de torres (Normativa Alemana)
+| Categoría | Altura evacuación | Exigencias especiales |
+| :--- | :---: | :--- |
+| I | $22 - 30 \text{ m}$ | Normativa vigente torres y rascacielos. |
+| II | $30 - 60 \text{ m}$ | Mínimo un ascensor de emergencia bomberos. |
+| III | $60 - 200 \text{ m}$ | Estructura R-120; dos cajas de escalera protegidas. |
+| IV | más de $200 \text{ m}$ | Condiciones más estrictas por autoridades. |
+
+---
+
+# BIBLIOTECAS: GENERALIDADES [Página 259-260]
+
+### Cargas de forjado (Tabla 4, p. 259)
+*   Depósito y estanterías: $7,5 - 12,5 \text{ kN/m}^2$.
+*   Instalaciones compactas: $12,5 - 15 \text{ kN/m}^2$.
+*   Sala de lectura: $5 \text{ kN/m}^2$.
+
+### Tabla 1: Cálculo de superficies (Página 260)
+| Sep. ejes estanterías (m) | Nº estantes superpuestos | Sup. necesaria para 1.000 vols. ($m^2$) | Vols. por $1 \text{ m}^2$ |
+| :--- | :---: | :---: | :---: |
+| $1,20$ | $6$ | $3,80$ | $263$ |
+| $1,35$ | $6$ | $4,15$ | $240$ |
+| $1,50$ | $6$ | $4,70$ | $212$ |
+
+---
+
+# TIENDAS: ORDENANZA ALEMANA (VKVO) [Página 267]
+
+### Sectores de incendio (Superficie máx. por planta):
+*   **Con sprinklers:** Planta baja $10.000 \text{ m}^2$; Otras $5.000 \text{ m}^2$.
+*   **Sin sprinklers:** Planta baja $2.000 \text{ m}^2$; Otras $1.500 \text{ m}^2$.
+
+### Escaleras y Pasillos:
+*   **Escaleras:** Ancho mín. $2 \text{ m}$, máx. $2,5 \text{ m}$. Si son solo para venta $< 500 \text{ m}^2$, basta con $1,25 \text{ m}$.
+*   **Pasillos protegidos:** Ancho mín. $2 \text{ m}$. Si son para venta $< 500 \text{ m}^2$, basta con $1,4 \text{ m}$.
+
+---
+
+# TIENDAS: AUTOSERVICIOS Y SUPERMERCADOS [Página 274]
+
+### Tabla 2: Datos de planificación
+| Características | Hasta 399 $m^2$ | 400-499 $m^2$ | 800-899 $m^2$ |
+| :--- | :---: | :---: | :---: |
+| Nº empleados necesarios | $10,6$ | $12,9$ | $22,1$ |
+| Longitud mostrador fresco (m) | $5,5$ | $7,6$ | $9,75$ |
+| Cámara frigorífica ($m^2$) | $11$ | $13,5$ | $22$ |
+| Estantería fruta/verdura (m) | $6,5$ | $7,5$ | $10$ |
+| Nº de cajas a la salida | $2,5$ | $2,9$ | $4,9$ |
+| Nº de carritos de compra | $85$ | $105$ | $180$ |
+
+---
+
+# ESPACIOS DE SERVICIO: ASEOS [Página 282]
+
+### Tabla 10: Grandes instalaciones de lavabos
+| Empleados | Inodoros (H) | Urinarios (H) | Inodoros (M) | Lavabos |
+| :--- | :---: | :---: | :---: | :---: |
+| 10 | 1 | 1 | 1 | 1 |
+| 50 | 3 | 3 | 3 | 2 |
+| 100 | 5 | 5 | 5 | 2 |
+| 250 | 10 | 10 | 10 | 4 |
+
+#### Cotas de diseño (Página 282):
+*   **3 Inodoros apertura fuera:** Ancho $1,25 - 1,55 \text{ m}$.
+*   **9 Instalación para 100 personas:** Ancho total $1,55 \text{ m}$. Fondo $1,50 \text{ m}$ por cabina.
+
+---
+
+# VESTUARIOS Y GUARDARROPAS [Página 284]
+
+### Tabla 8: Anchura de pasillos (DIN 18228)
+| Nº de personas | Anchura $a_p$ (m) |
+| :--- | :---: |
+| hasta 5 | $0,88$ |
+| hasta 20 | $1,00$ |
+| hasta 100 | $1,25$ |
+| hasta 400 | $2,25$ |
+
+#### Dimensiones armarios:
+*   **9 Armario trapezoidal:** Altura $1,70 \text{ m}$. Ancho frente $30 - 40 \text{ cm}$.
+*   **16 Armario dos hojas:** Para ropa de calle y trabajo. Ancho total $40 \text{ cm}$ ($20 + 20$). Fondo $50 \text{ cm}$. Altura $2,05 \text{ m}$.
+
+***
+*Nota: Se han transcrito todos los datos legibles de las secciones de Zoos, Oficinas, Bibliotecas, Tiendas e Industria.*
+Esta es una transcripción técnica íntegra y exhaustiva de los fragmentos proporcionados de las **Partes 13 y 14** del manual **"Neufert - Arte de Proyectar en Arquitectura"**. Se han respetado estrictamente todos los valores numéricos, tablas, cotas de diagramas y terminología normativa presente en las fuentes.
+
+***
+
+# TALLERES: OTRAS INDUSTRIAS [Página 292]
+
+### Carnicería (Diagrama 2: Planta modelo 6-7 empleados)
+*   **Proceso:** Entrada de carne en sala de máquinas -> ahumado/fuego -> cocina (cocina de salchichas) -> cámara frigorífica -> tienda.
+*   **Altura de salas:** $\ge 4 \text{ m}$ (según tamaño).
+*   **Pasillos:** $\ge 2 \text{ m}$ de anchura para paso de productos.
+*   **Puesto de trabajo (trituradora/embutidora):** $1,5 \text{ m}$ por delante y $1 \text{ m}$ a cada lado $\approx 3 \text{ m}^2$.
+*   **Separación máquinas a pared:** $40-50 \text{ cm}$.
+*   **Iluminación general:** $300 \text{ lux}$.
+*   **Cotas del diagrama 2:**
+    1. Rail eléctrico. 2. Tira de escaldar con extractor. 3. Mesa de depilación. 4. Elevador. 5. Colgadero de carne. 6. Guía tubular inferior. 7. Descuartización grandes animales. 8. Guía tubular superior. 9. Resbaladero. 10. Mesa combinada con pileta. 11. Fregadero. 12. Soporte ganchos. 13. Caballete. 14. Mesa análisis hígados. 15. Mesa manipulación. 16. Báscula. 17. Cinta transp.
+
+### Taller de radio y televisión (Diagramas 2 y 3)
+*   **Altura libre:** $\ge 3 \text{ m}$ y $15 \text{ m}^3$ de volumen de aire por empleado.
+*   **Iluminación:** Normal mín. $500 \text{ lux}$; para montaje de componentes electrónicos $1.500 \text{ lux}$.
+*   **Mesas de reparaciones:** Superficie amplia, preferible $1 \times 2 \text{ m}$.
+*   **Leyenda diagrama 2:** 1. Puesto técnico. 2. Puesto aprendiz. 3. Banco trabajo con gato. 4. Mostrador accesorios. 5. Mostrador discos. 6. Estante maquinaria. 7. Estante elementos pequeños. 8. Expositor. 9. Mostrador ventas. 10. Escaparate.
+
+### Taller de lacado (Diagrama 3)
+*   **Cotas de planta:** Fondo total $20 \text{ m}$. Anchura de ampliación $7 \text{ m}$.
+*   **Zonas:** Almacén materiales, Sala de máquinas, Sala descanso, Oficinas, Entrada, Taller, Fosa de montaje ($5 \text{ m}$), Preparación lacas, Sala agregados, Cámara combinada de pintado y secado.
+
+### Sastrería (Diagrama 4: Para diez empleados)
+*   **Información:** Landesgewerbeamt Baden-Württemberg, Stuttgart.
+*   **Zonas:** 1. Almacén. 2. Corte. 3. Taller hombres. 4. Taller mujeres. 5. Pruebas. 6. Oficina. 7. Vestuarios y lavado. 8. Vivienda. 9. Tienda.
+*   **Máquinas:** N (Coser), P (Pespuntes), BBA (Planchar vapor), TBA (Planchar vapor), TN (Mesa trabajo), TNB (Mesa trabajo y plancha), TZ (Mesa cortar), SB (Bastidor telas).
+
+---
+
+# TALLERES: LAVANDERÍA [Página 293]
+
+### Organización y Normativa
+*   **División:** Zona limpia y zona sucia. Esclusas de personas montadas para que solo se abra una a la vez.
+*   **Cotas diagramas:**
+    *   **1 Pequeña lavandería (5x5):** 1. Lavar/centrifugar. 2. Secar. 3. Calandrar. 4. Ascensor. 5. Contenedor ropa. 6. Mesa auxiliar. 7. Equipo plancha ruedas.
+    *   **4 Lavandería autoservicio:** Anchura entrada $1,2 \text{ m}$. Profundidad zona lavado $3,85 \text{ m}$. Zona secado ancho $4 \text{ m}$.
+
+### Tabla 7: Peso medio de la ropa (g)
+| Ropa de hombre | g | Ropa de mujer | g | Ropa de baño/cama | g |
+| :--- | :---: | :--- | :---: | :--- | :---: |
+| Camisa | 170 | Blusa | 140 | Albornoz | 900 |
+| Camiseta ligera | 100 | Ropa interior | 140 | Toalla (100x200) | 800 |
+| Camiseta gruesa | 150 | Faja | 75 | Toalla (67x140) | 400 |
+| Pijama | 450 | Salto de cama | 170 | Toalla (50x100) | 200 |
+| Calcetines (pareja) | 70 | Bata | 130 | Sábana (150x250) | 670 |
+| Traje de trabajo | 1.200 | Vestido niño | 110 | Cubrecama (160x200) | 850 |
+
+---
