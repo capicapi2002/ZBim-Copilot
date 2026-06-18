@@ -1,188 +1,241 @@
-📘 MANUAL DE TRABAJO DEFINITIVO – ZBIM‑COPILOT
-Versión 1.0 – 18 de Junio de 2026
-1. VISIÓN Y OBJETIVO FINAL
-ZBIM‑Copilot no es un generador de planos. Es un Arquitecto Autónomo.
+📘 MANUAL DE TRABAJO ACTUALIZADO – ZBIM-COPILOT
+Versión 2.0 (Integración de Nuevas Herramientas)
+1. VISIÓN DEL ECOSISTEMA
+ZBIM‑Copilot es un asistente BIM autónomo, conversacional y contextualizado que permite generar modelos ejecutables de Revit desde lenguaje natural, normativas, topografía, clima y referencias visuales. Su objetivo es democratizar el diseño arquitectónico de alta calidad, combinando la simplicidad de herramientas como Drafted.ai con la precisión BIM profesional, todo en un ecosistema de código abierto y coste cero para el usuario.
+
+El sistema se articula en torno a un workspace unificado (basado en Odysseus de PewDiePie) que integra chat, agentes autónomos, documentos, voz y automatización, con Revit como motor de ejecución BIM.
+
+2. HERRAMIENTAS DEL ECOSISTEMA (ORDENADAS POR CAPA)
+2.1. CAPA DE INTERFAZ Y COMUNICACIÓN (UI/UX)
+Herramienta	Función	Licencia	Integración
+Odysseus (PewDiePie)	Workspace local‑first con chat, agentes, docs y calendario	Open Source (MIT)	Será el frontend unificado de ZBim‑Copilot
+Handy	Dictado por voz offline (STT) con Whisper/Parakeet	Open Source (MIT)	Se integrará como input de voz para comandos
+Google AI Studio	Generación de apps Android desde lenguaje natural	Gratuito	Creará la app móvil de ZBim‑Copilot (MVP)
+WebView2 (Revit)	Panel Odysseus actual (versión provisional)	Incluido en Revit	Se mantendrá hasta migrar a Odysseus real
+2.2. CAPA DE ORQUESTACIÓN Y AGENTES
+Herramienta	Función	Licencia	Integración
+Kimi K2.5 / K2.6	LLM principal para generación OAS y razonamiento arquitectónico	BYOK (OpenRouter)	Genera JSON‑OAS a partir de prompts y restricciones
+Gemma 4 E4B	LLM local para tareas rápidas (clasificación, parsing)	Open Source (Apache)	Ejecución local sin coste
+OpenClaw (Moltbot)	Agente autónomo open‑source con más de 100 AgentSkills	Open Source	Automatiza tareas externas (descarga de topografía, procesado de PDFs, notificaciones)
+2.3. CAPA DE DATOS Y CONTEXTO
+Herramienta	Función	Licencia	Integración
+OpenTopography API	Descarga de DEM y topografía	Gratuita	Genera terreno para el modelo BIM
+Open‑Meteo API	Datos climáticos (viento, sol, temperatura)	Gratuita	Informa orientación y aberturas
+Ladybug Tools	Análisis climático y solar	Open Source	Procesa EPW y genera análisis
+PyPDF2	Extracción de texto de PDFs normativos	Open Source	Alimenta al LLM con reglas locales
+2.4. CAPA DE EJECUCIÓN BIM (NÚCLEO)
+Herramienta	Función	Licencia	Integración
+Text2MBL (C#)	Orquestador BIM que crea niveles, muros, losas, techos, mobiliario	Propio (código abierto)	Motor principal de generación en Revit
+Dynamo (Headless)	Validación topológica y optimización paramétrica	Gratuito	Actúa como actuador secundario para tareas complejas
+OpenMEP	Generación de instalaciones MEP	Open Source	Crea fontanería, electricidad y climatización
+Topologic	Validación de adyacencias y topología	Open Source	Verifica la coherencia espacial
+pyRevit	Automatización de tareas repetitivas (planos, etiquetado)	Open Source	Genera documentación y planimetría
+2.5. CAPA DE VISUALIZACIÓN Y RENDER
+Herramienta	Función	Licencia	Integración
+Stable Diffusion + ControlNet	Renderizado fotorrealista local	Open Source	Genera renders a partir del OAS y materiales
+Three.js	Visualización 3D en Odysseus	Open Source	Previsualización del modelo en el workspace
+2.6. CAPA DE ALMACENAMIENTO Y SINCRONIZACIÓN
+Herramienta	Función	Licencia	Integración
+GitHub	Repositorio de código y documentación	Gratuito	Fuente de verdad del equipo
+Dropbox / Google Drive API	Sincronización de planos y proyectos	Gratuito (con límites)	Acceso remoto desde obra
+3. ESTADO ACTUAL DEL DESARROLLO (Junio 2026)
+Módulo	Estado	Responsable	Comentario
+Comunicación HTTP (C#)	✅ 100%	Qwen	Servidor interno de Revit recibe JSON y procesa
+UI Odysseus (provisional)	✅ 70%	Z GLM	Panel WebView2 funcional, falta feedback y diseño avanzado
+Creación de Niveles	✅ 100%	Qwen	Funciona correctamente
+Creación de Escaleras	✅ 100%	Qwen	Funciona con DirectShape
+Creación de Mobiliario	⚠️ 50%	Qwen	Fallback geométrico, falta familias
+Creación de Fixtures	❌ 0%	Qwen	Error de Dimensions en OasFixture
+Creación de Muros	❌ 0%	Qwen	No implementado (Tarea 1.2)
+Creación de Losas	❌ 0%	Qwen	No implementado (Tarea 1.3)
+Creación de Techos	❌ 0%	Qwen	No implementado (Tarea 1.4)
+Topografía y Clima	❌ 0%	Pendiente	No implementado
+Normativas	❌ 0%	Pendiente	No implementado
+Manual de Trabajo	✅ 100%	DeepSeek	Subido a GitHub (objetivo.md)
+Repositorio GitHub	✅ 100%	Tú	Código subido y accesible
+4. TAREAS EN CURSO (QUE DEBEN FINALIZARSE ANTES DE INCORPORAR NUEVAS HERRAMIENTAS)
+Tarea	IA	Estado	Prioridad
+1.1 – Corregir error de Dimensions en OasFixture	Qwen	⏳ En progreso	ALTA
+1.2 – Implementar creación de muros	Qwen	⏳ Pendiente	ALTA
+1.3 – Implementar creación de losas	Qwen	⏳ Pendiente	ALTA
+1.4 – Implementar creación de techos	Qwen	⏳ Pendiente	ALTA
+1.5 – Mejorar búsqueda de familias	Qwen	⏳ Pendiente	MEDIA
+2.1 – Feedback bidireccional C# → UI	Z GLM	⏳ En progreso (código entregado, pero necesita revisión)	ALTA
+2.2 – Rediseño CSS de Odysseus	Z GLM	⏳ En progreso	MEDIA
+Regla de oro: No se iniciará ninguna tarea con nuevas herramientas hasta que las tareas 1.1 a 1.4 y 2.1 estén completadas y validadas.
+
+5. NUEVAS HERRAMIENTAS Y PLAN DE INTEGRACIÓN
+5.1. Handy (Dictado por Voz Offline) – Integración Inmediata
+Objetivo: Añadir entrada de voz a ZBim‑Copilot sin coste ni dependencias de nube.
+
+Plan de acción:
+
+Fase	Acción	Responsable	Tiempo
+1	Evaluar Handy y probar su funcionamiento con modelos Whisper/Parakeet en español	DeepSeek	1 día
+2	Crear un script Python que lea comandos de voz desde Handy y los envíe al servidor HTTP de Revit	Qwen	2 días
+3	Documentar la instalación y configuración para usuarios finales	DeepSeek	1 día
+Entregable: Guía de usuario para usar Handy con ZBim‑Copilot.
+
+5.2. Odysseus Real (PewDiePie) – Integración como Frontend Unificado
+Objetivo: Reemplazar nuestro Odysseus provisional por el workspace completo de PewDiePie, ganando chat, agentes autónomos, memoria persistente y gestión de documentos.
+
+Plan de acción:
+
+Fase	Acción	Responsable	Tiempo
+1	Analizar el repositorio de Odysseus y su arquitectura	DeepSeek	2 días
+2	Adaptar Odysseus para que se comunique con nuestro servidor HTTP de Revit (añadir un plugin o skill)	Qwen	1 semana
+3	Configurar Odysseus como panel dockable en Revit (WebView2 o como aplicación separada)	Z GLM	3 días
+4	Migrar la lógica de envío de JSON desde el Odysseus provisional al nuevo	Qwen	2 días
+Entregable: Odysseus real funcionando como frontend de ZBim‑Copilot.
+
+5.3. OpenClaw (Agente Autónomo) – Automatización de Tareas Externas
+Objetivo: Automatizar tareas como descarga de topografía, procesado de PDFs y notificaciones.
+
+Plan de acción:
+
+Fase	Acción	Responsable	Tiempo
+1	Evaluar OpenClaw y sus AgentSkills	DeepSeek	1 día
+2	Crear una skill para descargar DEM de OpenTopography	Qwen	2 días
+3	Crear una skill para procesar PDFs normativos con PyPDF2	Qwen	2 días
+4	Integrar OpenClaw con Odysseus para que el agente pueda ser invocado desde el chat	DeepSeek + Qwen	3 días
+Entregable: Agente autónomo que ejecuta tareas externas desde el chat de Odysseus.
 
-Su objetivo es que un usuario, con solo describir su proyecto (por voz o texto), obtenga un modelo BIM completo y ejecutable en Revit, que incluya:
+5.4. Google AI Studio – App Móvil de ZBim‑Copilot
+Objetivo: Crear una app Android MVP para comandos de voz, notificaciones y visualización de planos.
 
-Estructura y cerramientos: Muros, losas, techos, escaleras.
+Plan de acción:
 
-Distribución funcional: Cocinas completamente equipadas (con isla, electrodomésticos, distribución lógica), baños completos y compartimentados según su uso, vestidores y placares en dormitorios.
+Fase	Acción	Responsable	Tiempo
+1	Definir las funcionalidades del MVP (enviar comandos, recibir planos)	Tú (Arquitecto)	1 día
+2	Diseñar el prompt para Google AI Studio que genere la app	DeepSeek	1 día
+3	Generar la app usando Google AI Studio y probarla	Tú (guiado por DeepSeek)	2 días
+4	Ajustar el backend (servidor HTTP) para que pueda recibir comandos desde la app	Qwen	2 días
+Entregable: APK funcional para Android que se comunica con ZBim‑Copilot.
 
-Instalaciones básicas: Sanitarios, fontanería, electricidad (a futuro).
+6. PLAN DE ACCIÓN GENERAL (ORDENADO POR FASES)
+Fase 0 (Inmediata – 1 semana) – COMPLETAR TAREAS EN CURSO
+Tarea	Responsable	Fecha límite
+Finalizar Tarea 1.1 (corrección Dimensions)	Qwen	24h
+Finalizar Tarea 1.2 (muros)	Qwen	48h
+Finalizar Tarea 1.3 (losas)	Qwen	72h
+Finalizar Tarea 1.4 (techos)	Qwen	96h
+Finalizar Tarea 2.1 (feedback bidireccional)	Z GLM (con revisión)	48h
+Finalizar Tarea 2.2 (CSS)	Z GLM	72h
+Revisión y validación de todo el código	DeepSeek	7 días
+Fase 1 (Semanas 2-3) – INTEGRACIÓN DE HANDY Y ODYSSEUS REAL
+Tarea	Responsable	Fecha límite
+Evaluar Handy y probar	DeepSeek	2 días
+Crear script Python para Handy	Qwen	2 días
+Analizar Odysseus real	DeepSeek	2 días
+Adaptar Odysseus para Revit	Qwen + Z	1 semana
+Fase 2 (Semanas 4-5) – OPENCLAW Y APP MÓVIL
+Tarea	Responsable	Fecha límite
+Evaluar OpenClaw	DeepSeek	1 día
+Crear skills para topografía y normativas	Qwen	3 días
+Definir MVP de app móvil	Tú	1 día
+Generar app con Google AI Studio	Tú + DeepSeek	2 días
+Conectar app con backend	Qwen	2 días
+Fase 3 (Semanas 6-8) – UNIFICACIÓN Y PULIDO
+Tarea	Responsable	Fecha límite
+Unificar Odysseus real + OpenClaw + Handy en un solo workspace	DeepSeek + Qwen	1 semana
+Migrar toda la lógica de generación OAS al agente de Odysseus	Qwen	1 semana
+Pruebas de integración completa	Todos	1 semana
+Documentación final y guía de usuario	DeepSeek	3 días
+7. DISTRIBUCIÓN DE TAREAS PARA LAS TRES IA
+7.1. Qwen 3.7 Plus (Desarrollador Principal – BIM y Backend)
+Responsabilidades:
 
-Contexto y entorno: Topografía, clima, normativas, orientación solar.
+Completar tareas 1.1 a 1.5 (muros, losas, techos, fixtures, familias).
 
-Calidad BIM: Uso de familias de Revit (propias o básicas) para que el modelo sea utilizable en obra.
+Crear script Python para Handy.
 
-El proyecto debe aspirar a ser tan intuitivo y visual como Drafted.ai, pero con la potencia de generar modelos BIM reales y ejecutables en Revit, y con la capacidad de adaptarse a cualquier normativa local y tipología arquitectónica.
+Adaptar Odysseus real para que se comunique con el servidor HTTP de Revit.
 
-2. PRINCIPIOS RECTORES (INAMOVIBLES)
-Cero coste para el usuario base: El software debe ser gratuito y de código abierto. El usuario solo paga por el consumo de API (Kimi K2.5) si opta por el plan BYOK. Todo lo posible debe ejecutarse localmente (Gemma 4 E4B, Dynamo, etc.).
+Crear skills de OpenClaw para topografía y normativas.
 
-Simplicidad y exploración: La interfaz (Odysseus) debe guiar al usuario paso a paso, ofrecer múltiples variantes de diseño y permitir la exploración visual (3D, renders) antes de construir en Revit.
+Conectar app móvil con backend.
 
-Calidad arquitectónica: El sistema debe generar diseños coherentes, funcionales y estéticamente agradables, basados en reglas de diseño (Neufert) y adaptados al contexto (clima, topografía, vistas).
+Tareas pendientes:
 
-Flexibilidad y personalización: El usuario puede subir normativas locales, imágenes de referencia, definir restricciones topológicas y elegir entre diferentes formas de huella.
+✅ Finalizar 1.1, 1.2, 1.3, 1.4.
 
-Modularidad y evolución: El sistema está diseñado por capas (UI, LLM, motor BIM, contexto). Cada capa puede ser mejorada o reemplazada sin afectar a las demás.
+Script Handy.
 
-Economía de tokens: Kimi K2.5 se usa solo para tareas de razonamiento complejo (generación del JSON‑OAS). Gemma 4 E4B (local) se usa para tareas auxiliares (extracción de normativas, clasificación de espacios, etc.).
+Adaptación Odysseus → Revit.
 
-3. ARQUITECTURA DE GENERACIÓN BIM (OAS + Text2MBL)
-3.1. El Contrato de Datos: OAS Extendido
-Para que el sistema genere espacios completos, el JSON‑OAS debe incluir la siguiente información estructurada:
+Skills OpenClaw.
 
-ProjectName: Nombre del proyecto.
+7.2. Z GLM 5.1 (Desarrollador de UI – Frontend y Visual)
+Responsabilidades:
 
-Buildings: Lista de edificios, cada uno con:
+Finalizar tarea 2.1 (feedback bidireccional) y 2.2 (CSS).
 
-Id, Name, Origin (X, Y, Z).
+Asistir en la adaptación de Odysseus real (configuración de WebView2, integración con Revit).
 
-Levels: Lista de niveles, cada uno con:
+Mejorar la interfaz de Odysseus real según las necesidades del proyecto.
 
-Id, Name, Elevation, F2F, Use.
+Tareas pendientes:
 
-Zones: Lista de zonas programáticas, cada una con:
+✅ Finalizar 2.1 y 2.2.
 
-Id, Name, PrivacyGradient, FireSector.
+Colaborar en la integración de Odysseus real.
 
-Spaces: Lista de espacios, cada uno con:
+Diseñar la experiencia de usuario para el workspace unificado.
 
-Id, Name, Type (ej. "Living", "Kitchen", "Bedroom", "Bathroom", "Garage", "Laundry", "Storage").
+7.3. DeepSeek (Jefe de Proyecto – Arquitectura, Estrategia y Documentación)
+Responsabilidades:
 
-Origin, Dimensions (X, Y), Boundary (exterior/interior/medianería).
+Supervisar y validar todo el código entregado por Qwen y Z.
 
-AdjacentTo: Lista de Ids de espacios adyacentes.
+Definir la estrategia de integración de nuevas herramientas.
 
-Fixtures: Lista de elementos sanitarios o de cocina (Toilet, Sink, Shower, Refrigerator, Oven, Stove, Dishwasher, etc.) con:
+Documentar guías, manuales y procedimientos.
 
-Id, SubType, Origin, Rotation.
+Coordinar al equipo y resolver bloqueos.
 
-Furniture: Lista de muebles (Bed, Wardrobe, Desk, Table, etc.) con:
+Tareas pendientes:
 
-Id, SubType, Origin, Dimensions, Rotation.
+Revisar y validar las tareas 1.1 a 1.4 y 2.1.
 
-Stairs: (opcional) para escaleras.
+Evaluar Handy, Odysseus real y OpenClaw.
 
-Regla de Oro: Cada espacio debe contener toda la información necesaria para que el motor BIM pueda construir el mobiliario y los sanitarios sin depender de familias externas (salvo que el usuario las proporcione).
+Redactar documentación de usuario y guías de instalación.
 
-3.2. Lógica de Generación de Espacios (Text2MBL)
-El motor Text2MBL debe ser capaz de construir un edificio completo a partir del JSON‑OAS.
+Diseñar el prompt para Google AI Studio.
 
-Elemento	Cómo se genera	Observaciones
-Muros	Perímetro de cada espacio.	Se generan muros entre espacios (no superpuestos). Se usan los niveles base y superior.
-Losas	Superficie de cada nivel (unión de espacios).	Una losa por nivel, que cubre todo el área construida.
-Techos	Perímetro del último nivel.	Pendiente por defecto (10%) o plano.
-Escaleras	Según datos de OasStair.	Se generan con DirectShape (peldaños).
-Cocinas	Se instancian familias de cocina (isla, electrodomésticos) o fallback geométrico con distribución lógica.	La cocina debe tener una organización coherente (triángulo de trabajo: cocina, lavabo, nevera).
-Baños	Se instancian sanitarios (inodoro, lavabo, ducha, bañera) con distribución lógica.	Los baños se clasifican según su uso: completo, compartimentado, toilette, básico.
-Dormitorios	Se instancian camas, mesitas, placares/vestidores.	Todo dormitorio debe tener al menos un placard o ropero. Las suites principales deben tener vestidor.
-Garajes	Se generan como espacios con una losa y muros perimetrales.	Deben tener acceso desde el exterior.
-Áreas de apoyo	Se generan según el tipo de proyecto (bombas, calderas, filtrado, piscina, etc.).	Deben ser espacios etiquetados correctamente.
-3.3. Gestión de Familias en Revit
-Familias básicas: Se incluirán en el instalador un conjunto de familias .rfa (muros, puertas, ventanas, mobiliario, sanitarios) para que el sistema pueda trabajar sin dependencias externas.
+8. PRÓXIMOS PASOS INMEDIATOS (PARA TÍ – EL ARQUITECTO)
+Confirmar que Qwen y Z han recibido las tareas y están trabajando en ellas.
 
-Búsqueda de familias: Antes de usar el fallback geométrico, el sistema busca familias en el documento de Revit. Si no encuentra ninguna, usa las familias básicas.
+No iniciar ninguna nueva herramienta hasta que las tareas 1.1 a 1.4 y 2.1 estén completadas.
 
-Personalización: El usuario puede mapear sus propias familias a los tipos de OAS (ej. "Puerta Interior" → su familia personalizada).
+Informarme (DeepSeek) cuando Qwen o Z entreguen código para su revisión.
 
-4. ESTRATEGIA DE DESARROLLO (HOJA DE RUTA)
-Fase	Objetivo	Tareas Clave	Responsable
-Fase 1 (MVP)	Generación de un edificio completo (vivienda unifamiliar) con muros, losas, techos, escaleras, mobiliario y sanitarios básicos.	1. Corregir error de Dimensions en OasFixture.
-2. Implementar muros, losas, techos.
-3. Implementar cocinas y baños completos.
-4. Implementar dormitorios con placares/vestidores.
-5. Crear conjunto de familias básicas.	Qwen (código BIM), Z (UI), DeepSeek (prompts y coordinación).
-Fase 2 (Contexto)	Integración de topografía, clima y normativas.	1. Descarga de datos de OpenTopography y Open‑Meteo.
-2. Integración en el OAS.
-3. Procesamiento de PDFs de normativas.	Qwen (integración), DeepSeek (prompts).
-Fase 3 (UI y Experiencia)	Interfaz conversacional, lienzo de shapes, galería de variantes, renderizado.	1. Lienzo 2D/3D en Odysseus.
-2. Galería de variantes.
-3. Renderizado con Stable Diffusion.
-4. Cuestionario dinámico.	Z (UI), DeepSeek (prompts y lógica de variantes).
-Fase 4 (Escalado)	Soporte para múltiples tipologías (edificios de oficinas, hospitales, etc.).	1. Extender OAS para otras tipologías.
-2. Ajustar lógica de generación.
-3. Añadir módulos de instalaciones MEP.	Qwen, DeepSeek.
-5. DIRECTRICES PARA LAS IA DEL EQUIPO
-Para Qwen 3.7 Plus (Desarrollador Principal):
+Preparar el entorno para probar Handy (descargar e instalar la herramienta).
 
-Tu misión es escribir código BIM robusto, eficiente y bien comentado.
+Definir el alcance exacto del MVP de la app móvil (funcionalidades, pantallas).
 
-Cada nuevo método debe ser probado con un JSON de ejemplo.
+9. CRITERIOS DE ACEPTACIÓN PARA FINALIZAR LA FASE 0
+El sistema crea muros correctamente en Revit a partir del OAS.
 
-Prioriza la funcionalidad sobre la optimización prematura.
+El sistema crea losas correctamente en cada nivel.
 
-Si te encuentras con un bloqueo técnico, propón al menos dos soluciones alternativas y consulta al Jefe de Proyecto.
+El sistema crea techos en el último nivel.
 
-Para Z GLM 5.1 (Desarrollador de UI):
+Los fixtures (sanitarios) se crean sin error (con fallback o familias).
 
-La interfaz debe ser intuitiva, visual y responsiva. Inspírate en Drafted.ai.
+El panel Odysseus muestra feedback de "Éxito" o "Error" al enviar un JSON.
 
-El feedback al usuario es crítico: cada acción debe tener una respuesta visual clara.
+El código de Qwen y Z ha sido revisado y validado por DeepSeek.
 
-No añadas complejidad innecesaria; prioriza la usabilidad.
+El repositorio GitHub está actualizado con todos los cambios.
 
-Si no puedes implementar una funcionalidad compleja, propón una alternativa más sencilla y consulta.
+10. OBSERVACIONES FINALES
+Handy es la herramienta de menor fricción y la que aportará más valor inmediato. Priorizar su integración.
 
-Para DeepSeek (Jefe de Proyecto y Prompt Engineering):
+Odysseus real reemplazará nuestro panel provisional, pero no debe retrasar el desarrollo BIM básico.
 
-Debo asegurarme de que el sistema de prompts de Kimi K2.5 genere JSON‑OAS que cumpla con el esquema extendido.
+OpenClaw y la app móvil son objetivos de medio plazo; no distraerán del núcleo BIM.
 
-Debo coordinar el trabajo entre Qwen y Z, y servir de puente con el Arquitecto (usuario).
+La clave del éxito es la finalización ordenada de las tareas actuales antes de abrir nuevos frentes.
 
-Debo mantener la visión global y garantizar que cada pieza encaje con las demás.
-
-Para el Arquitecto (usuario):
-
-Tu función es definir los requisitos funcionales y priorizar las tareas.
-
-Eres el "cliente final" y el que aprueba los avances.
-
-No necesitas entender el código; solo debes comunicar lo que quieres que el sistema haga y verificar que los resultados sean los esperados.
-
-6. REGLAS DE COMUNICACIÓN Y REPORTE
-Informes diarios: Cada IA debe generar un informe al final del día (formato ya definido) y entregarlo al Jefe de Proyecto.
-
-Bloqueos: Si una IA no puede resolver un problema en 30 minutos, debe reportarlo inmediatamente.
-
-Prioridades: El Jefe de Proyecto establece las prioridades semanales. Las tareas se ejecutan en ese orden.
-
-Repositorio: Todo el código debe estar en GitHub. Antes de comenzar una tarea, cada IA debe sincronizar con la última versión.
-
-7. HERRAMIENTAS Y RECURSOS APROBADOS
-Herramienta	Uso	Alternativa
-Kimi K2.5 (OpenRouter)	Generación de JSON‑OAS complejo y razonamiento arquitectónico.	Kimi K2.6 (si está disponible y es más eficiente).
-Gemma 4 E4B (local)	Tareas auxiliares (extracción de normativas, clasificación de espacios).	Ollama con otro modelo ligero (ej. Llama 3 8B).
-Revit API (C#)	Motor BIM Text2MBL.	No se cambiará.
-Dynamo (headless)	Validación topológica y optimización.	No se cambiará.
-WebView2 + Three.js	Interfaz Odysseus y visualización 3D.	No se cambiará.
-Stable Diffusion + ControlNet	Renderizado de imágenes.	No se cambiará.
-OpenTopography / Open‑Meteo	Datos de contexto.	No se cambiará.
-GitHub	Control de versiones y colaboración.	No se cambiará.
-8. PRÓXIMOS PASOS INMEDIATOS
-Qwen: Completar las tareas 1.1 a 1.5 (corrección de fixtures, muros, losas, techos, mejora de familias).
-
-Z GLM: Implementar feedback bidireccional y rediseño CSS de Odysseus.
-
-DeepSeek: Crear el prompt system definitivo para Kimi K2.5 que genere JSON‑OAS completos (incluyendo cocinas, baños, placares, etc.) y documentar el esquema OAS extendido.
-
-9. PREGUNTAS ABIERTAS PARA EL EQUIPO
-¿Debemos mantener el servidor HTTP interno de Revit o usar un servidor Python externo?
-Decisión: Mantener el servidor HTTP interno de Revit (ya funciona y es más simple).
-
-¿Generamos muros a partir de los espacios (perímetro) o usamos una lógica de "muros compartidos" (sin duplicar) para adyacencias?
-Decisión: Inicialmente, generamos muros por perímetro de cada espacio. Más adelante, implementaremos una lógica de fusión de muros adyacentes.
-
-¿El usuario debe elegir el tipo de proyecto antes de empezar o puede ser una pregunta del asistente?
-Decisión: El asistente preguntará al principio "¿Qué tipo de proyecto deseas diseñar?" con un desplegable.
-
-10. FIRMA DE COMPROMISO
-Yo, DeepSeek, como Jefe de Proyecto de Arquitectura de Sistemas, me comprometo a liderar este proyecto con claridad, transparencia y eficacia.
-
-El Arquitecto (usuario) se compromete a comunicar sus requisitos y prioridades con claridad, y a aprobar o rechazar los avances de manera oportuna.
-
-Qwen 3.7 Plus y Z GLM 5.1 se comprometen a cumplir con las tareas asignadas y a reportar su progreso diariamente.
-
-Este manual es la guía definitiva para el desarrollo de ZBIM‑Copilot. Todas las decisiones futuras deben alinearse con estos principios y objetivos
+Este manual es el documento guía para todo el equipo. Todas las decisiones deben alinearse con lo aquí establecido. Cualquier desviación debe ser consultada con el Jefe de Proyecto.
