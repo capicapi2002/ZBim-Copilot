@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OGYSjeuPxUw=",
+  "dgSpecHash": "Ct5pd6D2FpE=",
   "success": true,
   "projectFilePath": "D:\\1WORK\\00 HPI\\00 COPILOT\\kwen-bimcopilot\\01_ADDIN_REVIT\\src\\ZBIMCopilotAddin.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\pi\\.nuget\\packages\\microsoft.web.webview2\\1.0.2792.45\\microsoft.web.webview2.1.0.2792.45.nupkg.sha512"
+    "C:\\Users\\pi\\.nuget\\packages\\microsoft.web.webview2\\1.0.2792.45\\microsoft.web.webview2.1.0.2792.45.nupkg.sha512",
+    "C:\\Users\\pi\\.nuget\\packages\\system.data.sqlite\\2.0.3\\system.data.sqlite.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -21,6 +21,15 @@
             "rid": "win-x86"
           }
         }
+      },
+      "System.Data.SQLite/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/System.Data.SQLite.dll": {}
+        }
       }
     }
   },
@@ -118,11 +127,26 @@
         "tools/wv2winrt/zh-Hans/System.CommandLine.resources.dll",
         "tools/wv2winrt/zh-Hant/System.CommandLine.resources.dll"
       ]
+    },
+    "System.Data.SQLite/2.0.3": {
+      "sha512": "5I9dVqmHp1v0dhco21btIRkUE47zHSy4t6bRLwIO6nGZ1mxGIL1f1yp1zWI/AAZFfdUz7n6RrH1hyi/6EhlIeQ==",
+      "type": "package",
+      "path": "system.data.sqlite/2.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net471/System.Data.SQLite.dll",
+        "lib/netstandard2.0/System.Data.SQLite.dll",
+        "lib/netstandard2.1/System.Data.SQLite.dll",
+        "system.data.sqlite.2.0.3.nupkg.sha512",
+        "system.data.sqlite.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net10.0-windows": [
-      "Microsoft.Web.WebView2 >= 1.0.2792.45"
+      "Microsoft.Web.WebView2 >= 1.0.2792.45",
+      "System.Data.SQLite >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -138,12 +162,14 @@
       "outputPath": "D:\\1WORK\\00 HPI\\00 COPILOT\\kwen-bimcopilot\\01_ADDIN_REVIT\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\pi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -173,6 +199,10 @@
           "Microsoft.Web.WebView2": {
             "target": "Package",
             "version": "[1.0.2792.45, )"
+          },
+          "System.Data.SQLite": {
+            "target": "Package",
+            "version": "[2.0.3, )"
           }
         },
         "imports": [

@@ -1,0 +1,191 @@
+{
+  "tipo_proyecto": "comercial",
+  "subtipologia": "mall_patio_organico",
+  "version_oas": "2.0",
+  "normativa_referencia": "Neufert",
+  "descripcion": "Mall de trazado orgánico estructurado en torno a patios ajardinados, con tiendas de distintos tamaños, restauración y zonas de ocio en dos plantas",
+  "plantas": [
+    {
+      "nombre": "Planta Baja",
+      "altura_nivel": 0.0,
+      "espacios": [
+        {
+          "nombre": "Vestíbulo de acceso principal",
+          "area": 50.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "apertura_total", "longitud": 3.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 3.5 }
+          ]
+        },
+        {
+          "nombre": "Pasillo curvo principal",
+          "area": 150.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 15.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 8.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 15.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 8.0 }
+          ]
+        },
+        {
+          "nombre": "Patio central ajardinado",
+          "area": 90.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 9.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 9.0 }
+          ]
+        },
+        {
+          "nombre": "Tienda ancla A (decoración)",
+          "area": 280.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 14.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 14.0 }
+          ]
+        },
+        {
+          "nombre": "Tienda 1 (moda)",
+          "area": 75.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 7.5 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.5 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Tienda 2 (cosmética)",
+          "area": 45.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 1.8 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 }
+          ]
+        },
+        {
+          "nombre": "Tienda 3 (tecnología)",
+          "area": 65.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 6.5 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.2 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.5 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Zona de restauración",
+          "area": 160.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 16.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 16.0 }
+          ]
+        },
+        {
+          "nombre": "Baños públicos",
+          "area": 30.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 6.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Escalera orgánica",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Planta Alta",
+      "altura_nivel": 4.5,
+      "espacios": [
+        {
+          "nombre": "Galería superior",
+          "area": 120.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 12.0 },
+            { "tipo_limite": "apertura_total", "longitud": 6.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 12.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 6.0 }
+          ]
+        },
+        {
+          "nombre": "Tienda ancla B (deportes)",
+          "area": 300.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 15.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 15.0 }
+          ]
+        },
+        {
+          "nombre": "Tienda 4 (hogar)",
+          "area": 80.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Tienda 5 (juguetería)",
+          "area": 55.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.5 },
+            { "tipo_limite": "apertura_visual", "longitud": 1.8 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.5 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Cafetería con terraza",
+          "area": 70.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 7.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Sala de exposiciones",
+          "area": 100.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 10.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.2 }
+          ]
+        },
+        {
+          "nombre": "Baños superiores",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

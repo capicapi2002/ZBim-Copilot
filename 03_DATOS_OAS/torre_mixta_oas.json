@@ -1,0 +1,53 @@
+﻿{
+  "levels": [
+    {
+      "level_name": "Nivel 0 - Comercial",
+      "elevation": 0.0,
+      "spaces": [
+        { "name": "Tienda A", "area": 80.0, "contorno": [] },
+        { "name": "Tienda B", "area": 65.0, "contorno": [] },
+        { "name": "Cafetería", "area": 50.0, "contorno": [] },
+        { "name": "Recepción", "area": 30.0, "contorno": [] }
+      ]
+    },
+    {
+      "level_name": "Nivel 1 - Oficinas",
+      "elevation": 4.0,
+      "spaces": [
+        { "name": "Oficina 101", "area": 40.0, "contorno": [] },
+        { "name": "Oficina 102", "area": 35.0, "contorno": [] },
+        { "name": "Oficina 103", "area": 45.0, "contorno": [] },
+        { "name": "Sala reuniones", "area": 55.0, "contorno": [] }
+      ]
+    },
+    {
+      "level_name": "Nivel 2 - Residencial",
+      "elevation": 8.0,
+      "spaces": [
+        { "name": "Apartamento 201", "area": 70.0, "contorno": [] },
+        { "name": "Apartamento 202", "area": 60.0, "contorno": [] },
+        { "name": "Apartamento 203", "area": 75.0, "contorno": [] },
+        { "name": "Lavandería", "area": 20.0, "contorno": [] }
+      ]
+    },
+    {
+      "level_name": "Nivel 3 - Residencial",
+      "elevation": 12.0,
+      "spaces": [
+        { "name": "Apartamento 301", "area": 70.0, "contorno": [] },
+        { "name": "Apartamento 302", "area": 60.0, "contorno": [] },
+        { "name": "Apartamento 303", "area": 75.0, "contorno": [] },
+        { "name": "Terraza", "area": 25.0, "contorno": [] }
+      ]
+    },
+    {
+      "level_name": "Nivel 4 - Penthouse",
+      "elevation": 16.0,
+      "spaces": [
+        { "name": "Penthouse A", "area": 100.0, "contorno": [] },
+        { "name": "Penthouse B", "area": 90.0, "contorno": [] },
+        { "name": "Rooftop", "area": 40.0, "contorno": [] }
+      ]
+    }
+  ]
+}

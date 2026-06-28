@@ -1,0 +1,80 @@
+============================================================
+ZBIM-COPILOT – REGISTRO DE IDEAS, FASES Y DECISIONES
+============================================================
+
+FASE A (Completada): Add-in básico, carga de Revit, panel WebView2 vacío.
+FASE B (Completada): HybridProjectBuilder, OasEventHandler, Text2MblOrchestrator.
+FASE C (Completada): 
+  - FullProjectConfig.cs, NeufertEngine.cs, FullProjectConfigHandler.cs.
+  - UI con formulario completo, modal programa, carga normativas/imágenes, detección idioma.
+FASE D (En integración): 
+  - Microservicio Python (design_intelligence_agent.py): Ollama local + Kimi vía proxy, endpoints /generate_oas, /save_normative, /list_normatives, /token_balance, /init_recharge.
+  - DesignIntelligenceClient.cs con todos los métodos.
+  - Servicio de Tokens ZBIM (token_service.py): /register, /balance, /create_payment, /webhook, /proxy-kimi, margen 10%, seguridad HMAC.
+  - Widget de tokens, modales de recarga y clarificaciones en index.html.
+  - Rotación de API keys de OpenRouter: 2 claves iniciales, escalable a N. Pool de keys con round-robin y rate-limit aware.
+  - Proxy con colas y reintentos.
+  - Clase SpaceRequirement añadida a FullProjectConfig.cs (corrige errores CS0117/CS1061).
+
+FASE E – ENTORNO Y SOSTENIBILIDAD (Pendiente):
+  - Herramientas oficiales:
+    * OpenTopography API: obtención de DEM/curvas de nivel → CSV → Revit Topography.
+    * Open-Meteo API: datos climáticos (temperatura, viento, sol) según ubicación.
+    * Ladybug Tools: análisis solar/eólico avanzado (opcional, para usuarios avanzados).
+  - Botones en panel "Entorno" del Odysseus:
+    * "Crear Topografía" → llama a OpenTopography + importa en Revit.
+    * "Análisis Climático" → llama a Open-Meteo y muestra resumen.
+    * "Análisis Solar (Ladybug)" → opcional, genera estudio con EPW.
+  - El contexto se enriquece automáticamente al generar el OAS: orientación solar, vientos dominantes, pendientes del terreno.
+
+MEJORAS DE UI/UX (Pendientes):
+  - Nubes explicativas (tooltips) con retardo de 0.5s, clic para abrir manual flotante.
+  - Manual de instrucciones accesible desde icono "?" y enlazado desde tooltips.
+  - Envío de imágenes y normativas en Base64.
+  - Widget de tokens con barra de progreso.
+  - Modal de preguntas de clarificación del backend.
+
+SISTEMA DE PRUEBAS GRATUITAS:
+  - Máximo 2 pruebas gratuitas por entidad (HWID+Email+IP+dominio).
+  - Funcionalidad completa limitada a 5 análisis de imágenes (≈50 tokens).
+  - Verificación de email obligatoria.
+  - Bloqueo por IP, dominio y HWID tras 2 usos.
+  - Mensaje amigable al alcanzar límite.
+
+APRENDIZAJE CONTINUO (Mejora del modelo):
+  - Modelo local (Gemma/Ollama) fine-tuned con casos reales antes del lanzamiento.
+  - Retroalimentación implícita: deltas entre OAS original y OAS aceptado por el usuario.
+  - Actualizaciones automáticas del modelo local (descarga + ollama create) sin intervención del usuario.
+  - EULA incluye cláusula de mejora anónima (datos no compartidos con terceros).
+
+INTERPRETACIÓN DE IMÁGENES DE REFERENCIA:
+  - Extracción de estilo (materiales, geometría, colores) sin copiar el edificio.
+  - Prompt a Kimi para describir estilo; luego prompt para aplicar estilo al programa.
+  - Filtro de escala para ajustar proporciones.
+  - Manejo de imágenes incongruentes: advertencia si el estilo es incompatible con el programa (museo vs vivienda), pero se intenta reinterpretar el espíritu.
+
+TOPOGRAFÍA Y TERRENO:
+  - Permitir subir PDF/DXF/DWG de parcela con Norte y frente.
+  - Opcional para estudiantes, pero disponible.
+  - Procesar geometría y orientación para integrar en OAS.
+  - Si no se sube archivo, se usa OpenTopography con las coordenadas de la ubicación.
+
+USO ESTUDIANTIL:
+  - Dimensiones del terreno obligatorias (texto libre + archivo opcional).
+  - Posibilidad de describir geometrías no rectangulares.
+  - Herramientas de topografía y clima disponibles pero no forzosas.
+
+SEGURIDAD Y ESCALABILIDAD:
+  - Servicio de Tokens centralizado, clave maestra única (luego pool de N claves).
+  - Autenticación HMAC con installation_id y client_secret.
+  - Rotación de API keys de OpenRouter con round-robin y rate-limit aware.
+  - Proxy con colas y reintentos.
+  - Contacto con OpenRouter para plan enterprise (evitar bloqueos, mayor capacidad).
+
+PRÓXIMOS PASOS INMEDIATOS:
+  - Corregir errores de compilación actuales (SpaceRequirement, GenerateTopologyFromFullConfig).
+  - Resolver advertencias de imports Python (flask, stripe en venv).
+  - Probar flujo completo UI -> OAS -> Revit.
+  - Implementar tooltips en el HTML.
+  - Conectar botones de topografía/clima con context_engine.py.
+  - Definir plan de pruebas automáticas.

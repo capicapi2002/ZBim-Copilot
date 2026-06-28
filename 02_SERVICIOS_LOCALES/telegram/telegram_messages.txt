@@ -1,0 +1,33 @@
+<!-- MENSAJE DE BIENVENIDA -->
+<b>🏗️ ZBIM‑Copilot Bot</b>
+Genera proyectos arquitectónicos desde tu móvil.
+
+<b>Comandos:</b>
+/nuevo_proyecto - Iniciar un nuevo proyecto
+/estado - Ver estado de tu último proyecto
+/ayuda - Mostrar esta ayuda
+/cancelar - Cancelar proyecto en curso
+
+<!-- CONFIRMACIÓN DE RECEPCIÓN -->
+✅ <b>Orden recibida</b>
+
+<b>Proyecto:</b> {project_name}
+<b>Tipo:</b> {project_type}
+<b>Ubicación:</b> {location}
+<b>Plantas:</b> {floors_above}
+
+⏳ Tu proyecto está siendo generado. Te notificaremos cuando esté listo.
+
+<!-- NOTIFICACIÓN DE FINALIZACIÓN -->
+🎉 <b>¡Proyecto completado!</b>
+
+<b>Proyecto:</b> {project_name}
+📄 <a href="{download_url}">Descargar PDF</a>
+📐 <a href="{ifc_url}">Descargar IFC</a>
+
+Puedes ver más detalles en la web: <a href="{confirmation_url}">Estado del proyecto</a>
+
+<!-- MENSAJE DE ERROR -->
+❌ <b>Error</b>
+No se pudo generar el proyecto: {error_message}
+Por favor, inténtalo de nuevo o contacta con soporte.

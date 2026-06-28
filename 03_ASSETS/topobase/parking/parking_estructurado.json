@@ -1,0 +1,143 @@
+{
+  "tipo_proyecto": "parking",
+  "subtipologia": "parking_estructurado",
+  "version_oas": "2.0",
+  "normativa_referencia": "Neufert",
+  "descripcion": "Estacionamiento robotizado y convencional multi-nivel, apto tanto para subsuelo como para edificio en altura, con rampas, ascensores, plazas estándar y adaptadas, y cuartos técnicos",
+  "plantas": [
+    {
+      "nombre": "Planta de acceso (nivel calle)",
+      "altura_nivel": 0.0,
+      "espacios": [
+        {
+          "nombre": "Acceso vehicular / Control",
+          "area": 45.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "apertura_total", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 9.0 }
+          ]
+        },
+        {
+          "nombre": "Vestíbulo de ascensores y escaleras",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.2 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Rampa helicoidal de subida/bajada",
+          "area": 90.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 12.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 12.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.5 }
+          ]
+        },
+        {
+          "nombre": "Cuarto de control / CCTV",
+          "area": 12.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        },
+        {
+          "nombre": "Aseo de cortesía",
+          "area": 6.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 3.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Planta Tipo Estacionamiento (x5)",
+      "altura_nivel": 3.0,
+      "repetir": 5,
+      "espacios_comunes": [
+        {
+          "nombre": "Área de estacionamiento general",
+          "area": 480.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 24.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 24.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 }
+          ]
+        },
+        {
+          "nombre": "Plazas de movilidad reducida",
+          "area": 30.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 }
+          ]
+        },
+        {
+          "nombre": "Plazas de carga eléctrica",
+          "area": 20.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Rampa de comunicación",
+          "area": 90.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 12.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 12.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.5 }
+          ]
+        },
+        {
+          "nombre": "Núcleo de ascensores",
+          "area": 20.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Escalera de emergencia",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 }
+          ]
+        },
+        {
+          "nombre": "Cuarto de instalaciones",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```Ahora solo queda **urbanizaciones**. Procedo con un archivo canónico completo para ese tipo de proyecto, que servirá tanto para urbanizaciones residenciales como para parques empresariales.

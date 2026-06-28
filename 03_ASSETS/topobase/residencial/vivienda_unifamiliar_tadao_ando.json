@@ -1,0 +1,305 @@
+{
+  "id_proyecto": ,"VIVIENDA_UNIFAMILIAR_TADAO_ANDO",
+  "nodo_raiz": "LOTE_10x25_PAREADO",
+  "nodos": [
+    {
+      "id_espacio": "LOTE_10x25_PAREADO",
+      "nombre": "Lote de 10m frente x 25m fondo",
+      "id_zona": "Z_TERRENO",
+      "area_min_m2": 250,
+      "metadatos_volumetricos": {
+        "dimensiones_m": [10, 25],
+        "frente_m": 10,
+        "fondo_m": 25,
+        "FOS": 0.6,
+        "FOT": 1.2,
+        "retiro_frontal_m": 5,
+        "retiro_lateral_unico_m": 3,
+        "lindero_medianero": "lado_derecho",
+        "retiro_fondo_m": 5
+      }
+    },
+    {
+      "id_espacio": "CALLE",
+      "nombre": "Calle y acceso peatonal",
+      "id_zona": "Z_EXTERIOR",
+      "area_min_m2": 0,
+      "metadatos_volumetricos": {
+        "alineamiento_oficial": true,
+        "nivel_acera_m": 0.15
+      }
+    },
+    {
+      "id_espacio": "JARDIN_POSTERIOR",
+      "nombre": "Jardín posterior privado",
+      "id_zona": "Z_EXTERIOR",
+      "area_min_m2": 50,
+      "metadatos_volumetricos": {
+        "retiro_fondo_m": 5,
+        "permeabilidad": 1.0,
+        "vegetacion": "autoctona_bajo_consumo_hidrico"
+      }
+    },
+    {
+      "id_espacio": "LINDERO_MEDIANERO",
+      "nombre": "Medianero ciego lado derecho",
+      "id_zona": "Z_LIMITE",
+      "area_min_m2": 0,
+      "metadatos_volumetricos": {
+        "material": "ladrillo_comun_visto",
+        "altura_max_lindero_m": 3,
+        "espesor_m": 0.30,
+        "sin_vanos": true
+      }
+    },
+    {
+      "id_espacio": "PATIO_INGLES",
+      "nombre": "Patio inglés lateral de luz reflejada",
+      "id_zona": "Z_VACIO",
+      "area_min_m2": 6,
+      "metadatos_volumetricos": {
+        "dimensiones_m": [2.0, 3.0],
+        "profundidad_bajo_nivel_suelo_m": 1.20,
+        "material_muros": "ladrillo_visto_claro",
+        "funcion": "rebote_luz_matinal_a_dormitorios_PB"
+      }
+    },
+    {
+      "id_espacio": "LUCERNARIO_ESCALERA",
+      "nombre": "Lucernario sobre rellano de escalera en L",
+      "id_zona": "Z_VACIO",
+      "area_min_m2": 2,
+      "metadatos_volumetricos": {
+        "dimensiones_m": [1.0, 2.0],
+        "vidrio": "laminado_seguridad",
+        "practicable_motorizado": true,
+        "orientacion": "cenital"
+      }
+    },
+    {
+      "id_espacio": "PLANTA_BAJA",
+      "nombre": "Espacio construido Planta Baja",
+      "id_zona": "Z_CONSTRUIDO",
+      "area_min_m2": 100,
+      "metadatos_volumetricos": {
+        "altura_libre_m": 2.80,
+        "floor_to_floor_m": 3.00,
+        "piso": "porcelanato_alto_transito",
+        "muros": "ladrillo_visto_PB"
+      }
+    },
+    {
+      "id_espacio": "PLANTA_ALTA",
+      "nombre": "Espacio construido Planta Alta",
+      "id_zona": "Z_CONSTRUIDO",
+      "area_min_m2": 80,
+      "metadatos_volumetricos": {
+        "altura_libre_m": 2.70,
+        "floor_to_floor_m": 2.90,
+        "retranqueo_posterior_m": 3.0,
+        "muros": "concreto_visto_PA"
+      }
+    },
+    {
+      "id_espacio": "ESTAR_COMEDOR_PB",
+      "nombre": "Estar-Comedor en Planta Baja",
+      "id_zona": "Z_SOCIAL",
+      "area_min_m2": 40,
+      "metadatos_volumetricos": {
+        "profundidad_m": 6.50,
+        "ventilacion_cruzada_obligatoria": true
+      }
+    },
+    {
+      "id_espacio": "COCINA_PB",
+      "nombre": "Cocina integrada con salida a patio de servicio",
+      "id_zona": "Z_SERVICIO",
+      "area_min_m2": 15,
+      "metadatos_volumetricos": {
+        "ventana_minima_m2": 0.40,
+        "extraccion_mecanica": true
+      }
+    },
+    {
+      "id_espacio": "DORMITORIO_PRINCIPAL_PA",
+      "nombre": "Dormitorio principal con ventanal frontal",
+      "id_zona": "Z_PRIVADA",
+      "area_min_m2": 22,
+      "metadatos_volumetricos": {
+        "ventana_frontal": "60%_fachada_concentrado_en_PA",
+        "antepecho_m": 0.90
+      }
+    },
+    {
+      "id_espacio": "DORMITORIOS_SECUNDARIOS_PA",
+      "nombre": "Dormitorios secundarios",
+      "id_zona": "Z_PRIVADA",
+      "area_min_m2": 28,
+      "metadatos_volumetricos": {
+        "cantidad": 2,
+        "iluminacion_lateral_patio_ingles": true
+      }
+    },
+    {
+      "id_espacio": "ESCALERA_EN_L",
+      "nombre": "Escalera en L pegada a medianera",
+      "id_zona": "Z_CIRCULACION",
+      "area_min_m2": 8,
+      "metadatos_volumetricos": {
+        "tipo": "L",
+        "huella_m": 0.28,
+        "contrahuella_m": 0.175,
+        "ancho_m": 1.0,
+        "descanso_m": [0.90, 0.90],
+        "altura_salvar_m": 2.80
+      }
+    },
+    {
+      "id_espacio": "PORCHE_ACCESO",
+      "nombre": "Porche de acceso frontal",
+      "id_zona": "Z_TRANSICION",
+      "area_min_m2": 9,
+      "metadatos_volumetricos": {
+        "profundidad_m": 1.50,
+        "ancho_m": 6.00,
+        "cubierta": "losa_volada",
+        "piso_elevado_sobre_acera_m": 0.30
+      }
+    },
+    {
+      "id_espacio": "TERRAZA_POSTERIOR_PA",
+      "nombre": "Terraza sobre estar-comedor (alero sombra)",
+      "id_zona": "Z_EXTERIOR",
+      "area_min_m2": 18,
+      "metadatos_volumetricos": {
+        "profundidad_m": 3.0,
+        "ancho_m": 6.0,
+        "altura_losa_superior_m": 2.90,
+        "funcion_sombra": "proteccion_solar_sobre_ventanal_PB"
+      }
+    },
+    {
+      "id_espacio": "PATIO_SERVICIO_POSTERIOR",
+      "nombre": "Patio de servicio y lavadero exterior",
+      "id_zona": "Z_SERVICIO",
+      "area_min_m2": 6,
+      "metadatos_volumetricos": {
+        "techado": "lamina_traslucida",
+        "ocultacion_visual": "celosia_de_madera"
+      }
+    }
+  ],
+  "adyacencias": [
+    {
+      "Origen": "LOTE_10x25_PAREADO",
+      "Destino": "CALLE",
+      "Peso": 10,
+      "tipo_limite": "apertura_visual",
+      "regla_solver": "FACHADA_FRONTAL_MASCARADA: Porche acceso 1.5m fondo. Muro ciego ladrillo en PB hasta losa. Ventanal superior PA concentra el 60% de apertura permitida."
+    },
+    {
+      "Origen": "LOTE_10x25_PAREADO",
+      "Destino": "JARDIN_POSTERIOR",
+      "Peso": 10,
+      "tipo_limite": "apertura_total",
+      "regla_solver": "FACHADA_POSTERIOR_TOTAL: Estar-comedor PB apertura total con corredizas piso a techo (4.0x2.4m). Planta Alta retranqueada 3m para crear terraza/alero de sombra horizontal profunda."
+    },
+    {
+      "Origen": "LOTE_10x25_PAREADO",
+      "Destino": "LINDERO_MEDIANERO",
+      "Peso": 10,
+      "tipo_limite": "muro_ciego",
+      "regla_solver": "MEDIANERA_INVIOLABLE: Sin vanos, altura máx 3m sobre lindero. Escalera en L adosada a este muro."
+    },
+    {
+      "Origen": "PLANTA_BAJA",
+      "Destino": "PATIO_INGLES",
+      "Peso": 8,
+      "tipo_limite": "apertura_visual",
+      "regla_solver": "LUZ_REFLECTADA: Patio inglés 2x3m en retiro lateral. Luz matinal rebota en ladrillo claro y entra tamizada a dormitorios secundarios PB."
+    },
+    {
+      "Origen": "ESCALERA_EN_L",
+      "Destino": "LUCERNARIO_ESCALERA",
+      "Peso": 10,
+      "tipo_limite": "apertura_total",
+      "regla_solver": "EJE_DE_LUZ_CENITAL: Lucernario 1.0x2.0m sobre rellano de giro. Rayo vertical de luz marca la circulación. Vidrio laminado con apertura motorizada para ventilación."
+    },
+    {
+      "Origen": "ESCALERA_EN_L",
+      "Destino": "LINDERO_MEDIANERO",
+      "Peso": 10,
+      "tipo_limite": "muro_ciego",
+      "regla_solver": "ADOSADA_A_MEDIANERA: Escalera pegada al muro ciego para liberar fachadas."
+    },
+    {
+      "Origen": "ESTAR_COMEDOR_PB",
+      "Destino": "JARDIN_POSTERIOR",
+      "Peso": 10,
+      "tipo_limite": "apertura_total",
+      "regla_solver": "DENTRO_FUERA: Vanos piso a techo sin obstrucción. Protegido por alero de PA de 3m de profundidad que crea sombra horizontal."
+    },
+    {
+      "Origen": "ESTAR_COMEDOR_PB",
+      "Destino": "COCINA_PB",
+      "Peso": 8,
+      "tipo_limite": "apertura_visual",
+      "regla_solver": "COCINA_INTEGRADA: Barra o península. Visual hacia jardín posterior."
+    },
+    {
+      "Origen": "COCINA_PB",
+      "Destino": "PATIO_SERVICIO_POSTERIOR",
+      "Peso": 7,
+      "tipo_limite": "muro_puerta_paso",
+      "regla_solver": "SALIDA_SERVICIO: Acceso directo a lavadero techado. Oculto visualmente."
+    },
+    {
+      "Origen": "PLANTA_ALTA",
+      "Destino": "TERRAZA_POSTERIOR_PA",
+      "Peso": 9,
+      "tipo_limite": "apertura_total",
+      "regla_solver": "RETRANQUEO_VOLUMETRICO: Planta Alta se retira 3m para generar terraza habitable. Baranda de vidrio."
+    },
+    {
+      "Origen": "DORMITORIO_PRINCIPAL_PA",
+      "Destino": "CALLE",
+      "Peso": 9,
+      "tipo_limite": "apertura_visual",
+      "regla_solver": "VENTANAL_SUPERIOR: Concentra el 60% de apertura de fachada. Antepecho 0.90m. Vista a la calle."
+    },
+    {
+      "Origen": "DORMITORIOS_SECUNDARIOS_PA",
+      "Destino": "PATIO_INGLES",
+      "Peso": 8,
+      "tipo_limite": "apertura_visual",
+      "regla_solver": "LUZ_LATERAL: Iluminación y ventilación natural indirecta a través del patio inglés."
+    },
+    {
+      "Origen": "PLANTA_BAJA",
+      "Destino": "PORCHE_ACCESO",
+      "Peso": 10,
+      "tipo_limite": "apertura_total",
+      "regla_solver": "ACCESO_CUBIERTO: Puerta principal bajo porche. Muro ciego lateral. Base pesada."
+    },
+    {
+      "Origen": "LOTE_10x25_PAREADO",
+      "Destino": "PLANTA_BAJA",
+      "Peso": 10,
+      "tipo_limite": "apertura_total",
+      "regla_solver": "HUELLA_EDIFICABLE: Ocupación máxima FOS 0.6 (150m2). Se respeta retiro frontal 5m, lateral 3m, fondo 5m."
+    },
+    {
+      "Origen": "PLANTA_BAJA",
+      "Destino": "PLANTA_ALTA",
+      "Peso": 10,
+      "tipo_limite": "apertura_total",
+      "regla_solver": "CONEXION_VERTICAL: Escalera en L. Altura libre mínima 2.10m en cualquier punto."
+    }
+  ],
+  "metadatos_globales": {
+    "estrategia_proyectual": "Sustracción y Retranqueo Volumétrico",
+    "referencia_conceptual": "Tadao Ando: la luz como sustancia",
+    "sistema_constructivo": "Muros de ladrillo visto PB, concreto visto PA. Losas macizas.",
+    "orientacion_optima": "Norte-Sur (patio inglés al Este, jardín posterior al Oeste)"
+  }
+}

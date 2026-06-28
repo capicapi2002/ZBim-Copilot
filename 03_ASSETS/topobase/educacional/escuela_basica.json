@@ -1,0 +1,171 @@
+{
+  "tipo_proyecto": "educacional",
+  "subtipologia": "escuela_basica",
+  "version_oas": "2.0",
+  "normativa_referencia": "Neufert",
+  "descripcion": "Centro de educación primaria con aulas modulares, gimnasio, comedor y áreas administrativas, en dos plantas",
+  "plantas": [
+    {
+      "nombre": "Planta Baja",
+      "altura_nivel": 0.0,
+      "espacios": [
+        {
+          "nombre": "Vestíbulo de acceso",
+          "area": 30.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "apertura_total", "longitud": 2.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.5 }
+          ]
+        },
+        {
+          "nombre": "Secretaría / Administración",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 }
+          ]
+        },
+        {
+          "nombre": "Sala de profesores",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Aula 1 (1er ciclo)",
+          "area": 50.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Aula 2 (1er ciclo)",
+          "area": 50.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Comedor / Salón multiusos",
+          "area": 80.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "apertura_total", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 4.0 }
+          ]
+        },
+        {
+          "nombre": "Cocina / Office",
+          "area": 20.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 0.9 }
+          ]
+        },
+        {
+          "nombre": "Baños niños",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.8 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        },
+        {
+          "nombre": "Escalera principal",
+          "area": 12.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Planta Alta",
+      "altura_nivel": 3.6,
+      "espacios": [
+        {
+          "nombre": "Pasillo distribuidor",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 }
+          ]
+        },
+        {
+          "nombre": "Aula 3 (2º ciclo)",
+          "area": 50.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Aula 4 (2º ciclo)",
+          "area": 50.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Aula 5 (laboratorio)",
+          "area": 60.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 7.5 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.5 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Biblioteca",
+          "area": 45.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Baños niñas",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.8 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

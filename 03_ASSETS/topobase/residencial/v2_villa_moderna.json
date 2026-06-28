@@ -1,0 +1,97 @@
+{
+  "tipo_proyecto": "residencial",
+  "subtipologia": "villa_moderna",
+  "version_oas": "2.0",
+  "normativa_referencia": "Neufert",
+  "descripcion": "Villa contemporánea de una planta con espacios abiertos y grandes superficies acristaladas",
+  "plantas": [
+    {
+      "nombre": "Planta Única",
+      "altura_nivel": 0.0,
+      "espacios": [
+        {
+          "nombre": "Vestíbulo de acceso",
+          "area": 8.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 },
+            { "tipo_limite": "apertura_total", "longitud": 1.2 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Salón-Comedor-Cocina",
+          "area": 55.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 5.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 5.0 },
+            { "tipo_limite": "apertura_total", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 }
+          ]
+        },
+        {
+          "nombre": "Suite principal",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Vestidor",
+          "area": 6.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.8 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 0.8 }
+          ]
+        },
+        {
+          "nombre": "Baño suite",
+          "area": 8.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 0.8 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.8 }
+          ]
+        },
+        {
+          "nombre": "Dormitorio invitados",
+          "area": 14.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 1.8 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Baño invitados",
+          "area": 4.5,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 2.2 },
+            { "tipo_limite": "apertura_visual", "longitud": 0.6 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.2 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.8 }
+          ]
+        },
+        {
+          "nombre": "Lavandería / Cuarto técnico",
+          "area": 5.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.8 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 0.8 }
+          ]
+        }
+      ]
+    }
+  ]
+}

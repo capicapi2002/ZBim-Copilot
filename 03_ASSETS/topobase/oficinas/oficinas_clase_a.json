@@ -1,0 +1,287 @@
+{
+  "tipo_proyecto": "oficinas",
+  "subtipologia": "oficinas_clase_a",
+  "version_oas": "2.0",
+  "normativa_referencia": "Neufert",
+  "descripcion": "Torre corporativa Clase A de 20 plantas con núcleo central, planta baja de doble altura, oficinas flexibles, salas de reuniones, executive lounge, auditorio y estacionamiento subterráneo",
+  "plantas": [
+    {
+      "nombre": "Planta Baja - Lobby",
+      "altura_nivel": 0.0,
+      "espacios": [
+        {
+          "nombre": "Vestíbulo principal de acceso",
+          "area": 120.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 },
+            { "tipo_limite": "apertura_total", "longitud": 4.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 }
+          ]
+        },
+        {
+          "nombre": "Recepción y seguridad",
+          "area": 30.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 6.0 }
+          ]
+        },
+        {
+          "nombre": "Salón de espera VIP",
+          "area": 40.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_doble", "longitud": 1.5 }
+          ]
+        },
+        {
+          "nombre": "Auditorio corporativo",
+          "area": 150.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 12.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 12.5 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 12.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 1.5 }
+          ]
+        },
+        {
+          "nombre": "Cafetería / Coffee point",
+          "area": 60.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 8.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.5 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 8.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.5 }
+          ]
+        },
+        {
+          "nombre": "Núcleo de ascensores principales",
+          "area": 30.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.2 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 }
+          ]
+        },
+        {
+          "nombre": "Escalera de emergencia",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 }
+          ]
+        },
+        {
+          "nombre": "Baños públicos lobby",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Planta Tipo Oficinas (x18)",
+      "altura_nivel": 3.8,
+      "repetir": 18,
+      "espacios_comunes": [
+        {
+          "nombre": "Vestíbulo de ascensores",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.2 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Pasillo de distribución",
+          "area": 35.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 12.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 12.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        },
+        {
+          "nombre": "Office / Kitchenette",
+          "area": 20.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 4.0 }
+          ]
+        },
+        {
+          "nombre": "Baños de planta",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 }
+          ]
+        },
+        {
+          "nombre": "Cuarto de instalaciones",
+          "area": 10.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 2.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.5 }
+          ]
+        }
+      ],
+      "unidades_privadas": [
+        {
+          "nombre": "Open space principal",
+          "area": 200.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 16.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 12.5 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 16.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 12.5 }
+          ]
+        },
+        {
+          "nombre": "Sala de reuniones grande (8 pax)",
+          "area": 30.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 5.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 6.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Sala de reuniones mediana (4 pax)",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 3.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 3.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Despacho dirección de planta",
+          "area": 22.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Planta Ejecutiva",
+      "altura_nivel": 3.8,
+      "espacios": [
+        {
+          "nombre": "Executive lounge",
+          "area": 80.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 }
+          ]
+        },
+        {
+          "nombre": "Despacho CEO",
+          "area": 40.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_doble", "longitud": 1.5 }
+          ]
+        },
+        {
+          "nombre": "Sala de juntas principal",
+          "area": 60.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 8.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 7.5 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 8.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 1.5 }
+          ]
+        },
+        {
+          "nombre": "Terraza ejecutiva",
+          "area": 50.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 },
+            { "tipo_limite": "apertura_total", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Baños ejecutivos",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Sótano - Estacionamiento (x3)",
+      "altura_nivel": -3.0,
+      "repetir": 3,
+      "espacios": [
+        {
+          "nombre": "Rampa de acceso",
+          "area": 50.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Área de estacionamiento",
+          "area": 400.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 }
+          ]
+        },
+        {
+          "nombre": "Cuarto de máquinas",
+          "area": 35.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

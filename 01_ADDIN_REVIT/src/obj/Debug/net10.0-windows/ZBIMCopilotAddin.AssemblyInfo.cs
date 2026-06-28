@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZBIMCopilotAddin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a093040d23da197321e6b9aeba7f712168b2026f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZBIMCopilotAddin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZBIMCopilotAddin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

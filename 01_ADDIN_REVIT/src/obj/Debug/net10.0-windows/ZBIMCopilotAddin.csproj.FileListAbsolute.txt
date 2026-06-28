@@ -1,6 +1,4 @@
-D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\bin\Debug\net10.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\bin\Debug\net10.0-windows\runtimes\win-x64\native\WebView2Loader.dll
-D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\bin\Debug\net10.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\bin\Debug\net10.0-windows\ZBIMCopilotAddin.deps.json
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\bin\Debug\net10.0-windows\ZBIMCopilotAddin.dll
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\bin\Debug\net10.0-windows\ZBIMCopilotAddin.pdb
@@ -15,9 +13,9 @@ D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\obj\Debug\net10.0-
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\obj\Debug\net10.0-windows\ZBIMCopilotAddin.AssemblyInfoInputs.cache
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\obj\Debug\net10.0-windows\ZBIMCopilotAddin.AssemblyInfo.cs
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\obj\Debug\net10.0-windows\ZBIMCopilotAddin.csproj.CoreCompileInputs.cache
+D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\obj\Debug\net10.0-windows\ZBIMCopilotAddin.sourcelink.json
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\obj\Debug\net10.0-windows\ZBIMCopi.A4486975.Up2Date
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\obj\Debug\net10.0-windows\ZBIMCopilotAddin.dll
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\obj\Debug\net10.0-windows\refint\ZBIMCopilotAddin.dll
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\obj\Debug\net10.0-windows\ZBIMCopilotAddin.pdb
 D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\obj\Debug\net10.0-windows\ref\ZBIMCopilotAddin.dll
-D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\src\bin\Debug\net10.0-windows\UI\OdysseusWeb\index.html

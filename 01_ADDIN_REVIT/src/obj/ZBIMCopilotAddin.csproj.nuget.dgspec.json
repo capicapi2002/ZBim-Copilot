@@ -14,12 +14,14 @@
         "outputPath": "D:\\1WORK\\00 HPI\\00 COPILOT\\kwen-bimcopilot\\01_ADDIN_REVIT\\src\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\pi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -49,6 +51,10 @@
             "Microsoft.Web.WebView2": {
               "target": "Package",
               "version": "[1.0.2792.45, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[2.0.3, )"
             }
           },
           "imports": [

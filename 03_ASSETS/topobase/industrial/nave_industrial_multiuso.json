@@ -1,0 +1,171 @@
+{
+  "tipo_proyecto": "industrial",
+  "subtipologia": "nave_industrial_multiuso",
+  "version_oas": "2.0",
+  "normativa_referencia": "Neufert",
+  "descripcion": "Nave industrial de última generación con zonas de producción, almacenaje, cámaras frigoríficas, oficinas, vestuarios y muelles de carga en una sola planta con altillo técnico",
+  "plantas": [
+    {
+      "nombre": "Planta Principal",
+      "altura_nivel": 0.0,
+      "espacios": [
+        {
+          "nombre": "Muelle de recepción de mercancías",
+          "area": 60.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "apertura_total", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 }
+          ]
+        },
+        {
+          "nombre": "Zona de producción principal",
+          "area": 500.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 25.0 }
+          ]
+        },
+        {
+          "nombre": "Almacén de producto terminado",
+          "area": 300.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 15.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 20.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 15.0 },
+            { "tipo_limite": "muro_puerta_doble", "longitud": 2.5 }
+          ]
+        },
+        {
+          "nombre": "Cámara frigorífica positiva (2-8°C)",
+          "area": 80.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.5 }
+          ]
+        },
+        {
+          "nombre": "Cámara frigorífica negativa (-20°C)",
+          "area": 50.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.5 }
+          ]
+        },
+        {
+          "nombre": "Área de control de calidad",
+          "area": 40.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 8.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Zona de mantenimiento",
+          "area": 35.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "muro_puerta_doble", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Vestuarios y taquillas",
+          "area": 45.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 9.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Comedor del personal",
+          "area": 55.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 11.0 }
+          ]
+        },
+        {
+          "nombre": "Oficinas administrativas",
+          "area": 70.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 }
+          ]
+        },
+        {
+          "nombre": "Sala de reuniones",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 5.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Sala de servidores / CPD",
+          "area": 10.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 }
+          ]
+        },
+        {
+          "nombre": "Muelle de expedición",
+          "area": 60.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "apertura_total", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Altillo técnico",
+      "altura_nivel": 3.5,
+      "espacios": [
+        {
+          "nombre": "Sala de compresores",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Central de climatización",
+          "area": 30.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

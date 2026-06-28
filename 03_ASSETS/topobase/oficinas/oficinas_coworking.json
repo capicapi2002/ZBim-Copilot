@@ -1,0 +1,207 @@
+{
+  "tipo_proyecto": "oficinas",
+  "subtipologia": "oficinas_coworking",
+  "version_oas": "2.0",
+  "normativa_referencia": "Neufert",
+  "descripcion": "Espacio de coworking de 3 plantas con zonas de hot-desking, oficinas privadas, cabinas acústicas, áreas de descanso, cafetería y terrazas ajardinadas",
+  "plantas": [
+    {
+      "nombre": "Planta Baja",
+      "altura_nivel": 0.0,
+      "espacios": [
+        {
+          "nombre": "Acceso y recepción",
+          "area": 45.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 6.0 },
+            { "tipo_limite": "apertura_total", "longitud": 2.5 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 6.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.5 }
+          ]
+        },
+        {
+          "nombre": "Cafetería / Bar",
+          "area": 70.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 8.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 8.8 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 8.0 },
+            { "tipo_limite": "apertura_total", "longitud": 2.0 }
+          ]
+        },
+        {
+          "nombre": "Zona de hot-desking abierta",
+          "area": 120.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 12.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 12.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 }
+          ]
+        },
+        {
+          "nombre": "Cabinas acústicas 1-4",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 6.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 3.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 0.9 }
+          ]
+        },
+        {
+          "nombre": "Sala de reuniones informal",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Área de descanso / gradas",
+          "area": 30.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Baños",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        },
+        {
+          "nombre": "Escalera principal",
+          "area": 12.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Planta Alta 1",
+      "altura_nivel": 3.2,
+      "espacios": [
+        {
+          "nombre": "Zona de oficinas privadas pequeñas",
+          "area": 90.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 9.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 9.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 }
+          ]
+        },
+        {
+          "nombre": "Sala de formación / workshop",
+          "area": 50.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 7.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 7.1 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 7.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 1.2 }
+          ]
+        },
+        {
+          "nombre": "Sala de podcast / streaming",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 3.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 0.9 }
+          ]
+        },
+        {
+          "nombre": "Terraza jardín",
+          "area": 40.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 8.0 },
+            { "tipo_limite": "apertura_total", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Baños",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Planta Alta 2",
+      "altura_nivel": 6.4,
+      "espacios": [
+        {
+          "nombre": "Oficinas privadas medianas",
+          "area": 100.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 10.0 }
+          ]
+        },
+        {
+          "nombre": "Sala de reuniones grande",
+          "area": 35.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 5.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 7.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 1.2 }
+          ]
+        },
+        {
+          "nombre": "Zona de silencio / biblioteca",
+          "area": 40.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 8.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 8.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Terraza superior",
+          "area": 35.0,
+          "contorno": [
+            { "tipo_limite": "muro_con_vidrio", "longitud": 7.0 },
+            { "tipo_limite": "apertura_total", "longitud": 3.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 7.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Baños",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

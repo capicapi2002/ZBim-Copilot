@@ -7,6 +7,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Autodesk.Revit.UI;
 using ZBIMCopilot.OAS;
+using ZBIMCopilot.Execution;
+using ZBimCopilot.Commands;
+using ZBimCopilot.Knowledge;
 
 namespace ZBIMCopilot
 {
@@ -21,88 +24,122 @@ namespace ZBIMCopilot
         private static OasEventHandler? _oasHandler;
         private static ExternalEvent? _oasExternalEvent;
 
+        private static BuildMixedTowerHandler? _mixedTowerHandler;
+        private static ExternalEvent? _mixedTowerExternalEvent;
+
+        private static ProjectConfigHandler? _projectConfigHandler;
+        private static ExternalEvent? _projectConfigExternalEvent;
+
+        // ========== NUEVOS CAMPOS (FASE D) ==========
+        private static FullProjectConfigHandler? _fullProjectConfigHandler;
+        private static ExternalEvent? _fullProjectConfigExternalEvent;
+
         public Result OnStartup(UIControlledApplication app)
         {
-            _oasHandler = new OasEventHandler();
-            _oasExternalEvent = ExternalEvent.Create(_oasHandler);
-
-            string tabName = "ZBIM-Copilot";
-            app.CreateRibbonTab(tabName);
-
-            RibbonPanel panel = app.CreateRibbonPanel(tabName, "Motor BIM");
-
-            PushButtonData buttonData = new PushButtonData(
-                "EjecutarSolver",
-                "Ejecutar\nSolver",
-                typeof(ZBIMApp).Assembly.Location,
-                typeof(ZBIMCopilot.SolverCommand).FullName);
-
-            PushButton? pushButton = panel.AddItem(buttonData) as PushButton;
-            
-            if (pushButton != null)
-            {
-                pushButton.ToolTip = "Inicia el servidor HTTP para recibir instrucciones del Agente IA.";
-            }
-
-            OdysseusPane.Register(app);
-
             try
             {
-                StartHttpServer();
+                _oasHandler = new OasEventHandler();
+                _oasExternalEvent = ExternalEvent.Create(_oasHandler);
+
+                _mixedTowerHandler = new BuildMixedTowerHandler();
+                _mixedTowerExternalEvent = ExternalEvent.Create(_mixedTowerHandler);
+
+                _projectConfigHandler = new ProjectConfigHandler();
+                _projectConfigExternalEvent = ExternalEvent.Create(_projectConfigHandler);
+
+                // ========== NUEVA INICIALIZACIÓN (FASE D) ==========
+                _fullProjectConfigHandler = new FullProjectConfigHandler();
+                _fullProjectConfigExternalEvent = ExternalEvent.Create(_fullProjectConfigHandler);
+
+                string tabName = "ZBIM-Copilot";
+                app.CreateRibbonTab(tabName);
+                RibbonPanel panel = app.CreateRibbonPanel(tabName, "Motor BIM");
+
+                PushButtonData solverBtnData = new PushButtonData(
+                    "EjecutarSolver", "Ejecutar\nSolver",
+                    typeof(ZBIMApp).Assembly.Location,
+                    typeof(ZBIMCopilot.SolverCommand).FullName);
+                if (panel.AddItem(solverBtnData) is PushButton solverBtn)
+                    solverBtn.ToolTip = "Inicia el servidor HTTP para recibir instrucciones del Agente IA.";
+
+                PushButtonData hybridBtnData = new PushButtonData(
+                    "BuildMixedTower", "Build Mixed\nTower",
+                    typeof(ZBIMApp).Assembly.Location,
+                    typeof(BuildMixedTowerCommand).FullName);
+                if (panel.AddItem(hybridBtnData) is PushButton hybridBtn)
+                    hybridBtn.ToolTip = "Genera una torre mixta usando topología OAS fija.";
+
+                OdysseusPane.Register(app);
+                // Ya no se suscribe a OnUICommand porque OdysseusPane delega directamente
+
+                return Result.Succeeded;
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show($"Error al iniciar servidor HTTP: {ex.Message}\nAsegúrese de ejecutar Revit como Administrador.", "ZBIM-Copilot");
+                System.Windows.Forms.MessageBox.Show($"Error fatal en OnStartup: {ex.Message}\n{ex.StackTrace}", "ZBIM-Copilot");
+                return Result.Failed;
             }
-
-            return Result.Succeeded;
         }
 
+        // Métodos estáticos requeridos por OdysseusPane
+        public static void TriggerMixedTowerExternalEvent()
+        {
+            _mixedTowerExternalEvent?.Raise();
+        }
+
+        public static void EnqueueProjectConfig(string json)
+        {
+            _projectConfigHandler?.Enqueue(json);
+        }
+
+        public static void TriggerProjectConfigExternalEvent()
+        {
+            _projectConfigExternalEvent?.Raise();
+        }
+
+        // ========== NUEVOS MÉTODOS ESTÁTICOS (FASE D) ==========
+        public static void EnqueueFullProjectConfig(string json)
+        {
+            _fullProjectConfigHandler?.Enqueue(json);
+        }
+
+        public static void TriggerFullProjectConfigExternalEvent()
+        {
+            _fullProjectConfigExternalEvent?.Raise();
+        }
+
+        // Servidor HTTP (sin cambios)
         private void StartHttpServer()
         {
             if (_httpListener != null) return;
-
             _httpListener = new HttpListener();
-            _httpListener.Prefixes.Add("http://localhost:8080/");
-            
-            try
-            {
-                _httpListener.Start();
-                NotifyStatus("✅ Servidor HTTP activo en http://localhost:8080/");
-            }
-            catch (Exception ex)
-            {
-                NotifyStatus($"❌ Error al iniciar HttpListener: {ex.Message}");
-                throw;
-            }
-
+            _httpListener.Prefixes.Add("http://localhost:8080/oas/");
             _cts = new CancellationTokenSource();
-            _serverTask = Task.Run(() => RunServerAsync(_cts.Token), _cts.Token);
-        }
 
-        private async Task RunServerAsync(CancellationToken cancellationToken)
-        {
-            while (!cancellationToken.IsCancellationRequested && _httpListener != null && _httpListener.IsListening)
+            _serverTask = Task.Run(() =>
             {
                 try
                 {
-                    var context = await _httpListener.GetContextAsync().ConfigureAwait(false);
-                    _ = Task.Run(() => ProcessRequestAsync(context), cancellationToken);
+                    _httpListener.Start();
+                    NotifyStatus("✅ Servidor HTTP activo en http://localhost:8080/oas/");
+                    while (!_cts.IsCancellationRequested)
+                    {
+                        var contextTask = _httpListener.GetContextAsync();
+                        contextTask.Wait(_cts.Token);
+                        HttpListenerContext context = contextTask.Result;
+                        Task.Run(() => ProcessRequestAsync(context), _cts.Token);
+                    }
                 }
-                catch (HttpListenerException) when (cancellationToken.IsCancellationRequested)
-                {
-                    break;
-                }
-                catch (ObjectDisposedException)
-                {
-                    break;
-                }
+                catch (OperationCanceledException) { }
                 catch (Exception ex)
                 {
-                    NotifyStatus($"❌ Error en RunServerAsync: {ex.Message}");
-                    await Task.Delay(100, cancellationToken).ConfigureAwait(false);
+                    NotifyStatus($"❌ Error en servidor HTTP: {ex.Message}");
                 }
-            }
+                finally
+                {
+                    _httpListener.Stop();
+                }
+            }, _cts.Token);
         }
 
         private async Task ProcessRequestAsync(HttpListenerContext context)
@@ -110,13 +147,11 @@ namespace ZBIMCopilot
             try
             {
                 var request = context.Request;
-                var response = context.Response;
-
-                NotifyStatus($"🔔 Petición HTTP recibida: {request.HttpMethod} {request.Url?.PathAndQuery}");
+                NotifyStatus($"🔔 Petición HTTP: {request.HttpMethod} {request.Url?.PathAndQuery}");
 
                 if (request.HttpMethod != "POST" || request.Url?.AbsolutePath != "/oas/")
                 {
-                    await SendResponseAsync(response, 404, "Ruta no encontrada").ConfigureAwait(false);
+                    await SendResponseAsync(context.Response, 404, "Ruta no encontrada").ConfigureAwait(false);
                     return;
                 }
 
@@ -126,34 +161,28 @@ namespace ZBIMCopilot
                     body = await reader.ReadToEndAsync().ConfigureAwait(false);
                 }
 
-                NotifyStatus($" Body recibido ({body.Length} caracteres)");
-
                 if (string.IsNullOrWhiteSpace(body))
                 {
-                    await SendResponseAsync(response, 400, "Body vacío").ConfigureAwait(false);
+                    await SendResponseAsync(context.Response, 400, "Body vacío").ConfigureAwait(false);
                     return;
                 }
 
                 OasProject? project;
                 try
                 {
-                    var options = new JsonSerializerOptions 
-                    { 
-                        PropertyNameCaseInsensitive = true,
-                        WriteIndented = false
-                    };
+                    var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                     project = JsonSerializer.Deserialize<OasProject>(body, options);
                 }
                 catch (JsonException ex)
                 {
-                    NotifyStatus($"❌ Error al deserializar JSON: {ex.Message}");
-                    await SendResponseAsync(response, 400, $"JSON inválido: {ex.Message}").ConfigureAwait(false);
+                    NotifyStatus($"❌ JSON inválido: {ex.Message}");
+                    await SendResponseAsync(context.Response, 400, $"JSON inválido: {ex.Message}").ConfigureAwait(false);
                     return;
                 }
 
                 if (project == null)
                 {
-                    await SendResponseAsync(response, 400, "JSON deserializado es nulo").ConfigureAwait(false);
+                    await SendResponseAsync(context.Response, 400, "JSON nulo").ConfigureAwait(false);
                     return;
                 }
 
@@ -161,26 +190,18 @@ namespace ZBIMCopilot
 
                 if (_oasHandler != null && _oasExternalEvent != null)
                 {
-                    _oasHandler.SetProject(project);
-                    var eventResult = _oasExternalEvent.Raise();
-                    NotifyStatus($"📤 ExternalEvent encolado (Resultado: {eventResult})");
-                    
-                    await SendResponseAsync(response, 200, "Proyecto encolado").ConfigureAwait(false);
+                    _oasHandler.Enqueue(project, context);
+                    _oasExternalEvent.Raise();
                 }
                 else
                 {
-                    NotifyStatus("❌ OasEventHandler o ExternalEvent no inicializados");
-                    await SendResponseAsync(response, 500, "Handler no disponible").ConfigureAwait(false);
+                    await SendResponseAsync(context.Response, 500, "Handler no disponible").ConfigureAwait(false);
                 }
             }
             catch (Exception ex)
             {
-                NotifyStatus($"❌ Error en ProcessRequestAsync: {ex.Message}\n{ex.StackTrace}");
-                try
-                {
-                    await SendResponseAsync(context.Response, 500, $"Error interno: {ex.Message}").ConfigureAwait(false);
-                }
-                catch { }
+                NotifyStatus($"❌ Error en ProcessRequestAsync: {ex.Message}");
+                try { await SendResponseAsync(context.Response, 500, $"Error: {ex.Message}").ConfigureAwait(false); } catch { }
             }
         }
 
@@ -190,18 +211,15 @@ namespace ZBIMCopilot
             {
                 response.StatusCode = statusCode;
                 response.ContentType = "text/plain; charset=utf-8";
-                
                 byte[] buffer = Encoding.UTF8.GetBytes(message);
                 response.ContentLength64 = buffer.Length;
-                
                 await response.OutputStream.WriteAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
                 response.OutputStream.Close();
-                
-                NotifyStatus($"📤 Respuesta enviada: {statusCode} - {message}");
+                NotifyStatus($"📤 Respuesta {statusCode}: {message}");
             }
             catch (Exception ex)
             {
-                NotifyStatus($"❌ Error al enviar respuesta: {ex.Message}");
+                NotifyStatus($"❌ Error enviando respuesta: {ex.Message}");
             }
         }
 
@@ -224,13 +242,12 @@ namespace ZBIMCopilot
                 _cts?.Cancel();
                 _httpListener?.Stop();
                 _httpListener?.Close();
-                NotifyStatus(" Servidor HTTP detenido");
+                NotifyStatus("Servidor HTTP detenido");
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Error en OnShutdown: {ex.Message}");
             }
-
             return Result.Succeeded;
         }
     }

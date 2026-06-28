@@ -5,6 +5,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
     <Nullable>enable</Nullable>
+    <RootNamespace>ZBIMCopilot</RootNamespace>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,12 +22,14 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2792.45" />
+    <PackageReference Include="System.Data.SQLite" Version="2.0.3" />
   </ItemGroup>
 
+  <!-- RECURSO EMBEBIDO CON NOMBRE LÓGICO FORZADO -->
   <ItemGroup>
-    <None Update="UI\OdysseusWeb\**\*.*">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="UI\OdysseusWeb\index.html">
+      <LogicalName>ZBIMCopilot.UI.OdysseusWeb.index.html</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

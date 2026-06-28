@@ -1,0 +1,191 @@
+{
+  "tipo_proyecto": "salud",
+  "subtipologia": "centro_salud_ambulatorio",
+  "version_oas": "2.0",
+  "normativa_referencia": "Neufert",
+  "descripcion": "Centro de atención primaria con consultorios, urgencias, laboratorio, farmacia y áreas de espera en dos plantas",
+  "plantas": [
+    {
+      "nombre": "Planta Baja",
+      "altura_nivel": 0.0,
+      "espacios": [
+        {
+          "nombre": "Vestíbulo de acceso y recepción",
+          "area": 60.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "apertura_total", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 8.0 },
+            { "tipo_limite": "muro_con_vidrio", "longitud": 3.0 }
+          ]
+        },
+        {
+          "nombre": "Sala de espera general",
+          "area": 45.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.2 }
+          ]
+        },
+        {
+          "nombre": "Consultorio 1 (medicina general)",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "apertura_visual", "longitud": 1.8 }
+          ]
+        },
+        {
+          "nombre": "Consultorio 2 (pediatría)",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "apertura_visual", "longitud": 1.8 }
+          ]
+        },
+        {
+          "nombre": "Consultorio 3 (ginecología)",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "apertura_visual", "longitud": 1.8 }
+          ]
+        },
+        {
+          "nombre": "Sala de curas / extracciones",
+          "area": 20.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "apertura_visual", "longitud": 1.5 }
+          ]
+        },
+        {
+          "nombre": "Farmacia",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 }
+          ]
+        },
+        {
+          "nombre": "Baños públicos",
+          "area": 20.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 }
+          ]
+        },
+        {
+          "nombre": "Escalera principal",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Planta Alta",
+      "altura_nivel": 3.5,
+      "espacios": [
+        {
+          "nombre": "Pasillo distribuidor",
+          "area": 30.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 10.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        },
+        {
+          "nombre": "Consultorio 4 (odontología)",
+          "area": 22.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.4 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "apertura_visual", "longitud": 1.8 }
+          ]
+        },
+        {
+          "nombre": "Consultorio 5 (psicología)",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 4.5 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 0.9 },
+            { "tipo_limite": "apertura_visual", "longitud": 1.8 }
+          ]
+        },
+        {
+          "nombre": "Laboratorio de análisis clínicos",
+          "area": 35.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 7.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 }
+          ]
+        },
+        {
+          "nombre": "Sala de reuniones",
+          "area": 25.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego_acustico", "longitud": 5.0 },
+            { "tipo_limite": "muro_puerta_acustica", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 }
+          ]
+        },
+        {
+          "nombre": "Despacho de dirección",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 3.5 },
+            { "tipo_limite": "apertura_visual", "longitud": 1.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.5 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 }
+          ]
+        },
+        {
+          "nombre": "Sala de servidores / CPD",
+          "area": 12.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        },
+        {
+          "nombre": "Baños personal",
+          "area": 12.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego_humedo", "longitud": 4.0 },
+            { "tipo_limite": "muro_puerta_paso", "longitud": 0.9 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

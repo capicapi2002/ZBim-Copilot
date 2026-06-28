@@ -1,0 +1,190 @@
+{
+  "id_proyecto": "VIVIENDA_MULTIFAMILIAR_BLOQUE",
+  "nodo_raiz": "NUCLEO_VERTICAL_MF",
+  "nodos": [
+    {
+      "id_espacio": "NUCLEO_VERTICAL_MF",
+      "nombre": "Núcleo de Circulaciones Verticales",
+      "id_zona": "Z_CIRCULACION",
+      "area_min_m2": 0,
+      "metadatos_volumetricos": {
+        "escalera": {
+          "ancho_tramo_m": 1.20,
+          "huella_m": 0.28,
+          "contrahuella_m": 0.175,
+          "contrahuellas_por_tramo": 16,
+          "altura_salvada_m": 2.80,
+          "numero_tramos": 2,
+          "descanso_m": 1.20,
+          "ancho_interior_caja_m": 2.55,
+          "largo_interior_caja_m": 6.60,
+          "muros": "concreto_RC_0.20m",
+          "ducto_presurizacion": "shaft_adosado_0.50x0.50m",
+          "sobrepresion_Pa": 50,
+          "velocidad_aire_puerta_abierta_m_s": 0.75
+        },
+        "elevador": {
+          "tipo": "MRL_630kg_8personas",
+          "ancho_hueco_interior_m": 1.60,
+          "fondo_hueco_interior_m": 1.45,
+          "puerta_m": 0.80,
+          "foso_m": 1.20,
+          "galibo_superior_m": 3.20,
+          "cantidad": 2,
+          "ancho_total_exterior_doble_m": 3.80,
+          "fondo_total_exterior_m": 1.85
+        },
+        "vestibulo_emergencia": {
+          "aplica_si_altura_mayor_28m": true,
+          "dimensiones_min_m": [1.50, 1.50],
+          "puertas": "RF60_0.90x2.10m",
+          "rociadores": true,
+          "detector_humo": true
+        }
+      }
+    },
+    {
+      "id_espacio": "DEPARTAMENTO_TIPO",
+      "nombre": "Unidad de Vivienda Tipo",
+      "id_zona": "Z_PRIVADA",
+      "area_min_m2": 75,
+      "metadatos_volumetricos": {
+        "altura_libre_m": 2.70,
+        "floor_to_floor_m": 2.80,
+        "dormitorios": 2,
+        "banios": 1,
+        "profundidad_maxima_m": 12.0
+      }
+    },
+    {
+      "id_espacio": "MURO_DIVISORIO_VECINO",
+      "nombre": "Muro Divisorio entre Unidades (STC>=55)",
+      "id_zona": "Z_LIMITE",
+      "area_min_m2": 0,
+      "metadatos_volumetricos": {
+        "tipo": "doble_hoja_ladrillo_12+4+12cm_lana_mineral",
+        "espesor_total_m": 0.30,
+        "alternativa": "concreto_RC_0.20m_STC55",
+        "cero_vanos": true
+      }
+    },
+    {
+      "id_espacio": "CLUSTER_HUMEDO_MF",
+      "nombre": "Agrupamiento Húmedo Cocina y Baños",
+      "id_zona": "Z_SERVICIO",
+      "area_min_m2": 0,
+      "metadatos_volumetricos": {
+        "cocina_adosada_medianera": true,
+        "cocinas_back_to_back": true,
+        "banios_franja_tecnica_interior": true,
+        "ducto_shunt": {
+          "seccion_m": [0.15, 0.30],
+          "funcion": "ventilacion_banios_y_cocinas",
+          "terminacion": "extractor_estatico_eolico_en_azotea"
+        },
+        "shaft_sanitario_colectivo": {
+          "seccion_interior_m": [0.40, 0.80],
+          "contiene": [
+            "2 montantes agua fria",
+            "2 montantes agua caliente",
+            "bajada_cloacal_4pulg",
+            "ventilacion_primaria_2pulg",
+            "desague_cocina",
+            "bajada_pluvial"
+          ],
+          "registro_por_planta": "puerta_0.40x0.60m_en_pasillo_o_banio"
+        }
+      }
+    },
+    {
+      "id_espacio": "FACHADA_EXTERIOR_MF",
+      "nombre": "Fachada a Vía Pública",
+      "id_zona": "Z_EXTERIOR",
+      "area_min_m2": 0,
+      "metadatos_volumetricos": {
+        "apertura_maxima": "60%_sup_fachada",
+        "antepechos": "0.90m_dormitorios",
+        "material": "revestimiento_continuo_monocapa"
+      }
+    },
+    {
+      "id_espacio": "PATIO_PRIMERA_CATEGORIA",
+      "nombre": "Patio para locales de primera categoría",
+      "id_zona": "Z_VACIO",
+      "area_min_m2": 12,
+      "metadatos_volumetricos": {
+        "lado_min_PB_1Piso_m": 3.00,
+        "lado_min_PB_2Pisos_m": 3.50,
+        "incremento_por_piso_m": 0.50,
+        "ventila_primera_categoria": true
+      }
+    },
+    {
+      "id_espacio": "PATIO_SEGUNDA_CATEGORIA",
+      "nombre": "Patio para locales de segunda categoría",
+      "id_zona": "Z_VACIO",
+      "area_min_m2": 8,
+      "metadatos_volumetricos": {
+        "lado_min_PB_1Piso_m": 2.00,
+        "lado_min_PB_2Pisos_m": 2.50,
+        "ventila_segunda_categoria": true
+      }
+    }
+  ],
+  "adyacencias": [
+    {
+      "Origen": "DEPARTAMENTO_TIPO",
+      "Destino": "MURO_DIVISORIO_VECINO",
+      "Peso": 10,
+      "tipo_limite": "muro_ciego_acustico",
+      "regla_solver": "MEDIANERIA_STC55: Doble hoja 12+4+12 cm lana mineral o HA 0.20m. Cero vanos. STC >= 55."
+    },
+    {
+      "Origen": "DEPARTAMENTO_TIPO",
+      "Destino": "CLUSTER_HUMEDO_MF",
+      "Peso": 10,
+      "tipo_limite": "muro_ciego_humedo",
+      "regla_solver": "APILAMIENTO_VERTICAL: Cocinas back-to-back con vecino. Baños alineados en franja técnica. Compartir montantes y ductos shunt 0.15x0.30m."
+    },
+    {
+      "Origen": "DEPARTAMENTO_TIPO",
+      "Destino": "FACHADA_EXTERIOR_MF",
+      "Peso": 10,
+      "tipo_limite": "apertura_visual",
+      "regla_solver": "NORMA_ILUM_VENT_1RA: Locales 1ra cat (Living/Dorm) -> Vanos >= 10% sup piso, Ventilación >= 5% (min 0.6m2). Profundidad max 2.5xH libre (6.75m). Si >6.75m obligar ventilación cruzada (angulo >= 90° entre vanos)."
+    },
+    {
+      "Origen": "DEPARTAMENTO_TIPO",
+      "Destino": "PATIO_PRIMERA_CATEGORIA",
+      "Peso": 8,
+      "tipo_limite": "apertura_visual",
+      "regla_solver": "PATIOS_CATEGORIA_1RA: Si ventila 1ra Cat, lado min 3.0m (PB+1), 3.5m (PB+2) +0.5m/piso extra. Superficie mínima 12m2 (PB+1)."
+    },
+    {
+      "Origen": "CLUSTER_HUMEDO_MF",
+      "Destino": "PATIO_SEGUNDA_CATEGORIA",
+      "Peso": 7,
+      "tipo_limite": "apertura_visual",
+      "regla_solver": "PATIOS_CATEGORIA_2DA: Si ventila 2da Cat (Cocinas/Baños), lado min 2.0m (PB+1), 2.5m (PB+2). Superficie mínima 8m2 (PB+1)."
+    },
+    {
+      "Origen": "NUCLEO_VERTICAL_MF",
+      "Destino": "DEPARTAMENTO_TIPO",
+      "Peso": 10,
+      "tipo_limite": "muro_puerta_cortafuego",
+      "regla_solver": "ACCESO_VERTICAL: Puerta RF60 desde palier. Vestíbulo de independencia si altura > 28m."
+    },
+    {
+      "Origen": "NUCLEO_VERTICAL_MF",
+      "Destino": "FACHADA_EXTERIOR_MF",
+      "Peso": 5,
+      "tipo_limite": "apertura_visual",
+      "regla_solver": "ILUMINACION_ESCALERA: Ventana en fachada para iluminación natural del núcleo."
+    }
+  ],
+  "metadatos_globales": {
+    "sistema_constructivo": "Muros portantes de concreto armado 0.20m o pórticos de concreto",
+    "modulacion": "0.60x0.60m",
+    "orientacion_optima": "Norte-Sur para ventilación cruzada"
+  }
+}

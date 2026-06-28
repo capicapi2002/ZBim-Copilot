@@ -1,0 +1,18 @@
+[
+  {
+    "command": "nuevo_proyecto",
+    "description": "Iniciar un nuevo proyecto arquitectónico"
+  },
+  {
+    "command": "estado",
+    "description": "Consultar el estado de tu último proyecto"
+  },
+  {
+    "command": "ayuda",
+    "description": "Mostrar la lista de comandos disponibles"
+  },
+  {
+    "command": "cancelar",
+    "description": "Cancelar el proyecto en curso"
+  }
+]

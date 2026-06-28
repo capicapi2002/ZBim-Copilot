@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>ZBIM-Copilot</Name>
+    <Assembly>src\bin\Release\net10.0-windows\ZBIMCopilotAddin.dll</Assembly>
+    <AddInId>d4c8b5a2-3e1f-4a9b-8c2d-5e6f7a8b9c0d</AddInId>
+    <FullClassName>ZBIMCopilot.ZBIMApp</FullClassName>
+    <VendorId>ZBIM</VendorId>
+    <VendorDescription>ZBIM Copilot - Generative BIM Engine</VendorDescription>
+  </AddIn>
+</RevitAddIns>

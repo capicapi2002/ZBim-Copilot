@@ -1,0 +1,255 @@
+{
+  "projectName": "Casa 4 Dormitorios 2 Plantas",
+  "buildings": [
+    {
+      "id": "BLD-01",
+      "name": "Casa Principal",
+      "origin": [0, 0],
+      "levels": [
+        {
+          "id": "LVL-01",
+          "name": "Planta Baja",
+          "elevation": 0,
+          "f2f": 2800,
+          "use": "Zona Dia y Visitas",
+          "zones": [
+            {
+              "id": "ZONE-PB-01",
+              "name": "Zona Social",
+              "spaces": [
+                {
+                  "id": "SPC-LIVING",
+                  "name": "Living-Comedor",
+                  "type": "Living",
+                  "origin": [0, 0],
+                  "dimensions": [6000, 5000],
+                  "boundary": "Exterior",
+                  "openings": [
+                    {
+                      "id": "OP-01",
+                      "type": "Window",
+                      "width": 2000,
+                      "height": 1500,
+                      "sillHeight": 900,
+                      "origin": [3000, 0],
+                      "rotation": 0
+                    },
+                    {
+                      "id": "OP-02",
+                      "type": "Door",
+                      "width": 900,
+                      "height": 2100,
+                      "sillHeight": 0,
+                      "origin": [5500, 2500],
+                      "rotation": 90
+                    }
+                  ],
+                  "furniture": [
+                    {
+                      "id": "FURN-01",
+                      "subType": "BaseCabinet",
+                      "origin": [6000, 4500],
+                      "dimensions": [4000, 600],
+                      "rotation": 0
+                    },
+                    {
+                      "id": "FURN-02",
+                      "subType": "Refrigerator",
+                      "origin": [9400, 500],
+                      "dimensions": [600, 600],
+                      "rotation": 0
+                    }
+                  ],
+                  "fixtures": [
+                    {
+                      "id": "FIX-01",
+                      "subType": "Sink",
+                      "origin": [7500, 4700],
+                      "rotation": 0
+                    }
+                  ],
+                  "stairs": [
+                    {
+                      "id": "STAIR-01",
+                      "type": "Straight",
+                      "baseLevelName": "Planta Baja",
+                      "topLevelName": "Planta Alta",
+                      "width": 1000,
+                      "origin": [5000, 2000],
+                      "endPoint": [5000, 2000],
+                      "rotation": 0
+                    }
+                  ]
+                },
+                {
+                  "id": "SPC-COCINA",
+                  "name": "Cocina",
+                  "type": "Kitchen",
+                  "origin": [6000, 0],
+                  "dimensions": [4000, 5000],
+                  "boundary": "Exterior",
+                  "furniture": [
+                    {
+                      "id": "FURN-03",
+                      "subType": "BaseCabinet",
+                      "origin": [6000, 4500],
+                      "dimensions": [4000, 600],
+                      "rotation": 0
+                    }
+                  ],
+                  "fixtures": [
+                    {
+                      "id": "FIX-02",
+                      "subType": "Sink",
+                      "origin": [7500, 4700],
+                      "rotation": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ZONE-PB-02",
+              "name": "Zona Noche PB",
+              "spaces": [
+                {
+                  "id": "SPC-BANO-VISITAS",
+                  "name": "Baño Visitas",
+                  "type": "Bathroom",
+                  "origin": [0, 5000],
+                  "dimensions": [2000, 2500],
+                  "boundary": "Interior",
+                  "fixtures": [
+                    {
+                      "id": "FIX-03",
+                      "subType": "Toilet",
+                      "origin": [200, 5200],
+                      "rotation": 90
+                    },
+                    {
+                      "id": "FIX-04",
+                      "subType": "Sink",
+                      "origin": [1500, 6800],
+                      "rotation": 0
+                    }
+                  ]
+                },
+                {
+                  "id": "SPC-DORM-VISITAS",
+                  "name": "Dormitorio Visitas",
+                  "type": "Bedroom",
+                  "origin": [2000, 5000],
+                  "dimensions": [3500, 4000],
+                  "boundary": "Exterior",
+                  "furniture": [
+                    {
+                      "id": "FURN-04",
+                      "subType": "Bed",
+                      "origin": [2200, 7500],
+                      "dimensions": [1600, 2000],
+                      "rotation": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "LVL-02",
+          "name": "Planta Alta",
+          "elevation": 2800,
+          "f2f": 2800,
+          "use": "Zona Noche Principal",
+          "zones": [
+            {
+              "id": "ZONE-PA-01",
+              "name": "Zona Privada",
+              "spaces": [
+                {
+                  "id": "SPC-DORM-PRINCIPAL",
+                  "name": "Dormitorio Principal",
+                  "type": "Bedroom",
+                  "origin": [0, 0],
+                  "dimensions": [4500, 5000],
+                  "boundary": "Exterior",
+                  "furniture": [
+                    {
+                      "id": "FURN-05",
+                      "subType": "Bed",
+                      "origin": [1450, 3000],
+                      "dimensions": [1800, 2000],
+                      "rotation": 0
+                    }
+                  ]
+                },
+                {
+                  "id": "SPC-BANO-SUITE",
+                  "name": "Baño en Suite",
+                  "type": "Bathroom",
+                  "origin": [0, 5000],
+                  "dimensions": [2500, 3000],
+                  "boundary": "Interior",
+                  "fixtures": [
+                    {
+                      "id": "FIX-05",
+                      "subType": "Toilet",
+                      "origin": [200, 5200],
+                      "rotation": 90
+                    },
+                    {
+                      "id": "FIX-06",
+                      "subType": "Sink",
+                      "origin": [1800, 5200],
+                      "rotation": 0
+                    },
+                    {
+                      "id": "FIX-07",
+                      "subType": "Shower",
+                      "origin": [200, 7200],
+                      "rotation": 0
+                    }
+                  ]
+                },
+                {
+                  "id": "SPC-DORM-2",
+                  "name": "Dormitorio 2",
+                  "type": "Bedroom",
+                  "origin": [4500, 0],
+                  "dimensions": [3500, 4000],
+                  "boundary": "Exterior",
+                  "furniture": [
+                    {
+                      "id": "FURN-06",
+                      "subType": "Bed",
+                      "origin": [4700, 2000],
+                      "dimensions": [1600, 2000],
+                      "rotation": 0
+                    }
+                  ]
+                },
+                {
+                  "id": "SPC-DORM-3",
+                  "name": "Dormitorio 3",
+                  "type": "Bedroom",
+                  "origin": [8000, 0],
+                  "dimensions": [3500, 4000],
+                  "boundary": "Exterior",
+                  "furniture": [
+                    {
+                      "id": "FURN-07",
+                      "subType": "Bed",
+                      "origin": [8200, 2000],
+                      "dimensions": [1600, 2000],
+                      "rotation": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

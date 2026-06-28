@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZBIM-Copilot - Estado del Proyecto</title>
+    <style>
+        :root {
+            --bg-main: #E8E8E8;
+            --bg-panel: #F0F0F0;
+            --bg-input: #FFFFFF;
+            --bg-btn-gray: #D0D0D0;
+            --border-color: #B0B0B0;
+            --accent: #007ACC;
+            --accent-hover: #005A9E;
+            --text-main: #000000;
+            --text-muted: #333333;
+            --danger: #D32F2F;
+            --success: #2E7D32;
+            --warning: #F57C00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 15px 20px;
+            background-color: var(--bg-main);
+            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .content {
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .project-info {
+            text-align: left;
+            background-color: var(--bg-input);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 25px;
+        }
+
+        .project-info p {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .project-info strong {
+            color: var(--text-muted);
+        }
+
+        .status-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .status-icon {
+            font-size: 3em;
+        }
+
+        .status-text {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .error-text {
+            color: var(--danger);
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--bg-btn-gray);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .btn-download {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 25px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.85em;
+            color: var(--text-muted);
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Ocultar elementos por defecto */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="panel-header">
+            ZBIM‑Copilot – Estado del Proyecto
+        </div>
+        <div class="content">
+            
+            <div class="project-info">
+                <p><strong>Proyecto:</strong> <span id="project_name">N/D</span></p>
+                <p><strong>Tipo:</strong> <span id="project_type">N/D</span></p>
+                <p><strong>Ubicación:</strong> <span id="location">N/D</span></p>
+            </div>
+
+            <!-- ESTADO: RECIBIDO -->
+            <div id="status-recibido" class="status-section hidden">
+                <div class="status-icon">⏳</div>
+                <div class="status-text">En cola…</div>
+            </div>
+
+            <!-- ESTADO: GENERANDO -->
+            <div id="status-generando" class="status-section hidden">
+                <div class="spinner"></div>
+                <div class="status-text">Generando OAS con IA…</div>
+            </div>
+
+            <!-- ESTADO: COMPLETADO -->
+            <div id="status-completado" class="status-section hidden">
+                <div class="status-icon">✅</div>
+                <div class="status-text">¡Proyecto completado!</div>
+                <a id="download_pdf" href="#" class="btn-download" download>📄 Descargar PDF</a>
+                <br>
+                <a id="download_ifc" href="#" class="btn-download" style="background-color: var(--success);" download>📐 Descargar IFC</a>
+            </div>
+
+            <!-- ESTADO: ERROR -->
+            <div id="status-error" class="status-section hidden">
+                <div class="status-icon">❌</div>
+                <div class="status-text">Error</div>
+                <div id="error-message" class="error-text">No se pudo generar el proyecto.</div>
+            </div>
+
+            <div class="footer">
+                <p>Visítanos en <a href="https://zbimcopilot.com" target="_blank">zbimcopilot.com</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Leer parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        const projectName = urlParams.get('project_name') || 'N/D';
+        const projectType = urlParams.get('project_type') || 'N/D';
+        const location = urlParams.get('location') || 'N/D';
+        const status = urlParams.get('status') || 'recibido';
+        const downloadUrl = urlParams.get('download_url');
+        const ifcUrl = urlParams.get('ifc_url');
+        const errorMsg = urlParams.get('error_message');
+
+        // Rellenar datos del proyecto
+        document.getElementById('project_name').innerText = projectName;
+        document.getElementById('project_type').innerText = projectType;
+        document.getElementById('location').innerText = location;
+
+        // Mostrar sección correspondiente al estado
+        function showStatus(id) {
+            document.querySelectorAll('.status-section').forEach(el => el.classList.add('hidden'));
+            const element = document.getElementById(id);
+            if (element) element.classList.remove('hidden');
+        }
+
+        if (status === 'recibido') {
+            showStatus('status-recibido');
+        } else if (status === 'generando') {
+            showStatus('status-generando');
+        } else if (status === 'completado') {
+            showStatus('status-completado');
+            if (downloadUrl) document.getElementById('download_pdf').href = downloadUrl;
+            if (ifcUrl) document.getElementById('download_ifc').href = ifcUrl;
+        } else if (status === 'error') {
+            showStatus('status-error');
+            if (errorMsg) document.getElementById('error-message').innerText = decodeURIComponent(errorMsg);
+        } else {
+            // Estado desconocido, mostrar como recibido por defecto
+            showStatus('status-recibido');
+        }
+    </script>
+</body>
+</html>

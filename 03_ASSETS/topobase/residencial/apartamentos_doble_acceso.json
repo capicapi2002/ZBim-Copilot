@@ -1,0 +1,116 @@
+{
+  "tipo_proyecto": "residencial",
+  "subtipologia": "edificio_altura_doble_acceso",
+  "version_oas": "2.0",
+  "normativa_referencia": "Neufert",
+  "descripcion": "Edificio de viviendas con doble núcleo de comunicación y apartamentos a ambos lados de pasillo central",
+  "plantas": [
+    {
+      "nombre": "Planta Baja",
+      "altura_nivel": 0.0,
+      "espacios": [
+        {
+          "nombre": "Portal principal",
+          "area": 20.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "apertura_total", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 }
+          ]
+        },
+        {
+          "nombre": "Núcleo A – Escalera + ascensor",
+          "area": 14.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Núcleo B – Escalera + ascensor",
+          "area": 14.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Local comercial",
+          "area": 40.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "apertura_total", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Planta Tipo (x8)",
+      "altura_nivel": 3.2,
+      "repetir": 8,
+      "espacios_comunes": [
+        {
+          "nombre": "Pasillo central",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 },
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 6.0 }
+          ]
+        },
+        {
+          "nombre": "Núcleo A",
+          "area": 12.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Núcleo B",
+          "area": 12.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        }
+      ],
+      "unidades_privadas": [
+        {
+          "nombre": "Apartamento Tipo 1 (fachada este)",
+          "area": 60.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.4 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.4 }
+          ]
+        },
+        {
+          "nombre": "Apartamento Tipo 2 (fachada oeste)",
+          "area": 58.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.8 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.2 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.8 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.2 }
+          ]
+        }
+      ]
+    }
+  ]
+}

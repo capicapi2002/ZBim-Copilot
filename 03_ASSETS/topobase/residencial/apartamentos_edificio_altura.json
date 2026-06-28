@@ -1,0 +1,138 @@
+{
+  "tipo_proyecto": "residencial",
+  "subtipologia": "edificio_altura_apartamentos",
+  "version_oas": "2.0",
+  "normativa_referencia": "Neufert",
+  "descripcion": "Edificio de viviendas en altura con planta tipo de 4 apartamentos por nivel y locales en planta baja",
+  "plantas": [
+    {
+      "nombre": "Planta Baja",
+      "altura_nivel": 0.0,
+      "espacios": [
+        {
+          "nombre": "Portal de acceso",
+          "area": 18.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "apertura_total", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 }
+          ]
+        },
+        {
+          "nombre": "Núcleo de escaleras",
+          "area": 12.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Ascensor",
+          "area": 4.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Local comercial 1",
+          "area": 45.0,
+          "contorno": [
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "apertura_total", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Planta Tipo (x10)",
+      "altura_nivel": 3.5,
+      "repetir": 10,
+      "espacios_comunes": [
+        {
+          "nombre": "Pasillo distribuidor",
+          "area": 15.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 5.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Escalera",
+          "area": 12.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        },
+        {
+          "nombre": "Ascensor",
+          "area": 4.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_cortafuego", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 1.0 }
+          ]
+        }
+      ],
+      "unidades_privadas": [
+        {
+          "nombre": "Apartamento A",
+          "area": 55.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 4.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.5 }
+          ]
+        },
+        {
+          "nombre": "Apartamento B",
+          "area": 48.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.5 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.5 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.0 }
+          ]
+        },
+        {
+          "nombre": "Apartamento C",
+          "area": 52.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.8 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.2 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.8 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.2 }
+          ]
+        },
+        {
+          "nombre": "Apartamento D",
+          "area": 50.0,
+          "contorno": [
+            { "tipo_limite": "muro_puerta_paso", "longitud": 1.0 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.6 },
+            { "tipo_limite": "apertura_visual", "longitud": 2.1 },
+            { "tipo_limite": "muro_ciego", "longitud": 3.6 },
+            { "tipo_limite": "muro_ciego", "longitud": 2.1 }
+          ]
+        }
+      ]
+    }
+  ]
+}
