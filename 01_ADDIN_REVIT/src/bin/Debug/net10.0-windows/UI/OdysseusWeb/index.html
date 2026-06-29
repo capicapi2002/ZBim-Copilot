@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- EVITAR CACHÉ EN WEBVIEW2 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>ZBIM-Copilot Odysseus</title>
     <style>
         :root {
@@ -572,6 +576,8 @@
     </style>
 </head>
 <body>
+    <!-- MARCADOR DE VERSIÓN PARA DIAGNÓSTICO -->
+    <div id="frontend-version" style="display: none;">v2.3-SINGLE-COORD-INPUT</div>
 
     <div class="main-container">
         <!-- LEFT PANEL: CONFIGURATION -->
@@ -616,15 +622,9 @@
                     <input type="text" id="location" class="form-control" placeholder="Madrid, España" required>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="latitude" data-i18n="latitude" class="tooltip-trigger" data-tooltip-i18n="tooltip_latitude">Latitud <span class="required-asterisk">*</span></label>
-                        <input type="number" id="latitude" class="form-control" step="any" min="-90" max="90" placeholder="Ej. 36.7226" oninput="updateEnvironmentButtons()">
-                    </div>
-                    <div class="form-group">
-                        <label for="longitude" data-i18n="longitude" class="tooltip-trigger" data-tooltip-i18n="tooltip_longitude">Longitud <span class="required-asterisk">*</span></label>
-                        <input type="number" id="longitude" class="form-control" step="any" min="-180" max="180" placeholder="Ej. -4.4234" oninput="updateEnvironmentButtons()">
-                    </div>
+                <div class="form-group">
+                    <label for="coord-input" data-i18n="coords_input" class="tooltip-trigger" data-tooltip-i18n="tooltip_coords_input">Pegar coordenadas (Google Earth)</label>
+                    <input type="text" id="coord-input" class="form-control" placeholder="Ej. 36.761722°N 4.068067°W" oninput="handleCoordInput(this.value)" onblur="handleCoordInput(this.value)">
                 </div>
 
                 <div class="form-group">
@@ -965,8 +965,7 @@ Preguntas clave a considerar en tu descripción:
             es: {
                 project_name: "Nombre del Proyecto",
                 location: "Ciudad / País (referencia general)",
-                latitude: "Latitud",
-                longitude: "Longitud",
+                coords_input: "Pegar coordenadas (Google Earth)",
                 radius: "Radio del lote (metros)",
                 google_earth_btn: "🌐 Obtener coordenadas desde Google Earth",
                 project_type: "Tipo de Proyecto",
@@ -1021,8 +1020,7 @@ Preguntas clave a considerar en tu descripción:
                 // Tooltips
                 tooltip_project_name: "Nombre del proyecto arquitectónico. Ej: Casa unifamiliar.",
                 tooltip_location: "Ciudad y país donde se ubicará el proyecto (referencia general).",
-                tooltip_latitude: "Latitud exacta del lote (obtenida de Google Earth).",
-                tooltip_longitude: "Longitud exacta del lote (obtenida de Google Earth).",
+                tooltip_coords_input: "Pega aquí las coordenadas desde Google Earth. Se convertirán a latitud y longitud automáticamente.",
                 tooltip_radius: "Radio de análisis del terreno en metros.",
                 tooltip_project_type: "Tipo de proyecto: vivienda, oficinas, comercial, etc.",
                 tooltip_site_description: "Describe las dimensiones y forma del terreno.",
@@ -1068,8 +1066,7 @@ Preguntas clave a considerar en tu descripción:
             en: {
                 project_name: "Project Name",
                 location: "City / Country (general reference)",
-                latitude: "Latitude",
-                longitude: "Longitude",
+                coords_input: "Paste coordinates (Google Earth)",
                 radius: "Plot radius (meters)",
                 google_earth_btn: "🌐 Get coordinates from Google Earth",
                 project_type: "Project Type",
@@ -1124,8 +1121,7 @@ Preguntas clave a considerar en tu descripción:
                 // Tooltips
                 tooltip_project_name: "Name of the architectural project. Ex: Single family house.",
                 tooltip_location: "City and country where the project will be located (general reference).",
-                tooltip_latitude: "Exact latitude of the plot (from Google Earth).",
-                tooltip_longitude: "Exact longitude of the plot (from Google Earth).",
+                tooltip_coords_input: "Paste coordinates from Google Earth here. They will be converted to latitude and longitude automatically.",
                 tooltip_radius: "Plot analysis radius in meters.",
                 tooltip_project_type: "Project type: residential, offices, commercial, etc.",
                 tooltip_site_description: "Describe the dimensions and shape of the site.",
@@ -1201,6 +1197,10 @@ Preguntas clave a considerar en tu descripción:
         let tokenBalance = 0;
         let generationInProgress = false;
         const MAX_TOKENS = 10000; 
+        
+        // Variables internas para coordenadas parseadas
+        let currentLat = null;
+        let currentLon = null;
 
         function addLog(message) {
             const logs = document.getElementById('logs-output');
@@ -1233,8 +1233,7 @@ Preguntas clave a considerar en tu descripción:
         const tooltipManualMap = {
             "tooltip_project_name": "manual-chapter-2",
             "tooltip_location": "manual-chapter-2",
-            "tooltip_latitude": "manual-chapter-2",
-            "tooltip_longitude": "manual-chapter-2",
+            "tooltip_coords_input": "manual-chapter-2",
             "tooltip_radius": "manual-chapter-4",
             "tooltip_project_type": "manual-chapter-2",
             "tooltip_site_description": "manual-chapter-4",
@@ -1634,7 +1633,7 @@ Preguntas clave a considerar en tu descripción:
             addLog("Solicitando cancelación de la generación...");
         }
 
-        // --- ENVIRONMENT LOGIC (COORDENADAS EXACTAS) ---
+        // --- ENVIRONMENT LOGIC (SISTEMA UNIFICADO DE COORDENADAS) ---
         function openGoogleEarth() {
             const locationVal = document.getElementById('location').value.trim() || "Earth";
             const url = `https://earth.google.com/web/search/${encodeURIComponent(locationVal)}`;
@@ -1646,14 +1645,77 @@ Preguntas clave a considerar en tu descripción:
             }));
         }
 
+        function handleCoordInput(value) {
+            const parsed = parseCoordinates(value);
+            if (parsed) {
+                currentLat = parseFloat(parsed.lat);
+                currentLon = parseFloat(parsed.lon);
+                addLog(`Coordenadas parseadas: Lat ${currentLat}, Lon ${currentLon}`);
+            } else {
+                currentLat = null;
+                currentLon = null;
+            }
+            updateEnvironmentButtons();
+        }
+
+        function parseCoordinates(input) {
+            if (!input) return null;
+            let lat = null, lon = null;
+            
+            // Normalizar texto: trim, reemplazar múltiples espacios por uno solo
+            let text = input.trim().replace(/\s+/g, ' ');
+
+            // 1. Sexagesimal: 36°45'42.19"N 4°04'05.04"W
+            // Se usa \u0022 para representar comillas dobles y evitar problemas de escapado en C#
+            let sexRegex = /(\d+)°\s*(\d+)'\s*([\d.]+)\u0022\s*([NS])\s*,?\s*(\d+)°\s*(\d+)'\s*([\d.]+)\u0022\s*([EW])/i;
+            let matchSex = text.match(sexRegex);
+            if (matchSex) {
+                let d1 = parseFloat(matchSex[1]);
+                let m1 = parseFloat(matchSex[2]);
+                let s1 = parseFloat(matchSex[3]);
+                let dir1 = matchSex[4].toUpperCase();
+                lat = d1 + (m1 / 60) + (s1 / 3600);
+                if (dir1 === 'S') lat = -lat;
+
+                let d2 = parseFloat(matchSex[5]);
+                let m2 = parseFloat(matchSex[6]);
+                let s2 = parseFloat(matchSex[7]);
+                let dir2 = matchSex[8].toUpperCase();
+                lon = d2 + (m2 / 60) + (s2 / 3600);
+                if (dir2 === 'W') lon = -lon;
+                
+                return { lat: lat.toFixed(6), lon: lon.toFixed(6) };
+            }
+
+            // 2. Decimal con Direcciones: 36.761722°N 4.068067°W o 36.761722 N 4.068067 W
+            let decDirRegex = /(-?\d+\.?\d*)\s*°?\s*([NS])\s*,?\s*(-?\d+\.?\d*)\s*°?\s*([EW])/i;
+            let matchDecDir = text.match(decDirRegex);
+            if (matchDecDir) {
+                lat = parseFloat(matchDecDir[1]);
+                if (matchDecDir[2].toUpperCase() === 'S') lat = -lat;
+                lon = parseFloat(matchDecDir[3]);
+                if (matchDecDir[4].toUpperCase() === 'W') lon = -lon;
+                return { lat: lat.toFixed(6), lon: lon.toFixed(6) };
+            }
+
+            // 3. Decimal Plano: 36.761722, -4.068067 o 36.761722 -4.068067
+            let decRegex = /(-?\d+\.?\d*)\s*,?\s*(-?\d+\.?\d*)/;
+            let matchDec = text.match(decRegex);
+            if (matchDec) {
+                lat = parseFloat(matchDec[1]);
+                lon = parseFloat(matchDec[2]);
+                return { lat: lat.toFixed(6), lon: lon.toFixed(6) };
+            }
+
+            return null;
+        }
+
         function updateEnvironmentButtons() {
-            const lat = parseFloat(document.getElementById('latitude').value);
-            const lon = parseFloat(document.getElementById('longitude').value);
             const btnTopo = document.getElementById('btn-topography');
             const btnClim = document.getElementById('btn-climate');
 
-            const isValidLat = !isNaN(lat) && lat >= -90 && lat <= 90;
-            const isValidLon = !isNaN(lon) && lon >= -180 && lon <= 180;
+            const isValidLat = currentLat !== null && !isNaN(currentLat) && currentLat >= -90 && currentLat <= 90;
+            const isValidLon = currentLon !== null && !isNaN(currentLon) && currentLon >= -180 && currentLon <= 180;
             const isValid = isValidLat && isValidLon;
 
             btnTopo.disabled = !isValid;
@@ -1661,29 +1723,24 @@ Preguntas clave a considerar en tu descripción:
         }
 
         function generateTopography() {
-            const lat = parseFloat(document.getElementById('latitude').value);
-            const lon = parseFloat(document.getElementById('longitude').value);
-            const rad = parseInt(document.getElementById('radius').value) || 200;
-
-            if (isNaN(lat) || isNaN(lon)) {
+            if (currentLat === null || currentLon === null) {
                 addLog("Error: Coordenadas inválidas para topografía.");
                 return;
             }
+            const rad = parseInt(document.getElementById('radius').value) || 200;
+
             addLog("Solicitando generación de topografía...");
             window.chrome.webview.postMessage(JSON.stringify({
                 type: "command",
                 command: "generate_topography",
-                latitude: lat,
-                longitude: lon,
+                latitude: currentLat,
+                longitude: currentLon,
                 radius: rad
             }));
         }
 
         function climateAnalysis() {
-            const lat = parseFloat(document.getElementById('latitude').value);
-            const lon = parseFloat(document.getElementById('longitude').value);
-
-            if (isNaN(lat) || isNaN(lon)) {
+            if (currentLat === null || currentLon === null) {
                 addLog("Error: Coordenadas inválidas para clima.");
                 return;
             }
@@ -1691,8 +1748,8 @@ Preguntas clave a considerar en tu descripción:
             window.chrome.webview.postMessage(JSON.stringify({
                 type: "command",
                 command: "climate_analysis",
-                latitude: lat,
-                longitude: lon
+                latitude: currentLat,
+                longitude: currentLon
             }));
         }
 
@@ -1760,6 +1817,8 @@ Preguntas clave a considerar en tu descripción:
             const configObject = {
                 project_name: document.getElementById('project_name').value,
                 location: document.getElementById('location').value,
+                latitude: currentLat, // Se envía la latitud interna
+                longitude: currentLon, // Se envía la longitud interna
                 project_type: pType,
                 site_description: document.getElementById('site_description').value,
                 site_plan_base64: sitePlanBase64,
