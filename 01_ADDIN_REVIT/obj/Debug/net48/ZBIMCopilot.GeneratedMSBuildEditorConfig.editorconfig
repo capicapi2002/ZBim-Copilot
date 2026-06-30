@@ -1,0 +1,14 @@
+is_global = true
+build_property.ApplicationManifest = 
+build_property.StartupObject = 
+build_property.ApplicationDefaultFont = 
+build_property.ApplicationHighDpiMode = 
+build_property.ApplicationUseCompatibleTextRendering = 
+build_property.ApplicationVisualStyles = 
+build_property.RootNamespace = ZBIMCopilot
+build_property.ProjectDir = D:\1WORK\00 HPI\00 COPILOT\kwen-bimcopilot\01_ADDIN_REVIT\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

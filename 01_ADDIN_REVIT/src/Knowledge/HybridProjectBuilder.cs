@@ -17,30 +17,30 @@ namespace ZBimCopilot.Knowledge
 
     public class OasBoundarySegment
     {
-        [JsonPropertyName("start")] public Vector3 Start { get; set; } = new();
-        [JsonPropertyName("end")]   public Vector3 End   { get; set; } = new();
+        [JsonPropertyName("start")] public Vector3 Start { get; set; } = new Vector3();
+        [JsonPropertyName("end")]   public Vector3 End   { get; set; } = new Vector3();
     }
 
     public class OasSpace
     {
         [JsonPropertyName("name")]       public string Name { get; set; } = string.Empty;
         [JsonPropertyName("area")]       public double Area { get; set; }
-        [JsonPropertyName("contorno")]   public List<OasBoundarySegment> Contorno { get; set; } = new();
-        [JsonPropertyName("origin")]     public Vector3 Origin { get; set; } = new();
-        [JsonPropertyName("dimensions")] public Vector3 Dimensions { get; set; } = new();
+        [JsonPropertyName("contorno")]   public List<OasBoundarySegment> Contorno { get; set; } = new List<OasBoundarySegment>();
+        [JsonPropertyName("origin")]     public Vector3 Origin { get; set; } = new Vector3();
+        [JsonPropertyName("dimensions")] public Vector3 Dimensions { get; set; } = new Vector3();
     }
 
     public class OasStair
     {
-        [JsonPropertyName("origin")]     public Vector3 Origin { get; set; } = new();
-        [JsonPropertyName("dimensions")] public Vector3 Dimensions { get; set; } = new();
+        [JsonPropertyName("origin")]     public Vector3 Origin { get; set; } = new Vector3();
+        [JsonPropertyName("dimensions")] public Vector3 Dimensions { get; set; } = new Vector3();
         [JsonPropertyName("type")]       public string Type { get; set; } = "two_flight";
     }
 
     public class OasElevatorCore
     {
-        [JsonPropertyName("origin")]     public Vector3 Origin { get; set; } = new();
-        [JsonPropertyName("dimensions")] public Vector3 Dimensions { get; set; } = new();
+        [JsonPropertyName("origin")]     public Vector3 Origin { get; set; } = new Vector3();
+        [JsonPropertyName("dimensions")] public Vector3 Dimensions { get; set; } = new Vector3();
         [JsonPropertyName("type")]       public string Type { get; set; } = "passenger";
     }
 
@@ -48,31 +48,28 @@ namespace ZBimCopilot.Knowledge
     {
         [JsonPropertyName("level_name")] public string LevelName { get; set; } = string.Empty;
         [JsonPropertyName("elevation")]  public double Elevation { get; set; }
-        [JsonPropertyName("spaces")]     public List<OasSpace> Spaces { get; set; } = new();
-        [JsonPropertyName("stair")]      public OasStair Stair { get; set; } = new();
-        [JsonPropertyName("elevator")]   public OasElevatorCore Elevator { get; set; } = new();
+        [JsonPropertyName("spaces")]     public List<OasSpace> Spaces { get; set; } = new List<OasSpace>();
+        [JsonPropertyName("stair")]      public OasStair Stair { get; set; } = new OasStair();
+        [JsonPropertyName("elevator")]   public OasElevatorCore Elevator { get; set; } = new OasElevatorCore();
     }
 
     public class ProjectLayout
     {
-        [JsonPropertyName("levels")] public List<LevelLayout> Levels { get; set; } = new();
+        [JsonPropertyName("levels")] public List<LevelLayout> Levels { get; set; } = new List<LevelLayout>();
     }
 
     public class LevelDefinition
     {
         [JsonPropertyName("level_name")] public string LevelName { get; set; } = string.Empty;
         [JsonPropertyName("elevation")]  public double Elevation { get; set; }
-        [JsonPropertyName("spaces")]     public List<OasSpace> Spaces { get; set; } = new();
+        [JsonPropertyName("spaces")]     public List<OasSpace> Spaces { get; set; } = new List<OasSpace>();
     }
 
     public class TopologyData
     {
-        [JsonPropertyName("levels")] public List<LevelDefinition> Levels { get; set; } = new();
+        [JsonPropertyName("levels")] public List<LevelDefinition> Levels { get; set; } = new List<LevelDefinition>();
     }
 
-    /// <summary>
-    /// Constructor de layout híbrido: planta cuadrada con núcleo central y espacios perimetrales.
-    /// </summary>
     public class HybridProjectBuilder
     {
         private const double CoreSideFeet = 15.0;
@@ -120,7 +117,7 @@ namespace ZBimCopilot.Knowledge
 
         private List<List<OasSpace>> DistributeSpacesToSides(List<OasSpace> spaces)
         {
-            var sides = new List<List<OasSpace>> { new(), new(), new(), new() };
+            var sides = new List<List<OasSpace>> { new List<OasSpace>(), new List<OasSpace>(), new List<OasSpace>(), new List<OasSpace>() };
             var sorted = spaces.OrderByDescending(s => s.Area).ToList();
             double[] sideAreas = new double[4];
 

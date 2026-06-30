@@ -21,22 +21,19 @@ namespace ZBIMCopilot.Execution
         private const double DEFAULT_RISER_FT = 0.18;
         private const double DEFAULT_TREAD_FT = 0.28;
 
-        private readonly Dictionary<string, Level> _levelCache = new();
-        private readonly Dictionary<string, WallType> _wallTypeCache = new();
-        private readonly Dictionary<string, FloorType> _floorTypeCache = new();
-        private readonly Dictionary<string, RoofType> _roofTypeCache = new();
-        private readonly Dictionary<string, FamilySymbol> _familySymbolCache = new();
+        private readonly Dictionary<string, Level> _levelCache = new Dictionary<string, Level>();
+        private readonly Dictionary<string, WallType> _wallTypeCache = new Dictionary<string, WallType>();
+        private readonly Dictionary<string, FloorType> _floorTypeCache = new Dictionary<string, FloorType>();
+        private readonly Dictionary<string, RoofType> _roofTypeCache = new Dictionary<string, RoofType>();
+        private readonly Dictionary<string, FamilySymbol> _familySymbolCache = new Dictionary<string, FamilySymbol>();
 
-        private static readonly Dictionary<string, Dictionary<string, List<string>>> _mappingCache = new();
-        private static readonly object _cacheLock = new();
+        private static readonly Dictionary<string, Dictionary<string, List<string>>> _mappingCache =
+            new Dictionary<string, Dictionary<string, List<string>>>();
+        private static readonly object _cacheLock = new object();
 
         private Document _doc = null!;
         private UIApplication _uiApp = null!;
         private Action<string> _log = null!;
-
-        // ========================================================================
-        // CONSTRUCTORES
-        // ========================================================================
 
         public Text2MblOrchestrator() { }
 
@@ -46,10 +43,6 @@ namespace ZBIMCopilot.Execution
             _doc = app.ActiveUIDocument?.Document ?? throw new InvalidOperationException("No hay documento activo");
             _log = msg => ZBIMApp.OnServerStatus?.Invoke($"[{DateTime.Now:HH:mm:ss}] {msg}");
         }
-
-        // ========================================================================
-        // MÉTODO EXISTENTE: Execute (flujo OAS v2.0)
-        // ========================================================================
 
         public Result Execute(OasProject project, UIApplication app)
         {
@@ -102,10 +95,6 @@ namespace ZBIMCopilot.Execution
             }
         }
 
-        // ========================================================================
-        // NUEVO MÉTODO: BuildFromLayout (flujo HybridProjectBuilder)
-        // ========================================================================
-
         public void BuildFromLayout(ZBimCopilot.Knowledge.ProjectLayout layout)
         {
             if (layout?.Levels == null)
@@ -143,9 +132,13 @@ namespace ZBIMCopilot.Execution
                     {
                         var levelLayout = sortedLevels[i];
                         
-                        var topLevel = (i < sortedLevels.Count - 1)
-                            ? _levelCache.GetValueOrDefault(sortedLevels[i + 1].LevelName)
-                            : null;
+                        Level? topLevel = null;
+                        if (i < sortedLevels.Count - 1)
+                        {
+                            // Reemplazo de GetValueOrDefault por TryGetValue
+                            if (!_levelCache.TryGetValue(sortedLevels[i + 1].LevelName, out topLevel))
+                                topLevel = null;
+                        }
 
                         if (!_levelCache.TryGetValue(levelLayout.LevelName, out Level? currentLevel) || currentLevel == null)
                         {
@@ -193,15 +186,10 @@ namespace ZBIMCopilot.Execution
             }
         }
 
-        // ========================================================================
-        // MÉTODOS AUXILIARES PARA BuildFromLayout (CORREGIDOS - SIN CONVERSIÓN)
-        // ========================================================================
-
         private void CreateLevelFromLayout(ZBimCopilot.Knowledge.LevelLayout levelLayout)
         {
             try
             {
-                // CORRECCIÓN: Elevation ya está en pies, no multiplicar
                 double elevationFt = levelLayout.Elevation;
 
                 Level level = Level.Create(_doc, elevationFt);
@@ -230,7 +218,6 @@ namespace ZBIMCopilot.Execution
             {
                 if (space.Origin == null || space.Dimensions == null) continue;
 
-                // CORRECCIÓN: Coordenadas ya están en pies, no multiplicar
                 double ox = space.Origin.X;
                 double oy = space.Origin.Y;
                 double w = space.Dimensions.X;
@@ -283,7 +270,6 @@ namespace ZBIMCopilot.Execution
             {
                 if (space.Origin == null || space.Dimensions == null) continue;
 
-                // CORRECCIÓN: Coordenadas ya están en pies, no multiplicar
                 double ox = space.Origin.X;
                 double oy = space.Origin.Y;
                 double w = space.Dimensions.X;
@@ -322,7 +308,6 @@ namespace ZBIMCopilot.Execution
         {
             if (space.Origin == null || space.Dimensions == null) return;
 
-            // CORRECCIÓN: Coordenadas ya están en pies, no multiplicar
             double ox = space.Origin.X;
             double oy = space.Origin.Y;
             double w = space.Dimensions.X;
@@ -357,7 +342,6 @@ namespace ZBIMCopilot.Execution
         {
             if (stair.Origin == null || stair.Dimensions == null) return;
 
-            // CORRECCIÓN: Coordenadas ya están en pies, no multiplicar
             double ox = stair.Origin.X;
             double oy = stair.Origin.Y;
             double w = stair.Dimensions.X;
@@ -372,13 +356,11 @@ namespace ZBIMCopilot.Execution
 
             try
             {
-                // CORRECCIÓN: Reutilizar lógica de peldaños en lugar de caja opaca
                 int numRisers = (int)Math.Ceiling(height / DEFAULT_RISER_FT);
                 if (numRisers <= 0) numRisers = 1;
 
-                List<Solid> solids = new();
+                List<Solid> solids = new List<Solid>();
                 
-                // Ajustar escalera para que quepa dentro de las dimensiones del núcleo
                 double availableRun = d;
                 double adjustedTread = availableRun / numRisers;
                 if (adjustedTread < DEFAULT_TREAD_FT) adjustedTread = DEFAULT_TREAD_FT;
@@ -412,7 +394,6 @@ namespace ZBIMCopilot.Execution
         {
             if (elevator.Origin == null || elevator.Dimensions == null) return;
 
-            // CORRECCIÓN: Coordenadas ya están en pies, no multiplicar
             double ox = elevator.Origin.X;
             double oy = elevator.Origin.Y;
             double w = elevator.Dimensions.X;
@@ -444,10 +425,6 @@ namespace ZBIMCopilot.Execution
                 _log?.Invoke($"❌ Error creando ascensor: {ex.Message}");
             }
         }
-
-        // ========================================================================
-        // MÉTODOS AUXILIARES EXISTENTES (CORREGIDOS - TIPOS OAS CUALIFICADOS)
-        // ========================================================================
 
         private void DeleteAllLevels()
         {
@@ -534,9 +511,13 @@ namespace ZBIMCopilot.Execution
                     }
 
                     int idx = sortedLevels.IndexOf(levelData);
-                    Level? topLevel = (idx < sortedLevels.Count - 1)
-                        ? _levelCache.GetValueOrDefault(sortedLevels[idx + 1].Name)
-                        : null;
+                    Level? topLevel = null;
+                    if (idx < sortedLevels.Count - 1)
+                    {
+                        // Reemplazo de GetValueOrDefault por TryGetValue
+                        if (!_levelCache.TryGetValue(sortedLevels[idx + 1].Name, out topLevel))
+                            topLevel = null;
+                    }
 
                     CreateFloorForLevel(levelData, currentLevel);
 
@@ -715,7 +696,7 @@ namespace ZBIMCopilot.Execution
             double width = stair.Width > 0 ? stair.Width * MM_TO_FT : 1.2;
             int numRisers = (int)Math.Ceiling(height / riser);
 
-            List<Solid> solids = new();
+            List<Solid> solids = new List<Solid>();
             if (numRisers <= 20)
                 BuildSingleFlight(solids, width, tread, riser, numRisers, baseLevel.Elevation);
             else
@@ -862,12 +843,7 @@ namespace ZBIMCopilot.Execution
                 foreach (var syn in synonyms)
                 {
                     var match = allSymbols.FirstOrDefault(fs => fs.Name != null &&
-                        fs.Name.Equals(syn, StringComparison.OrdinalIgnoreCase));
-                    if (match != null) { _familySymbolCache[cacheKey] = match; return match; }
-                }
-                foreach (var syn in synonyms)
-                {
-                    var match = allSymbols.FirstOrDefault(fs => fs.Name != null &&
+                        // Reemplazamos Contains con 2 argumentos por IndexOf con StringComparison
                         fs.Name.IndexOf(syn, StringComparison.OrdinalIgnoreCase) >= 0);
                     if (match != null) { _familySymbolCache[cacheKey] = match; return match; }
                 }
@@ -893,15 +869,21 @@ namespace ZBIMCopilot.Execution
             }
             else
             {
-                if (subType.Contains("Toilet", StringComparison.OrdinalIgnoreCase) || subType.Contains("Inodoro", StringComparison.OrdinalIgnoreCase))
+                // Reemplazamos Contains con 2 argumentos por IndexOf
+                if (subType.IndexOf("Toilet", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    subType.IndexOf("Inodoro", StringComparison.OrdinalIgnoreCase) >= 0)
                     (w, d, h) = (0.4, 0.6, 0.4);
-                else if (subType.Contains("Sink", StringComparison.OrdinalIgnoreCase) || subType.Contains("Lavabo", StringComparison.OrdinalIgnoreCase))
+                else if (subType.IndexOf("Sink", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                         subType.IndexOf("Lavabo", StringComparison.OrdinalIgnoreCase) >= 0)
                     (w, d, h) = (0.5, 0.4, 0.8);
-                else if (subType.Contains("Shower", StringComparison.OrdinalIgnoreCase) || subType.Contains("Ducha", StringComparison.OrdinalIgnoreCase))
+                else if (subType.IndexOf("Shower", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                         subType.IndexOf("Ducha", StringComparison.OrdinalIgnoreCase) >= 0)
                     (w, d, h) = (0.9, 0.9, 2.0);
-                else if (subType.Contains("Refrigerator", StringComparison.OrdinalIgnoreCase) || subType.Contains("Refrigerador", StringComparison.OrdinalIgnoreCase))
+                else if (subType.IndexOf("Refrigerator", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                         subType.IndexOf("Refrigerador", StringComparison.OrdinalIgnoreCase) >= 0)
                     (w, d, h) = (0.7, 0.7, 1.8);
-                else if (subType.Contains("Stove", StringComparison.OrdinalIgnoreCase) || subType.Contains("Cocina", StringComparison.OrdinalIgnoreCase))
+                else if (subType.IndexOf("Stove", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                         subType.IndexOf("Cocina", StringComparison.OrdinalIgnoreCase) >= 0)
                     (w, d, h) = (0.6, 0.6, 0.9);
             }
 
@@ -992,42 +974,42 @@ namespace ZBIMCopilot.Execution
         {
             var baseSynonyms = new Dictionary<string, List<string>>
             {
-                ["Toilet"] = new() { "toilet", "wc", "water closet" },
-                ["Sink"] = new() { "sink", "lavatory", "washbasin", "under mount sink" },
-                ["Shower"] = new() { "shower", "shower tray" },
-                ["Bathtub"] = new() { "bathtub", "tub" },
-                ["Bed"] = new() { "bed", "divan", "hospital bed" },
-                ["Refrigerator"] = new() { "refrigerator", "fridge" },
-                ["Dishwasher"] = new() { "dishwasher" },
-                ["Oven"] = new() { "oven", "microwave" },
-                ["Stove"] = new() { "stove", "cooktop", "hob", "gas hob", "induction hob" },
-                ["BaseCabinet"] = new() { "base cabinet", "lower cabinet" },
-                ["WallCabinet"] = new() { "wall cabinet", "upper cabinet" },
-                ["Countertop"] = new() { "countertop", "worktop" },
-                ["Sofa"] = new() { "sofa", "couch", "armchair" },
-                ["Table"] = new() { "table", "dining table", "coffee table" },
-                ["Chair"] = new() { "chair", "stool", "office chair" },
-                ["Wardrobe"] = new() { "wardrobe", "closet", "armoire" }
+                ["Toilet"] = new List<string> { "toilet", "wc", "water closet" },
+                ["Sink"] = new List<string> { "sink", "lavatory", "washbasin", "under mount sink" },
+                ["Shower"] = new List<string> { "shower", "shower tray" },
+                ["Bathtub"] = new List<string> { "bathtub", "tub" },
+                ["Bed"] = new List<string> { "bed", "divan", "hospital bed" },
+                ["Refrigerator"] = new List<string> { "refrigerator", "fridge" },
+                ["Dishwasher"] = new List<string> { "dishwasher" },
+                ["Oven"] = new List<string> { "oven", "microwave" },
+                ["Stove"] = new List<string> { "stove", "cooktop", "hob", "gas hob", "induction hob" },
+                ["BaseCabinet"] = new List<string> { "base cabinet", "lower cabinet" },
+                ["WallCabinet"] = new List<string> { "wall cabinet", "upper cabinet" },
+                ["Countertop"] = new List<string> { "countertop", "worktop" },
+                ["Sofa"] = new List<string> { "sofa", "couch", "armchair" },
+                ["Table"] = new List<string> { "table", "dining table", "coffee table" },
+                ["Chair"] = new List<string> { "chair", "stool", "office chair" },
+                ["Wardrobe"] = new List<string> { "wardrobe", "closet", "armoire" }
             };
 
             var esSynonyms = new Dictionary<string, List<string>>
             {
-                ["Toilet"] = new() { "Inodoro con tanque alto-3D", "Inodoro suspendido-3D", "Combinación de WC", "Asiento de WC_2 con cisterna - Basado en muro" },
-                ["Sink"] = new() { "Lavabo de baño", "Lavabo con encimera-Múltiple-3D", "s719_u765_under_mount_sink_370_370_43430800", "Kitchen_Sinks_Roca_871741D01-Praga-Stainless-steel-single-bowl kitchen sink" },
-                ["Shower"] = new() { "Ducha", "Plato de ducha-3D", "Cubeta de ducha - Desagüe axial", "Cubeta de ducha - Desagüe en ángulo", "Cubeta de ducha - Esquina de compartimento" },
-                ["Bathtub"] = new() { "Bañera-Rectangular con grifo-3D", "Bañera-De pie-3D", "Bañera-2D" },
-                ["Bed"] = new() { "Cama - Diván", "Cama con respaldo de madera", "Cama-Cuadro", "Cama-Hospital", "Cama-Shaker" },
-                ["Refrigerator"] = new() { "Refrigerador", "Kitchen_Appliances_Electrolux-Brasil_Refrigerator-French-Door-Connected-540L_Refrigerator French Door Connected 540L" },
-                ["Dishwasher"] = new() { "Lavavajillas", "Kitchen_Built-In - Dishwasher_HAFELE_Florence", "Kitchen_Freestanding-Dishwasher_HAFELE_Hygiene" },
-                ["Oven"] = new() { "Kitchen_Built-In-Microwave_HAFELE_ETNA", "Kitchen_Built-In-Microwave_HAFELE_ALBANO", "Kitchen_Appliances_Electrolux-Brasil_Electrolux-Efficient-23L-Stainless-Steel-Microwave-with-Assisted-Defrost-ME23S-ME23S" },
-                ["Stove"] = new() { "Cocina encimera - 4 fuegos 2", "Cocinita - Media", "Cocinita - Pequeña", "Kitchen_Gas-Hob_HAFELE_Haco", "Kitchen_Induction-Hob_HAFELE_Lina", "Kitchen_Appliances_Electrolux_Electrolux-Gas-Hob-60-White" },
-                ["BaseCabinet"] = new() { "Armario base-2 cajones", "Armario base-2 cubos", "Kitchen_Kitchen-Cabinets_Invita_Base-cabinet-60-cm-Alba-KU10-060", "Kitchen_Kitchen-Cabinets_Invita_Base-cabinet-100-cm-Athena-KU10-100" },
-                ["WallCabinet"] = new() { "Armario superior - 1 puerta", "Armario superior - 2 puertas con cristal", "Armario superior - Con cristal", "Kitchen_Cabinets_Marbodal_Wall-cabinet-5210080-Aspekt", "Kitchen_Kitchen-Cabinets_Invita_Wall-cabinet-80-cm-Athena-KU1-080" },
-                ["Countertop"] = new() { "Encimera con agujero para fregadero", "Encimera - Isla", "Encimera - Forma en L con agujero para fregadero 2", "Encimera con agujero para fregadero cuadrado", "Encimera con agujero para fregadero redondo", "Encimera de armario de baño con agujero para fregadero" },
-                ["Sofa"] = new() { "Butaca de cine", "Silla - Diseño (1)", "Silla - Madera (1)", "Silla-Oficina (brazos)" },
-                ["Table"] = new() { "Mesa", "Mesa - Cristal", "Mesa-Comedor redonda con sillas" },
-                ["Chair"] = new() { "Silla - Diseño (1)", "Silla - Madera (1)", "Silla-Oficina (brazos)", "Taburete (2)" },
-                ["Wardrobe"] = new() { "Armario - 4 cajones", "Armario alto-2 Puertas-Empotrado", "Armario alto-Una puerta (2)", "Armario dormitorio" }
+                ["Toilet"] = new List<string> { "Inodoro con tanque alto-3D", "Inodoro suspendido-3D", "Combinación de WC", "Asiento de WC_2 con cisterna - Basado en muro" },
+                ["Sink"] = new List<string> { "Lavabo de baño", "Lavabo con encimera-Múltiple-3D", "s719_u765_under_mount_sink_370_370_43430800", "Kitchen_Sinks_Roca_871741D01-Praga-Stainless-steel-single-bowl kitchen sink" },
+                ["Shower"] = new List<string> { "Ducha", "Plato de ducha-3D", "Cubeta de ducha - Desagüe axial", "Cubeta de ducha - Desagüe en ángulo", "Cubeta de ducha - Esquina de compartimento" },
+                ["Bathtub"] = new List<string> { "Bañera-Rectangular con grifo-3D", "Bañera-De pie-3D", "Bañera-2D" },
+                ["Bed"] = new List<string> { "Cama - Diván", "Cama con respaldo de madera", "Cama-Cuadro", "Cama-Hospital", "Cama-Shaker" },
+                ["Refrigerator"] = new List<string> { "Refrigerador", "Kitchen_Appliances_Electrolux-Brasil_Refrigerator-French-Door-Connected-540L_Refrigerator French Door Connected 540L" },
+                ["Dishwasher"] = new List<string> { "Lavavajillas", "Kitchen_Built-In - Dishwasher_HAFELE_Florence", "Kitchen_Freestanding-Dishwasher_HAFELE_Hygiene" },
+                ["Oven"] = new List<string> { "Kitchen_Built-In-Microwave_HAFELE_ETNA", "Kitchen_Built-In-Microwave_HAFELE_ALBANO", "Kitchen_Appliances_Electrolux-Brasil_Electrolux-Efficient-23L-Stainless-Steel-Microwave-with-Assisted-Defrost-ME23S-ME23S" },
+                ["Stove"] = new List<string> { "Cocina encimera - 4 fuegos 2", "Cocinita - Media", "Cocinita - Pequeña", "Kitchen_Gas-Hob_HAFELE_Haco", "Kitchen_Induction-Hob_HAFELE_Lina", "Kitchen_Appliances_Electrolux_Electrolux-Gas-Hob-60-White" },
+                ["BaseCabinet"] = new List<string> { "Armario base-2 cajones", "Armario base-2 cubos", "Kitchen_Kitchen-Cabinets_Invita_Base-cabinet-60-cm-Alba-KU10-060", "Kitchen_Kitchen-Cabinets_Invita_Base-cabinet-100-cm-Athena-KU10-100" },
+                ["WallCabinet"] = new List<string> { "Armario superior - 1 puerta", "Armario superior - 2 puertas con cristal", "Armario superior - Con cristal", "Kitchen_Cabinets_Marbodal_Wall-cabinet-5210080-Aspekt", "Kitchen_Kitchen-Cabinets_Invita_Wall-cabinet-80-cm-Athena-KU1-080" },
+                ["Countertop"] = new List<string> { "Encimera con agujero para fregadero", "Encimera - Isla", "Encimera - Forma en L con agujero para fregadero 2", "Encimera con agujero para fregadero cuadrado", "Encimera con agujero para fregadero redondo", "Encimera de armario de baño con agujero para fregadero" },
+                ["Sofa"] = new List<string> { "Butaca de cine", "Silla - Diseño (1)", "Silla - Madera (1)", "Silla-Oficina (brazos)" },
+                ["Table"] = new List<string> { "Mesa", "Mesa - Cristal", "Mesa-Comedor redonda con sillas" },
+                ["Chair"] = new List<string> { "Silla - Diseño (1)", "Silla - Madera (1)", "Silla-Oficina (brazos)", "Taburete (2)" },
+                ["Wardrobe"] = new List<string> { "Armario - 4 cajones", "Armario alto-2 Puertas-Empotrado", "Armario alto-Una puerta (2)", "Armario dormitorio" }
             };
 
             var result = new Dictionary<string, List<string>>();

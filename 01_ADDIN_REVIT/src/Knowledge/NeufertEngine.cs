@@ -18,14 +18,14 @@ namespace ZBimCopilot.Knowledge
         public double WidthMin { get; set; }
         public double DepthMin { get; set; }
         public double Height { get; set; }
-        public List<string> TypicalFurniture { get; set; } = new();
+        public List<string> TypicalFurniture { get; set; } = new List<string>();
         public string NormativeReference { get; set; } = string.Empty;
         public double Confidence { get; set; }
     }
 
     public static class NeufertEngine
     {
-        private static readonly object _dbLock = new();
+        private static readonly object _dbLock = new object();
         private const double DEFAULT_FLOOR_HEIGHT_M = 2.70;
         private const double DEFAULT_MIN_ROOM_DIMENSION_M = 2.40;
 
@@ -121,7 +121,8 @@ namespace ZBimCopilot.Knowledge
             {
                 foreach (var kvp in spaceDictionary)
                 {
-                    if (text.Contains(kvp.Key) && !requirements.Any(r => r.Name.Equals(kvp.Value, StringComparison.OrdinalIgnoreCase)))
+                    if (text.IndexOf(kvp.Key, StringComparison.OrdinalIgnoreCase) >= 0 &&
+                        !requirements.Any(r => r.Name.Equals(kvp.Value, StringComparison.OrdinalIgnoreCase)))
                     {
                         requirements.Add(new SpaceRequirement
                         {
@@ -219,21 +220,21 @@ namespace ZBimCopilot.Knowledge
         {
             var all = new Dictionary<string, NeufertMatch>(StringComparer.OrdinalIgnoreCase)
             {
-                ["Dormitorio"] = new NeufertMatch { SpaceName = "Dormitorio", Function = "Dormitorio", AreaMin = 10, AreaMax = 16, WidthMin = 2.8, DepthMin = 3.0, Height = 2.7, TypicalFurniture = new() { "Bed", "Wardrobe", "Nightstand" } },
-                ["Cocina"] = new NeufertMatch { SpaceName = "Cocina", Function = "Cocina", AreaMin = 8, AreaMax = 16, WidthMin = 2.4, DepthMin = 3.0, Height = 2.7, TypicalFurniture = new() { "BaseCabinet", "Refrigerator", "Stove", "Sink" } },
-                ["Baño_Completo"] = new NeufertMatch { SpaceName = "Baño_Completo", Function = "Baño", AreaMin = 4.5, AreaMax = 7, WidthMin = 1.8, DepthMin = 2.0, Height = 2.4, TypicalFurniture = new() { "Toilet", "Sink", "Shower" } },
-                ["Baño_Visitas"] = new NeufertMatch { SpaceName = "Baño_Visitas", Function = "Aseo", AreaMin = 2.5, AreaMax = 4, WidthMin = 1.5, DepthMin = 1.6, Height = 2.4, TypicalFurniture = new() { "Toilet", "Sink" } },
-                ["Living"] = new NeufertMatch { SpaceName = "Living", Function = "Sala de estar", AreaMin = 18, AreaMax = 35, WidthMin = 3.5, DepthMin = 4.0, Height = 2.7, TypicalFurniture = new() { "Sofa", "Table", "TV_Stand" } },
-                ["Comedor"] = new NeufertMatch { SpaceName = "Comedor", Function = "Comedor", AreaMin = 10, AreaMax = 18, WidthMin = 3.0, DepthMin = 3.2, Height = 2.7, TypicalFurniture = new() { "DiningTable", "Chairs" } },
-                ["Garaje"] = new NeufertMatch { SpaceName = "Garaje", Function = "Estacionamiento", AreaMin = 18, AreaMax = 36, WidthMin = 3.5, DepthMin = 5.0, Height = 2.4, TypicalFurniture = new() },
-                ["Lavadero"] = new NeufertMatch { SpaceName = "Lavadero", Function = "Lavadero", AreaMin = 3, AreaMax = 6, WidthMin = 1.5, DepthMin = 2.0, Height = 2.4, TypicalFurniture = new() { "WashingMachine" } },
-                ["Oficina"] = new NeufertMatch { SpaceName = "Oficina", Function = "Oficina", AreaMin = 8, AreaMax = 12, WidthMin = 3.0, DepthMin = 3.0, Height = 2.7, TypicalFurniture = new() { "Desk", "OfficeChair" } },
-                ["Sala_Reuniones"] = new NeufertMatch { SpaceName = "Sala_Reuniones", Function = "Reuniones", AreaMin = 15, AreaMax = 30, WidthMin = 3.5, DepthMin = 4.5, Height = 2.7, TypicalFurniture = new() { "MeetingTable", "Chairs" } },
-                ["Recepcion"] = new NeufertMatch { SpaceName = "Recepcion", Function = "Recepción", AreaMin = 10, AreaMax = 20, WidthMin = 3.0, DepthMin = 3.5, Height = 2.7, TypicalFurniture = new() { "ReceptionDesk" } },
-                ["Area_Ventas"] = new NeufertMatch { SpaceName = "Area_Ventas", Function = "Venta", AreaMin = 50, AreaMax = 200, WidthMin = 6.0, DepthMin = 8.0, Height = 3.0, TypicalFurniture = new() { "DisplayShelf", "Counter" } },
-                ["Almacen"] = new NeufertMatch { SpaceName = "Almacen", Function = "Almacén", AreaMin = 15, AreaMax = 40, WidthMin = 3.0, DepthMin = 4.0, Height = 3.0, TypicalFurniture = new() { "ShelvingUnit" } },
-                ["Aula"] = new NeufertMatch { SpaceName = "Aula", Function = "Aula", AreaMin = 45, AreaMax = 70, WidthMin = 6.0, DepthMin = 7.5, Height = 3.0, TypicalFurniture = new() { "StudentDesk", "Blackboard" } },
-                ["Biblioteca"] = new NeufertMatch { SpaceName = "Biblioteca", Function = "Biblioteca", AreaMin = 40, AreaMax = 80, WidthMin = 6.0, DepthMin = 6.5, Height = 3.0, TypicalFurniture = new() { "Bookshelf", "ReadingTable" } }
+                ["Dormitorio"] = new NeufertMatch { SpaceName = "Dormitorio", Function = "Dormitorio", AreaMin = 10, AreaMax = 16, WidthMin = 2.8, DepthMin = 3.0, Height = 2.7, TypicalFurniture = new List<string> { "Bed", "Wardrobe", "Nightstand" } },
+                ["Cocina"] = new NeufertMatch { SpaceName = "Cocina", Function = "Cocina", AreaMin = 8, AreaMax = 16, WidthMin = 2.4, DepthMin = 3.0, Height = 2.7, TypicalFurniture = new List<string> { "BaseCabinet", "Refrigerator", "Stove", "Sink" } },
+                ["Baño_Completo"] = new NeufertMatch { SpaceName = "Baño_Completo", Function = "Baño", AreaMin = 4.5, AreaMax = 7, WidthMin = 1.8, DepthMin = 2.0, Height = 2.4, TypicalFurniture = new List<string> { "Toilet", "Sink", "Shower" } },
+                ["Baño_Visitas"] = new NeufertMatch { SpaceName = "Baño_Visitas", Function = "Aseo", AreaMin = 2.5, AreaMax = 4, WidthMin = 1.5, DepthMin = 1.6, Height = 2.4, TypicalFurniture = new List<string> { "Toilet", "Sink" } },
+                ["Living"] = new NeufertMatch { SpaceName = "Living", Function = "Sala de estar", AreaMin = 18, AreaMax = 35, WidthMin = 3.5, DepthMin = 4.0, Height = 2.7, TypicalFurniture = new List<string> { "Sofa", "Table", "TV_Stand" } },
+                ["Comedor"] = new NeufertMatch { SpaceName = "Comedor", Function = "Comedor", AreaMin = 10, AreaMax = 18, WidthMin = 3.0, DepthMin = 3.2, Height = 2.7, TypicalFurniture = new List<string> { "DiningTable", "Chairs" } },
+                ["Garaje"] = new NeufertMatch { SpaceName = "Garaje", Function = "Estacionamiento", AreaMin = 18, AreaMax = 36, WidthMin = 3.5, DepthMin = 5.0, Height = 2.4, TypicalFurniture = new List<string>() },
+                ["Lavadero"] = new NeufertMatch { SpaceName = "Lavadero", Function = "Lavadero", AreaMin = 3, AreaMax = 6, WidthMin = 1.5, DepthMin = 2.0, Height = 2.4, TypicalFurniture = new List<string> { "WashingMachine" } },
+                ["Oficina"] = new NeufertMatch { SpaceName = "Oficina", Function = "Oficina", AreaMin = 8, AreaMax = 12, WidthMin = 3.0, DepthMin = 3.0, Height = 2.7, TypicalFurniture = new List<string> { "Desk", "OfficeChair" } },
+                ["Sala_Reuniones"] = new NeufertMatch { SpaceName = "Sala_Reuniones", Function = "Reuniones", AreaMin = 15, AreaMax = 30, WidthMin = 3.5, DepthMin = 4.5, Height = 2.7, TypicalFurniture = new List<string> { "MeetingTable", "Chairs" } },
+                ["Recepcion"] = new NeufertMatch { SpaceName = "Recepcion", Function = "Recepción", AreaMin = 10, AreaMax = 20, WidthMin = 3.0, DepthMin = 3.5, Height = 2.7, TypicalFurniture = new List<string> { "ReceptionDesk" } },
+                ["Area_Ventas"] = new NeufertMatch { SpaceName = "Area_Ventas", Function = "Venta", AreaMin = 50, AreaMax = 200, WidthMin = 6.0, DepthMin = 8.0, Height = 3.0, TypicalFurniture = new List<string> { "DisplayShelf", "Counter" } },
+                ["Almacen"] = new NeufertMatch { SpaceName = "Almacen", Function = "Almacén", AreaMin = 15, AreaMax = 40, WidthMin = 3.0, DepthMin = 4.0, Height = 3.0, TypicalFurniture = new List<string> { "ShelvingUnit" } },
+                ["Aula"] = new NeufertMatch { SpaceName = "Aula", Function = "Aula", AreaMin = 45, AreaMax = 70, WidthMin = 6.0, DepthMin = 7.5, Height = 3.0, TypicalFurniture = new List<string> { "StudentDesk", "Blackboard" } },
+                ["Biblioteca"] = new NeufertMatch { SpaceName = "Biblioteca", Function = "Biblioteca", AreaMin = 40, AreaMax = 80, WidthMin = 6.0, DepthMin = 6.5, Height = 3.0, TypicalFurniture = new List<string> { "Bookshelf", "ReadingTable" } }
             };
 
             var result = new List<NeufertMatch>();
@@ -264,7 +265,9 @@ namespace ZBimCopilot.Knowledge
             if (result.Count == 0)
             {
                 string pt = (projectType ?? "").ToLowerInvariant();
-                if (pt.Contains("viv") || pt.Contains("casa") || pt.Contains("residencial"))
+                if (pt.IndexOf("viv", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    pt.IndexOf("casa", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    pt.IndexOf("residencial", StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     result.Add(CloneMatch(all["Living"]));
                     result.Add(CloneMatch(all["Cocina"]));
@@ -272,14 +275,14 @@ namespace ZBimCopilot.Knowledge
                     result.Add(CloneMatch(all["Dormitorio"]));
                     result.Add(CloneMatch(all["Baño_Completo"]));
                 }
-                else if (pt.Contains("ofic"))
+                else if (pt.IndexOf("ofic", StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     result.Add(CloneMatch(all["Oficina"]));
                     result.Add(CloneMatch(all["Sala_Reuniones"]));
                     result.Add(CloneMatch(all["Recepcion"]));
                     result.Add(CloneMatch(all["Baño_Visitas"]));
                 }
-                else if (pt.Contains("comer"))
+                else if (pt.IndexOf("comer", StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     result.Add(CloneMatch(all["Area_Ventas"]));
                     result.Add(CloneMatch(all["Almacen"]));

@@ -7,9 +7,6 @@ using System.Text.Json;
 
 namespace ZBIMCopilot.Knowledge
 {
-    /// <summary>
-    /// Carga los datos de Neufert desde los archivos JSON fragmentados.
-    /// </summary>
     public class NeufertLoader
     {
         private readonly List<NeufertEntry> _entries;
@@ -40,9 +37,6 @@ namespace ZBIMCopilot.Knowledge
             }
         }
 
-        /// <summary>
-        /// Obtiene todas las entradas de un dominio y elemento específicos.
-        /// </summary>
         public List<NeufertEntry> GetEntries(string domain, string element)
         {
             return _entries
@@ -51,10 +45,6 @@ namespace ZBIMCopilot.Knowledge
                 .ToList();
         }
 
-        /// <summary>
-        /// Método de compatibilidad: devuelve los espacios asociados a un elemento (como "bar", "restaurante").
-        /// Realiza una búsqueda por nombre de elemento y convierte las entradas a NeufertSpace.
-        /// </summary>
         public List<NeufertSpace> GetSpacesFor(string elementKeyword)
         {
             var entries = SearchByElement(elementKeyword);
@@ -62,25 +52,23 @@ namespace ZBIMCopilot.Knowledge
             foreach (var entry in entries)
             {
                 double width = 0, length = 0;
-                // Intentar extraer dimensiones típicas o valores numéricos
                 if (entry.TypicalValue is JsonElement jsonVal)
                 {
                     if (jsonVal.ValueKind == JsonValueKind.Number)
                     {
                         double val = jsonVal.GetDouble();
-                        if (entry.ParameterOrSubject != null && entry.ParameterOrSubject.Contains("ancho", StringComparison.OrdinalIgnoreCase))
+                        if (entry.ParameterOrSubject != null && entry.ParameterOrSubject.IndexOf("ancho", StringComparison.OrdinalIgnoreCase) >= 0)
                             width = val;
-                        else if (entry.ParameterOrSubject != null && (entry.ParameterOrSubject.Contains("largo", StringComparison.OrdinalIgnoreCase) || entry.ParameterOrSubject.Contains("longitud", StringComparison.OrdinalIgnoreCase)))
+                        else if (entry.ParameterOrSubject != null && (entry.ParameterOrSubject.IndexOf("largo", StringComparison.OrdinalIgnoreCase) >= 0 || entry.ParameterOrSubject.IndexOf("longitud", StringComparison.OrdinalIgnoreCase) >= 0))
                             length = val;
                         else
-                            width = val; // Asumimos que es dimensión principal
+                            width = val;
                     }
                     else if (jsonVal.ValueKind == JsonValueKind.String && double.TryParse(jsonVal.GetString(), out double parsed))
                     {
                         width = parsed;
                     }
                 }
-                // También buscar en min/max value si typical es null
                 if (width == 0 && entry.MinValue is JsonElement minElem && minElem.ValueKind == JsonValueKind.Number)
                     width = minElem.GetDouble();
                 if (length == 0 && entry.MaxValue is JsonElement maxElem && maxElem.ValueKind == JsonValueKind.Number)
@@ -102,25 +90,19 @@ namespace ZBIMCopilot.Knowledge
             return spaces;
         }
 
-        /// <summary>
-        /// Busca entradas cuyo nombre de elemento contenga la palabra clave.
-        /// </summary>
         public List<NeufertEntry> SearchByElement(string keyword)
         {
             return _entries
-                .Where(e => e.Element != null && e.Element.Contains(keyword, StringComparison.OrdinalIgnoreCase))
+                .Where(e => e.Element != null && e.Element.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
                 .ToList();
         }
 
-        /// <summary>
-        /// Busca en todos los campos de texto (elemento, descripción, tags) la palabra clave.
-        /// </summary>
         public List<NeufertEntry> SearchByKeyword(string keyword)
         {
             return _entries.Where(e =>
-                (e.Element != null && e.Element.Contains(keyword, StringComparison.OrdinalIgnoreCase)) ||
-                (e.RuleDescription != null && e.RuleDescription.Contains(keyword, StringComparison.OrdinalIgnoreCase)) ||
-                (e.Tags != null && e.Tags.Any(t => t.Contains(keyword, StringComparison.OrdinalIgnoreCase)))
+                (e.Element != null && e.Element.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                (e.RuleDescription != null && e.RuleDescription.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                (e.Tags != null && e.Tags.Any(t => t.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0))
             ).ToList();
         }
 
@@ -130,7 +112,7 @@ namespace ZBIMCopilot.Knowledge
                 string.Equals(e.Domain, domain, StringComparison.OrdinalIgnoreCase)
                 && string.Equals(e.Element, element, StringComparison.OrdinalIgnoreCase)
                 && e.ParameterOrSubject != null
-                && e.ParameterOrSubject.Contains(parameterSubstring, StringComparison.OrdinalIgnoreCase)
+                && e.ParameterOrSubject.IndexOf(parameterSubstring, StringComparison.OrdinalIgnoreCase) >= 0
                 && e.TypicalValue != null);
 
             if (entry?.TypicalValue is JsonElement jsonElement)

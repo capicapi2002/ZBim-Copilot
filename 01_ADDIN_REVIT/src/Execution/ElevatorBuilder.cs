@@ -7,21 +7,19 @@ using Autodesk.Revit.DB.Architecture;
 
 namespace ZBIMCopilot.Execution
 {
-    /// <summary>
-    /// Generador profesional de ascensores y montacargas. Usa LookupParameter como fallback.
-    /// </summary>
     public static class ElevatorBuilder
     {
         private const double MIN_SHAFT_WALL_THICKNESS = 0.15;
 
-        private static Dictionary<int, (double Width, double Depth, double Height)> CabinDimensions = new()
-        {
-            { 4,  (1.10, 1.40, 2.20) },
-            { 6,  (1.10, 2.00, 2.20) },
-            { 8,  (1.40, 2.40, 2.30) },
-            { 10, (1.80, 2.70, 2.30) },
-            { 12, (2.10, 2.70, 2.30) }
-        };
+        private static Dictionary<int, (double Width, double Depth, double Height)> CabinDimensions =
+            new Dictionary<int, (double, double, double)>
+            {
+                { 4,  (1.10, 1.40, 2.20) },
+                { 6,  (1.10, 2.00, 2.20) },
+                { 8,  (1.40, 2.40, 2.30) },
+                { 10, (1.80, 2.70, 2.30) },
+                { 12, (2.10, 2.70, 2.30) }
+            };
 
         public enum ElevatorType { ElectricTraction, Hydraulic, Pneumatic, Panoramic, Freight }
 
@@ -70,7 +68,6 @@ namespace ZBIMCopilot.Execution
                 double x1 = x0 + totalShaftWidth;
                 double y1 = y0 + totalShaftDepth;
 
-                // Muros del hueco
                 WallBuilder.CreateStraightWall(doc, baseLevel, topLevel, null, new XYZ(x0, y0, baseLevel.Elevation), new XYZ(x1, y0, baseLevel.Elevation));
                 WallBuilder.CreateStraightWall(doc, baseLevel, topLevel, null, new XYZ(x0, y1, baseLevel.Elevation), new XYZ(x1, y1, baseLevel.Elevation));
                 WallBuilder.CreateStraightWall(doc, baseLevel, topLevel, null, new XYZ(x0, y0, baseLevel.Elevation), new XYZ(x0, y1, baseLevel.Elevation));
@@ -82,10 +79,8 @@ namespace ZBIMCopilot.Execution
                     WallBuilder.CreateStraightWall(doc, baseLevel, topLevel, null, new XYZ(xService, y0, baseLevel.Elevation), new XYZ(xService, y1, baseLevel.Elevation));
                 }
 
-                // CAMBIO: Muro host creado fuera del bucle para evitar bug lógico y CS8604
                 Wall? hostWall = WallBuilder.CreateStraightWall(doc, baseLevel, topLevel, null, new XYZ(x0, y0, baseLevel.Elevation), new XYZ(x1, y0, baseLevel.Elevation));
 
-                // Puertas de ascensor
                 FamilySymbol? doorSymbol = FindElevatorDoorSymbol(doc, elevatorType);
                 FamilyInstance? firstDoor = null;
                 if (doorSymbol != null && hostWall != null)
@@ -126,7 +121,6 @@ namespace ZBIMCopilot.Execution
 
         private static FamilySymbol? FindElevatorDoorSymbol(Document doc, ElevatorType type)
         {
-            // Buscar familia de puerta de ascensor
             return new FilteredElementCollector(doc)
                 .OfClass(typeof(FamilySymbol))
                 .OfCategory(BuiltInCategory.OST_Doors)

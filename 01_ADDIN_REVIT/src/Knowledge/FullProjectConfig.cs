@@ -4,7 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace ZBimCopilot.Knowledge
 {
-    /// <summary>Requisito de espacio definido por el usuario (programa de necesidades).</summary>
     public class SpaceRequirement
     {
         [JsonPropertyName("name")]
@@ -55,7 +54,7 @@ namespace ZBimCopilot.Knowledge
     public class StyleReferences
     {
         [JsonPropertyName("materials")]
-        public List<string> Materials { get; set; } = new();
+        public List<string> Materials { get; set; } = new List<string>();
 
         [JsonPropertyName("style")]
         public string Style { get; set; } = string.Empty;
@@ -105,7 +104,7 @@ namespace ZBimCopilot.Knowledge
         public string SitePlanBase64 { get; set; } = string.Empty;
 
         [JsonPropertyName("retreats")]
-        public Retreats Retreats { get; set; } = new();
+        public Retreats Retreats { get; set; } = new Retreats();
 
         [JsonPropertyName("implantation_area")]
         public double ImplantationArea { get; set; }
@@ -123,13 +122,13 @@ namespace ZBimCopilot.Knowledge
         public string ProgramDocBase64 { get; set; } = string.Empty;
 
         [JsonPropertyName("applicable_normative")]
-        public List<NormativeFile> ApplicableNormative { get; set; } = new();
+        public List<NormativeFile> ApplicableNormative { get; set; } = new List<NormativeFile>();
 
         [JsonPropertyName("style_references")]
-        public StyleReferences StyleReferences { get; set; } = new();
+        public StyleReferences StyleReferences { get; set; } = new StyleReferences();
 
         [JsonPropertyName("images_references")]
-        public List<ReferenceImage> ImagesReferences { get; set; } = new();
+        public List<ReferenceImage> ImagesReferences { get; set; } = new List<ReferenceImage>();
 
         [JsonIgnore]
         public string EffectiveProjectType =>

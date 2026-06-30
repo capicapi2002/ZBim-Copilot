@@ -21,9 +21,9 @@ namespace ZBimCopilot.Knowledge
         public string Normative { get; set; } = "CTE";
 
         [JsonPropertyName("style_references")]
-        public List<string> StyleReferences { get; set; } = new();
+        public List<string> StyleReferences { get; set; } = new List<string>();
 
         [JsonPropertyName("program_requirements")]
-        public List<SpaceRequirement> ProgramRequirements { get; set; } = new();
+        public List<SpaceRequirement> ProgramRequirements { get; set; } = new List<SpaceRequirement>();
     }
 }

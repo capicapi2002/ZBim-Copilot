@@ -9,7 +9,7 @@ namespace ZBIMCopilot.Execution
 {
     public class ProjectConfigHandler : IExternalEventHandler
     {
-        private readonly ConcurrentQueue<string> _configQueue = new();
+        private readonly ConcurrentQueue<string> _configQueue = new ConcurrentQueue<string>();
 
         public void Enqueue(string json)
         {

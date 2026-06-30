@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\1WORK\\00 HPI\\00 COPILOT\\kwen-bimcopilot\\01_ADDIN_REVIT\\ZBIMCopilot.csproj": {}
+  },
+  "projects": {
+    "D:\\1WORK\\00 HPI\\00 COPILOT\\kwen-bimcopilot\\01_ADDIN_REVIT\\ZBIMCopilot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\1WORK\\00 HPI\\00 COPILOT\\kwen-bimcopilot\\01_ADDIN_REVIT\\ZBIMCopilot.csproj",
+        "projectName": "ZBIMCopilot",
+        "projectPath": "D:\\1WORK\\00 HPI\\00 COPILOT\\kwen-bimcopilot\\01_ADDIN_REVIT\\ZBIMCopilot.csproj",
+        "packagesPath": "C:\\Users\\pi\\.nuget\\packages\\",
+        "outputPath": "D:\\1WORK\\00 HPI\\00 COPILOT\\kwen-bimcopilot\\01_ADDIN_REVIT\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "framework": "net48",
+            "targetAlias": "net48",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net48": {
+          "framework": "net48",
+          "targetAlias": "net48",
+          "dependencies": {
+            "Microsoft.Web.WebView2": {
+              "target": "Package",
+              "version": "[1.0.2903.40, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

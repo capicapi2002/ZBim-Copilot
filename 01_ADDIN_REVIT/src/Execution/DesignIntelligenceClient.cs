@@ -10,10 +10,6 @@ using ZBimCopilot.Knowledge;
 
 namespace ZBIMCopilot.Execution
 {
-    /// <summary>
-    /// Cliente C# que se comunica con el microservicio Python design_intelligence_agent.py.
-    /// Todos los métodos asíncronos soportan CancellationToken para permitir cancelación desde la UI.
-    /// </summary>
     public class DesignIntelligenceClient : IDisposable
     {
         private readonly HttpClient _httpClient;
@@ -88,7 +84,6 @@ namespace ZBIMCopilot.Execution
             }
             catch (OperationCanceledException)
             {
-                // Cancelación o timeout. Propagar para que el handler lo capture.
                 throw;
             }
             catch (Exception ex)
@@ -123,7 +118,7 @@ namespace ZBIMCopilot.Execution
 
             if (!response.IsSuccessStatusCode)
             {
-                string error = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                string error = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 throw new Exception($"Error guardando normativa: {error}");
             }
         }
@@ -143,7 +138,7 @@ namespace ZBIMCopilot.Execution
 
                 if (response.IsSuccessStatusCode)
                 {
-                    string body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    string body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                     using var doc = JsonDocument.Parse(body);
                     if (doc.RootElement.TryGetProperty("normatives", out var normsEl) &&
                         normsEl.ValueKind == JsonValueKind.Array)
@@ -185,7 +180,7 @@ namespace ZBIMCopilot.Execution
 
                 if (response.IsSuccessStatusCode)
                 {
-                    string body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    string body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                     using var doc = JsonDocument.Parse(body);
                     if (doc.RootElement.TryGetProperty("balance", out var balanceEl))
                     {
@@ -217,7 +212,7 @@ namespace ZBIMCopilot.Execution
 
             if (response.IsSuccessStatusCode)
             {
-                string body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                string body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 using var doc = JsonDocument.Parse(body);
                 if (doc.RootElement.TryGetProperty("payment_url", out var urlEl))
                 {
@@ -258,7 +253,7 @@ namespace ZBIMCopilot.Execution
 
                 if (response.IsSuccessStatusCode)
                 {
-                    string body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    string body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                     using var doc = JsonDocument.Parse(body);
                     if (doc.RootElement.TryGetProperty("questions", out var questionsEl) &&
                         questionsEl.ValueKind == JsonValueKind.Array)
@@ -315,7 +310,7 @@ namespace ZBIMCopilot.Execution
 
                     if (response.IsSuccessStatusCode)
                     {
-                        string body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                        string body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                         using var doc = JsonDocument.Parse(body);
                         if (doc.RootElement.TryGetProperty("description", out var descEl))
                         {
@@ -362,7 +357,7 @@ namespace ZBIMCopilot.Execution
 
                 if (response.IsSuccessStatusCode)
                 {
-                    string body = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    string body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                     using var doc = JsonDocument.Parse(body);
                     return doc.RootElement.Clone();
                 }
@@ -376,9 +371,6 @@ namespace ZBIMCopilot.Execution
         // FASE E: ENRIQUECIMIENTO DE CONTEXTO
         // ============================================================
 
-        /// <summary>
-        /// Obtiene datos de contexto (topografía y clima) desde el microservicio.
-        /// </summary>
         public async Task<string> EnrichContextAsync(string location)
         {
             var payload = new { location };
@@ -389,20 +381,27 @@ namespace ZBIMCopilot.Execution
             return await response.Content.ReadAsStringAsync();
         }
 
-        /// <summary>
-        /// [NUEVO] Obtiene datos de contexto (topografía y clima) usando coordenadas y radio.
-        /// </summary>
-        /// <param name="latitude">Latitud del punto central</param>
-        /// <param name="longitude">Longitud del punto central</param>
-        /// <param name="radius">Radio en metros para el área de topografía (default 200m)</param>
-        /// <returns>JSON con datos de topografía y clima</returns>
         public async Task<string> EnrichContextAsync(double latitude, double longitude, int radius = 200)
+        {
+            var payload = new { latitude, longitude, radius };
+            string json = JsonSerializer.Serialize(payload);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync($"{_baseUrl}/enrich_context", content);
+            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadAsStringAsync();
+        }
+
+        /// <summary>
+        /// [NUEVO] Envía coordenadas, radio y opcionalmente un KML con el polígono de la parcela.
+        /// </summary>
+        public async Task<string> EnrichContextAsync(double latitude, double longitude, int radius, string? kml)
         {
             var payload = new
             {
                 latitude,
                 longitude,
-                radius
+                radius,
+                kml = kml ?? string.Empty
             };
             string json = JsonSerializer.Serialize(payload);
             var content = new StringContent(json, Encoding.UTF8, "application/json");

@@ -1,7 +1,7 @@
 {
   "temperature_avg": 25.1,
-  "humidity_avg": 78.0,
-  "wind_speed_avg": 6.2,
+  "humidity_avg": 79.5,
+  "wind_speed_avg": 6.7,
   "wind_direction_dominant": "135",
-  "solar_radiation_avg": 262.58
+  "solar_radiation_avg": 269.88
 }

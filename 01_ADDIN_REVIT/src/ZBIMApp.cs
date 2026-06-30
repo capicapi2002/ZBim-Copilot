@@ -34,6 +34,10 @@ namespace ZBIMCopilot
         private static FullProjectConfigHandler? _fullProjectConfigHandler;
         private static ExternalEvent? _fullProjectConfigExternalEvent;
 
+        // ========== NUEVOS CAMPOS (FASE E – TOPOGRAFÍA) ==========
+        public static ExternalEvent? TopographyEvent { get; private set; }
+        public static TopographyHandler? TopoHandlerInstance { get; private set; }
+
         public Result OnStartup(UIControlledApplication app)
         {
             try
@@ -50,6 +54,10 @@ namespace ZBIMCopilot
                 // ========== NUEVA INICIALIZACIÓN (FASE D) ==========
                 _fullProjectConfigHandler = new FullProjectConfigHandler();
                 _fullProjectConfigExternalEvent = ExternalEvent.Create(_fullProjectConfigHandler);
+
+                // ========== NUEVA INICIALIZACIÓN (FASE E – TOPOGRAFÍA) ==========
+                TopoHandlerInstance = new TopographyHandler();
+                TopographyEvent = ExternalEvent.Create(TopoHandlerInstance);
 
                 string tabName = "ZBIM-Copilot";
                 app.CreateRibbonTab(tabName);
@@ -70,7 +78,6 @@ namespace ZBIMCopilot
                     hybridBtn.ToolTip = "Genera una torre mixta usando topología OAS fija.";
 
                 OdysseusPane.Register(app);
-                // Ya no se suscribe a OnUICommand porque OdysseusPane delega directamente
 
                 return Result.Succeeded;
             }

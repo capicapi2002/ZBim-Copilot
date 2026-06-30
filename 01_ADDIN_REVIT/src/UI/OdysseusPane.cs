@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using System.Text;
@@ -12,7 +13,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using Autodesk.Revit.DB;
-using Autodesk.Revit.DB.Architecture;
 using Autodesk.Revit.UI;
 using Microsoft.Web.WebView2.Core;
 using Microsoft.Web.WebView2.Wpf;
@@ -29,44 +29,20 @@ namespace ZBIMCopilot
         private WpfGrid? _host;
         private bool _isWebViewReady;
         private bool _isPageLoaded;
-        private readonly List<string> _messageBuffer = new();
-        private readonly object _bufferLock = new();
+        private readonly List<string> _messageBuffer = new List<string>();
+        private readonly object _bufferLock = new object();
 
         public static Action<string>? SendToUI;
         public static event Action<string>? OnUICommand;
 
-        // ExternalEvent estático de topografía (se crea una sola vez en el hilo principal)
-        private static ExternalEvent? _topographyExternalEvent;
-        internal static List<XYZ>? _pendingTopographyPoints;
-
         public OdysseusPane()
         {
             ZBIMApp.OnServerStatus += OnServerStatusReceived;
-
-            if (_topographyExternalEvent == null)
-            {
-                var handler = new TopographyHandler();
-                _topographyExternalEvent = ExternalEvent.Create(handler);
-                _pendingTopographyPoints = new List<XYZ>();
-            }
         }
 
         ~OdysseusPane()
         {
             try { ZBIMApp.OnServerStatus -= OnServerStatusReceived; } catch { }
-        }
-
-        public static void EnqueueTopographyPoints(List<XYZ> points)
-        {
-            if (_pendingTopographyPoints != null && _topographyExternalEvent != null)
-            {
-                lock (_pendingTopographyPoints)
-                {
-                    _pendingTopographyPoints.Clear();
-                    _pendingTopographyPoints.AddRange(points);
-                }
-                _topographyExternalEvent.Raise();
-            }
         }
 
         public static void Register(UIControlledApplication application)
@@ -189,7 +165,10 @@ namespace ZBIMCopilot
                                         double lat = GetDoubleProp(doc.RootElement, "latitude") ?? 0;
                                         double lon = GetDoubleProp(doc.RootElement, "longitude") ?? 0;
                                         int radius = GetIntProp(doc.RootElement, "radius") ?? 200;
-                                        _ = HandleGenerateTopographyCommandAsync(lat, lon, radius);
+                                        string? kml = null;
+                                        if (doc.RootElement.TryGetProperty("kml", out var kmlEl))
+                                            kml = kmlEl.GetString();
+                                        _ = HandleGenerateTopographyCommandAsync(lat, lon, radius, kml);
                                         return;
                                     }
 
@@ -210,25 +189,23 @@ namespace ZBIMCopilot
                         string html = LoadEmbeddedHtml();
                         _webView.CoreWebView2.NavigateToString(html);
 
-                        // Forzar recarga después de 500 ms para eliminar caché residual
                         _ = Task.Run(async () =>
                         {
                             await Task.Delay(500);
                             if (_webView?.CoreWebView2 != null)
                             {
-                                System.Diagnostics.Debug.WriteLine("🔄 [ZBIM] Forzando recarga del WebView2...");
+                                Debug.WriteLine("🔄 [ZBIM] Forzando recarga del WebView2...");
                                 _webView.CoreWebView2.Reload();
                             }
                         });
                     }
                     else
                     {
-                        System.Diagnostics.Debug.WriteLine($"❌ Error al inicializar WebView2: {e.InitializationException?.Message}");
+                        Debug.WriteLine($"❌ Error al inicializar WebView2: {e.InitializationException?.Message}");
                         ShowFallbackLabel("Error al inicializar WebView2 Runtime.");
                     }
                 };
 
-                // Opciones para deshabilitar completamente la caché de Chromium
                 var options = new CoreWebView2EnvironmentOptions();
                 options.AdditionalBrowserArguments =
                     "--disable-cache " +
@@ -237,38 +214,36 @@ namespace ZBIMCopilot
                     "--disk-cache-size=0 " +
                     "--media-cache-size=0";
 
-                System.Diagnostics.Debug.WriteLine("🔧 [ZBIM] Iniciando WebView2 con caché deshabilitada...");
+                Debug.WriteLine("🔧 [ZBIM] Iniciando WebView2 con caché deshabilitada...");
 
                 var env = await CoreWebView2Environment.CreateAsync(null, dataFolder, options);
                 await _webView.EnsureCoreWebView2Async(env);
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"❌ Error en InitializeAsync: {ex.Message}");
+                Debug.WriteLine($"❌ Error en InitializeAsync: {ex.Message}");
                 ShowFallbackLabel($"Excepción: {ex.Message}");
             }
         }
 
         private string LoadEmbeddedHtml()
         {
-            // Cargar desde el archivo físico en la carpeta de salida de compilación
             string dllDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty;
             string filePath = Path.Combine(dllDirectory, "UI", "OdysseusWeb", "index.html");
 
             if (File.Exists(filePath))
             {
-                System.Diagnostics.Debug.WriteLine($"📁 [ZBIM] Cargando HTML desde archivo: {filePath}");
+                Debug.WriteLine($"📁 [ZBIM] Cargando HTML desde archivo: {filePath}");
                 return File.ReadAllText(filePath);
             }
 
-            // Fallback: recurso embebido
             string targetResource = "ZBIMCopilot.UI.OdysseusWeb.index.html";
             var assembly = Assembly.GetExecutingAssembly();
             using (Stream? stream = assembly.GetManifestResourceStream(targetResource))
             {
                 if (stream != null)
                 {
-                    System.Diagnostics.Debug.WriteLine("📦 [ZBIM] Cargando HTML desde recurso embebido");
+                    Debug.WriteLine("📦 [ZBIM] Cargando HTML desde recurso embebido");
                     using StreamReader reader = new StreamReader(stream);
                     return reader.ReadToEnd();
                 }
@@ -405,43 +380,77 @@ namespace ZBIMCopilot
             await Task.CompletedTask;
         }
 
-        private async Task HandleGenerateTopographyCommandAsync(double latitude, double longitude, int radius)
+        // --- MANEJADOR DE TOPOGRAFÍA CON KML ---
+        private async Task HandleGenerateTopographyCommandAsync(double latitude, double longitude, int radius, string? kml = null)
         {
             try
             {
                 SendMessage("🗺️ Solicitando datos topográficos...");
                 var client = new DesignIntelligenceClient();
-                string contextJson = await client.EnrichContextAsync(latitude, longitude, radius);
+                string contextJson = await client.EnrichContextAsync(latitude, longitude, radius, kml);
                 SendMessage("✅ Datos topográficos recibidos.");
 
                 using var jsonDoc = JsonDocument.Parse(contextJson);
+
+                // Leer puntos de topografía
+                List<XYZ>? points = null;
                 if (jsonDoc.RootElement.TryGetProperty("topography", out var topoEl) &&
                     topoEl.TryGetProperty("points", out var pointsEl))
                 {
-                    var points = new List<XYZ>();
+                    points = new List<XYZ>();
                     foreach (var point in pointsEl.EnumerateArray())
                     {
-                        if (point.TryGetProperty("x", out var xEl) &&
-                            point.TryGetProperty("y", out var yEl) &&
-                            point.TryGetProperty("z", out var zEl))
+                        if (point.TryGetProperty("lat", out var latEl) &&
+                            point.TryGetProperty("lon", out var lonEl) &&
+                            point.TryGetProperty("elevation", out var elevEl))
                         {
-                            points.Add(new XYZ(xEl.GetDouble(), yEl.GetDouble(), zEl.GetDouble()));
+                            double ptLat = latEl.GetDouble();
+                            double ptLon = lonEl.GetDouble();
+                            double ptElev = elevEl.GetDouble();
+
+                            double metersPerDegLat = 111320.0;
+                            double metersPerDegLon = 111320.0 * Math.Cos(latitude * Math.PI / 180.0);
+                            double xMeters = (ptLon - longitude) * metersPerDegLon;
+                            double yMeters = (ptLat - latitude) * metersPerDegLat;
+
+                            points.Add(new XYZ(xMeters, yMeters, ptElev));
                         }
                     }
+                }
 
-                    if (points.Count >= 3)
+                // Leer contorno del polígono (si existe)
+                List<XYZ>? contourPoints = null;
+                if (jsonDoc.RootElement.TryGetProperty("contour", out var contourEl) &&
+                    contourEl.TryGetProperty("coordinates", out var coordsEl))
+                {
+                    contourPoints = new List<XYZ>();
+                    foreach (var coord in coordsEl.EnumerateArray())
                     {
-                        EnqueueTopographyPoints(points);
-                        SendMessage($"✅ Topografía encolada con {points.Count} puntos.");
+                        if (coord.TryGetProperty("lat", out var cLat) &&
+                            coord.TryGetProperty("lon", out var cLon))
+                        {
+                            double ptLat = cLat.GetDouble();
+                            double ptLon = cLon.GetDouble();
+
+                            double metersPerDegLat = 111320.0;
+                            double metersPerDegLon = 111320.0 * Math.Cos(latitude * Math.PI / 180.0);
+                            double xMeters = (ptLon - longitude) * metersPerDegLon;
+                            double yMeters = (ptLat - latitude) * metersPerDegLat;
+
+                            contourPoints.Add(new XYZ(xMeters, yMeters, 0));
+                        }
                     }
-                    else
-                    {
-                        SendMessage("⚠️ No hay suficientes puntos para crear topografía.");
-                    }
+                }
+
+                // Enviar al manejador de topografía (puntos + contorno)
+                if (points != null && points.Count >= 3)
+                {
+                    ZBIMApp.TopoHandlerInstance?.SetPointsAndRaise(points, contourPoints);
+                    SendMessage($"✅ Topografía encolada con {points.Count} puntos.");
                 }
                 else
                 {
-                    SendMessage("⚠️ No se recibieron datos de topografía.");
+                    SendMessage("⚠️ No hay suficientes puntos para crear topografía.");
                 }
             }
             catch (Exception ex)
@@ -487,49 +496,5 @@ namespace ZBIMCopilot
                 SendMessage($"❌ ERROR DE CONEXIÓN: {ex.Message}");
             }
         }
-    }
-
-    public class TopographyHandler : IExternalEventHandler
-    {
-        public void Execute(UIApplication app)
-        {
-            var points = OdysseusPane._pendingTopographyPoints;
-            if (points == null || points.Count == 0)
-            {
-                System.Diagnostics.Debug.WriteLine("⚠️ [ZBIM] TopographyHandler: No hay puntos para crear topografía.");
-                return;
-            }
-
-            Document doc = app.ActiveUIDocument?.Document;
-            if (doc == null)
-            {
-                System.Diagnostics.Debug.WriteLine("❌ [ZBIM] TopographyHandler: No se pudo obtener el documento activo.");
-                return;
-            }
-
-            // Copiar puntos para liberar el lock rápidamente
-            List<XYZ> pointsCopy;
-            lock (points)
-            {
-                pointsCopy = new List<XYZ>(points);
-            }
-
-            try
-            {
-                using (Transaction t = new Transaction(doc, "Crear topografía desde OpenTopography"))
-                {
-                    t.Start();
-                    TopographySurface.Create(doc, pointsCopy);
-                    t.Commit();
-                }
-                System.Diagnostics.Debug.WriteLine($"✅ [ZBIM] Topografía creada correctamente con {pointsCopy.Count} puntos.");
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"❌ [ZBIM] Error al crear topografía: {ex.Message}");
-            }
-        }
-
-        public string GetName() => "TopographyHandler";
     }
 }

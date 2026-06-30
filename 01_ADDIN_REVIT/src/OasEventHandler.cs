@@ -11,7 +11,8 @@ namespace ZBIMCopilot
 {
     public class OasEventHandler : IExternalEventHandler
     {
-        private readonly ConcurrentQueue<(OasProject Project, HttpListenerContext Context)> _queue = new();
+        private readonly ConcurrentQueue<(OasProject Project, HttpListenerContext Context)> _queue =
+            new ConcurrentQueue<(OasProject, HttpListenerContext)>();
 
         public void Enqueue(OasProject project, HttpListenerContext context)
         {

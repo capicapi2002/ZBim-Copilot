@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>ZBIMCopilot</AssemblyName>
+    <RootNamespace>ZBIMCopilot</RootNamespace>
+    <OutputType>Library</OutputType>
+    
+    <!-- Evita la generación de atributos de ensamblado duplicados -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+
+    <!-- Excluye carpetas temporales para que no se compilen archivos basura -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);src/obj/**;src/bin/**;obj/**;bin/**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Revit API 2027 -->
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2027\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2027\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    
+    <!-- Sistema -->
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Paquetes NuGet -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Archivos estáticos -->
+    <Content Include="src\UI\OdysseusWeb\index.html" />
+    <Content Include="ZBIMCopilot.addin" />
+  </ItemGroup>
+
+</Project>
