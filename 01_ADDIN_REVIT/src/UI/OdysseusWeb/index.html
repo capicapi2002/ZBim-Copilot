@@ -897,7 +897,7 @@
         function handleProgramDocUpload(files) { if(!files||files.length===0) return; const f=files[0],r=new FileReader(); r.onload=function(e){programDocBase64=e.target.result;document.getElementById('program_doc_name').innerText=f.name;addLog("Documento de programa cargado: "+f.name);}; r.readAsDataURL(f); document.getElementById('program_doc_file').value=''; }
 
         // NORMATIVES
-        function handleNormativeUpload(files) { if(!files||files.length===0) return; const f=files[0]; let n=prompt(t('ask_code_name'),f.name.replace('.pdf','')); if(n&&n.trim()!==""){n=n.trim(); if(codesList.some(c=>c.name===n)){addLog(t('log_code_exists'));return;} const r=new FileReader(); r.onload=function(e){codesList.push({name:n,data:e.target.result});updateNormativeUI();addLog(t('log_code_added')+n);}; r.readAsDataURL(f);} document.getElementById('normative_file_input').value=''; }
+        function handleNormativeUpload(files) { if(!files||files.length===0) return; const f=files[0]; let n=prompt(t('ask_code_name'),f.name.replace('.pdf','')); if(n&&n.trim()!=""){n=n.trim(); if(codesList.some(c=>c.name===n)){addLog(t('log_code_exists'));return;} const r=new FileReader(); r.onload=function(e){codesList.push({name:n,data:e.target.result});updateNormativeUI();addLog(t('log_code_added')+n);}; r.readAsDataURL(f);} document.getElementById('normative_file_input').value=''; }
         function removeNormative() { const s=document.getElementById('normative_select'); if(s.value!==""){if(confirm(t('ask_confirm_delete'))){const i=parseInt(s.value),r=codesList.splice(i,1)[0];updateNormativeUI();addLog(t('log_code_removed')+(r?r.name:''));}} }
         function updateNormativeUI() {
             const s=document.getElementById('normative_select');
@@ -978,7 +978,11 @@
         function initMap(lat, lon) {
             if (map) { map.setView([lat, lon], 17); return; }
             map = L.map('map').setView([lat, lon], 17);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+            // CAMBIO A VISTA SATELITAL
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+                maxZoom: 19
+            }).addTo(map);
             drawnItems = new L.FeatureGroup(); map.addLayer(drawnItems);
             drawControl = new L.Control.Draw({ edit: { featureGroup: drawnItems, remove: true }, draw: { polygon: { allowIntersection: false, showArea: true }, polyline: false, circle: false, rectangle: false, marker: false, circlemarker: false } });
             map.addControl(drawControl);

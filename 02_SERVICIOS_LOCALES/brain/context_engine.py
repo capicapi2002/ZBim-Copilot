@@ -31,7 +31,6 @@ class ContextEngine:
             kml_clean = kml_string.strip()
             root = ET.fromstring(kml_clean)
 
-            # Intentar con namespace de KML y sin él
             ns = {"kml": "http://www.opengis.net/kml/2.2"}
             coordinates_nodes = root.findall(".//kml:coordinates", ns)
             if not coordinates_nodes:
@@ -66,20 +65,19 @@ class ContextEngine:
 
     def fetch_topography(self, lat, lon, radius_m=200, output_dir="context_output", clip_polygon=None):
         """
-        Descarga topografía desde OpenTopography y la interpola a una resolución adaptativa.
-        Si clip_polygon (shapely Polygon) está presente, recorta los puntos a su interior.
+        Descarga topografía desde OpenTopography y genera puntos con resolución adaptativa.
+        Si clip_polygon (shapely Polygon) está presente, genera puntos solo dentro del polígono.
         """
         MIN_DOWNLOAD_RADIUS = 200
         download_radius = max(radius_m, MIN_DOWNLOAD_RADIUS)
-        filter_points = download_radius > radius_m
 
-        # Resolución adaptativa: a menor radio, mayor densidad de puntos
+        # Resolución ultra‑densa para radios pequeños → miles de puntos
         if radius_m < 50:
-            target_spacing_m = 1.0
+            target_spacing_m = 0.5   # ~0.5 m entre puntos
         elif radius_m < 100:
-            target_spacing_m = 2.0
+            target_spacing_m = 1.0
         elif radius_m < 200:
-            target_spacing_m = 3.0
+            target_spacing_m = 2.0
         else:
             target_spacing_m = 5.0
 
@@ -96,6 +94,7 @@ class ContextEngine:
         tiff_path = os.path.join(output_dir, "terrain.tif")
         csv_path = os.path.join(output_dir, "terrain_revit.csv")
 
+        # Descargar el DEM
         base_url = "https://portal.opentopography.org/API/globaldem"
         params = {
             "demtype": "SRTMGL1",
@@ -125,63 +124,84 @@ class ContextEngine:
             print(f"❌ Excepción durante descarga: {e}")
             return None
 
+        # Generar puntos con la resolución deseada
         try:
             with rasterio.open(tiff_path) as dataset:
-                pixel_size_deg = abs(dataset.transform[0])
-                scale_factor = pixel_size_deg / (target_spacing_m / 111000.0)
-                if scale_factor < 1.0:
-                    scale_factor = 1.0
+                # Definir la zona de muestreo
+                if clip_polygon:
+                    minx, miny, maxx, maxy = clip_polygon.bounds
+                else:
+                    lat_deg_per_m = 1.0 / 111000.0
+                    lon_deg_per_m = 1.0 / (111000.0 * math.cos(math.radians(lat)))
+                    rad_deg_lat = radius_m * lat_deg_per_m
+                    rad_deg_lon = radius_m * lon_deg_per_m
+                    minx = lon - rad_deg_lon
+                    maxx = lon + rad_deg_lon
+                    miny = lat - rad_deg_lat
+                    maxy = lat + rad_deg_lat
 
-                new_width = int(dataset.width * scale_factor)
-                new_height = int(dataset.height * scale_factor)
+                # Espaciado en grados
+                lat_step_deg = target_spacing_m / 111000.0
+                lon_step_deg = target_spacing_m / (111000.0 * math.cos(math.radians(lat)))
 
-                band1 = dataset.read(1, out_shape=(new_height, new_width), resampling=Resampling.bilinear)
+                # Crear grilla regular
+                xs = np.arange(minx, maxx + lon_step_deg, lon_step_deg)
+                ys = np.arange(miny, maxy + lat_step_deg, lat_step_deg)
+                xx, yy = np.meshgrid(xs, ys)
+                points_lon = xx.ravel()
+                points_lat = yy.ravel()
 
-                rows, cols = np.mgrid[0:new_height, 0:new_width]
-                xs, ys = dataset.xy(rows.ravel(), cols.ravel())
-                zs = band1.ravel()
-
-                valid = zs != dataset.nodata
-                xs = np.array(xs)[valid]
-                ys = np.array(ys)[valid]
-                zs = zs[valid]
-
-                # Filtro circular (solo si no hay polígono KML)
-                if filter_points and clip_polygon is None:
+                # Filtrar puntos dentro del polígono o del círculo
+                if clip_polygon:
+                    inside = np.array([clip_polygon.contains(Point(lo, la)) for lo, la in zip(points_lon, points_lat)])
+                else:
                     center_lon, center_lat = lon, lat
-                    lon_dist_deg = (xs - center_lon) * math.cos(math.radians(center_lat))
-                    lat_dist_deg = ys - center_lat
-                    dist_deg = np.sqrt(lon_dist_deg**2 + lat_dist_deg**2)
+                    lon_dist = (points_lon - center_lon) * math.cos(math.radians(center_lat))
+                    lat_dist = points_lat - center_lat
+                    dist = np.sqrt(lon_dist**2 + lat_dist**2)
                     max_dist_deg = radius_m / 111000.0
-                    mask = dist_deg <= max_dist_deg
-                    xs = xs[mask]
-                    ys = ys[mask]
-                    zs = zs[mask]
+                    inside = dist <= max_dist_deg
 
-                # Recorte por polígono KML
-                if clip_polygon is not None:
-                    inside_indices = []
-                    for i in range(len(xs)):
-                        pt = Point(xs[i], ys[i])
-                        if clip_polygon.contains(pt):
-                            inside_indices.append(i)
-                    xs = xs[inside_indices]
-                    ys = ys[inside_indices]
-                    zs = zs[inside_indices]
+                points_lon = points_lon[inside]
+                points_lat = points_lat[inside]
 
-                MAX_POINTS = 10000
-                if len(xs) > MAX_POINTS:
-                    step = len(xs) // MAX_POINTS
-                    xs = xs[::step]
-                    ys = ys[::step]
+                # Si no quedan puntos, forzar el centro
+                if len(points_lon) == 0:
+                    points_lon = np.array([lon])
+                    points_lat = np.array([lat])
+
+                # Muestrear elevaciones en cada punto
+                xy = [(lo, la) for lo, la in zip(points_lon, points_lat)]
+                elevs = []
+                for val in dataset.sample(xy):
+                    elevs.append(val[0])
+                zs = np.array(elevs)
+
+                # Eliminar posibles valores nodata
+                nodata = dataset.nodata
+                if nodata is not None:
+                    valid = zs != nodata
+                    points_lon = points_lon[valid]
+                    points_lat = points_lat[valid]
+                    zs = zs[valid]
+
+                # Limitar a un máximo de 20000 puntos (rendimiento en Revit)
+                MAX_POINTS = 20000
+                if len(points_lon) > MAX_POINTS:
+                    step = len(points_lon) // MAX_POINTS
+                    points_lon = points_lon[::step]
+                    points_lat = points_lat[::step]
                     zs = zs[::step]
 
+                # Guardar CSV
                 with open(csv_path, 'w') as f:
                     f.write("X,Y,Z\n")
-                    for x, y, z in zip(xs, ys, zs):
-                        f.write(f"{x:.6f},{y:.6f},{z:.3f}\n")
+                    for lo, la, z in zip(points_lon, points_lat, zs):
+                        f.write(f"{lo:.6f},{la:.6f},{z:.3f}\n")
 
+                print(f"✅ Puntos topográficos generados: {len(points_lon)}")
                 return csv_path
+
         except Exception as e:
             print(f"❌ Error procesando dataset: {e}")
             return None
@@ -244,7 +264,6 @@ class ContextEngine:
         Orquesta la obtención de topografía, clima y contorno.
         NUNCA retorna None en los campos esperados por C# (siempre arrays/diccionarios vacíos).
         """
-        # Valores por defecto seguros para evitar el error "Null" en C#
         topography_data = {"points": [], "bounds": {"min_x": 0.0, "max_x": 0.0, "min_y": 0.0, "max_y": 0.0}}
         contour_data = {"coordinates": []}
         climate_data = {
@@ -256,7 +275,6 @@ class ContextEngine:
         if lat is None or lon is None:
             return {"topography": topography_data, "climate": climate_data, "contour": contour_data}
 
-        # Procesar KML si existe
         contour_coords = None
         clip_polygon = None
         if kml_string:
@@ -266,13 +284,12 @@ class ContextEngine:
             else:
                 print("⚠️ No se pudo extraer un polígono del KML. Se usará el radio.")
 
-        # Topografía
         try:
             csv_path = self.fetch_topography(lat, lon, radius_m=radius_m, clip_polygon=clip_polygon)
             if csv_path and os.path.exists(csv_path):
                 points = []
                 with open(csv_path, 'r') as f:
-                    lines = f.readlines()[1:]  # saltar cabecera
+                    lines = f.readlines()[1:]
                     for line in lines:
                         parts = line.strip().split(',')
                         if len(parts) == 3:
@@ -294,7 +311,6 @@ class ContextEngine:
         except Exception as e:
             print(f"❌ Error obteniendo topografía: {e}")
 
-        # Clima
         try:
             climate_summary = self.fetch_climate(lat, lon)
             if climate_summary:
@@ -302,7 +318,6 @@ class ContextEngine:
         except Exception as e:
             print(f"❌ Error obteniendo clima: {e}")
 
-        # Contorno
         if contour_coords:
             contour_data = {
                 "coordinates": [{"lat": lat, "lon": lon} for lon, lat in contour_coords]
