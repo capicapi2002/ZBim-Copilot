@@ -520,12 +520,17 @@
             </div>
 
             <!-- MAPA INTERACTIVO PARA DIBUJAR PARCELA -->
-            <div class="panel-header" style="margin-top: 20px;">🗺️ Dibujar Parcela</div>
+            <div class="panel-header" style="margin-top: 20px;">🗺️ Dibujar Polígono de Parcela</div>
             <div style="padding: 15px;">
                 <div id="map-container">
                     <div id="map"></div>
                 </div>
                 <p style="font-size:0.7em;color:var(--text-muted);margin-top:4px;">Usa las herramientas de dibujo para trazar el polígono de la parcela. Se convertirá a KML automáticamente.</p>
+                <div class="form-group" style="margin-top: 10px;">
+                    <label for="rotation-angle">Rotación de la parcela (°)</label>
+                    <input type="number" id="rotation-angle" class="form-control" value="0" step="0.1" min="-180" max="180" onchange="applyRotationToMap()">
+                    <small style="color: var(--text-muted);">Ajusta el ángulo para alinear el polígono con los ejes de Revit.</small>
+                </div>
             </div>
         </div>
     </div>
@@ -974,11 +979,11 @@
         function updateEnvironmentButtons() { const isValid = currentLat !== null && currentLon !== null; document.getElementById('btn-topography').disabled = !isValid; document.getElementById('btn-climate').disabled = !isValid; }
 
         // MAPA LEAFLET
-        let map = null, drawnItems = null, drawControl = null;
+        let map = null, drawnItems = null, drawControl = null, rotationAngle = 0;
         function initMap(lat, lon) {
             if (map) { map.setView([lat, lon], 17); return; }
             map = L.map('map').setView([lat, lon], 17);
-            // CAMBIO A VISTA SATELITAL
+            // VISTA SATELITAL
             L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
                 attribution: 'Tiles &copy; Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
                 maxZoom: 19
@@ -991,15 +996,42 @@
             map.on(L.Draw.Event.DELETED, function () { document.getElementById('kml-input').value = ""; addLog("Polígono eliminado del mapa."); });
             L.marker([lat, lon]).addTo(map).bindPopup("Centro del proyecto").openPopup();
         }
+
+        function applyRotationToMap() {
+            rotationAngle = parseFloat(document.getElementById('rotation-angle').value) || 0;
+            if (drawnItems && drawnItems.getLayers().length > 0) {
+                const layer = drawnItems.getLayers()[0];
+                updateKMLFromLayer(layer);
+            }
+        }
+
+        function rotatePolygonCoords(latlngs, angleDeg) {
+            if (!latlngs || latlngs.length === 0 || angleDeg === 0) return latlngs;
+            let sumLat = 0, sumLng = 0;
+            latlngs.forEach(ll => { sumLat += ll.lat; sumLng += ll.lng; });
+            const centerLat = sumLat / latlngs.length;
+            const centerLng = sumLng / latlngs.length;
+            const rad = angleDeg * Math.PI / 180;
+            const cos = Math.cos(rad), sin = Math.sin(rad);
+            return latlngs.map(ll => {
+                const dx = ll.lng - centerLng;
+                const dy = ll.lat - centerLat;
+                const newLng = centerLng + dx * cos - dy * sin;
+                const newLat = centerLat + dx * sin + dy * cos;
+                return { lat: newLat, lng: newLng };
+            });
+        }
+
         function updateKMLFromLayer(layer) {
-            const latlngs = layer.getLatLngs()[0];
+            let latlngs = layer.getLatLngs()[0];
             if (!latlngs || latlngs.length < 3) return;
+            latlngs = rotatePolygonCoords(latlngs, rotationAngle);
             let kmlCoords = "";
             latlngs.forEach(ll => { kmlCoords += `${ll.lng},${ll.lat},0 `; });
             kmlCoords += `${latlngs[0].lng},${latlngs[0].lat},0`;
             const kmlString = `<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2">\n  <Document>\n    <Placemark>\n      <name>Parcela Dibujada</name>\n      <Polygon>\n        <outerBoundaryIs>\n          <LinearRing>\n            <coordinates>\n              ${kmlCoords.trim()}\n            </coordinates>\n          </LinearRing>\n        </outerBoundaryIs>\n      </Polygon>\n    </Placemark>\n  </Document>\n</kml>`;
             document.getElementById('kml-input').value = kmlString;
-            addLog("✅ KML generado desde el mapa interactivo.");
+            addLog("✅ KML generado desde el mapa interactivo (rotación aplicada: " + rotationAngle + "°).");
         }
 
         // TOPOGRAFÍA
@@ -1007,8 +1039,33 @@
             if (currentLat === null || currentLon === null) { addLog("Error: Coordenadas inválidas."); return; }
             const rad = parseInt(document.getElementById('radius').value) || 200;
             const kml = document.getElementById('kml-input').value.trim();
+            if (rotationAngle !== 0 && kml) {
+                try {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(kml, "text/xml");
+                    const coords = xmlDoc.querySelector("coordinates");
+                    if (coords) {
+                        const coordText = coords.textContent.trim();
+                        const points = coordText.split(/\s+/).map(c => {
+                            const [lng, lat] = c.split(',');
+                            return { lat: parseFloat(lat), lng: parseFloat(lng) };
+                        });
+                        if (points.length >= 3) {
+                            const rotated = rotatePolygonCoords(points, rotationAngle);
+                            let newCoords = rotated.map(p => `${p.lng},${p.lat},0`).join(' ');
+                            newCoords += ` ${rotated[0].lng},${rotated[0].lat},0`;
+                            coords.textContent = newCoords;
+                            const serializer = new XMLSerializer();
+                            const newKml = serializer.serializeToString(xmlDoc);
+                            document.getElementById('kml-input').value = newKml;
+                            addLog("KML rotado " + rotationAngle + "° antes de enviar.");
+                        }
+                    }
+                } catch (e) { addLog("Error rotando KML: " + e.message); }
+            }
+            const finalKml = document.getElementById('kml-input').value.trim();
             addLog("Solicitando generación de topografía...");
-            window.chrome.webview.postMessage(JSON.stringify({ type: "command", command: "generate_topography", latitude: currentLat, longitude: currentLon, radius: rad, kml: kml || null }));
+            window.chrome.webview.postMessage(JSON.stringify({ type: "command", command: "generate_topography", latitude: currentLat, longitude: currentLon, radius: rad, kml: finalKml || null }));
         }
         function climateAnalysis() {
             if (currentLat === null || currentLon === null) { addLog("Error: Coordenadas inválidas."); return; }
