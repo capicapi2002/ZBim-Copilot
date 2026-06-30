@@ -20,22 +20,15 @@ class ContextEngine:
         self.google_api_key = google_api_key
 
     def parse_kml_polygon(self, kml_string):
-        """
-        Parsea de manera robusta el KML para extraer los vértices del polígono.
-        Retorna una lista de tuplas (lon, lat) y un objeto Polygon de shapely si está disponible.
-        """
+        """Parsea KML y devuelve (lista_de_tuplas, Polygon o None)."""
         try:
             if not kml_string or kml_string.strip() == "":
                 return None, None
-
-            kml_clean = kml_string.strip()
-            root = ET.fromstring(kml_clean)
-
+            root = ET.fromstring(kml_string.strip())
             ns = {"kml": "http://www.opengis.net/kml/2.2"}
             coordinates_nodes = root.findall(".//kml:coordinates", ns)
             if not coordinates_nodes:
                 coordinates_nodes = root.findall(".//coordinates")
-
             coords_list = []
             for node in coordinates_nodes:
                 coords_text = node.text.strip()
@@ -46,36 +39,33 @@ class ContextEngine:
                         coords_list.append((lon, lat))
                 if coords_list:
                     break
-
             if not coords_list:
                 return None, None
-
-            # Cerrar el anillo si es necesario para Shapely
             if coords_list[0] != coords_list[-1]:
                 coords_list.append(coords_list[0])
-
             if SHAPELY_AVAILABLE:
                 polygon = Polygon(coords_list)
                 return coords_list, polygon
-            else:
-                return coords_list, None
+            return coords_list, None
         except Exception as e:
             print(f"❌ Error parseando KML: {e}")
             return None, None
 
-    def fetch_topography(self, lat, lon, radius_m=200, output_dir="context_output", clip_polygon=None):
+    def fetch_topography(self, lat, lon, radius_m=200, output_dir="context_output",
+                         clip_polygon=None, rotation_angle_deg=0):
         """
-        Descarga topografía desde OpenTopography y genera puntos con resolución adaptativa.
-        Si clip_polygon (shapely Polygon) está presente, genera puntos solo dentro del polígono.
+        Descarga DEM de OpenTopography y genera puntos con resolución adaptativa.
+        Si se proporciona un ángulo, los puntos se rotan alrededor del centro
+        de la parcela antes de obtener las elevaciones.
         """
         MIN_DOWNLOAD_RADIUS = 200
         download_radius = max(radius_m, MIN_DOWNLOAD_RADIUS)
 
-        # Resolución ultra‑densa para radios pequeños → miles de puntos
-        if radius_m < 50:
-            target_spacing_m = 0.5   # ~0.5 m entre puntos
+        # Resolución ultra‑densa
+        if radius_m <= 45:
+            target_spacing_m = 0.1          # 10 cm entre puntos
         elif radius_m < 100:
-            target_spacing_m = 1.0
+            target_spacing_m = 0.25         # 25 cm
         elif radius_m < 200:
             target_spacing_m = 2.0
         else:
@@ -94,14 +84,11 @@ class ContextEngine:
         tiff_path = os.path.join(output_dir, "terrain.tif")
         csv_path = os.path.join(output_dir, "terrain_revit.csv")
 
-        # Descargar el DEM
         base_url = "https://portal.opentopography.org/API/globaldem"
         params = {
             "demtype": "SRTMGL1",
-            "south": south,
-            "north": north,
-            "west": west,
-            "east": east,
+            "south": south, "north": north,
+            "west": west, "east": east,
             "outputFormat": "GTiff",
             "API_Key": self.api_key
         }
@@ -124,7 +111,6 @@ class ContextEngine:
             print(f"❌ Excepción durante descarga: {e}")
             return None
 
-        # Generar puntos con la resolución deseada
         try:
             with rasterio.open(tiff_path) as dataset:
                 # Definir la zona de muestreo
@@ -140,20 +126,19 @@ class ContextEngine:
                     miny = lat - rad_deg_lat
                     maxy = lat + rad_deg_lat
 
-                # Espaciado en grados
                 lat_step_deg = target_spacing_m / 111000.0
                 lon_step_deg = target_spacing_m / (111000.0 * math.cos(math.radians(lat)))
 
-                # Crear grilla regular
                 xs = np.arange(minx, maxx + lon_step_deg, lon_step_deg)
                 ys = np.arange(miny, maxy + lat_step_deg, lat_step_deg)
                 xx, yy = np.meshgrid(xs, ys)
                 points_lon = xx.ravel()
                 points_lat = yy.ravel()
 
-                # Filtrar puntos dentro del polígono o del círculo
+                # Filtrar dentro del polígono o del círculo
                 if clip_polygon:
-                    inside = np.array([clip_polygon.contains(Point(lo, la)) for lo, la in zip(points_lon, points_lat)])
+                    inside = np.array([clip_polygon.contains(Point(lo, la))
+                                       for lo, la in zip(points_lon, points_lat)])
                 else:
                     center_lon, center_lat = lon, lat
                     lon_dist = (points_lon - center_lon) * math.cos(math.radians(center_lat))
@@ -165,19 +150,26 @@ class ContextEngine:
                 points_lon = points_lon[inside]
                 points_lat = points_lat[inside]
 
-                # Si no quedan puntos, forzar el centro
                 if len(points_lon) == 0:
                     points_lon = np.array([lon])
                     points_lat = np.array([lat])
 
+                # --- ROTACIÓN alrededor del centro de la parcela ---
+                if rotation_angle_deg != 0:
+                    center_lon_rot = np.mean(points_lon)
+                    center_lat_rot = np.mean(points_lat)
+                    theta = math.radians(rotation_angle_deg)
+                    cos_a, sin_a = math.cos(theta), math.sin(theta)
+                    dx = points_lon - center_lon_rot
+                    dy = points_lat - center_lat_rot
+                    points_lon = center_lon_rot + dx * cos_a - dy * sin_a
+                    points_lat = center_lat_rot + dx * sin_a + dy * cos_a
+
                 # Muestrear elevaciones en cada punto
-                xy = [(lo, la) for lo, la in zip(points_lon, points_lat)]
-                elevs = []
-                for val in dataset.sample(xy):
-                    elevs.append(val[0])
+                xy = list(zip(points_lon, points_lat))
+                elevs = [val[0] for val in dataset.sample(xy)]
                 zs = np.array(elevs)
 
-                # Eliminar posibles valores nodata
                 nodata = dataset.nodata
                 if nodata is not None:
                     valid = zs != nodata
@@ -185,15 +177,13 @@ class ContextEngine:
                     points_lat = points_lat[valid]
                     zs = zs[valid]
 
-                # Limitar a un máximo de 20000 puntos (rendimiento en Revit)
-                MAX_POINTS = 20000
+                MAX_POINTS = 50000   # Más puntos = superficie más suave
                 if len(points_lon) > MAX_POINTS:
-                    step = len(points_lon) // MAX_POINTS
-                    points_lon = points_lon[::step]
-                    points_lat = points_lat[::step]
-                    zs = zs[::step]
+                    idx = np.linspace(0, len(points_lon)-1, MAX_POINTS, dtype=int)
+                    points_lon = points_lon[idx]
+                    points_lat = points_lat[idx]
+                    zs = zs[idx]
 
-                # Guardar CSV
                 with open(csv_path, 'w') as f:
                     f.write("X,Y,Z\n")
                     for lo, la, z in zip(points_lon, points_lat, zs):
@@ -201,7 +191,6 @@ class ContextEngine:
 
                 print(f"✅ Puntos topográficos generados: {len(points_lon)}")
                 return csv_path
-
         except Exception as e:
             print(f"❌ Error procesando dataset: {e}")
             return None
@@ -212,7 +201,6 @@ class ContextEngine:
         url = (f"https://api.open-meteo.com/v1/forecast?"
                f"latitude={latitude}&longitude={longitude}"
                f"&hourly={variables}&timezone=auto&forecast_days=1")
-
         try:
             response = requests.get(url, timeout=10)
             if response.status_code == 200:
@@ -222,7 +210,6 @@ class ContextEngine:
                 wspeeds = [v for v in data['hourly']['wind_speed_10m'] if v is not None]
                 wdirs = [v for v in data['hourly']['wind_direction_10m'] if v is not None]
                 solars = [v for v in data['hourly']['direct_radiation'] if v is not None]
-
                 return {
                     "temperature_avg": round(sum(temps)/len(temps), 1) if temps else 15.0,
                     "humidity_avg": round(sum(humids)/len(humids), 1) if humids else 60.0,
@@ -233,10 +220,8 @@ class ContextEngine:
         except Exception as e:
             print(f"⚠️ Error extrayendo datos climáticos: {e}")
         return {
-            "temperature_avg": 15.0,
-            "humidity_avg": 60.0,
-            "wind_speed_avg": 10.0,
-            "wind_direction_dominant": "N",
+            "temperature_avg": 15.0, "humidity_avg": 60.0,
+            "wind_speed_avg": 10.0, "wind_direction_dominant": "N",
             "solar_radiation_avg": 150.0
         }
 
@@ -259,18 +244,15 @@ class ContextEngine:
             print(f"❌ Error en geocodificación: {e}")
             return None, None
 
-    def enrich_context(self, location=None, latitude=None, longitude=None, radius_m=200, kml_string=None):
-        """
-        Orquesta la obtención de topografía, clima y contorno.
-        NUNCA retorna None en los campos esperados por C# (siempre arrays/diccionarios vacíos).
-        """
+    def enrich_context(self, location=None, latitude=None, longitude=None,
+                       radius_m=200, kml_string=None, rotation_angle=0):
+        """Orquesta topografía, clima y contorno. rotation_angle en grados."""
         topography_data = {"points": [], "bounds": {"min_x": 0.0, "max_x": 0.0, "min_y": 0.0, "max_y": 0.0}}
         contour_data = {"coordinates": []}
         climate_data = {
             "temperature_avg": 15.0, "humidity_avg": 60.0,
             "wind_speed_avg": 10.0, "wind_direction_dominant": "N", "solar_radiation_avg": 150.0
         }
-
         lat, lon = latitude, longitude
         if lat is None or lon is None:
             return {"topography": topography_data, "climate": climate_data, "contour": contour_data}
@@ -285,7 +267,9 @@ class ContextEngine:
                 print("⚠️ No se pudo extraer un polígono del KML. Se usará el radio.")
 
         try:
-            csv_path = self.fetch_topography(lat, lon, radius_m=radius_m, clip_polygon=clip_polygon)
+            csv_path = self.fetch_topography(lat, lon, radius_m=radius_m,
+                                             clip_polygon=clip_polygon,
+                                             rotation_angle_deg=rotation_angle)
             if csv_path and os.path.exists(csv_path):
                 points = []
                 with open(csv_path, 'r') as f:

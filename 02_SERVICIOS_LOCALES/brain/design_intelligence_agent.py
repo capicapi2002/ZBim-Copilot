@@ -451,30 +451,33 @@ def check_model_update():
 @app.route("/enrich_context", methods=["POST"])
 def enrich_context():
     """
-    [FASE E] Recibe una ubicación (texto o coordenadas), radio y opcionalmente un KML
-    con el polígono de la parcela. Devuelve datos de topografía, clima y contorno.
+    [FASE E] Recibe una ubicación (texto o coordenadas), radio, opcionalmente un KML
+    con el polígono de la parcela y un ángulo de rotación.
+    Devuelve datos de topografía, clima y contorno.
     """
     data = request.get_json(force=True, silent=True) or {}
     location = data.get("location", "")
     latitude = data.get("latitude")
     longitude = data.get("longitude")
     radius = data.get("radius", 200)
-    kml = data.get("kml", "")                    # <--- NUEVO: recogemos el KML
-    
+    kml = data.get("kml", "")
+    rotation = data.get("rotation", 0)            # <--- AÑADIDO: recogemos el ángulo de rotación
+
     if not location and (latitude is None or longitude is None):
         return jsonify({"error": "Se requiere 'location' o 'latitude'+'longitude'"}), 400
-    
+
     try:
         from context_engine import ContextEngine
         api_key = os.environ.get("OPENTOPO_API_KEY", "9c89a797b18ede702687422b4974baa1")
         engine = ContextEngine(api_key_opentopo=api_key)
-        
+
         context = engine.enrich_context(
             location=location if location else None,
             latitude=latitude,
             longitude=longitude,
             radius_m=radius,
-            kml_string=kml if kml else None       # <--- NUEVO: pasamos el KML
+            kml_string=kml if kml else None,
+            rotation_angle=rotation                  # <--- AÑADIDO: pasamos el ángulo
         )
         return jsonify(context)
     except Exception as e:
